@@ -343,7 +343,7 @@
 
     <include>
       <pose> 0 0 0.2 0 0 0 </pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/sydney_regatta</uri>
+      <uri>model://sydney_regatta</uri>
     </include>
 
     <include>
@@ -355,7 +355,7 @@
     <include>
       <name>mb_marker_buoy_red</name>
       <pose>-528 191 0 0 0 0</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/mb_marker_buoy_red</uri>
+      <uri>model://mb_marker_buoy_red</uri>
 
       <plugin name="vrx::PolyhedraBuoyancyDrag"
               filename="libPolyhedraBuoyancyDrag.so">
@@ -382,7 +382,7 @@
     <include>
       <name>mb_marker_buoy_black</name>
       <pose>-528 190 0 0 0 0</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/mb_marker_buoy_black</uri>
+      <uri>model://mb_marker_buoy_black</uri>
 
       <plugin name="vrx::PolyhedraBuoyancyDrag"
               filename="libPolyhedraBuoyancyDrag.so">
@@ -409,7 +409,7 @@
     <include>
       <name>mb_marker_buoy_green</name>
       <pose>-528 189 0 0 0 0</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/mb_marker_buoy_green</uri>
+      <uri>model://mb_marker_buoy_green</uri>
 
       <plugin name="vrx::PolyhedraBuoyancyDrag"
               filename="libPolyhedraBuoyancyDrag.so">
@@ -436,7 +436,7 @@
     <include>
       <name>mb_marker_buoy_white</name>
       <pose>-528 188 0 0 0 0</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/mb_marker_buoy_white</uri>
+      <uri>model://mb_marker_buoy_white</uri>
 
       <plugin name="vrx::PolyhedraBuoyancyDrag"
               filename="libPolyhedraBuoyancyDrag.so">
@@ -463,7 +463,7 @@
     <include>
       <name>mb_round_buoy_orange</name>
       <pose>-528 187 0 0 0 0</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/mb_round_buoy_orange</uri>
+      <uri>model://mb_round_buoy_orange</uri>
 
       <plugin name="vrx::PolyhedraBuoyancyDrag"
               filename="libPolyhedraBuoyancyDrag.so">
@@ -489,7 +489,7 @@
     <include>
       <name>mb_round_buoy_black</name>
       <pose>-528 186 0 0 0 0</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/mb_round_buoy_black</uri>
+      <uri>model://mb_round_buoy_black</uri>
 
       <plugin name="vrx::PolyhedraBuoyancyDrag"
               filename="libPolyhedraBuoyancyDrag.so">
@@ -516,40 +516,40 @@
     <include>
       <name>post_0</name>
       <pose>-535.916809 154.362869 0.675884 -0.17182 0.030464 -0.005286</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/post</uri>
+      <uri>model://post</uri>
     </include>
     <include>
       <name>post_1</name>
       <pose>-527.48999 153.854782 0.425844 -0.1365 0  0</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/post</uri>
+      <uri>model://post</uri>
     </include>
     <include>
       <name>post_2</name>
       <pose>-544.832825 156.671951 0.499025 -0.162625 0 0 </pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/post</uri>
+      <uri>model://post</uri>
     </include>
 
     <!-- Antenna for communication with the WAM-V -->
     <include>
       <pose>-531.063721 147.668579 1.59471 -0.068142 0 -0.1</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/antenna</uri>
+      <uri>model://antenna</uri>
     </include>
 
     <!-- ground station tents -->
     <include>
       <name>ground_station_0</name>
       <pose>-540.796448 146.493744 1.671421 -0.00834 0.01824 1.301726</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/ground_station</uri>
+      <uri>model://ground_station</uri>
     </include>
     <include>
       <name>ground_station_1</name>
       <pose>-537.622681 145.827896 1.681931 -0.00603 0.018667 1.301571</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/ground_station</uri>
+      <uri>model://ground_station</uri>
     </include>
     <include>
       <name>ground_station_2</name>
       <pose>-534.550537 144.910400 1.720474 -0.004994 0.020798 1.301492</pose>
-      <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/ground_station</uri>
+      <uri>model://ground_station</uri>
     </include>
 
     <!-- The projectile for the ball shooter -->
