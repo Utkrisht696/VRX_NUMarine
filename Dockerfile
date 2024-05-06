@@ -69,7 +69,7 @@ RUN apt-get install -y --quiet --no-install-recommends \
     ros-humble-sdformat-urdf \
     ros-humble-rmw-cyclonedds-cpp
 
-RUN apt install python3-sdformat13 ros-humble-ros-gzgarden ros-humble-xacro
+RUN apt install -y python3-sdformat13 ros-humble-ros-gzgarden ros-humble-xacro
 
 RUN mkdir -p /workspaces/ros_ws/src
 
