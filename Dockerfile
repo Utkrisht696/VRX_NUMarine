@@ -59,7 +59,7 @@ RUN apt update && apt-get install -y --quiet --no-install-recommends \
     clang lldb lld wget lsb-release gnupg openssl \
     libgflags-dev 
 
-RUN apt-get install -y --quiet --no-install-recommends \
+RUN apt update && apt-get install -y --quiet --no-install-recommends \
     ros-dev-tools \
     ros-humble-desktop \
     ros-humble-sdformat-urdf \
@@ -74,7 +74,7 @@ RUN apt install -y python3-sdformat13 ros-humble-ros-gzgarden ros-humble-xacro
 RUN mkdir -p /workspaces/ros_ws/src
 
 RUN echo "source /workspaces/ros_ws/install/setup.bash" >> ~/.bashrc
-RUN echo "source /opt/ros/install/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 
 SHELL ["/bin/bash", "-c"]

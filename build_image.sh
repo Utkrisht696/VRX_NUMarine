@@ -53,10 +53,10 @@ if $force_option; then
   ./build_image.sh  #Comment this line if the script stucks, there might be some issue in the DockerFile
 
 else
-  run_command="cd $workspace && catkin_make && exit"
+  run_command="cd $workspace && source /opt/ros/humble/setup.bash && colcon build --merge-install && exit"
 
   if $clean_option; then
-    run_command="cd $workspace && rm -rf devel build && catkin_make && exit"
+    run_command="cd $workspace && source /opt/ros/humble/setup.bash && rm -rf devel build && colcon build --merge-install && exit"
     echo "Clean Command Enabled"
   fi
 
