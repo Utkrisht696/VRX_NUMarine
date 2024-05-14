@@ -67,7 +67,8 @@ RUN apt update && apt-get install -y --quiet --no-install-recommends \
     ros-humble-ros-gzgarden \
     ros-humble-xacro \
     ros-humble-sdformat-urdf \
-    ros-humble-rmw-cyclonedds-cpp
+    ros-humble-rmw-cyclonedds-cpp \
+    ros-humble-joy-teleop
 
 RUN apt install -y python3-sdformat13 ros-humble-ros-gzgarden ros-humble-xacro
 
