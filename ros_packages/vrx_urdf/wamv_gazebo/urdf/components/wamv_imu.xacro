@@ -31,7 +31,7 @@
       <sensor type="imu" name="${name}_sensor">
         <update_rate>${update_rate}</update_rate>
         <imu>
-          <angular_velocity>
+          <!-- <angular_velocity>
             <x>
               <noise type="gaussian">
                 <mean>0</mean>
@@ -100,7 +100,7 @@
                 <precision>0.005</precision>
               </noise>
             </z>
-          </linear_acceleration>
+          </linear_acceleration> -->
           <orientation_reference_frame>
             <localization>ENU</localization>
           </orientation_reference_frame>
