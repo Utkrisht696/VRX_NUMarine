@@ -29,28 +29,15 @@ The VRX environment is also the "virtual venue" for the [VRX Competition](https:
 
 If you use the VRX simulation in your work, please cite our summary publication, [Toward Maritime Robotic Simulation in Gazebo](https://wiki.nps.edu/display/BB/Publications?preview=/1173263776/1173263778/PID6131719.pdf): 
 
-```
-@InProceedings{bingham19toward,
-  Title                    = {Toward Maritime Robotic Simulation in Gazebo},
-  Author                   = {Brian Bingham and Carlos Aguero and Michael McCarrin and Joseph Klamo and Joshua Malia and Kevin Allen and Tyler Lum and Marshall Rawson and Rumman Waqar},
-  Booktitle                = {Proceedings of MTS/IEEE OCEANS Conference},
-  Year                     = {2019},
-  Address                  = {Seattle, WA},
-  Month                    = {October}
-}
+## Launch the Simulation
+
+```shell
+ros2 launch vrx_gz competition.launch.py world:=sydney_regatta
+
 ```
 
-## Contributing
-This project is under active development to support the VRX and RobotX teams. We are adding and improving things all the time. Our primary focus is to provide the fundamental aspects of the robot and environment, but we rely on the community to develop additional functionality around their particular use cases.
+## Drive the robot
 
-If you have any questions about these topics, or would like to work on other aspects, please contribute.  You can contact us directly (see below), submit an [issue](https://github.com/osrf/vrx/issues) or, better yet, submit a [pull request](https://github.com/osrf/vrx/pulls/)!
-
-## Contributors
-
-We continue to receive important improvements from the community.  We have done our best to document this on our [Contributors Wiki](https://github.com/osrf/vrx/wiki/Contributors).
-
-## Contacts
-
- * Carlos Agüero <caguero@openrobotics.org>
- * Michael McCarrin <mrmccarr@nps.edu>
- * Brian Bingham <bbingham@nps.edu>
+```shell
+ros2 launch vrx_gz usv_joy_teleop.py
+```
