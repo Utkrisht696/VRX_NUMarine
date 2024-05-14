@@ -349,7 +349,7 @@
     <include>
       <name>Coast Waves</name>
       <pose>0 0 0 0 0 0</pose>
-      <uri>coast_waves</uri>
+      <uri>model://coast_waves</uri>
     </include>
 
     <include>
