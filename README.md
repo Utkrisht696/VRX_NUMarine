@@ -41,3 +41,9 @@ ros2 launch vrx_gz competition.launch.py world:=sydney_regatta
 ```shell
 ros2 launch vrx_gz usv_joy_teleop.py
 ```
+
+## Drive the robot teleop-keyboard
+
+```shell
+ros2 run teleop_cpp_ros2 usv_teleop
+```

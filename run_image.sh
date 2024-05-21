@@ -26,6 +26,7 @@ else
         -v $PWD/gz_packages:/workspaces/gz_ws/src \
         -v $PWD/ros_packages:/workspaces/ros_ws/src \
         -v /var/run/docker.sock:/var/run/docker.sock \
+        -v /dev/input:/dev/input --device-cgroup-rule='c 13:* rmw' \
         --name "$container_name" \
         --workdir /workspaces \
         --runtime nvidia \

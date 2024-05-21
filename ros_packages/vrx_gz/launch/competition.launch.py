@@ -22,6 +22,17 @@ import os
 import vrx_gz.launch
 from vrx_gz.model import Model
 
+import os
+
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.actions import IncludeLaunchDescription
+from launch.conditions import IfCondition
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+
 
 def launch(context, *args, **kwargs):
     config_file = LaunchConfiguration('config_file').perform(context)
@@ -61,6 +72,13 @@ def launch(context, *args, **kwargs):
 
 
 def generate_launch_description():
+
+    pkg_vrx_gazebo = get_package_share_directory('vrx_gazebo')
+
+    rviz = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(
+                    os.path.join(pkg_vrx_gazebo, 'launch', 'rviz.launch.py')
+                ))
     return LaunchDescription([
         # Launch Arguments
         DeclareLaunchArgument(
@@ -108,4 +126,5 @@ def generate_launch_description():
             default_value='',
             description='Additional arguments to be passed to gz sim. '),
         OpaqueFunction(function=launch),
+        rviz
     ])
