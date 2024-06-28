@@ -11,7 +11,7 @@ We're happy to announce with release 2.0 VRX has transitioned from Gazebo Classi
 * Users who wish to continue running Gazebo Classic and ROS 1 can still do so using the `gazebo_classic` branch of this repository. 
   * Tutorials for VRX Classic will remain available on our Wiki.
   * VRX Classic will transition from an officially supported branch to a community supported branch by Spring 2023.
-
+facts
 ## The VRX Competition
 The VRX environment is also the "virtual venue" for the [VRX Competition](https://github.com/osrf/vrx/wiki). Please see our Wiki for tutorials and links to registration and documentation relevant to the virtual competition. 
 
