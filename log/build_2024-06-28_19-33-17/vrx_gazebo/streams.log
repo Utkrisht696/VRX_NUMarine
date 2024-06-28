@@ -1,0 +1,18 @@
+[0.025s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/vrx_gazebo -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[0.088s] -- The C compiler identification is GNU 11.4.0
+[0.157s] -- The CXX compiler identification is GNU 11.4.0
+[0.169s] -- Detecting C compiler ABI info
+[0.265s] -- Detecting C compiler ABI info - done
+[0.282s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.282s] -- Detecting C compile features
+[0.283s] -- Detecting C compile features - done
+[0.289s] -- Detecting CXX compiler ABI info
+[0.397s] -- Detecting CXX compiler ABI info - done
+[0.407s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.408s] -- Detecting CXX compile features
+[0.408s] -- Detecting CXX compile features - done
+[0.411s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.604s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.863s] -- Configuring done
+[0.869s] -- Generating done
+[0.870s] -- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo

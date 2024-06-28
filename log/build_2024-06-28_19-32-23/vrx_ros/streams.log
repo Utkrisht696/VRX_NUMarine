@@ -1,0 +1,60 @@
+[0.027s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[0.169s] -- The C compiler identification is GNU 11.4.0
+[0.278s] -- The CXX compiler identification is GNU 11.4.0
+[0.289s] -- Detecting C compiler ABI info
+[0.376s] -- Detecting C compiler ABI info - done
+[0.392s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.393s] -- Detecting C compile features
+[0.393s] -- Detecting C compile features - done
+[0.399s] -- Detecting CXX compiler ABI info
+[0.489s] -- Detecting CXX compiler ABI info - done
+[0.501s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.501s] -- Detecting CXX compile features
+[0.502s] -- Detecting CXX compile features - done
+[0.510s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.698s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.834s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.884s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.891s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.904s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.927s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.956s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.215s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.228s] -- Searching for dependencies of gz-msgs9
+[1.432s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.437s] -- Looking for gz-math7 -- found version 7.5.0
+[1.437s] -- Searching for dependencies of gz-math7
+[1.441s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.441s] -- Searching for dependencies of gz-utils2
+[1.450s] -- Checking for module 'tinyxml2'
+[1.462s] --   Found tinyxml2, version 9.0.0
+[1.500s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.500s] -- Searching for dependencies of gz-transport12
+[1.543s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[1.549s] -- Checking for module 'libzmq >= 4'
+[1.564s] --   Found libzmq , version 4.3.4
+[1.601s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[1.609s] -- Checking for module 'uuid'
+[1.623s] --   Found uuid, version 2.37.2
+[1.656s] -- Found UUID: TRUE  
+[1.657s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.658s] -- Searching for dependencies of gz-utils2
+[1.658s] -- Searching for <gz-utils2> component [cli]
+[1.662s] -- Looking for gz-utils2-cli -- found version 2.2.0
+[1.662s] -- Searching for dependencies of gz-utils2-cli
+[1.664s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.667s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[1.740s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.743s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.846s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.875s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.928s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.939s] -- Found Threads: TRUE  
+[2.105s] -- Found ros_gz_interfaces: 0.244.11 (/opt/ros/humble/share/ros_gz_interfaces/cmake)
+[2.244s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.354s] -- Found tf2: 0.25.7 (/opt/ros/humble/share/tf2/cmake)
+[2.371s] -- Found tf2_msgs: 0.25.7 (/opt/ros/humble/share/tf2_msgs/cmake)
+[2.566s] -- Found tf2_ros: 0.25.7 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.826s] -- Configuring done
+[2.842s] -- Generating done
+[2.844s] -- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros

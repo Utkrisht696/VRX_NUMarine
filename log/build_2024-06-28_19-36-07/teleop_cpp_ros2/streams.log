@@ -1,0 +1,73 @@
+[0.020s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/teleop_cpp_ros2 -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[0.103s] -- The C compiler identification is GNU 11.4.0
+[0.191s] -- The CXX compiler identification is GNU 11.4.0
+[0.204s] -- Detecting C compiler ABI info
+[0.303s] -- Detecting C compiler ABI info - done
+[0.317s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.318s] -- Detecting C compile features
+[0.319s] -- Detecting C compile features - done
+[0.324s] -- Detecting CXX compiler ABI info
+[0.443s] -- Detecting CXX compiler ABI info - done
+[0.454s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.455s] -- Detecting CXX compile features
+[0.455s] -- Detecting CXX compile features - done
+[0.459s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.644s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.750s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[0.807s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.813s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.823s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.844s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.869s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.963s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.965s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.108s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.147s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.203s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.215s] -- Looking for pthread.h
+[1.294s] -- Looking for pthread.h - found
+[1.295s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.406s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.407s] -- Found Threads: TRUE  
+[1.769s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.875s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.034s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.143s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.145s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.145s] -- Configured cppcheck include dirs: /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/teleop_cpp_ros2/include
+[2.146s] -- Configured cppcheck exclude dirs and/or files: 
+[2.147s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.147s] -- Configured cpplint exclude dirs and/or files: 
+[2.148s] -- Added test 'lint_cmake' to check CMake code style
+[2.150s] -- Added test 'uncrustify' to check C / C++ code style
+[2.150s] -- Configured uncrustify additional arguments: 
+[2.150s] -- Added test 'xmllint' to check XML markup files
+[2.152s] -- Configuring done
+[2.169s] -- Generating done
+[2.172s] -- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2
+[2.193s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/teleop_cpp_ros2 -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[2.195s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j8 -l8
+[2.258s] [ 50%] [32mBuilding CXX object CMakeFiles/usv_teleop.dir/src/usv_teleop.cpp.o[0m
+[9.431s] [100%] [32m[1mLinking CXX executable usv_teleop[0m
+[9.652s] [100%] Built target usv_teleop
+[9.670s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j8 -l8
+[9.706s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2
+[9.719s] -- Install configuration: ""
+[9.720s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/teleop_cpp_ros2/usv_teleop
+[9.723s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/teleop_cpp_ros2/usv_teleop" to ""
+[9.723s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/teleop_cpp_ros2
+[9.724s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/teleop_cpp_ros2
+[9.725s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/environment/ament_prefix_path.sh
+[9.725s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/environment/ament_prefix_path.dsv
+[9.726s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/environment/path.sh
+[9.726s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/environment/path.dsv
+[9.726s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/local_setup.bash
+[9.727s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/local_setup.sh
+[9.727s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/local_setup.zsh
+[9.727s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/local_setup.dsv
+[9.727s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.dsv
+[9.728s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/teleop_cpp_ros2
+[9.728s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/cmake/teleop_cpp_ros2Config.cmake
+[9.728s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/cmake/teleop_cpp_ros2Config-version.cmake
+[9.728s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.xml
+[9.732s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2

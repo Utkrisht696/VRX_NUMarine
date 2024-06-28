@@ -1,0 +1,20 @@
+[0.010s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/wamv_description': AMENT_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models:/home/jain/Documents/GitHub/VRX_NUMarine/install/share LD_LIBRARY_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_description -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[0.082s] -- The C compiler identification is GNU 11.4.0
+[0.155s] -- The CXX compiler identification is GNU 11.4.0
+[0.167s] -- Detecting C compiler ABI info
+[0.244s] -- Detecting C compiler ABI info - done
+[0.254s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.254s] -- Detecting C compile features
+[0.255s] -- Detecting C compile features - done
+[0.259s] -- Detecting CXX compiler ABI info
+[0.359s] -- Detecting CXX compiler ABI info - done
+[0.369s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.369s] -- Detecting CXX compile features
+[0.370s] -- Detecting CXX compile features - done
+[0.373s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.552s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.669s] -- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)
+[0.671s] -- xacro: determining deps for: urdf/wamv_base.urdf.xacro ...
+[0.981s] -- Configuring done
+[0.987s] -- Generating done
+[0.989s] -- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/wamv_description

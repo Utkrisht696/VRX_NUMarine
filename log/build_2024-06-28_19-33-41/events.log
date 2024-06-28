@@ -1,0 +1,403 @@
+[0.000000] (-) TimerEvent: {}
+[0.000418] (imu_heading_pkg) JobQueued: {'identifier': 'imu_heading_pkg', 'dependencies': OrderedDict()}
+[0.000612] (teb_msgs) JobQueued: {'identifier': 'teb_msgs', 'dependencies': OrderedDict()}
+[0.000732] (teleop_cpp_ros2) JobQueued: {'identifier': 'teleop_cpp_ros2', 'dependencies': OrderedDict()}
+[0.000786] (vrx_gazebo) JobQueued: {'identifier': 'vrx_gazebo', 'dependencies': OrderedDict()}
+[0.000827] (vrx_ros) JobQueued: {'identifier': 'vrx_ros', 'dependencies': OrderedDict()}
+[0.000867] (teb_local_planner) JobQueued: {'identifier': 'teb_local_planner', 'dependencies': OrderedDict([('teb_msgs', '/home/jain/Documents/GitHub/VRX_NUMarine/install')])}
+[0.000920] (vrx_gz) JobQueued: {'identifier': 'vrx_gz', 'dependencies': OrderedDict([('vrx_ros', '/home/jain/Documents/GitHub/VRX_NUMarine/install')])}
+[0.000962] (wamv_description) JobQueued: {'identifier': 'wamv_description', 'dependencies': OrderedDict([('vrx_gazebo', '/home/jain/Documents/GitHub/VRX_NUMarine/install')])}
+[0.001002] (wamv_gazebo) JobQueued: {'identifier': 'wamv_gazebo', 'dependencies': OrderedDict([('vrx_gazebo', '/home/jain/Documents/GitHub/VRX_NUMarine/install'), ('wamv_description', '/home/jain/Documents/GitHub/VRX_NUMarine/install')])}
+[0.001173] (vrx_gazebo) JobStarted: {'identifier': 'vrx_gazebo'}
+[0.006605] (teb_msgs) JobStarted: {'identifier': 'teb_msgs'}
+[0.010373] (vrx_ros) JobStarted: {'identifier': 'vrx_ros'}
+[0.014133] (imu_heading_pkg) JobStarted: {'identifier': 'imu_heading_pkg'}
+[0.018041] (teleop_cpp_ros2) JobStarted: {'identifier': 'teleop_cpp_ros2'}
+[0.022887] (vrx_gazebo) JobProgress: {'identifier': 'vrx_gazebo', 'progress': 'cmake'}
+[0.023405] (vrx_gazebo) JobProgress: {'identifier': 'vrx_gazebo', 'progress': 'build'}
+[0.024049] (vrx_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo', '--', '-j8', '-l8'], 'cwd': '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'jain'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jain'), ('OLDPWD', '/home/jain/Documents/GitHub/VRX_NUMarine/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1586'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jain'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jain'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/opt/spinnaker/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jain:@/tmp/.ICE-unix/1586,unix/jain:/tmp/.ICE-unix/1586'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4dd65fff_655e_40f5_b7ae_2cf37766e389'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SPINNAKER_GENTL64_CTI', '/opt/spinnaker/lib/spinnaker-gentl/Spinnaker_GenTL.cti'), ('DISPLAY', ':0'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.156'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', '/opt/spinnaker/lib/spinnaker-gentl'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.026704] (teb_msgs) JobProgress: {'identifier': 'teb_msgs', 'progress': 'cmake'}
+[0.026852] (teb_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/teb_local_planner/teb_msgs', '-DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install'], 'cwd': '/home/jain/Documents/GitHub/VRX_NUMarine/build/teb_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'jain'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jain'), ('OLDPWD', '/home/jain/Documents/GitHub/VRX_NUMarine/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1586'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jain'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jain'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/opt/spinnaker/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jain:@/tmp/.ICE-unix/1586,unix/jain:/tmp/.ICE-unix/1586'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4dd65fff_655e_40f5_b7ae_2cf37766e389'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SPINNAKER_GENTL64_CTI', '/opt/spinnaker/lib/spinnaker-gentl/Spinnaker_GenTL.cti'), ('DISPLAY', ':0'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.156'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jain/Documents/GitHub/VRX_NUMarine/build/teb_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', '/opt/spinnaker/lib/spinnaker-gentl'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.029800] (vrx_ros) JobProgress: {'identifier': 'vrx_ros', 'progress': 'cmake'}
+[0.030037] (vrx_ros) JobProgress: {'identifier': 'vrx_ros', 'progress': 'build'}
+[0.030512] (vrx_ros) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros', '--', '-j8', '-l8'], 'cwd': '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'jain'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jain'), ('OLDPWD', '/home/jain/Documents/GitHub/VRX_NUMarine/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1586'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jain'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jain'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/opt/spinnaker/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jain:@/tmp/.ICE-unix/1586,unix/jain:/tmp/.ICE-unix/1586'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4dd65fff_655e_40f5_b7ae_2cf37766e389'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SPINNAKER_GENTL64_CTI', '/opt/spinnaker/lib/spinnaker-gentl/Spinnaker_GenTL.cti'), ('DISPLAY', ':0'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.156'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', '/opt/spinnaker/lib/spinnaker-gentl'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.034318] (imu_heading_pkg) JobProgress: {'identifier': 'imu_heading_pkg', 'progress': 'cmake'}
+[0.034776] (imu_heading_pkg) JobProgress: {'identifier': 'imu_heading_pkg', 'progress': 'build'}
+[0.035452] (imu_heading_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jain/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg', '--', '-j8', '-l8'], 'cwd': '/home/jain/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'jain'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jain'), ('OLDPWD', '/home/jain/Documents/GitHub/VRX_NUMarine/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1586'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jain'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jain'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/opt/spinnaker/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jain:@/tmp/.ICE-unix/1586,unix/jain:/tmp/.ICE-unix/1586'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4dd65fff_655e_40f5_b7ae_2cf37766e389'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SPINNAKER_GENTL64_CTI', '/opt/spinnaker/lib/spinnaker-gentl/Spinnaker_GenTL.cti'), ('DISPLAY', ':0'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.156'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jain/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', '/opt/spinnaker/lib/spinnaker-gentl'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.041438] (teleop_cpp_ros2) JobProgress: {'identifier': 'teleop_cpp_ros2', 'progress': 'cmake'}
+[0.042356] (teleop_cpp_ros2) JobProgress: {'identifier': 'teleop_cpp_ros2', 'progress': 'build'}
+[0.043013] (teleop_cpp_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2', '--', '-j8', '-l8'], 'cwd': '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'jain'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jain'), ('OLDPWD', '/home/jain/Documents/GitHub/VRX_NUMarine/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1586'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jain'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jain'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/opt/spinnaker/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jain:@/tmp/.ICE-unix/1586,unix/jain:/tmp/.ICE-unix/1586'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4dd65fff_655e_40f5_b7ae_2cf37766e389'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SPINNAKER_GENTL64_CTI', '/opt/spinnaker/lib/spinnaker-gentl/Spinnaker_GenTL.cti'), ('DISPLAY', ':0'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.156'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jain/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', '/opt/spinnaker/lib/spinnaker-gentl'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.085705] (vrx_gazebo) StdoutLine: {'line': b'Built target ament_cmake_python_copy_vrx_gazebo\n'}
+[0.088053] (teb_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099092] (-) TimerEvent: {}
+[0.100109] (vrx_ros) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/pose_tf_broadcaster.dir/src/pose_tf_broadcaster.cc.o\x1b[0m\n'}
+[0.102120] (vrx_ros) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/optical_frame_publisher.dir/src/optical_frame_publisher.cc.o\x1b[0m\n'}
+[0.103884] (teleop_cpp_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/usv_teleop.dir/src/usv_teleop.cpp.o\x1b[0m\n'}
+[0.106605] (imu_heading_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/imu_heading_node.dir/src/imu_heading_node.cpp.o\x1b[0m\n'}
+[0.163540] (teb_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.176557] (teb_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199188] (-) TimerEvent: {}
+[0.267475] (teb_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.285863] (teb_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.286265] (teb_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.286957] (teb_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.292670] (teb_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.299295] (-) TimerEvent: {}
+[0.399375] (teb_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.399613] (-) TimerEvent: {}
+[0.409403] (teb_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.409795] (teb_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.410717] (teb_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.414335] (teb_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.464811] (vrx_gazebo) StdoutLine: {'line': b'running egg_info\n'}
+[0.465684] (vrx_gazebo) StdoutLine: {'line': b'creating vrx_gazebo.egg-info\n'}
+[0.465989] (vrx_gazebo) StdoutLine: {'line': b'writing vrx_gazebo.egg-info/PKG-INFO\n'}
+[0.466258] (vrx_gazebo) StdoutLine: {'line': b'writing dependency_links to vrx_gazebo.egg-info/dependency_links.txt\n'}
+[0.466547] (vrx_gazebo) StdoutLine: {'line': b'writing top-level names to vrx_gazebo.egg-info/top_level.txt\n'}
+[0.466779] (vrx_gazebo) StdoutLine: {'line': b"writing manifest file 'vrx_gazebo.egg-info/SOURCES.txt'\n"}
+[0.468739] (vrx_gazebo) StdoutLine: {'line': b"reading manifest file 'vrx_gazebo.egg-info/SOURCES.txt'\n"}
+[0.469324] (vrx_gazebo) StdoutLine: {'line': b"writing manifest file 'vrx_gazebo.egg-info/SOURCES.txt'\n"}
+[0.499728] (-) TimerEvent: {}
+[0.502839] (vrx_gazebo) StdoutLine: {'line': b'Built target ament_cmake_python_build_vrx_gazebo_egg\n'}
+[0.517309] (vrx_gazebo) CommandEnded: {'returncode': 0}
+[0.540506] (imu_heading_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/imu_heading_pkg/src/imu_heading_node.cpp:3\x1b[m\x1b[K:\n'}
+[0.540781] (imu_heading_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp\x07-Wcpp\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.540951] (imu_heading_pkg) StderrLine: {'line': b'   35 | #\x1b[01;35m\x1b[Kwarning\x1b[m\x1b[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead\n'}
+[0.541114] (imu_heading_pkg) StderrLine: {'line': b'      |  \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.549492] (vrx_gazebo) JobProgress: {'identifier': 'vrx_gazebo', 'progress': 'install'}
+[0.564146] (vrx_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo'], 'cwd': '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'jain'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jain'), ('OLDPWD', '/home/jain/Documents/GitHub/VRX_NUMarine/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1586'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jain'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jain'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/opt/spinnaker/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jain:@/tmp/.ICE-unix/1586,unix/jain:/tmp/.ICE-unix/1586'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4dd65fff_655e_40f5_b7ae_2cf37766e389'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SPINNAKER_GENTL64_CTI', '/opt/spinnaker/lib/spinnaker-gentl/Spinnaker_GenTL.cti'), ('DISPLAY', ':0'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.156'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', '/opt/spinnaker/lib/spinnaker-gentl'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.573421] (vrx_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.573713] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/resource_paths.dsv\n'}
+[0.573921] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/resource_paths.sh\n'}
+[0.574143] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models\n'}
+[0.574328] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter\n'}
+[0.574563] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/materials\n'}
+[0.574710] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/materials/Textures\n'}
+[0.574868] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/materials/Textures/Launcher_Albedo.png\n'}
+[0.575948] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/materials/Textures/Launcher_Metalness.png\n'}
+[0.576295] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/materials/Textures/Launcher_Roughness.png\n'}
+[0.576966] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/materials/Textures/Launcher_Normal.png\n'}
+[0.577499] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/model.config\n'}
+[0.577714] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/meshes\n'}
+[0.577911] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/meshes/ball_shooter_base.dae\n'}
+[0.578091] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/meshes/Launcher_Albedo.png\n'}
+[0.579603] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/meshes/Glass_BaseColor.png\n'}
+[0.579803] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/meshes/Launcher_BaseColor.png\n'}
+[0.581776] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/meshes/ball_shooter_launcher.dae\n'}
+[0.582420] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/ball_shooter/model.sdf\n'}
+[0.582647] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar\n'}
+[0.582853] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/mesh\n'}
+[0.583015] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/mesh/3d_Lidar_Albedo.png\n'}
+[0.583794] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/mesh/3d_lidar.dae\n'}
+[0.584023] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/mesh/3d_Lidar_Metalness.png\n'}
+[0.584276] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/mesh/3d_Lidar_Normal.png\n'}
+[0.584566] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/mesh/3d_lidar.png\n'}
+[0.584951] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/mesh/3d_Lidar_Roughness.png\n'}
+[0.585440] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/model.config\n'}
+[0.585640] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/3d_lidar/model.sdf\n'}
+[0.585885] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/sensor_post\n'}
+[0.586072] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/sensor_post/mesh\n'}
+[0.586232] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/sensor_post/mesh/sensor_post_arm.dae\n'}
+[0.586415] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/sensor_post/mesh/sensor_post.png\n'}
+[0.586605] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/sensor_post/mesh/sensor_post.dae\n'}
+[0.586797] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/sensor_post/model.config\n'}
+[0.586989] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/sensor_post/model.sdf\n'}
+[0.587205] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/blue_projectile\n'}
+[0.587422] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/blue_projectile/model.config\n'}
+[0.587631] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/blue_projectile/model.sdf\n'}
+[0.587790] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases\n'}
+[0.587948] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/mesh\n'}
+[0.588107] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/mesh/cpu_cases_Albedo.png\n'}
+[0.593637] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/mesh/cpu_cases.dae\n'}
+[0.594183] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/mesh/cpu_cases_Metalness.png\n'}
+[0.594442] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/mesh/cpu_cases.png\n'}
+[0.599851] (-) TimerEvent: {}
+[0.601736] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/mesh/cpu_cases_Roughness.png\n'}
+[0.604932] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/mesh/cpu_cases_Normal.png\n'}
+[0.611349] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/model.config\n'}
+[0.611699] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/cpu_cases/model.sdf\n'}
+[0.611976] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera\n'}
+[0.612139] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/mesh\n'}
+[0.612316] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/mesh/mono_camera.png\n'}
+[0.612981] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/mesh/mono_camera.dae\n'}
+[0.613293] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/mesh/mono_camera_Roughness.png\n'}
+[0.613716] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/mesh/mono_camera_Normal.png\n'}
+[0.614141] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/mesh/mono_camera_Albedo.png\n'}
+[0.614431] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/mesh/mono_camera_Metalness.png\n'}
+[0.614678] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/model.config\n'}
+[0.614890] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/mono_camera/model.sdf\n'}
+[0.615131] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery\n'}
+[0.615352] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/mesh\n'}
+[0.615510] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/mesh/battery.dae\n'}
+[0.615705] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/mesh/battery_Roughness.png\n'}
+[0.618778] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/mesh/battery_Normal.png\n'}
+[0.625404] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/mesh/battery_Metalness.png\n'}
+[0.625702] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/mesh/battery_Albedo.png\n'}
+[0.632279] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/mesh/battery.png\n'}
+[0.639318] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/model.config\n'}
+[0.639614] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models/battery/model.sdf\n'}
+[0.639823] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/launch\n'}
+[0.640020] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/launch/generate_wamv.launch.py\n'}
+[0.640248] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/launch/rviz.launch.py\n'}
+[0.640476] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config\n'}
+[0.640647] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/rviz_vrx_rsp.rviz\n'}
+[0.640873] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config\n'}
+[0.641069] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/example_thruster_config.yaml\n'}
+[0.641292] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/example_component_config.yaml\n'}
+[0.641453] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/thruster_compliance\n'}
+[0.641709] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/thruster_compliance/bounding_boxes.yaml\n'}
+[0.641871] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/thruster_compliance/numeric.yaml\n'}
+[0.642069] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/component_compliance\n'}
+[0.642266] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/component_compliance/bounding_boxes.yaml\n'}
+[0.642455] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/wamv_config/component_compliance/numeric.yaml\n'}
+[0.642613] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/config/rviz_vrx_final.rviz\n'}
+[0.642776] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/vrx_gazebo/generate_wamv.py\n'}
+[0.643002] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/pythonpath.sh\n'}
+[0.643159] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/pythonpath.dsv\n'}
+[0.643374] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo-1.3.0-py3.10.egg-info\n'}
+[0.643557] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo-1.3.0-py3.10.egg-info/SOURCES.txt\n'}
+[0.643739] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo-1.3.0-py3.10.egg-info/dependency_links.txt\n'}
+[0.643899] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo-1.3.0-py3.10.egg-info/PKG-INFO\n'}
+[0.644107] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo-1.3.0-py3.10.egg-info/top_level.txt\n'}
+[0.644355] (vrx_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo\n'}
+[0.644517] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/__init__.py\n'}
+[0.644730] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/compliance.py\n'}
+[0.644889] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/configure_wamv.py\n'}
+[0.645082] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/utils.py\n'}
+[0.646454] (teb_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.685105] (vrx_gazebo) StdoutLine: {'line': b"Listing '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo'...\n"}
+[0.685351] (vrx_gazebo) StdoutLine: {'line': b"Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/__init__.py'...\n"}
+[0.685498] (vrx_gazebo) StdoutLine: {'line': b"Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/compliance.py'...\n"}
+[0.685639] (vrx_gazebo) StdoutLine: {'line': b"Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/configure_wamv.py'...\n"}
+[0.685801] (vrx_gazebo) StdoutLine: {'line': b"Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gazebo/utils.py'...\n"}
+[0.690520] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/vrx_gazebo\n'}
+[0.690843] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/vrx_gazebo\n'}
+[0.691069] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/ament_prefix_path.sh\n'}
+[0.691328] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/ament_prefix_path.dsv\n'}
+[0.691580] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/path.sh\n'}
+[0.691986] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/environment/path.dsv\n'}
+[0.692200] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/local_setup.bash\n'}
+[0.692413] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/local_setup.sh\n'}
+[0.692651] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/local_setup.zsh\n'}
+[0.692888] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/local_setup.dsv\n'}
+[0.693124] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.dsv\n'}
+[0.693410] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/vrx_gazebo\n'}
+[0.693674] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/cmake/vrx_gazeboConfig.cmake\n'}
+[0.693920] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/cmake/vrx_gazeboConfig-version.cmake\n'}
+[0.694111] (vrx_gazebo) StdoutLine: {'line': b'-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.xml\n'}
+[0.696284] (vrx_gazebo) CommandEnded: {'returncode': 0}
+[0.699942] (-) TimerEvent: {}
+[0.747997] (vrx_gazebo) JobEnded: {'identifier': 'vrx_gazebo', 'rc': 0}
+[0.749188] (wamv_description) JobStarted: {'identifier': 'wamv_description'}
+[0.757965] (wamv_description) JobProgress: {'identifier': 'wamv_description', 'progress': 'cmake'}
+[0.758302] (wamv_description) Command: {'cmd': ['/usr/bin/cmake', '/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_description', '-DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install'], 'cwd': '/home/jain/Documents/GitHub/VRX_NUMarine/build/wamv_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_AU:en'), ('USER', 'jain'), ('GZ_SIM_RESOURCE_PATH', '/home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models:/home/jain/Documents/GitHub/VRX_NUMarine/install/share'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jain/Documents/GitHub/VRX_NUMarine/install/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jain'), ('OLDPWD', '/home/jain/Documents/GitHub/VRX_NUMarine/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1586'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jain'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jain'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/opt/spinnaker/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jain:@/tmp/.ICE-unix/1586,unix/jain:/tmp/.ICE-unix/1586'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4dd65fff_655e_40f5_b7ae_2cf37766e389'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SPINNAKER_GENTL64_CTI', '/opt/spinnaker/lib/spinnaker-gentl/Spinnaker_GenTL.cti'), ('DISPLAY', ':0'), ('LANG', 'en_AU.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.156'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jain/Documents/GitHub/VRX_NUMarine/build/wamv_description'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2009d232cdf92cb38a76a329667dd6af'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', '/opt/spinnaker/lib/spinnaker-gentl'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble')]), 'shell': False}
+[0.800091] (-) TimerEvent: {}
+[0.801278] (teb_msgs) StdoutLine: {'line': b'-- Found builtin_interfaces: 1.2.1 (/opt/ros/humble/share/builtin_interfaces/cmake)\n'}
+[0.830958] (wamv_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.863099] (teb_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.872925] (teb_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.890375] (teb_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.900208] (-) TimerEvent: {}
+[0.903967] (wamv_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.916038] (wamv_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.921510] (teb_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.965918] (teb_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.993337] (wamv_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.000328] (-) TimerEvent: {}
+[1.003174] (wamv_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.003522] (wamv_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.004057] (wamv_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.007725] (wamv_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.021455] (teb_msgs) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:16 (find_package):\n'}
+[1.021801] (teb_msgs) StderrLine: {'line': b'  By not providing "Findcostmap_converter_msgs.cmake" in CMAKE_MODULE_PATH\n'}
+[1.021969] (teb_msgs) StderrLine: {'line': b'  this project has asked CMake to find a package configuration file provided\n'}
+[1.022132] (teb_msgs) StderrLine: {'line': b'  by "costmap_converter_msgs", but CMake did not find one.\n'}
+[1.022291] (teb_msgs) StderrLine: {'line': b'\n'}
+[1.022442] (teb_msgs) StderrLine: {'line': b'  Could not find a package configuration file provided by\n'}
+[1.022597] (teb_msgs) StderrLine: {'line': b'  "costmap_converter_msgs" with any of the following names:\n'}
+[1.022903] (teb_msgs) StderrLine: {'line': b'\n'}
+[1.023058] (teb_msgs) StderrLine: {'line': b'    costmap_converter_msgsConfig.cmake\n'}
+[1.023213] (teb_msgs) StderrLine: {'line': b'    costmap_converter_msgs-config.cmake\n'}
+[1.023366] (teb_msgs) StderrLine: {'line': b'\n'}
+[1.023519] (teb_msgs) StderrLine: {'line': b'  Add the installation prefix of "costmap_converter_msgs" to\n'}
+[1.023673] (teb_msgs) StderrLine: {'line': b'  CMAKE_PREFIX_PATH or set "costmap_converter_msgs_DIR" to a directory\n'}
+[1.023826] (teb_msgs) StderrLine: {'line': b'  containing one of the above files.  If "costmap_converter_msgs" provides a\n'}
+[1.023982] (teb_msgs) StderrLine: {'line': b'  separate development package or SDK, be sure it has been installed.\n'}
+[1.024136] (teb_msgs) StderrLine: {'line': b'\n'}
+[1.024332] (teb_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[1.024486] (teb_msgs) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[1.024640] (teb_msgs) StdoutLine: {'line': b'See also "/home/jain/Documents/GitHub/VRX_NUMarine/build/teb_msgs/CMakeFiles/CMakeOutput.log".\n'}
+[1.032131] (teb_msgs) CommandEnded: {'returncode': 1}
+[1.057584] (teb_msgs) JobEnded: {'identifier': 'teb_msgs', 'rc': 1}
+[1.100459] (-) TimerEvent: {}
+[1.107574] (wamv_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.117545] (wamv_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.117873] (wamv_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.118625] (wamv_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.121772] (wamv_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.200567] (-) TimerEvent: {}
+[1.301024] (wamv_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.301240] (-) TimerEvent: {}
+[1.401523] (-) TimerEvent: {}
+[1.417975] (wamv_description) StdoutLine: {'line': b'-- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)\n'}
+[1.419741] (wamv_description) StdoutLine: {'line': b'-- xacro: determining deps for: urdf/wamv_base.urdf.xacro ...\n'}
+[1.501637] (-) TimerEvent: {}
+[1.602078] (-) TimerEvent: {}
+[1.702509] (-) TimerEvent: {}
+[1.729959] (wamv_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.736324] (wamv_description) StdoutLine: {'line': b'-- Generating done\n'}
+[1.738104] (wamv_description) StdoutLine: {'line': b'-- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/wamv_description\n'}
+[1.745203] (wamv_description) JobEnded: {'identifier': 'wamv_description', 'rc': 'SIGINT'}
+[1.802643] (-) TimerEvent: {}
+[1.903053] (-) TimerEvent: {}
+[2.003460] (-) TimerEvent: {}
+[2.103888] (-) TimerEvent: {}
+[2.204308] (-) TimerEvent: {}
+[2.304722] (-) TimerEvent: {}
+[2.405143] (-) TimerEvent: {}
+[2.505565] (-) TimerEvent: {}
+[2.605982] (-) TimerEvent: {}
+[2.706388] (-) TimerEvent: {}
+[2.806806] (-) TimerEvent: {}
+[2.907234] (-) TimerEvent: {}
+[3.007669] (-) TimerEvent: {}
+[3.108082] (-) TimerEvent: {}
+[3.208480] (-) TimerEvent: {}
+[3.308875] (-) TimerEvent: {}
+[3.409288] (-) TimerEvent: {}
+[3.509708] (-) TimerEvent: {}
+[3.610118] (-) TimerEvent: {}
+[3.710517] (-) TimerEvent: {}
+[3.810921] (-) TimerEvent: {}
+[3.911333] (-) TimerEvent: {}
+[4.011744] (-) TimerEvent: {}
+[4.112186] (-) TimerEvent: {}
+[4.212617] (-) TimerEvent: {}
+[4.313053] (-) TimerEvent: {}
+[4.413457] (-) TimerEvent: {}
+[4.513873] (-) TimerEvent: {}
+[4.614282] (-) TimerEvent: {}
+[4.714703] (-) TimerEvent: {}
+[4.815121] (-) TimerEvent: {}
+[4.915522] (-) TimerEvent: {}
+[5.015917] (-) TimerEvent: {}
+[5.116320] (-) TimerEvent: {}
+[5.216703] (-) TimerEvent: {}
+[5.317097] (-) TimerEvent: {}
+[5.417497] (-) TimerEvent: {}
+[5.517903] (-) TimerEvent: {}
+[5.618324] (-) TimerEvent: {}
+[5.718741] (-) TimerEvent: {}
+[5.819148] (-) TimerEvent: {}
+[5.892513] (teleop_cpp_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable usv_teleop\x1b[0m\n'}
+[5.919277] (-) TimerEvent: {}
+[6.019699] (-) TimerEvent: {}
+[6.120123] (-) TimerEvent: {}
+[6.129003] (teleop_cpp_ros2) StdoutLine: {'line': b'[100%] Built target usv_teleop\n'}
+[6.141665] (teleop_cpp_ros2) JobEnded: {'identifier': 'teleop_cpp_ros2', 'rc': 'SIGINT'}
+[6.220244] (-) TimerEvent: {}
+[6.320571] (-) TimerEvent: {}
+[6.420954] (-) TimerEvent: {}
+[6.521293] (-) TimerEvent: {}
+[6.621627] (-) TimerEvent: {}
+[6.722007] (-) TimerEvent: {}
+[6.822372] (-) TimerEvent: {}
+[6.922721] (-) TimerEvent: {}
+[7.023079] (-) TimerEvent: {}
+[7.123399] (-) TimerEvent: {}
+[7.223715] (-) TimerEvent: {}
+[7.324041] (-) TimerEvent: {}
+[7.424421] (-) TimerEvent: {}
+[7.524768] (-) TimerEvent: {}
+[7.625127] (-) TimerEvent: {}
+[7.725474] (-) TimerEvent: {}
+[7.825860] (-) TimerEvent: {}
+[7.926235] (-) TimerEvent: {}
+[8.026578] (-) TimerEvent: {}
+[8.126908] (-) TimerEvent: {}
+[8.227308] (-) TimerEvent: {}
+[8.327626] (-) TimerEvent: {}
+[8.428020] (-) TimerEvent: {}
+[8.528397] (-) TimerEvent: {}
+[8.628742] (-) TimerEvent: {}
+[8.729079] (-) TimerEvent: {}
+[8.829472] (-) TimerEvent: {}
+[8.929812] (-) TimerEvent: {}
+[9.030162] (-) TimerEvent: {}
+[9.130524] (-) TimerEvent: {}
+[9.230842] (-) TimerEvent: {}
+[9.331166] (-) TimerEvent: {}
+[9.431484] (-) TimerEvent: {}
+[9.531811] (-) TimerEvent: {}
+[9.632223] (-) TimerEvent: {}
+[9.732601] (-) TimerEvent: {}
+[9.832993] (-) TimerEvent: {}
+[9.933383] (-) TimerEvent: {}
+[10.033751] (-) TimerEvent: {}
+[10.134125] (-) TimerEvent: {}
+[10.234493] (-) TimerEvent: {}
+[10.334871] (-) TimerEvent: {}
+[10.435195] (-) TimerEvent: {}
+[10.535529] (-) TimerEvent: {}
+[10.635906] (-) TimerEvent: {}
+[10.736248] (-) TimerEvent: {}
+[10.785452] (vrx_ros) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable pose_tf_broadcaster\x1b[0m\n'}
+[10.836364] (-) TimerEvent: {}
+[10.936708] (-) TimerEvent: {}
+[11.037116] (-) TimerEvent: {}
+[11.137562] (-) TimerEvent: {}
+[11.185135] (imu_heading_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable imu_heading_node\x1b[0m\n'}
+[11.237700] (-) TimerEvent: {}
+[11.338117] (-) TimerEvent: {}
+[11.340632] (vrx_ros) StdoutLine: {'line': b'[ 75%] Built target pose_tf_broadcaster\n'}
+[11.438229] (-) TimerEvent: {}
+[11.538617] (-) TimerEvent: {}
+[11.638967] (-) TimerEvent: {}
+[11.702727] (imu_heading_pkg) StdoutLine: {'line': b'[100%] Built target imu_heading_node\n'}
+[11.714010] (imu_heading_pkg) JobEnded: {'identifier': 'imu_heading_pkg', 'rc': 'SIGINT'}
+[11.739073] (-) TimerEvent: {}
+[11.839395] (-) TimerEvent: {}
+[11.939782] (-) TimerEvent: {}
+[12.040099] (-) TimerEvent: {}
+[12.140451] (-) TimerEvent: {}
+[12.240768] (-) TimerEvent: {}
+[12.341085] (-) TimerEvent: {}
+[12.441444] (-) TimerEvent: {}
+[12.541749] (-) TimerEvent: {}
+[12.642059] (-) TimerEvent: {}
+[12.742377] (-) TimerEvent: {}
+[12.842717] (-) TimerEvent: {}
+[12.943039] (-) TimerEvent: {}
+[13.043361] (-) TimerEvent: {}
+[13.143716] (-) TimerEvent: {}
+[13.244036] (-) TimerEvent: {}
+[13.344367] (-) TimerEvent: {}
+[13.444677] (-) TimerEvent: {}
+[13.544986] (-) TimerEvent: {}
+[13.645298] (-) TimerEvent: {}
+[13.745603] (-) TimerEvent: {}
+[13.845905] (-) TimerEvent: {}
+[13.946238] (-) TimerEvent: {}
+[14.046635] (-) TimerEvent: {}
+[14.146995] (-) TimerEvent: {}
+[14.247361] (-) TimerEvent: {}
+[14.347750] (-) TimerEvent: {}
+[14.448124] (-) TimerEvent: {}
+[14.548549] (-) TimerEvent: {}
+[14.648913] (-) TimerEvent: {}
+[14.749297] (-) TimerEvent: {}
+[14.846597] (vrx_ros) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable optical_frame_publisher\x1b[0m\n'}
+[14.849369] (-) TimerEvent: {}
+[14.949644] (-) TimerEvent: {}
+[15.049968] (-) TimerEvent: {}
+[15.150306] (-) TimerEvent: {}
+[15.250654] (-) TimerEvent: {}
+[15.351003] (-) TimerEvent: {}
+[15.451359] (-) TimerEvent: {}
+[15.550123] (vrx_ros) StdoutLine: {'line': b'[100%] Built target optical_frame_publisher\n'}
+[15.551461] (-) TimerEvent: {}
+[15.562345] (vrx_ros) JobEnded: {'identifier': 'vrx_ros', 'rc': 'SIGINT'}
+[15.572992] (teb_local_planner) JobSkipped: {'identifier': 'teb_local_planner'}
+[15.573122] (vrx_gz) JobSkipped: {'identifier': 'vrx_gz'}
+[15.573154] (wamv_gazebo) JobSkipped: {'identifier': 'wamv_gazebo'}
+[15.573180] (-) EventReactorShutdown: {}
