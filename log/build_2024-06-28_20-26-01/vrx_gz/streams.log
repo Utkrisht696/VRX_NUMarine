@@ -1,0 +1,793 @@
+[0.007s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz': AMENT_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_gz -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[0.064s] -- The C compiler identification is GNU 11.4.0
+[0.127s] -- The CXX compiler identification is GNU 11.4.0
+[0.137s] -- Detecting C compiler ABI info
+[0.223s] -- Detecting C compiler ABI info - done
+[0.237s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.237s] -- Detecting C compile features
+[0.238s] -- Detecting C compile features - done
+[0.242s] -- Detecting CXX compiler ABI info
+[0.336s] -- Detecting CXX compiler ABI info - done
+[0.348s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.348s] -- Detecting CXX compile features
+[0.349s] -- Detecting CXX compile features - done
+[0.352s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.513s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.623s] -- Looking for gz-sim7 -- found version 7.7.0
+[0.637s] -- Searching for dependencies of gz-sim7
+[0.640s] -- Looking for sdformat13 -- found version 13.7.0
+[0.641s] -- Searching for dependencies of sdformat13
+[0.648s] -- Checking for module 'tinyxml2'
+[0.662s] --   Found tinyxml2, version 9.0.0
+[0.700s] -- Looking for gz-math7 -- found version 7.5.0
+[0.700s] -- Searching for dependencies of gz-math7
+[0.703s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.704s] -- Searching for dependencies of gz-utils2
+[0.706s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.706s] -- Searching for dependencies of gz-utils2
+[0.707s] -- Searching for <gz-utils2> component [cli]
+[0.710s] -- Looking for gz-utils2-cli -- found version 2.2.0
+[0.711s] -- Searching for dependencies of gz-utils2-cli
+[0.715s] -- Looking for gz-plugin2 -- found version 2.0.3
+[0.715s] -- Searching for dependencies of gz-plugin2
+[0.716s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.717s] -- Searching for <gz-plugin2> component [loader]
+[0.719s] -- Looking for gz-plugin2-loader -- found version 2.0.3
+[0.720s] -- Searching for dependencies of gz-plugin2-loader
+[0.721s] -- Searching for <gz-plugin2> component [register]
+[0.723s] -- Looking for gz-plugin2-register -- found version 2.0.3
+[0.724s] -- Searching for dependencies of gz-plugin2-register
+[0.727s] -- Looking for gz-transport12 -- found version 12.2.1
+[0.727s] -- Searching for dependencies of gz-transport12
+[0.914s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[0.927s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[0.933s] -- Checking for module 'libzmq >= 4'
+[0.945s] --   Found libzmq , version 4.3.4
+[0.978s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[0.985s] -- Checking for module 'uuid'
+[0.997s] --   Found uuid, version 2.37.2
+[1.027s] -- Found UUID: TRUE  
+[1.027s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.030s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.031s] -- Searching for dependencies of gz-msgs9
+[1.053s] -- Looking for gz-math7 -- found version 7.5.0
+[1.061s] -- Searching for <gz-transport12> component [log]
+[1.063s] -- Looking for gz-transport12-log -- found version 12.2.1
+[1.064s] -- Searching for dependencies of gz-transport12-log
+[1.064s] -- Searching for <gz-transport12> component [parameters]
+[1.067s] -- Looking for gz-transport12-parameters -- found version 12.2.1
+[1.067s] -- Searching for dependencies of gz-transport12-parameters
+[1.068s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.071s] -- Looking for gz-common5 -- found version 5.6.0
+[1.071s] -- Searching for dependencies of gz-common5
+[1.072s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.072s] -- Looking for dlfcn.h - found
+[1.074s] -- Looking for libdl - found
+[1.075s] -- Found DL: TRUE  
+[1.083s] -- Searching for <gz-common5> component [profiler]
+[1.085s] -- Looking for gz-common5-profiler -- found version 5.6.0
+[1.086s] -- Searching for dependencies of gz-common5-profiler
+[1.086s] -- Searching for <gz-common5> component [events]
+[1.089s] -- Looking for gz-common5-events -- found version 5.6.0
+[1.089s] -- Searching for dependencies of gz-common5-events
+[1.090s] -- Looking for gz-math7 -- found version 7.5.0
+[1.090s] -- Searching for <gz-common5> component [av]
+[1.092s] -- Looking for gz-common5-av -- found version 5.6.0
+[1.093s] -- Searching for dependencies of gz-common5-av
+[1.098s] -- Checking for module 'libswscale'
+[1.111s] --   Found libswscale, version 5.9.100
+[1.147s] -- Found SWSCALE: TRUE  
+[1.152s] -- Checking for module 'libavdevice >= 56.4.100'
+[1.167s] --   Found libavdevice , version 58.13.100
+[1.204s] -- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+[1.210s] -- Checking for module 'libavformat'
+[1.223s] --   Found libavformat, version 58.76.100
+[1.260s] -- Found AVFORMAT: TRUE  
+[1.267s] -- Checking for module 'libavcodec'
+[1.281s] --   Found libavcodec, version 58.134.100
+[1.314s] -- Found AVCODEC: TRUE  
+[1.321s] -- Checking for module 'libavutil'
+[1.335s] --   Found libavutil, version 56.70.100
+[1.370s] -- Found AVUTIL: TRUE  
+[1.371s] -- Searching for <gz-common5> component [io]
+[1.373s] -- Looking for gz-common5-io -- found version 5.6.0
+[1.374s] -- Searching for dependencies of gz-common5-io
+[1.377s] -- Looking for gz-fuel_tools8 -- found version 8.1.0
+[1.378s] -- Searching for dependencies of gz-fuel_tools8
+[1.463s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[1.473s] -- Checking for module 'jsoncpp'
+[1.486s] --   Found jsoncpp, version 1.9.5
+[1.522s] -- Found JSONCPP: TRUE  
+[1.529s] -- Checking for module 'libzip'
+[1.544s] --   Found libzip, version 1.7.3
+[1.579s] -- Found ZIP: TRUE  
+[1.580s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.580s] -- Looking for gz-common5 -- found version 5.6.0
+[1.581s] -- Searching for dependencies of gz-common5
+[1.581s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.581s] -- Looking for dlfcn.h - found
+[1.581s] -- Looking for libdl - found
+[1.591s] -- Searching for <gz-common5> component [testing]
+[1.594s] -- Looking for gz-common5-testing -- found version 5.6.0
+[1.594s] -- Searching for dependencies of gz-common5-testing
+[1.595s] -- Looking for gz-math7 -- found version 7.5.0
+[1.596s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.598s] -- Looking for gz-gui7 -- found version 7.2.2
+[1.599s] -- Searching for dependencies of gz-gui7
+[1.628s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.628s] -- Looking for gz-math7 -- found version 7.5.0
+[1.629s] -- Looking for gz-common5 -- found version 5.6.0
+[1.629s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.630s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.632s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.633s] -- Searching for dependencies of gz-rendering7
+[1.633s] -- Looking for gz-math7 -- found version 7.5.0
+[1.633s] -- Searching for dependencies of gz-math7
+[1.634s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.634s] -- Searching for <gz-math7> component [eigen3]
+[1.636s] -- Looking for gz-math7-eigen3 -- found version 7.5.0
+[1.637s] -- Searching for dependencies of gz-math7-eigen3
+[1.645s] -- Looking for gz-common5 -- found version 5.6.0
+[1.645s] -- Searching for dependencies of gz-common5
+[1.646s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.646s] -- Looking for dlfcn.h - found
+[1.646s] -- Looking for libdl - found
+[1.655s] -- Searching for <gz-common5> component [graphics]
+[1.657s] -- Looking for gz-common5-graphics -- found version 5.6.0
+[1.658s] -- Searching for dependencies of gz-common5-graphics
+[1.658s] -- Looking for gz-math7 -- found version 7.5.0
+[1.664s] -- Found GzAssimp: TRUE (found version "5.2.0") 
+[1.665s] -- Searching for <gz-common5> component [events]
+[1.665s] -- Searching for <gz-common5> component [geospatial]
+[1.668s] -- Looking for gz-common5-geospatial -- found version 5.6.0
+[1.668s] -- Searching for dependencies of gz-common5-geospatial
+[1.669s] -- Looking for gz-math7 -- found version 7.5.0
+[1.669s] -- Looking for gz-common5 -- found version 5.6.0
+[1.670s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.671s] -- Searching for dependencies of gz-plugin2
+[1.671s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.671s] -- Searching for <gz-plugin2> component [all]
+[1.674s] -- Looking for all libraries of gz-plugin2 -- found version 2.0.3
+[1.674s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.676s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.682s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL 
+[1.683s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.705s] -- Looking for gz-physics6 -- found version 6.6.0
+[1.706s] -- Searching for dependencies of gz-physics6
+[1.706s] -- Looking for gz-common5 -- found version 5.6.0
+[1.707s] -- Looking for gz-math7 -- found version 7.5.0
+[1.707s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.707s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.709s] -- Searching for <gz-physics6> component [heightmap]
+[1.711s] -- Looking for gz-physics6-heightmap -- found version 6.6.0
+[1.711s] -- Searching for dependencies of gz-physics6-heightmap
+[1.712s] -- Looking for gz-common5 -- found version 5.6.0
+[1.712s] -- Searching for <gz-physics6> component [mesh]
+[1.714s] -- Looking for gz-physics6-mesh -- found version 6.6.0
+[1.715s] -- Searching for dependencies of gz-physics6-mesh
+[1.715s] -- Looking for gz-common5 -- found version 5.6.0
+[1.716s] -- Searching for <gz-physics6> component [sdf]
+[1.718s] -- Looking for gz-physics6-sdf -- found version 6.6.0
+[1.718s] -- Searching for dependencies of gz-physics6-sdf
+[1.719s] -- Looking for sdformat13 -- found version 13.7.0
+[1.721s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.722s] -- Searching for dependencies of gz-sensors7
+[1.741s] -- Looking for gz-math7 -- found version 7.5.0
+[1.742s] -- Looking for gz-common5 -- found version 5.6.0
+[1.742s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.743s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.743s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.744s] -- Looking for sdformat13 -- found version 13.7.0
+[1.744s] -- Searching for <gz-sensors7> component [air_pressure]
+[1.746s] -- Looking for gz-sensors7-air_pressure -- found version 7.3.0
+[1.747s] -- Searching for dependencies of gz-sensors7-air_pressure
+[1.747s] -- Searching for <gz-sensors7> component [air_speed]
+[1.749s] -- Looking for gz-sensors7-air_speed -- found version 7.3.0
+[1.750s] -- Searching for dependencies of gz-sensors7-air_speed
+[1.750s] -- Searching for <gz-sensors7> component [altimeter]
+[1.752s] -- Looking for gz-sensors7-altimeter -- found version 7.3.0
+[1.753s] -- Searching for dependencies of gz-sensors7-altimeter
+[1.753s] -- Searching for <gz-sensors7> component [imu]
+[1.755s] -- Looking for gz-sensors7-imu -- found version 7.3.0
+[1.756s] -- Searching for dependencies of gz-sensors7-imu
+[1.757s] -- Searching for <gz-sensors7> component [force_torque]
+[1.759s] -- Looking for gz-sensors7-force_torque -- found version 7.3.0
+[1.759s] -- Searching for dependencies of gz-sensors7-force_torque
+[1.760s] -- Searching for <gz-sensors7> component [logical_camera]
+[1.762s] -- Looking for gz-sensors7-logical_camera -- found version 7.3.0
+[1.762s] -- Searching for dependencies of gz-sensors7-logical_camera
+[1.763s] -- Searching for <gz-sensors7> component [magnetometer]
+[1.765s] -- Looking for gz-sensors7-magnetometer -- found version 7.3.0
+[1.765s] -- Searching for dependencies of gz-sensors7-magnetometer
+[1.766s] -- Searching for <gz-sensors7> component [navsat]
+[1.768s] -- Looking for gz-sensors7-navsat -- found version 7.3.0
+[1.769s] -- Searching for dependencies of gz-sensors7-navsat
+[1.769s] -- Searching for <gz-sensors7> component [rendering]
+[1.771s] -- Looking for gz-sensors7-rendering -- found version 7.3.0
+[1.772s] -- Searching for dependencies of gz-sensors7-rendering
+[1.772s] -- Searching for <gz-sensors7> component [lidar]
+[1.774s] -- Looking for gz-sensors7-lidar -- found version 7.3.0
+[1.775s] -- Searching for dependencies of gz-sensors7-lidar
+[1.775s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.776s] -- Searching for <gz-sensors7> component [gpu_lidar]
+[1.778s] -- Looking for gz-sensors7-gpu_lidar -- found version 7.3.0
+[1.778s] -- Searching for dependencies of gz-sensors7-gpu_lidar
+[1.779s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.779s] -- Searching for <gz-sensors7> component [camera]
+[1.781s] -- Looking for gz-sensors7-camera -- found version 7.3.0
+[1.782s] -- Searching for dependencies of gz-sensors7-camera
+[1.782s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.783s] -- Searching for <gz-sensors7> component [boundingbox_camera]
+[1.785s] -- Looking for gz-sensors7-boundingbox_camera -- found version 7.3.0
+[1.785s] -- Searching for dependencies of gz-sensors7-boundingbox_camera
+[1.786s] -- Searching for <gz-sensors7> component [segmentation_camera]
+[1.788s] -- Looking for gz-sensors7-segmentation_camera -- found version 7.3.0
+[1.788s] -- Searching for dependencies of gz-sensors7-segmentation_camera
+[1.789s] -- Searching for <gz-sensors7> component [depth_camera]
+[1.791s] -- Looking for gz-sensors7-depth_camera -- found version 7.3.0
+[1.792s] -- Searching for dependencies of gz-sensors7-depth_camera
+[1.792s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.793s] -- Searching for <gz-sensors7> component [rgbd_camera]
+[1.795s] -- Looking for gz-sensors7-rgbd_camera -- found version 7.3.0
+[1.795s] -- Searching for dependencies of gz-sensors7-rgbd_camera
+[1.796s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.797s] -- Searching for <gz-sensors7> component [thermal_camera]
+[1.799s] -- Looking for gz-sensors7-thermal_camera -- found version 7.3.0
+[1.799s] -- Searching for dependencies of gz-sensors7-thermal_camera
+[1.800s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.800s] -- Searching for <gz-sensors7> component [wide_angle_camera]
+[1.803s] -- Looking for gz-sensors7-wide_angle_camera -- found version 7.3.0
+[1.803s] -- Searching for dependencies of gz-sensors7-wide_angle_camera
+[1.804s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.805s] -- Looking for gz-math7 -- found version 7.5.0
+[1.805s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.828s] -- Looking for gz-common5 -- found version 5.6.0
+[1.828s] -- Looking for gz-fuel_tools8 -- found version 8.1.0
+[1.829s] -- Looking for gz-math7 -- found version 7.5.0
+[1.829s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.830s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.830s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.831s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.831s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.832s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.832s] -- Looking for sdformat13 -- found version 13.7.0
+[1.834s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[1.867s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.873s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.884s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.901s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.925s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.168s] -- Configuring done
+[2.300s] -- Generating done
+[2.305s] -- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz
+[2.322s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_gz -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[2.325s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz': AMENT_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz -- -j8 -l8
+[2.383s] [  2%] [32mBuilding CXX object CMakeFiles/Waves.dir/src/Wavefield.cc.o[0m
+[2.383s] [  4%] [32mBuilding CXX object CMakeFiles/ScoringPlugin.dir/src/ScoringPlugin.cc.o[0m
+[2.394s] [  4%] Built target ament_cmake_python_copy_vrx_gz
+[2.708s] running egg_info
+[2.709s] creating vrx_gz.egg-info
+[2.709s] writing vrx_gz.egg-info/PKG-INFO
+[2.709s] writing dependency_links to vrx_gz.egg-info/dependency_links.txt
+[2.710s] writing top-level names to vrx_gz.egg-info/top_level.txt
+[2.710s] writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[2.713s] reading manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[2.713s] writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[2.744s] [  4%] Built target ament_cmake_python_build_vrx_gz_egg
+[6.773s] [  6%] [32m[1mLinking CXX shared library libWaves.so[0m
+[7.028s] [  6%] Built target Waves
+[7.050s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/PolyhedraBuoyancyDrag.cc.o[0m
+[7.050s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/ShapeVolume.cc.o[0m
+[7.050s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/PolyhedronVolume.cc.o[0m
+[8.403s] [ 14%] [32m[1mLinking CXX shared library libScoringPlugin.so[0m
+[8.736s] [ 14%] Built target ScoringPlugin
+[8.767s] [ 22%] [32mBuilding CXX object CMakeFiles/WayfindingScoringPlugin.dir/src/WayfindingScoringPlugin.cc.o[0m
+[8.767s] [ 22%] [32mBuilding CXX object CMakeFiles/AcousticTrackingScoringPlugin.dir/src/AcousticTrackingScoringPlugin.cc.o[0m
+[8.768s] [ 22%] [32mBuilding CXX object CMakeFiles/AcousticPingerPlugin.dir/src/AcousticPingerPlugin.cc.o[0m
+[8.768s] [ 22%] [32mBuilding CXX object CMakeFiles/BallShooterPlugin.dir/src/BallShooterPlugin.cc.o[0m
+[8.771s] [ 25%] [32mBuilding CXX object CMakeFiles/StationkeepingScoringPlugin.dir/src/StationkeepingScoringPlugin.cc.o[0m
+[8.773s] [ 27%] [32mBuilding CXX object CMakeFiles/AcousticPerceptionScoringPlugin.dir/src/AcousticPerceptionScoringPlugin.cc.o[0m
+[9.594s] [ 29%] [32mBuilding CXX object CMakeFiles/StationkeepingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[19.074s] [ 31%] [32m[1mLinking CXX shared library libPolyhedraBuoyancyDrag.so[0m
+[19.712s] [ 31%] Built target PolyhedraBuoyancyDrag
+[19.747s] [ 33%] [32mBuilding CXX object CMakeFiles/LightBuoyPlugin.dir/src/LightBuoyPlugin.cc.o[0m
+[21.093s] [ 35%] [32m[1mLinking CXX shared library libAcousticPingerPlugin.so[0m
+[21.479s] [ 37%] [32mBuilding CXX object CMakeFiles/AcousticTrackingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[21.913s] [ 37%] Built target AcousticPingerPlugin
+[21.946s] [ 39%] [32mBuilding CXX object CMakeFiles/NavigationScoringPlugin.dir/src/NavigationScoringPlugin.cc.o[0m
+[22.915s] [ 41%] [32m[1mLinking CXX shared library libStationkeepingScoringPlugin.so[0m
+[23.105s] [ 43%] [32mBuilding CXX object CMakeFiles/AcousticPerceptionScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[23.640s] [ 45%] [32mBuilding CXX object CMakeFiles/WayfindingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[23.767s] [ 45%] Built target StationkeepingScoringPlugin
+[23.812s] [ 47%] [32mBuilding CXX object CMakeFiles/GymkhanaScoringPlugin.dir/src/GymkhanaScoringPlugin.cc.o[0m
+[24.023s] [ 50%] [32mBuilding CXX object CMakeFiles/PerceptionScoringPlugin.dir/src/PerceptionScoringPlugin.cc.o[0m
+[24.036s] [ 52%] [32m[1mLinking CXX shared library libBallShooterPlugin.so[0m
+[24.760s] [ 52%] Built target BallShooterPlugin
+[24.793s] [ 54%] [32mBuilding CXX object CMakeFiles/PlacardPlugin.dir/src/PlacardPlugin.cc.o[0m
+[28.725s] [ 56%] [32m[1mLinking CXX shared library libLightBuoyPlugin.so[0m
+[29.302s] [ 56%] Built target LightBuoyPlugin
+[29.335s] [ 58%] [32mBuilding CXX object CMakeFiles/PublisherPlugin.dir/src/PublisherPlugin.cc.o[0m
+[31.877s] [ 60%] [32m[1mLinking CXX shared library libAcousticTrackingScoringPlugin.so[0m
+[32.544s] [ 60%] Built target AcousticTrackingScoringPlugin
+[32.577s] [ 62%] [32mBuilding CXX object CMakeFiles/ScanDockScoringPlugin.dir/src/ScanDockScoringPlugin.cc.o[0m
+[33.579s] [ 64%] [32m[1mLinking CXX shared library libWayfindingScoringPlugin.so[0m
+[33.770s] [ 66%] [32m[1mLinking CXX shared library libGymkhanaScoringPlugin.so[0m
+[33.821s] [ 68%] [32m[1mLinking CXX shared library libAcousticPerceptionScoringPlugin.so[0m
+[34.307s] [ 68%] Built target WayfindingScoringPlugin
+[34.349s] [ 70%] [32mBuilding CXX object CMakeFiles/SimpleHydrodynamics.dir/src/SimpleHydrodynamics.cc.o[0m
+[34.430s] [ 70%] Built target GymkhanaScoringPlugin
+[34.464s] [ 72%] [32mBuilding CXX object CMakeFiles/Surface.dir/src/Surface.cc.o[0m
+[34.512s] [ 72%] Built target AcousticPerceptionScoringPlugin
+[34.545s] [ 75%] [32mBuilding CXX object CMakeFiles/USVWind.dir/src/USVWind.cc.o[0m
+[35.712s] [ 77%] [32m[1mLinking CXX shared library libPlacardPlugin.so[0m
+[36.094s] [ 79%] [32m[1mLinking CXX shared library libPerceptionScoringPlugin.so[0m
+[36.320s] [ 79%] Built target PlacardPlugin
+[36.355s] [ 81%] [32mBuilding CXX object CMakeFiles/WaveVisual.dir/src/WaveVisual.cc.o[0m
+[36.578s] [ 83%] [32m[1mLinking CXX shared library libPublisherPlugin.so[0m
+[36.603s] [ 85%] [32m[1mLinking CXX shared library libNavigationScoringPlugin.so[0m
+[36.835s] [ 85%] Built target PerceptionScoringPlugin
+[36.868s] [ 87%] [32mBuilding CXX object CMakeFiles/WildlifeScoringPlugin.dir/src/WildlifeScoringPlugin.cc.o[0m
+[37.011s] [ 87%] Built target PublisherPlugin
+[37.143s] [ 87%] Built target NavigationScoringPlugin
+[41.897s] [ 89%] [32m[1mLinking CXX shared library libSurface.so[0m
+[42.292s] [ 89%] Built target Surface
+[43.236s] [ 91%] [32m[1mLinking CXX shared library libSimpleHydrodynamics.so[0m
+[43.523s] [ 91%] Built target SimpleHydrodynamics
+[44.271s] [ 93%] [32m[1mLinking CXX shared library libScanDockScoringPlugin.so[0m
+[44.705s] [ 93%] Built target ScanDockScoringPlugin
+[45.989s] [ 95%] [32m[1mLinking CXX shared library libWildlifeScoringPlugin.so[0m
+[46.433s] [ 95%] Built target WildlifeScoringPlugin
+[46.810s] [ 97%] [32m[1mLinking CXX shared library libUSVWind.so[0m
+[47.138s] [ 97%] Built target USVWind
+[47.776s] [100%] [32m[1mLinking CXX shared library libWaveVisual.so[0m
+[48.111s] [100%] Built target WaveVisual
+[48.124s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz -- -j8 -l8
+[48.220s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz': AMENT_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz
+[48.229s] -- Install configuration: ""
+[48.229s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/resource_paths.dsv
+[48.229s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/resource_paths.sh
+[48.229s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWaves.so
+[48.231s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPolyhedraBuoyancyDrag.so
+[48.233s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPolyhedraBuoyancyDrag.so" to ""
+[48.233s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libScoringPlugin.so
+[48.235s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libStationkeepingScoringPlugin.so
+[48.238s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libStationkeepingScoringPlugin.so" to ""
+[48.238s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWayfindingScoringPlugin.so
+[48.241s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWayfindingScoringPlugin.so" to ""
+[48.241s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPerceptionScoringPlugin.so
+[48.244s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPerceptionScoringPlugin.so" to ""
+[48.244s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticTrackingScoringPlugin.so
+[48.247s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticTrackingScoringPlugin.so" to ""
+[48.247s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPingerPlugin.so
+[48.249s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPingerPlugin.so" to ""
+[48.250s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libBallShooterPlugin.so
+[48.253s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libBallShooterPlugin.so" to ""
+[48.253s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libLightBuoyPlugin.so
+[48.255s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libLightBuoyPlugin.so" to ""
+[48.255s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libNavigationScoringPlugin.so
+[48.258s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libNavigationScoringPlugin.so" to ""
+[48.258s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libGymkhanaScoringPlugin.so
+[48.260s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libGymkhanaScoringPlugin.so" to ""
+[48.260s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPerceptionScoringPlugin.so
+[48.263s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPerceptionScoringPlugin.so" to ""
+[48.263s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPlacardPlugin.so
+[48.265s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPlacardPlugin.so" to ""
+[48.265s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPublisherPlugin.so
+[48.267s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPublisherPlugin.so" to ""
+[48.267s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libScanDockScoringPlugin.so
+[48.270s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libScanDockScoringPlugin.so" to ""
+[48.270s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libSimpleHydrodynamics.so
+[48.272s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libSimpleHydrodynamics.so" to ""
+[48.272s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libSurface.so
+[48.274s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libSurface.so" to ""
+[48.275s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libUSVWind.so
+[48.277s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libUSVWind.so" to ""
+[48.277s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWaveVisual.so
+[48.279s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWaveVisual.so" to ""
+[48.280s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWildlifeScoringPlugin.so
+[48.282s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWildlifeScoringPlugin.so" to ""
+[48.282s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/pythonpath.sh
+[48.282s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/pythonpath.dsv
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/SOURCES.txt
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/dependency_links.txt
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/PKG-INFO
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/top_level.txt
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/__init__.py
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridge.py
+[48.283s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/launch.py
+[48.284s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridges.py
+[48.284s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/payload_bridges.py
+[48.284s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/model.py
+[48.330s] Listing '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz'...
+[48.330s] Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/__init__.py'...
+[48.330s] Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridge.py'...
+[48.330s] Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridges.py'...
+[48.330s] Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/launch.py'...
+[48.330s] Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/model.py'...
+[48.330s] Compiling '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/payload_bridges.py'...
+[48.334s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config
+[48.334s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config/roboboat.yaml
+[48.334s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config/wamv.yaml
+[48.334s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch
+[48.334s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/spawn.launch.py
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/vrx_environment.launch.py
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/competition.launch.py
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/spawn_config.launch.py
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/usv_joy_teleop.py
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh
+[48.335s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Normal.png
+[48.339s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Roughness.png
+[48.341s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Albedo.png
+[48.344s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Metalness.png
+[48.344s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/robotx_light_buoy.dae
+[48.345s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Opacity.png
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/model.config
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/model.sdf
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4/model.config
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4/model.sdf
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials
+[48.346s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures
+[48.347s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Albedo.png
+[48.354s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Roughness.png
+[48.366s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/model.config
+[48.366s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/meshes
+[48.366s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/meshes/drybox.dae
+[48.367s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/model.sdf
+[48.367s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1
+[48.367s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1/model.config
+[48.367s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1/model.sdf
+[48.367s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2
+[48.367s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2/model.config
+[48.367s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2/model.sdf
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/1.png
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/2.png
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/3.png
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/4.png
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/5.png
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh
+[48.368s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh/tent.dae
+[48.369s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh/tent.png
+[48.369s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/model.config
+[48.369s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/model.sdf
+[48.369s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01
+[48.370s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials
+[48.370s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/scripts
+[48.370s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/scripts/model.material
+[48.370s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures
+[48.370s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Albedo.png
+[48.377s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Normal.png
+[48.378s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Roughness.png
+[48.380s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Albedo.png
+[48.381s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Metallic.png
+[48.382s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Roughness.png
+[48.386s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/model.config
+[48.387s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes
+[48.387s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/prop.dae
+[48.387s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/mount.dae
+[48.387s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/housing.dae
+[48.387s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/roboboat01.dae
+[48.389s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/model.sdf
+[48.389s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black
+[48.389s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails
+[48.389s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/1.png
+[48.389s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/2.png
+[48.389s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/3.png
+[48.390s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/4.png
+[48.390s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/5.png
+[48.390s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/model.config
+[48.390s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/model.sdf
+[48.390s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform
+[48.391s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform/model.config
+[48.391s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform/model.sdf
+[48.391s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta
+[48.391s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials
+[48.391s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures
+[48.391s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/RoofCorrugated.png
+[48.416s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Windows_Dark.png
+[48.416s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Dock.png
+[48.444s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Terrain.png
+[48.489s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/MetalGalvanized.png
+[48.512s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Wall_05.png
+[48.514s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/DockDark.png
+[48.541s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/TreeDiffuse.png
+[48.542s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails
+[48.542s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/1.png
+[48.542s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/2.png
+[48.543s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/3.png
+[48.543s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/4.png
+[48.543s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/5.png
+[48.543s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/model.config
+[48.543s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes
+[48.543s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes/sydney_regatta.dae
+[48.565s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes/sydney_regatta_shore.dae
+[48.566s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/model.sdf
+[48.566s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna
+[48.566s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails
+[48.566s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/1.png
+[48.566s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/2.png
+[48.567s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/3.png
+[48.567s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/4.png
+[48.567s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/5.png
+[48.567s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/model.config
+[48.567s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes
+[48.567s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes/antenna.png
+[48.568s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes/antenna.dae
+[48.568s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/model.sdf
+[48.569s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red
+[48.569s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials
+[48.569s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures
+[48.569s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures/MarkerBuoy_Roughness.png
+[48.569s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures/MarkerBuoy_Base_Color.png
+[48.571s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails
+[48.571s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/1.png
+[48.571s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/2.png
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/3.png
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/4.png
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/5.png
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/model.config
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/meshes
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/meshes/mb_marker_buoy.dae
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/model.sdf
+[48.572s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base/model.config
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base/model.sdf
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/1.png
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/2.png
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/3.png
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/4.png
+[48.573s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/5.png
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/model.config
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/model.sdf
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg/model.config
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg/model.sdf
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials
+[48.574s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/scripts
+[48.575s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/scripts/model.material
+[48.575s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures
+[48.575s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Albedo.png
+[48.581s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Roughness.png
+[48.585s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Normal.png
+[48.587s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Metallic.png
+[48.588s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/model.config
+[48.588s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/meshes
+[48.588s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/meshes/roboboat02.dae
+[48.590s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/model.sdf
+[48.590s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit
+[48.590s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit/model.config
+[48.590s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit/model.sdf
+[48.590s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1/model.config
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1/model.sdf
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr/model.config
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr/model.sdf
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb/model.config
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb/model.sdf
+[48.591s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/1.png
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/2.png
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/3.png
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/4.png
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/5.png
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/model.config
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/model.sdf
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr
+[48.592s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr/model.config
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr/model.sdf
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/1.png
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/2.png
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/3.png
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/4.png
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/5.png
+[48.593s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/model.config
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/model.sdf
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2/model.config
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2/model.sdf
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/1.png
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/2.png
+[48.594s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/3.png
+[48.595s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/4.png
+[48.595s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/5.png
+[48.595s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh
+[48.595s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh/foldable_chair.png
+[48.601s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh/foldable_chair.dae
+[48.601s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/model.config
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/model.sdf
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg/model.config
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg/model.sdf
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5/model.config
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5/model.sdf
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet
+[48.602s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/1.png
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/2.png
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/3.png
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/4.png
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/5.png
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/model.config
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/meshes
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/meshes/pallet.dae
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/model.sdf
+[48.603s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/mesh
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/mesh/triangle.dae
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/model.config
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/model.sdf
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy/model.config
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy/model.sdf
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform
+[48.604s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform/model.config
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform/model.sdf
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials/textures
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials/textures/Placard.png
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/model.config
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/meshes
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/meshes/placard_2022.dae
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/model.sdf
+[48.605s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3
+[48.606s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3/model.config
+[48.606s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3/model.sdf
+[48.606s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange
+[48.606s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials
+[48.606s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures
+[48.606s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures/RoundBarrierBuoy_Base_Color.png
+[48.608s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures/RoundBarrierBuoy_Roughness.png
+[48.608s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails
+[48.608s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/1.png
+[48.609s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/2.png
+[48.609s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/3.png
+[48.609s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/4.png
+[48.609s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/5.png
+[48.610s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/model.config
+[48.610s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/meshes
+[48.610s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/meshes/mb_round_buoy.dae
+[48.610s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/model.sdf
+[48.610s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr
+[48.610s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr/model.config
+[48.611s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr/model.sdf
+[48.611s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station
+[48.611s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails
+[48.611s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/1.png
+[48.611s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/2.png
+[48.611s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/3.png
+[48.611s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/4.png
+[48.612s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/5.png
+[48.612s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/model.config
+[48.612s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/model.sdf
+[48.612s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy
+[48.612s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy/model.config
+[48.612s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy/model.sdf
+[48.612s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0/model.config
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0/model.sdf
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures
+[48.613s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures/skybox_lowres.dds
+[48.614s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures/wave_normals.dds
+[48.615s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/model.config
+[48.615s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/meshes
+[48.615s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/meshes/waterlow.dae
+[48.631s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/model.sdf
+[48.631s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table
+[48.631s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/1.png
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/2.png
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/3.png
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/4.png
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/5.png
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh/foldable_table.dae
+[48.632s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh/foldable_table.png
+[48.633s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/model.config
+[48.633s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/model.sdf
+[48.633s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022
+[48.633s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022/model.config
+[48.633s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022/model.sdf
+[48.634s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course
+[48.634s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course/model.config
+[48.634s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course/model.sdf
+[48.634s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post
+[48.634s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials
+[48.634s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials/textures
+[48.634s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials/textures/post.png
+[48.640s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails
+[48.640s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/1.png
+[48.640s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/2.png
+[48.641s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/3.png
+[48.641s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/4.png
+[48.641s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/5.png
+[48.641s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/model.config
+[48.641s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/meshes
+[48.641s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/meshes/post.dae
+[48.642s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/model.sdf
+[48.642s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4
+[48.642s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh
+[48.642s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Roughness.png
+[48.643s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Normal.png
+[48.675s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/dock_block_4x4.dae
+[48.678s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Metalness.png
+[48.678s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Albedo.png
+[48.679s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/model.config
+[48.679s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/model.sdf
+[48.679s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/wildlife_task.sdf
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/sydney_regatta.sdf
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/gymkhana_task.sdf
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/navigation_task.sdf
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/acoustic_tracking_task.sdf
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver1_task.sdf
+[48.680s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding1_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path2_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking0_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping1_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding0_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception2_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife2_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception2_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking1_task.sdf
+[48.681s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception1_task.sdf
+[48.682s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping0_task.sdf
+[48.682s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver0_task.sdf
+[48.682s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception0_task.sdf
+[48.682s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking2_task.sdf
+[48.682s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding2_task.sdf
+[48.682s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver2_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path0_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception1_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception0_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path1_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife0_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping2_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife1_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/follow_path_task.sdf
+[48.683s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/scan_dock_deliver_task.sdf
+[48.684s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/perception_task.sdf
+[48.684s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/stationkeeping_task.sdf
+[48.684s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/nbpark.sdf
+[48.684s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/acoustic_perception_task.sdf
+[48.684s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/wayfinding_task.sdf
+[48.684s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/vrx_gz
+[48.685s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/vrx_gz
+[48.685s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/ament_prefix_path.sh
+[48.685s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/ament_prefix_path.dsv
+[48.685s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/path.sh
+[48.685s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/path.dsv
+[48.685s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.bash
+[48.686s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.sh
+[48.686s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.zsh
+[48.686s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.dsv
+[48.686s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/package.dsv
+[48.686s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/vrx_gz
+[48.687s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/cmake/vrx_gzConfig.cmake
+[48.687s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/cmake/vrx_gzConfig-version.cmake
+[48.687s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/package.xml
+[48.690s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jain/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz

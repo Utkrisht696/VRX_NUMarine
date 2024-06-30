@@ -1,0 +1,29 @@
+[35m[1mConsolidate compiler generated dependencies of target mppi_controller_node[0m
+[ 50%] Built target gps_to_ned_node
+[ 75%] [32mBuilding CXX object CMakeFiles/mppi_controller_node.dir/src/mppi_controller_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable mppi_controller_node[0m
+[100%] Built target mppi_controller_node
+-- Install configuration: ""
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_navigation_pkg/gps_to_ned_node
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_navigation_pkg/mppi_controller_node
+-- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_navigation_pkg/mppi_controller_node" to ""
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/include/
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/include//my_navigation_pkg
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg//launch
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg//launch/mppi_launch.py
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg//launch/gps_to_ned_launch.py
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/my_navigation_pkg
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/my_navigation_pkg
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/ament_prefix_path.sh
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/path.sh
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/path.dsv
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.bash
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.sh
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.zsh
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.dsv
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/package.dsv
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/my_navigation_pkg
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/cmake/my_navigation_pkgConfig.cmake
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/cmake/my_navigation_pkgConfig-version.cmake
+-- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/package.xml

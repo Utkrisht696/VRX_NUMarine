@@ -1,0 +1,455 @@
+[0.066s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz -- -j8 -l8
+[0.192s] [  4%] Built target Waves
+[0.206s] [  8%] Built target ScoringPlugin
+[0.213s] [  8%] Built target ament_cmake_python_copy_vrx_gz
+[0.286s] [ 16%] Built target PolyhedraBuoyancyDrag
+[0.315s] [ 22%] Built target StationkeepingScoringPlugin
+[0.331s] [ 35%] Built target AcousticTrackingScoringPlugin
+[0.331s] [ 35%] Built target WayfindingScoringPlugin
+[0.334s] [ 41%] Built target AcousticPerceptionScoringPlugin
+[0.342s] [ 45%] Built target AcousticPingerPlugin
+[0.350s] [ 50%] Built target BallShooterPlugin
+[0.446s] [ 54%] Built target ScanDockScoringPlugin
+[0.452s] [ 58%] Built target GymkhanaScoringPlugin
+[0.452s] [ 62%] Built target NavigationScoringPlugin
+[0.459s] [ 68%] Built target PlacardPlugin
+[0.462s] [ 70%] Built target PerceptionScoringPlugin
+[0.465s] [ 75%] Built target LightBuoyPlugin
+[0.470s] [ 79%] Built target PublisherPlugin
+[0.479s] [ 83%] Built target SimpleHydrodynamics
+[0.549s] [ 87%] Built target WildlifeScoringPlugin
+[0.563s] [ 91%] Built target Surface
+[0.564s] [ 95%] Built target USVWind
+[0.565s] [100%] Built target WaveVisual
+[1.000s] running egg_info
+[1.002s] writing vrx_gz.egg-info/PKG-INFO
+[1.002s] writing dependency_links to vrx_gz.egg-info/dependency_links.txt
+[1.002s] writing top-level names to vrx_gz.egg-info/top_level.txt
+[1.007s] reading manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[1.009s] writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[1.079s] [100%] Built target ament_cmake_python_build_vrx_gz_egg
+[1.096s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz -- -j8 -l8
+[1.275s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz
+[1.288s] -- Install configuration: ""
+[1.288s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/resource_paths.dsv
+[1.289s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/resource_paths.sh
+[1.289s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWaves.so
+[1.289s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPolyhedraBuoyancyDrag.so
+[1.289s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libScoringPlugin.so
+[1.290s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libStationkeepingScoringPlugin.so
+[1.291s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWayfindingScoringPlugin.so
+[1.291s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPerceptionScoringPlugin.so
+[1.291s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticTrackingScoringPlugin.so
+[1.292s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPingerPlugin.so
+[1.292s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libBallShooterPlugin.so
+[1.293s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libLightBuoyPlugin.so
+[1.294s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libNavigationScoringPlugin.so
+[1.294s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libGymkhanaScoringPlugin.so
+[1.295s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPerceptionScoringPlugin.so
+[1.295s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPlacardPlugin.so
+[1.296s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libPublisherPlugin.so
+[1.297s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libScanDockScoringPlugin.so
+[1.297s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libSimpleHydrodynamics.so
+[1.297s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libSurface.so
+[1.298s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libUSVWind.so
+[1.299s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWaveVisual.so
+[1.299s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/libWildlifeScoringPlugin.so
+[1.302s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/pythonpath.sh
+[1.302s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/pythonpath.dsv
+[1.302s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info
+[1.302s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.302s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.303s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/PKG-INFO
+[1.303s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/top_level.txt
+[1.303s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz
+[1.303s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/__init__.py
+[1.303s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridge.py
+[1.303s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/launch.py
+[1.304s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridges.py
+[1.304s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/payload_bridges.py
+[1.304s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/model.py
+[1.354s] Listing '/home/jain/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz'...
+[1.364s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config
+[1.365s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config/roboboat.yaml
+[1.365s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config/wamv.yaml
+[1.366s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch
+[1.366s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/spawn.launch.py
+[1.366s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/vrx_environment.launch.py
+[1.367s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/competition.launch.py
+[1.367s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/spawn_config.launch.py
+[1.367s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/usv_joy_teleop.py
+[1.367s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models
+[1.367s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb
+[1.368s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh
+[1.368s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Normal.png
+[1.370s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Roughness.png
+[1.371s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Albedo.png
+[1.371s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Metalness.png
+[1.371s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/robotx_light_buoy.dae
+[1.371s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Opacity.png
+[1.372s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/model.config
+[1.372s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/model.sdf
+[1.372s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4
+[1.372s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4/model.config
+[1.372s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4/model.sdf
+[1.373s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox
+[1.373s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials
+[1.374s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures
+[1.374s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Albedo.png
+[1.374s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Roughness.png
+[1.375s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/model.config
+[1.375s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/meshes
+[1.375s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/meshes/drybox.dae
+[1.375s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/model.sdf
+[1.375s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1/model.config
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1/model.sdf
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2/model.config
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2/model.sdf
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails
+[1.376s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/1.png
+[1.377s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/2.png
+[1.377s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/3.png
+[1.377s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/4.png
+[1.377s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/5.png
+[1.378s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh
+[1.378s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh/tent.dae
+[1.378s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh/tent.png
+[1.378s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/model.config
+[1.378s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/model.sdf
+[1.379s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01
+[1.379s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials
+[1.379s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/scripts
+[1.379s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/scripts/model.material
+[1.379s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures
+[1.380s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Albedo.png
+[1.380s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Normal.png
+[1.381s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Roughness.png
+[1.382s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Albedo.png
+[1.383s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Metallic.png
+[1.384s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Roughness.png
+[1.384s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/model.config
+[1.385s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes
+[1.385s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/prop.dae
+[1.385s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/mount.dae
+[1.386s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/housing.dae
+[1.387s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/roboboat01.dae
+[1.391s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/model.sdf
+[1.393s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black
+[1.393s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails
+[1.394s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/1.png
+[1.394s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/2.png
+[1.394s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/3.png
+[1.396s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/4.png
+[1.397s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/5.png
+[1.397s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/model.config
+[1.397s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/model.sdf
+[1.398s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform
+[1.398s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform/model.config
+[1.398s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform/model.sdf
+[1.398s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta
+[1.398s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials
+[1.398s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures
+[1.398s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/RoofCorrugated.png
+[1.399s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Windows_Dark.png
+[1.399s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Dock.png
+[1.399s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Terrain.png
+[1.399s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/MetalGalvanized.png
+[1.399s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Wall_05.png
+[1.399s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/DockDark.png
+[1.399s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/TreeDiffuse.png
+[1.400s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails
+[1.400s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/1.png
+[1.400s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/2.png
+[1.400s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/3.png
+[1.400s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/4.png
+[1.400s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/5.png
+[1.401s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/model.config
+[1.401s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes
+[1.401s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes/sydney_regatta.dae
+[1.401s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes/sydney_regatta_shore.dae
+[1.401s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/model.sdf
+[1.401s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna
+[1.402s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails
+[1.402s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/1.png
+[1.402s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/2.png
+[1.402s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/3.png
+[1.402s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/4.png
+[1.402s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/5.png
+[1.402s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/model.config
+[1.403s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes
+[1.403s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes/antenna.png
+[1.403s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes/antenna.dae
+[1.403s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/model.sdf
+[1.404s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red
+[1.404s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials
+[1.404s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures
+[1.405s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures/MarkerBuoy_Roughness.png
+[1.405s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures/MarkerBuoy_Base_Color.png
+[1.405s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails
+[1.405s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/1.png
+[1.405s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/2.png
+[1.405s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/3.png
+[1.405s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/4.png
+[1.406s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/5.png
+[1.406s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/model.config
+[1.406s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/meshes
+[1.406s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/meshes/mb_marker_buoy.dae
+[1.406s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/model.sdf
+[1.406s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base
+[1.406s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base/model.config
+[1.407s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base/model.sdf
+[1.407s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black
+[1.407s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails
+[1.407s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/1.png
+[1.407s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/2.png
+[1.407s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/3.png
+[1.408s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/4.png
+[1.408s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/5.png
+[1.410s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/model.config
+[1.411s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/model.sdf
+[1.411s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg
+[1.411s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg/model.config
+[1.412s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg/model.sdf
+[1.412s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02
+[1.412s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials
+[1.412s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/scripts
+[1.413s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/scripts/model.material
+[1.413s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures
+[1.413s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Albedo.png
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Roughness.png
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Normal.png
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Metallic.png
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/model.config
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/meshes
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/meshes/roboboat02.dae
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/model.sdf
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit/model.config
+[1.414s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit/model.sdf
+[1.415s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1
+[1.415s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1/model.config
+[1.415s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1/model.sdf
+[1.416s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr
+[1.416s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr/model.config
+[1.416s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr/model.sdf
+[1.416s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb
+[1.417s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb/model.config
+[1.417s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb/model.sdf
+[1.417s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green
+[1.418s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails
+[1.418s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/1.png
+[1.418s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/2.png
+[1.419s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/3.png
+[1.419s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/4.png
+[1.419s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/5.png
+[1.420s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/model.config
+[1.420s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/model.sdf
+[1.420s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr
+[1.420s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr/model.config
+[1.420s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr/model.sdf
+[1.421s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white
+[1.421s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails
+[1.422s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/1.png
+[1.422s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/2.png
+[1.422s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/3.png
+[1.423s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/4.png
+[1.423s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/5.png
+[1.425s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/model.config
+[1.425s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/model.sdf
+[1.426s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2
+[1.426s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2/model.config
+[1.427s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2/model.sdf
+[1.428s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair
+[1.428s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails
+[1.428s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/1.png
+[1.428s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/2.png
+[1.428s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/3.png
+[1.428s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/4.png
+[1.429s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/5.png
+[1.429s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh
+[1.429s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh/foldable_chair.png
+[1.429s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh/foldable_chair.dae
+[1.429s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/model.config
+[1.429s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/model.sdf
+[1.429s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg
+[1.430s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg/model.config
+[1.430s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg/model.sdf
+[1.430s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5
+[1.430s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5/model.config
+[1.430s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5/model.sdf
+[1.430s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet
+[1.431s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails
+[1.431s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/1.png
+[1.431s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/2.png
+[1.431s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/3.png
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/4.png
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/5.png
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/model.config
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/meshes
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/meshes/pallet.dae
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/model.sdf
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle
+[1.432s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/mesh
+[1.433s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/mesh/triangle.dae
+[1.433s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/model.config
+[1.433s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/model.sdf
+[1.433s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy
+[1.433s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy/model.config
+[1.433s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy/model.sdf
+[1.433s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform/model.config
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform/model.sdf
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials/textures
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials/textures/Placard.png
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/model.config
+[1.434s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/meshes
+[1.435s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/meshes/placard_2022.dae
+[1.435s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/model.sdf
+[1.435s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3
+[1.435s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3/model.config
+[1.435s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3/model.sdf
+[1.435s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange
+[1.435s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials
+[1.436s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures
+[1.436s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures/RoundBarrierBuoy_Base_Color.png
+[1.436s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures/RoundBarrierBuoy_Roughness.png
+[1.436s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails
+[1.436s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/1.png
+[1.437s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/2.png
+[1.437s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/3.png
+[1.437s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/4.png
+[1.437s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/5.png
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/model.config
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/meshes
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/meshes/mb_round_buoy.dae
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/model.sdf
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr/model.config
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr/model.sdf
+[1.438s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station
+[1.439s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails
+[1.439s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/1.png
+[1.439s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/2.png
+[1.439s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/3.png
+[1.439s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/4.png
+[1.439s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/5.png
+[1.440s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/model.config
+[1.440s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/model.sdf
+[1.440s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy
+[1.440s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy/model.config
+[1.441s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy/model.sdf
+[1.441s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0
+[1.441s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0/model.config
+[1.441s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0/model.sdf
+[1.441s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves
+[1.441s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials
+[1.442s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs
+[1.442s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl
+[1.442s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl
+[1.442s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures
+[1.442s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures/skybox_lowres.dds
+[1.443s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures/wave_normals.dds
+[1.443s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/model.config
+[1.443s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/meshes
+[1.444s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/meshes/waterlow.dae
+[1.444s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/model.sdf
+[1.444s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table
+[1.444s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails
+[1.444s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/1.png
+[1.444s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/2.png
+[1.445s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/3.png
+[1.445s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/4.png
+[1.445s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/5.png
+[1.445s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh
+[1.445s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh/foldable_table.dae
+[1.446s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh/foldable_table.png
+[1.446s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/model.config
+[1.446s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/model.sdf
+[1.446s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022
+[1.446s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022/model.config
+[1.446s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022/model.sdf
+[1.447s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course
+[1.447s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course/model.config
+[1.447s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course/model.sdf
+[1.447s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post
+[1.447s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials
+[1.447s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials/textures
+[1.448s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials/textures/post.png
+[1.448s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails
+[1.448s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/1.png
+[1.448s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/2.png
+[1.448s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/3.png
+[1.449s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/4.png
+[1.449s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/5.png
+[1.449s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/model.config
+[1.449s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/meshes
+[1.449s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/meshes/post.dae
+[1.450s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/model.sdf
+[1.450s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4
+[1.450s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh
+[1.450s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Roughness.png
+[1.450s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Normal.png
+[1.450s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/dock_block_4x4.dae
+[1.451s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Metalness.png
+[1.451s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Albedo.png
+[1.451s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/model.config
+[1.451s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/model.sdf
+[1.451s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds
+[1.452s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/wildlife_task.sdf
+[1.452s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/sydney_regatta.sdf
+[1.452s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/gymkhana_task.sdf
+[1.452s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/navigation_task.sdf
+[1.452s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/acoustic_tracking_task.sdf
+[1.453s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice
+[1.453s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver1_task.sdf
+[1.453s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding1_task.sdf
+[1.453s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path2_task.sdf
+[1.453s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking0_task.sdf
+[1.453s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping1_task.sdf
+[1.454s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding0_task.sdf
+[1.454s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception2_task.sdf
+[1.454s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife2_task.sdf
+[1.454s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception2_task.sdf
+[1.454s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking1_task.sdf
+[1.455s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception1_task.sdf
+[1.455s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping0_task.sdf
+[1.455s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver0_task.sdf
+[1.455s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception0_task.sdf
+[1.455s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking2_task.sdf
+[1.456s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding2_task.sdf
+[1.456s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver2_task.sdf
+[1.456s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path0_task.sdf
+[1.456s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception1_task.sdf
+[1.456s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception0_task.sdf
+[1.457s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path1_task.sdf
+[1.457s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife0_task.sdf
+[1.457s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping2_task.sdf
+[1.457s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife1_task.sdf
+[1.457s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/follow_path_task.sdf
+[1.457s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/scan_dock_deliver_task.sdf
+[1.457s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/perception_task.sdf
+[1.458s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/stationkeeping_task.sdf
+[1.458s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/nbpark.sdf
+[1.458s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/acoustic_perception_task.sdf
+[1.458s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/wayfinding_task.sdf
+[1.458s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/vrx_gz
+[1.458s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/vrx_gz
+[1.459s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/ament_prefix_path.sh
+[1.459s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/ament_prefix_path.dsv
+[1.459s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/path.sh
+[1.459s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/path.dsv
+[1.459s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.bash
+[1.459s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.sh
+[1.460s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.zsh
+[1.460s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.dsv
+[1.460s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/package.dsv
+[1.460s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/vrx_gz
+[1.460s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/cmake/vrx_gzConfig.cmake
+[1.460s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/cmake/vrx_gzConfig-version.cmake
+[1.461s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/package.xml
+[1.461s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gz

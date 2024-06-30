@@ -1,0 +1,25 @@
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/gps_to_ned_node.cpp:[m[K In constructor ‘[01m[KGPSToNED::GPSToNED()[m[K’:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/gps_to_ned_node.cpp:12:31:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+   12 |     gps_subscription_ = this->[01;31m[Kcreate_subscription<sensor_msgs::msg/NavSatFix>[m[K(
+      |                               [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/gps_to_ned_node.cpp:12:78:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KGPSToNED::create_subscription<<expression error> >(const char [26], int, std::_Bind_helper<false, void (GPSToNED::*)(std::shared_ptr<sensor_msgs::msg::NavSatFix_<std::allocator<void> > >), GPSToNED*, const std::_Placeholder<1>&>::type)[m[K’
+   12 |     gps_subscription_ = [01;31m[Kthis->create_subscription<sensor_msgs::msg/NavSatFix>([m[K
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   13 | [01;31m[K      "/wamv/sensors/gps/gps/fix", 10, std::bind(&GPSToNED::gps_callback, this, std::placeholders::_1))[m[K;
+      |       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/gps_to_ned_node.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+  219 |   [01;36m[Kcreate_subscription[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/gps_to_ned_node.cpp:12:78:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   12 |     gps_subscription_ = [01;31m[Kthis->create_subscription<sensor_msgs::msg/NavSatFix>([m[K
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   13 | [01;31m[K      "/wamv/sensors/gps/gps/fix", 10, std::bind(&GPSToNED::gps_callback, this, std::placeholders::_1))[m[K;
+      |       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/gps_to_ned_node.dir/build.make:76: CMakeFiles/gps_to_ned_node.dir/src/gps_to_ned_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_to_ned_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,9 @@
+[0.029s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo -- -j8 -l8
+[0.101s] Built target ament_cmake_python_copy_vrx_gazebo
+[0.435s] running egg_info
+[0.436s] writing vrx_gazebo.egg-info/PKG-INFO
+[0.436s] writing dependency_links to vrx_gazebo.egg-info/dependency_links.txt
+[0.437s] writing top-level names to vrx_gazebo.egg-info/top_level.txt
+[0.438s] reading manifest file 'vrx_gazebo.egg-info/SOURCES.txt'
+[0.439s] writing manifest file 'vrx_gazebo.egg-info/SOURCES.txt'
+[0.469s] Built target ament_cmake_python_build_vrx_gazebo_egg

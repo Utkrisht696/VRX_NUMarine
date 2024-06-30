@@ -1,0 +1,93 @@
+[0.019s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[0.079s] -- The C compiler identification is GNU 11.4.0
+[0.142s] -- The CXX compiler identification is GNU 11.4.0
+[0.151s] -- Detecting C compiler ABI info
+[0.228s] -- Detecting C compiler ABI info - done
+[0.238s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.238s] -- Detecting C compile features
+[0.239s] -- Detecting C compile features - done
+[0.243s] -- Detecting CXX compiler ABI info
+[0.343s] -- Detecting CXX compiler ABI info - done
+[0.360s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.360s] -- Detecting CXX compile features
+[0.361s] -- Detecting CXX compile features - done
+[0.365s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.572s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.718s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.779s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.787s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.802s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.829s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.865s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.041s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.049s] -- Searching for dependencies of gz-msgs9
+[1.233s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.236s] -- Looking for gz-math7 -- found version 7.5.0
+[1.236s] -- Searching for dependencies of gz-math7
+[1.238s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.239s] -- Searching for dependencies of gz-utils2
+[1.245s] -- Checking for module 'tinyxml2'
+[1.258s] --   Found tinyxml2, version 9.0.0
+[1.298s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.299s] -- Searching for dependencies of gz-transport12
+[1.345s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[1.352s] -- Checking for module 'libzmq >= 4'
+[1.367s] --   Found libzmq , version 4.3.4
+[1.405s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[1.410s] -- Checking for module 'uuid'
+[1.427s] --   Found uuid, version 2.37.2
+[1.466s] -- Found UUID: TRUE  
+[1.467s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.468s] -- Searching for dependencies of gz-utils2
+[1.468s] -- Searching for <gz-utils2> component [cli]
+[1.471s] -- Looking for gz-utils2-cli -- found version 2.2.0
+[1.472s] -- Searching for dependencies of gz-utils2-cli
+[1.474s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.477s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[1.613s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.619s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.779s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.829s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.915s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.933s] -- Found Threads: TRUE  
+[2.173s] -- Found ros_gz_interfaces: 0.244.11 (/opt/ros/humble/share/ros_gz_interfaces/cmake)
+[2.316s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.435s] -- Found tf2: 0.25.7 (/opt/ros/humble/share/tf2/cmake)
+[2.453s] -- Found tf2_msgs: 0.25.7 (/opt/ros/humble/share/tf2_msgs/cmake)
+[2.664s] -- Found tf2_ros: 0.25.7 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.959s] -- Configuring done
+[2.978s] -- Generating done
+[2.981s] -- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros
+[3.001s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[3.003s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j8 -l8
+[3.075s] [ 25%] [32mBuilding CXX object CMakeFiles/pose_tf_broadcaster.dir/src/pose_tf_broadcaster.cc.o[0m
+[3.078s] [ 50%] [32mBuilding CXX object CMakeFiles/optical_frame_publisher.dir/src/optical_frame_publisher.cc.o[0m
+[14.317s] [ 75%] [32m[1mLinking CXX executable pose_tf_broadcaster[0m
+[14.932s] [ 75%] Built target pose_tf_broadcaster
+[18.523s] [100%] [32m[1mLinking CXX executable optical_frame_publisher[0m
+[19.254s] [100%] Built target optical_frame_publisher
+[19.266s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j8 -l8
+[19.300s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros
+[19.307s] -- Install configuration: ""
+[19.307s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/optical_frame_publisher
+[19.314s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/optical_frame_publisher" to ""
+[19.314s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/pose_tf_broadcaster
+[19.318s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/pose_tf_broadcaster" to ""
+[19.319s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/launch
+[19.319s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/launch/monitor_sim.py
+[19.319s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/vrx_ros
+[19.319s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/vrx_ros
+[19.319s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/ament_prefix_path.sh
+[19.319s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/ament_prefix_path.dsv
+[19.319s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/path.sh
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/path.dsv
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.bash
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.sh
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.zsh
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.dsv
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.dsv
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/vrx_ros
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/cmake/vrx_rosConfig.cmake
+[19.320s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/cmake/vrx_rosConfig-version.cmake
+[19.321s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.xml
+[19.323s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_ros
