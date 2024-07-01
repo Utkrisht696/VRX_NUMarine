@@ -11,6 +11,7 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav2_core REQUIRED)
 find_package(nav2_mppi_controller REQUIRED)
+find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
@@ -18,9 +19,14 @@ find_package(GeographicLib REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 include_directories(include)
+include_directories(config)
 
 add_executable(gps_to_ned_node src/gps_to_ned_node.cpp)
 ament_target_dependencies(gps_to_ned_node rclcpp sensor_msgs tf2_ros tf2_geometry_msgs GeographicLib)
+
+add_executable(pid_controller_node src/pid_controller_node.cpp)
+ament_target_dependencies(pid_controller_node rclcpp geometry_msgs sensor_msgs std_msgs tf2 tf2_ros tf2_geometry_msgs Eigen3)
+
 
 
 if(BUILD_TESTING)
@@ -37,14 +43,16 @@ endif()
 
 install(TARGETS
   gps_to_ned_node
+  pid_controller_node
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY include/
   DESTINATION include/
 )
 
-install(DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}/
-)
+install(DIRECTORY launch config
+  DESTINATION share/${PROJECT_NAME})
+
+
 
 ament_package()

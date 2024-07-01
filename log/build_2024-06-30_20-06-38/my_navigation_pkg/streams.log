@@ -1,0 +1,30 @@
+[0.026s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg -- -j8 -l8
+[0.094s] [100%] Built target gps_to_ned_node
+[0.109s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg -- -j8 -l8
+[0.147s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg
+[0.158s] -- Install configuration: ""
+[0.159s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_navigation_pkg/gps_to_ned_node
+[0.160s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/include/
+[0.160s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/include//my_navigation_pkg
+[0.160s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/launch
+[0.160s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/launch/navigation_launch.py
+[0.160s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/launch/gps_to_ned_launch.py
+[0.160s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/config
+[0.161s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/config/mppi_params.yaml
+[0.161s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/config/nav2_params.yaml
+[0.161s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/my_navigation_pkg
+[0.161s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/my_navigation_pkg
+[0.161s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/ament_prefix_path.sh
+[0.162s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/ament_prefix_path.dsv
+[0.162s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/path.sh
+[0.162s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/environment/path.dsv
+[0.164s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.bash
+[0.165s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.sh
+[0.165s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.zsh
+[0.166s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/local_setup.dsv
+[0.166s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/package.dsv
+[0.166s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/my_navigation_pkg
+[0.167s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/cmake/my_navigation_pkgConfig.cmake
+[0.167s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/cmake/my_navigation_pkgConfig-version.cmake
+[0.167s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_navigation_pkg/package.xml
+[0.191s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg
