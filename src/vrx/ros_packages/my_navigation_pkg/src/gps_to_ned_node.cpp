@@ -4,7 +4,10 @@
 #include "geometry_msgs/msg/transform_stamped.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
+#include "geometry_msgs/msg/vector3_stamped.hpp"
 #include <GeographicLib/LocalCartesian.hpp>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2/LinearMath/Matrix3x3.h>
 
 class GPSToNED : public rclcpp::Node
 {
@@ -17,6 +20,7 @@ public:
       "/wamv/sensors/imu/imu/data", 10, std::bind(&GPSToNED::imu_callback, this, std::placeholders::_1));
     tf_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(this);
     ned_publisher_ = this->create_publisher<geometry_msgs::msg::PointStamped>("ned_coordinates", 10);
+    orientation_publisher_ = this->create_publisher<geometry_msgs::msg::Vector3Stamped>("imu_orientation_degrees", 10);
 
     geodetic_converter_.Reset(ref_lat, ref_lon, ref_alt);
   }
@@ -47,12 +51,27 @@ private:
     ned_msg.point.z = down;
     ned_publisher_->publish(ned_msg);
 
-    // Print NED coordinates
-    RCLCPP_INFO(this->get_logger(), "NED Coordinates: [North: %f, East: %f, Down: %f]", north, east, down);
+    // Convert IMU orientation to degrees and publish
+    geometry_msgs::msg::Vector3Stamped orientation_msg;
+    orientation_msg.header.stamp = this->now();
+    orientation_msg.header.frame_id = "map";
 
-    // Print orientation
-    RCLCPP_INFO(this->get_logger(), "Orientation: [x: %f, y: %f, z: %f, w: %f]",
-                imu_orientation_.x, imu_orientation_.y, imu_orientation_.z, imu_orientation_.w);
+    tf2::Quaternion quat(imu_orientation_.x, imu_orientation_.y, imu_orientation_.z, imu_orientation_.w);
+    tf2::Matrix3x3 mat(quat);
+    double roll, pitch, yaw;
+    mat.getRPY(roll, pitch, yaw);
+
+    orientation_msg.vector.x = roll * 180.0 / M_PI;
+    orientation_msg.vector.y = pitch * 180.0 / M_PI;
+    orientation_msg.vector.z = yaw * 180.0 / M_PI;
+    orientation_publisher_->publish(orientation_msg);
+
+    // // Print NED coordinates
+    // RCLCPP_INFO(this->get_logger(), "NED Coordinates: [North: %f, East: %f, Down: %f]", north, east, down);
+
+    // // Print orientation in degrees
+    // RCLCPP_INFO(this->get_logger(), "Orientation (degrees): [Roll: %f, Pitch: %f, Yaw: %f]",
+    //             orientation_msg.vector.x, orientation_msg.vector.y, orientation_msg.vector.z);
   }
 
   void imu_callback(const sensor_msgs::msg::Imu::SharedPtr msg)
@@ -64,6 +83,7 @@ private:
   rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_subscription_;
   std::shared_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
   rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr ned_publisher_;
+  rclcpp::Publisher<geometry_msgs::msg::Vector3Stamped>::SharedPtr orientation_publisher_;
   geometry_msgs::msg::Quaternion imu_orientation_;
 
   const double ref_lat;

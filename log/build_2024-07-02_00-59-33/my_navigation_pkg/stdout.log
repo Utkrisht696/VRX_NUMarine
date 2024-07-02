@@ -1,0 +1,3 @@
+[ 20%] Built target gps_to_ned_node
+[35m[1mConsolidate compiler generated dependencies of target goal_pose_controller[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/goal_pose_controller.dir/src/goal_pose_controller.cpp.o[0m

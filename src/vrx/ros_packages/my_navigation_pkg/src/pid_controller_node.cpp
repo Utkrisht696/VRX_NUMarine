@@ -1,33 +1,44 @@
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
-#include "sensor_msgs/msg/imu.hpp"
+#include "geometry_msgs/msg/vector3_stamped.hpp"
 #include "std_msgs/msg/float64.hpp"
 #include <Eigen/Dense>
 #include <vector>
-#include <tf2/LinearMath/Quaternion.h>
-#include <tf2/LinearMath/Matrix3x3.h>
 #include <cmath>
+
+enum class State
+{
+  INITIAL_YAW_CORRECTION,
+  MOVING_FORWARD,
+  TURNING,
+  STOP
+};
 
 class PIDControllerNode : public rclcpp::Node
 {
 public:
   PIDControllerNode()
     : Node("pid_controller_node"),
+      current_state_(State::INITIAL_YAW_CORRECTION),
       current_waypoint_index_(0),
-      turning_(false),
-      turn_start_yaw_(0.0),
       kp_(10.0),
       ki_(0.0),
       kd_(0.0),
+      yaw_kp_(5.0),
+      yaw_ki_(0.0),
+      yaw_kd_(2.0),
       previous_error_(Eigen::Vector3d::Zero()),
       integral_(Eigen::Vector3d::Zero()),
+      yaw_previous_error_(0.0),
+      yaw_integral_(0.0),
       initial_position_set_(false),
-      current_position_(Eigen::Vector3d::Zero())
+      current_position_(Eigen::Vector3d::Zero()),
+      current_yaw_(0.0)
   {
     ned_subscription_ = this->create_subscription<geometry_msgs::msg::PointStamped>(
       "/ned_coordinates", 10, std::bind(&PIDControllerNode::ned_callback, this, std::placeholders::_1));
-    imu_subscription_ = this->create_subscription<sensor_msgs::msg::Imu>(
-      "/wamv/sensors/imu/imu/data", 10, std::bind(&PIDControllerNode::imu_callback, this, std::placeholders::_1));
+    yaw_subscription_ = this->create_subscription<geometry_msgs::msg::Vector3Stamped>(
+      "/imu_orientation_degrees", 10, std::bind(&PIDControllerNode::yaw_callback, this, std::placeholders::_1));
 
     stern_port1_thrust_publisher_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port1/thrust", 10);
     stern_port2_thrust_publisher_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port2/thrust", 10);
@@ -52,18 +63,18 @@ private:
     }
   }
 
-  void imu_callback(const sensor_msgs::msg::Imu::SharedPtr msg)
+  void yaw_callback(const geometry_msgs::msg::Vector3Stamped::SharedPtr msg)
   {
-    imu_orientation_ = msg->orientation;
+    current_yaw_ = msg->vector.z;
   }
 
   void initialize_waypoints()
   {
     waypoints_.clear();
-    waypoints_.emplace_back(initial_position_ + Eigen::Vector3d(10.0, 0.0, 0.0)); // First side
-    waypoints_.emplace_back(initial_position_ + Eigen::Vector3d(10.0, 10.0, 0.0)); // Second side
-    waypoints_.emplace_back(initial_position_ + Eigen::Vector3d(0.0, 10.0, 0.0)); // Third side
-    waypoints_.emplace_back(initial_position_); // Back to start
+    waypoints_.emplace_back(initial_position_ + Eigen::Vector3d(0.0, 10.0, 0.0)); // Move East
+    waypoints_.emplace_back(initial_position_ + Eigen::Vector3d(10.0, 10.0, 0.0)); // Move North
+    waypoints_.emplace_back(initial_position_ + Eigen::Vector3d(10.0, 0.0, 0.0)); // Move West
+    waypoints_.emplace_back(initial_position_); // Move South
   }
 
   void control_loop()
@@ -74,15 +85,74 @@ private:
       return;
     }
 
-    if (turning_)
+    switch (current_state_)
     {
-      perform_turn();
+    case State::INITIAL_YAW_CORRECTION:
+      correct_initial_yaw();
+      break;
+    case State::MOVING_FORWARD:
+      move_forward();
+      break;
+    case State::TURNING:
+      turn();
+      break;
+    case State::STOP:
+      stop();
+      break;
+    }
+  }
+
+  void correct_initial_yaw()
+  {
+    double target_yaw;
+    switch (current_waypoint_index_)
+    {
+    case 0:
+      target_yaw = 90.0; // East
+      break;
+    case 1:
+      target_yaw = 0.0; // North
+      break;
+    case 2:
+      target_yaw = -90.0; // West
+      break;
+    case 3:
+      target_yaw = -180.0; // South
+      break;
+    default:
+      target_yaw = 0.0;
+      break;
+    }
+
+    double yaw_error = shortest_angular_distance(current_yaw_, target_yaw);
+
+    yaw_integral_ += yaw_error;
+    double yaw_derivative = yaw_error - yaw_previous_error_;
+    yaw_previous_error_ = yaw_error;
+
+    double yaw_control_input = yaw_kp_ * yaw_error + yaw_ki_ * yaw_integral_ + yaw_kd_ * yaw_derivative;
+
+    if (std::abs(yaw_error) < 5.0) // Close enough to target yaw
+    {
+      bow_port_thrust_publisher_->publish(create_thrust_msg(0.0));
+      bow_star_thrust_publisher_->publish(create_thrust_msg(0.0));
+      RCLCPP_INFO(this->get_logger(), "Yaw correction complete. Moving to forward state.");
+      current_state_ = State::MOVING_FORWARD;
       return;
     }
 
+    // Apply thrust for turning
+    bow_port_thrust_publisher_->publish(create_thrust_msg(yaw_control_input));
+    bow_star_thrust_publisher_->publish(create_thrust_msg(-yaw_control_input));
+    RCLCPP_INFO(this->get_logger(), "Correcting yaw: [current: %f, target: %f, control input: %f]", current_yaw_, target_yaw, yaw_control_input);
+  }
+
+  void move_forward()
+  {
     if (current_waypoint_index_ >= waypoints_.size())
     {
       RCLCPP_INFO(this->get_logger(), "Completed the square path.");
+      current_state_ = State::STOP;
       return;
     }
 
@@ -105,8 +175,7 @@ private:
     {
       stern_thrust_msg.data = 0.0;
       RCLCPP_INFO(this->get_logger(), "Reached waypoint %d. Stopping thrusters and preparing to turn.", current_waypoint_index_);
-      turning_ = true;
-      turn_start_yaw_ = get_yaw_from_orientation(imu_orientation_);
+      current_state_ = State::TURNING;
       return;
     }
 
@@ -115,57 +184,54 @@ private:
     stern_star1_thrust_publisher_->publish(stern_thrust_msg);
     stern_star2_thrust_publisher_->publish(stern_thrust_msg);
 
-    RCLCPP_INFO(this->get_logger(), "Publishing thrust command: [stern: %f]", stern_thrust_msg.data);
+    RCLCPP_INFO(this->get_logger(), "Moving forward: [stern thrust: %f]", stern_thrust_msg.data);
   }
 
-  void perform_turn()
+  void turn()
   {
-    double current_yaw = get_yaw_from_orientation(imu_orientation_);
-    double target_yaw = turn_start_yaw_ + M_PI_2; // Target 90 degrees turn
-    double yaw_error = shortest_angular_distance(current_yaw, target_yaw);
+    // Reset PID integrals for the next phase
+    integral_ = Eigen::Vector3d::Zero();
+    previous_error_ = Eigen::Vector3d::Zero();
 
-    std_msgs::msg::Float64 bow_port_thrust_msg;
-    std_msgs::msg::Float64 bow_star_thrust_msg;
-
-    if (std::abs(yaw_error) < 0.1) // Close enough to 90 degrees turn
+    current_waypoint_index_++;
+    if (current_waypoint_index_ >= waypoints_.size())
     {
-      bow_port_thrust_msg.data = 0.0;
-      bow_star_thrust_msg.data = 0.0;
-      bow_port_thrust_publisher_->publish(bow_port_thrust_msg);
-      bow_star_thrust_publisher_->publish(bow_star_thrust_msg);
-      RCLCPP_INFO(this->get_logger(), "Completed turn. Proceeding to next waypoint.");
-      current_waypoint_index_++;
-      turning_ = false;
-      return;
+      current_state_ = State::STOP;
     }
-
-    // Apply thrust for turning
-    bow_port_thrust_msg.data = 0.5;
-    bow_star_thrust_msg.data = -0.5;
-    bow_port_thrust_publisher_->publish(bow_port_thrust_msg);
-    bow_star_thrust_publisher_->publish(bow_star_thrust_msg);
-    RCLCPP_INFO(this->get_logger(), "Turning: [bow port: %f, bow star: %f]", bow_port_thrust_msg.data, bow_star_thrust_msg.data);
+    else
+    {
+      current_state_ = State::INITIAL_YAW_CORRECTION;
+    }
   }
 
-  double get_yaw_from_orientation(const geometry_msgs::msg::Quaternion &q)
+  void stop()
   {
-    tf2::Quaternion tf_q(q.x, q.y, q.z, q.w);
-    tf2::Matrix3x3 m(tf_q);
-    double roll, pitch, yaw;
-    m.getRPY(roll, pitch, yaw);
-    return yaw;
+    bow_port_thrust_publisher_->publish(create_thrust_msg(0.0));
+    bow_star_thrust_publisher_->publish(create_thrust_msg(0.0));
+    stern_port1_thrust_publisher_->publish(create_thrust_msg(0.0));
+    stern_port2_thrust_publisher_->publish(create_thrust_msg(0.0));
+    stern_star1_thrust_publisher_->publish(create_thrust_msg(0.0));
+    stern_star2_thrust_publisher_->publish(create_thrust_msg(0.0));
+    RCLCPP_INFO(this->get_logger(), "Stopping all thrusters.");
   }
 
   double shortest_angular_distance(double from, double to)
   {
     double delta = to - from;
-    while (delta > M_PI) delta -= 2.0 * M_PI;
-    while (delta < -M_PI) delta += 2.0 * M_PI;
+    while (delta > 180.0) delta -= 360.0;
+    while (delta < -180.0) delta += 360.0;
     return delta;
   }
 
+  std_msgs::msg::Float64 create_thrust_msg(double thrust)
+  {
+    std_msgs::msg::Float64 msg;
+    msg.data = thrust;
+    return msg;
+  }
+
   rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr ned_subscription_;
-  rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_subscription_;
+  rclcpp::Subscription<geometry_msgs::msg::Vector3Stamped>::SharedPtr yaw_subscription_;
   rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr stern_port1_thrust_publisher_;
   rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr stern_port2_thrust_publisher_;
   rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr stern_star1_thrust_publisher_;
@@ -174,19 +240,23 @@ private:
   rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr bow_star_thrust_publisher_;
   rclcpp::TimerBase::SharedPtr control_timer_;
 
+  State current_state_;
   Eigen::Vector3d current_position_;
   Eigen::Vector3d initial_position_;
   std::vector<Eigen::Vector3d> waypoints_;
   int current_waypoint_index_;
   bool initial_position_set_;
-  bool turning_;
-  geometry_msgs::msg::Quaternion imu_orientation_;
-  double turn_start_yaw_;
+  double current_yaw_;
   double kp_;
   double ki_;
   double kd_;
+  double yaw_kp_;
+  double yaw_ki_;
+  double yaw_kd_;
   Eigen::Vector3d previous_error_;
   Eigen::Vector3d integral_;
+  double yaw_previous_error_;
+  double yaw_integral_;
 };
 
 int main(int argc, char **argv)

@@ -1,0 +1,27 @@
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:[m[K In constructor ‘[01m[KPIDControllerNode::PIDControllerNode()[m[K’:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:259:10:[m[K [01;35m[Kwarning: [m[K‘[01m[KPIDControllerNode::yaw_integral_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  259 |   double [01;35m[Kyaw_integral_[m[K;
+      |          [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:248:8:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool PIDControllerNode::initial_position_set_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  248 |   bool [01;35m[Kinitial_position_set_[m[K;
+      |        [01;35m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:20:3:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   20 |   [01;35m[KPIDControllerNode[m[K()
+      |   [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:248:8:[m[K [01;35m[Kwarning: [m[K‘[01m[KPIDControllerNode::initial_position_set_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  248 |   bool [01;35m[Kinitial_position_set_[m[K;
+      |        [01;35m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:244:19:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KEigen::Vector3d PIDControllerNode::current_position_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  244 |   Eigen::Vector3d [01;35m[Kcurrent_position_[m[K;
+      |                   [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:20:3:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   20 |   [01;35m[KPIDControllerNode[m[K()
+      |   [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:[m[K In member function ‘[01m[Kvoid PIDControllerNode::move_forward()[m[K’:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:152:33:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  152 |     if ([01;35m[Kcurrent_waypoint_index_ >= waypoints_.size()[m[K)
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:[m[K In member function ‘[01m[Kvoid PIDControllerNode::turn()[m[K’:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_navigation_pkg/src/pid_controller_node.cpp:197:33:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  197 |     if ([01;35m[Kcurrent_waypoint_index_ >= waypoints_.size()[m[K)
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K

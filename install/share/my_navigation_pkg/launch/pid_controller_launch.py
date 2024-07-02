@@ -12,8 +12,8 @@ def generate_launch_description():
         ),
         Node(
             package='my_navigation_pkg',
-            executable='pid_controller_node',
-            name='pid_controller_node',
+            executable='goal_pose_listener',
+            name='goal_pose_listener',
             output='screen',
             parameters=[{'use_sim_time': True}]
         )
