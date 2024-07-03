@@ -24,17 +24,11 @@ include_directories(config)
 add_executable(gps_to_ned_node src/gps_to_ned_node.cpp)
 ament_target_dependencies(gps_to_ned_node rclcpp sensor_msgs tf2_ros tf2_geometry_msgs GeographicLib)
 
-add_executable(pid_controller_node src/pid_controller_node.cpp)
-ament_target_dependencies(pid_controller_node rclcpp geometry_msgs sensor_msgs std_msgs tf2 tf2_ros tf2_geometry_msgs Eigen3)
-
 add_executable(goal_pose_listener src/goal_pose_listener.cpp)
 ament_target_dependencies(goal_pose_listener rclcpp geometry_msgs std_msgs tf2 tf2_geometry_msgs)
 
 add_executable(goal_pose_broadcaster src/goal_pose_broadcaster.cpp)
 ament_target_dependencies(goal_pose_broadcaster rclcpp geometry_msgs std_msgs tf2 tf2_geometry_msgs)
-
-add_executable(goal_pose_controller src/goal_pose_controller.cpp)
-ament_target_dependencies(goal_pose_controller rclcpp geometry_msgs sensor_msgs std_msgs tf2 tf2_ros tf2_geometry_msgs Eigen3)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -50,10 +44,8 @@ endif()
 
 install(TARGETS
   gps_to_ned_node
-  pid_controller_node
   goal_pose_listener
   goal_pose_broadcaster
-  goal_pose_controller
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY include/

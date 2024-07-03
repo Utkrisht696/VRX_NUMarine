@@ -1,2 +1,0 @@
-Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg -- -j8 -l8
-Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_navigation_pkg -- -j8 -l8

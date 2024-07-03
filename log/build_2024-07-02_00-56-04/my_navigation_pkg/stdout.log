@@ -1,9 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target goal_pose_broadcaster[0m
-[35m[1mConsolidate compiler generated dependencies of target goal_pose_listener[0m
-[35m[1mConsolidate compiler generated dependencies of target pid_controller_node[0m
-[ 20%] Built target goal_pose_broadcaster
-[ 40%] Built target pid_controller_node
-[ 60%] Built target goal_pose_listener
-[ 80%] Built target gps_to_ned_node
-[35m[1mConsolidate compiler generated dependencies of target goal_pose_controller[0m
-[ 90%] [32mBuilding CXX object CMakeFiles/goal_pose_controller.dir/src/goal_pose_controller.cpp.o[0m

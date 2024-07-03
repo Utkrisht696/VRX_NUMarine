@@ -1,1 +1,0 @@
-Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo -- -j8 -l8
