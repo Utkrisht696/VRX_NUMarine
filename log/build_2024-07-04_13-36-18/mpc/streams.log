@@ -1,0 +1,31 @@
+[0.402s] Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/mpc': PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/prefix_override:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../../build/mpc build --build-base /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build install --record /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/install.log --single-version-externally-managed
+[0.540s] running egg_info
+[0.540s] creating ../../../../build/mpc/mpc.egg-info
+[0.540s] writing ../../../../build/mpc/mpc.egg-info/PKG-INFO
+[0.540s] writing dependency_links to ../../../../build/mpc/mpc.egg-info/dependency_links.txt
+[0.540s] writing entry points to ../../../../build/mpc/mpc.egg-info/entry_points.txt
+[0.540s] writing requirements to ../../../../build/mpc/mpc.egg-info/requires.txt
+[0.541s] writing top-level names to ../../../../build/mpc/mpc.egg-info/top_level.txt
+[0.541s] writing manifest file '../../../../build/mpc/mpc.egg-info/SOURCES.txt'
+[0.542s] reading manifest file '../../../../build/mpc/mpc.egg-info/SOURCES.txt'
+[0.543s] writing manifest file '../../../../build/mpc/mpc.egg-info/SOURCES.txt'
+[0.543s] running build
+[0.544s] running build_py
+[0.544s] creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build
+[0.544s] creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build/lib
+[0.544s] creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build/lib/mpc
+[0.544s] copying mpc/__init__.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build/lib/mpc
+[0.544s] copying mpc/control_node.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build/lib/mpc
+[0.544s] running install
+[0.544s] running install_lib
+[0.544s] creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc
+[0.544s] copying /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build/lib/mpc/__init__.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc
+[0.544s] copying /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build/lib/mpc/control_node.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc
+[0.544s] byte-compiling /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc/__init__.py to __init__.cpython-310.pyc
+[0.545s] byte-compiling /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc/control_node.py to control_node.cpython-310.pyc
+[0.545s] running install_egg_info
+[0.546s] Copying ../../../../build/mpc/mpc.egg-info to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc-0.0.0-py3.10.egg-info
+[0.546s] running install_scripts
+[0.558s] Installing control_node script to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/mpc
+[0.558s] writing list of installed files to '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/install.log'
+[0.572s] Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/mpc' returned '0': PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/prefix_override:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../../build/mpc build --build-base /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/build install --record /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/install.log --single-version-externally-managed
