@@ -1,0 +1,20 @@
+-- Install configuration: ""
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/config
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/config/dual_ekf_navsat_params.yaml
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/launch
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/launch/localization_launch.py
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/gps_odom_pkg
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/gps_odom_pkg
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/environment/ament_prefix_path.sh
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/environment/ament_prefix_path.dsv
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/environment/path.sh
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/environment/path.dsv
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/local_setup.bash
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/local_setup.sh
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/local_setup.zsh
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/local_setup.dsv
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/package.dsv
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/gps_odom_pkg
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/cmake/gps_odom_pkgConfig.cmake
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/cmake/gps_odom_pkgConfig-version.cmake
+-- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/gps_odom_pkg/package.xml

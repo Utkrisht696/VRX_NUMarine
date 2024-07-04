@@ -1,0 +1,9 @@
+[91mXML parsing error: mismatched tag: line 161, column 2[0m
+when processing file: urdf/wamv_base.urdf.xacro
+
+Check that:
+ - Your XML is well-formed
+ - You have the xacro xmlns declaration: xmlns:xacro="http://www.ros.org/wiki/xacro"
+gmake[2]: *** [CMakeFiles/wamv_description__xacro_auto_generate.dir/build.make:73: urdf/wamv_base.urdf] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/wamv_description__xacro_auto_generate.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,29 @@
+[  4%] Built target ScoringPlugin
+[  8%] Built target Waves
+[  8%] Built target ament_cmake_python_copy_vrx_gz
+[ 27%] Built target StationkeepingScoringPlugin
+[ 27%] Built target PolyhedraBuoyancyDrag
+[ 27%] Built target AcousticPingerPlugin
+[ 33%] Built target AcousticTrackingScoringPlugin
+[ 39%] Built target WayfindingScoringPlugin
+[ 43%] Built target LightBuoyPlugin
+[ 47%] Built target BallShooterPlugin
+[ 54%] Built target AcousticPerceptionScoringPlugin
+[ 58%] Built target NavigationScoringPlugin
+[ 62%] Built target Surface
+[ 66%] Built target GymkhanaScoringPlugin
+[ 70%] Built target PerceptionScoringPlugin
+[ 75%] Built target PlacardPlugin
+[ 79%] Built target SimpleHydrodynamics
+[ 83%] Built target PublisherPlugin
+[ 87%] Built target ScanDockScoringPlugin
+[ 91%] Built target USVWind
+[ 95%] Built target WaveVisual
+[100%] Built target WildlifeScoringPlugin
+running egg_info
+writing vrx_gz.egg-info/PKG-INFO
+writing dependency_links to vrx_gz.egg-info/dependency_links.txt
+writing top-level names to vrx_gz.egg-info/top_level.txt
+reading manifest file 'vrx_gz.egg-info/SOURCES.txt'
+writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_vrx_gz_egg
