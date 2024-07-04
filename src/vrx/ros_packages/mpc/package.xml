@@ -13,7 +13,7 @@
   <depend>sensor_msgs</depend>
   <depend>numpy</depend>
   <depend>scipy</depend>
-  <depend>some_package</depend> <!-- Replace with actual package name containing ControlState, DynamicsInput, and Trajectory -->
+  
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

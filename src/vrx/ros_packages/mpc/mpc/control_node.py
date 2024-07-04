@@ -3,9 +3,9 @@ from rclpy.node import Node
 import numpy as np
 from std_msgs.msg import Float64
 from std_msgs.msg import Float64MultiArray
-from some_package.srv import Trajectory  # Replace with actual service types
-from scipy.optimize import least_squares
 from sensor_msgs.msg import NavSatFix, Imu
+#from some_package.srv import Trajectory  # Replace with actual service types
+from scipy.optimize import least_squares
 import math
 
 # Kinematics helper function for skew-symmetric matrix
@@ -31,20 +31,25 @@ SrRBb = skew(rRBb)
 SrFLBb = skew(rFLBb)
 SrFRBb = skew(rFRBb)
 
-Ba = np.array([
+Ba_top = np.array([
     [1, 1, 0, 0],
     [0, 0, -1, 1],
-    [0, 0, 0, 0],
-    SrLBb @ np.array([1, 0, 0]),
-    SrRBb @ np.array([1, 0, 0]),
-    SrFRBb @ np.array([1, 0, 0]),
-    SrFLBb @ np.array([1, 0, 0])
-]).T
+    [0, 0, 0, 0]
+])
+
+Ba_bottom = np.hstack([
+    SrLBb @ np.array([[1, 0, 0]]).T,
+    SrRBb @ np.array([[1, 0, 0]]).T,
+    SrFRBb @ np.array([[1, 0, 0]]).T,
+    SrFLBb @ np.array([[1, 0, 0]]).T
+])
+
+Ba = np.vstack([Ba_top, Ba_bottom, np.zeros((6, 4))])
 
 def dynamics(t, x, u):
-    q3_bar = u[2]
-    q4_bar = u[3]
-    q5_bar = u[4]
+    q3_bar = 0
+    q4_bar = 0
+    q5_bar = 0
 
     f = np.array([
         - (8*x[0])/25 - np.sin(x[10])*(24525*q3_bar - 24525*x[8]) - x[1]*(x[1]/1975 - (2*x[5])/395) - x[2]*(x[2]/4475 + (2*x[4])/895),
@@ -100,7 +105,7 @@ class ControlNode(Node):
 
         self.latest_gps = None
         self.latest_imu = None
-        self.control_state = None
+        self.current_state = None  # Store the current state directly
 
     def thrust_callback(self, msg, index):
         self.thrust_values[index] = msg.data
@@ -158,12 +163,8 @@ class ControlNode(Node):
         ])
 
         # Combine into a single state vector
-        x = np.concatenate((momentum, displacement))
-
-        # Update the control state
-        self.control_state = ControlState()
-        self.control_state.state = x.tolist()
-        self.get_logger().info(f'State vector updated: {x}')
+        self.current_state = np.concatenate((momentum, displacement))
+        self.get_logger().info(f'State vector updated: {self.current_state}')
 
     def control_error(self, U):
         dt_ctrl = 5  # Control horizon time (s)
@@ -182,10 +183,10 @@ class ControlNode(Node):
 
         # Initial values from ROS topics
         t0 = self.get_clock().now().seconds_nanoseconds()[0]  # Current time
-        if self.control_state is None:
+        if self.current_state is None:
             return np.zeros((3 + len(U)))  # No control state available yet
 
-        x0 = self.control_state.state  # Current state
+        x0 = self.current_state  # Current state
         u0 = self.combined_thrust_values  # Current input from combined thrust values
 
         dt = dt_ctrl / nSubsteps
@@ -295,7 +296,7 @@ class ControlNode(Node):
 
             # Create the message
             msg = Float64MultiArray()
-            msg.data = U_opt
+            msg.data = list(map(float, U_opt))  # Ensure the data is a list of floats
 
             # Publish the message
             self.publisher_.publish(msg)

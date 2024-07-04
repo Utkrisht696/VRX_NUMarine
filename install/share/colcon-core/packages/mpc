@@ -1,1 +1,1 @@
-numpy:rclpy:scipy:sensor_msgs:some_package:std_msgs
+numpy:rclpy:scipy:sensor_msgs:std_msgs
