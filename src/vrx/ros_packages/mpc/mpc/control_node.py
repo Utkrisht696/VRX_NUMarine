@@ -8,10 +8,61 @@ from scipy.optimize import least_squares
 from sensor_msgs.msg import NavSatFix, Imu
 import math
 
-# Dynamics function (to be implemented)
+# Kinematics helper function for skew-symmetric matrix
+def skew(vector):
+    return np.array([
+        [0, -vector[2], vector[1]],
+        [vector[2], 0, -vector[0]],
+        [-vector[1], vector[0], 0]
+    ])
+
+# Initialize constants
+l = -1.9  # Longitudinal distance from B to wheels [m]
+d = 1.63  # Distance between wheels [m]
+thruster_depth = -0.05
+
+rLBb = np.array([l, -d/2, thruster_depth])
+rRBb = np.array([l, d/2, thruster_depth])
+rFLBb = np.array([-l, -d/2, thruster_depth])
+rFRBb = np.array([-l, d/2, thruster_depth])
+
+SrLBb = skew(rLBb)
+SrRBb = skew(rRBb)
+SrFLBb = skew(rFLBb)
+SrFRBb = skew(rFRBb)
+
+Ba = np.array([
+    [1, 1, 0, 0],
+    [0, 0, -1, 1],
+    [0, 0, 0, 0],
+    SrLBb @ np.array([1, 0, 0]),
+    SrRBb @ np.array([1, 0, 0]),
+    SrFRBb @ np.array([1, 0, 0]),
+    SrFLBb @ np.array([1, 0, 0])
+]).T
+
 def dynamics(t, x, u):
-    # Implement the dynamics function
-    pass
+    q3_bar = u[2]
+    q4_bar = u[3]
+    q5_bar = u[4]
+
+    f = np.array([
+        - (8*x[0])/25 - np.sin(x[10])*(24525*q3_bar - 24525*x[8]) - x[1]*(x[1]/1975 - (2*x[5])/395) - x[2]*(x[2]/4475 + (2*x[4])/895),
+        (12*x[5])/79 - (96*x[1])/79 + (x[2]*x[3])/400 + x[0]*(x[1]/1975 - (2*x[5])/395) + np.cos(x[10])*np.sin(x[9])*(24525*q3_bar - 24525*x[8]),
+        x[0]*(x[2]/4475 + (2*x[4])/895) - (40*x[4])/179 - (x[1]*x[3])/400 - (720*x[2])/179 + np.cos(x[9])*np.cos(x[10])*(24525*q3_bar - 24525*x[8]),
+        450*q4_bar - (5*x[3])/2 - 450*x[9] - x[4]*(x[1]/1975 - (2*x[5])/395) - x[2]*((8*x[1])/1975 - x[5]/1975) - x[5]*(x[2]/4475 + (2*x[4])/895) + x[1]*((18*x[2])/4475 + x[4]/4475),
+        np.cos(x[9])*(400*q5_bar - 400*x[10]) - (800*x[4])/179 - (80*x[2])/179 + (x[0]*x[2])/250 + (x[3]*x[5])/400 + x[3]*(x[1]/1975 - (2*x[5])/395) - x[0]*((18*x[2])/4475 + x[4]/4475) + np.sin(x[9])*np.tan(x[10])*(450*q4_bar - 450*x[9]),
+        (8*x[1])/79 - (80*x[5])/79 - (x[0]*x[1])/250 - (x[3]*x[4])/400 - np.sin(x[9])*(400*q5_bar - 400*x[10]) + x[0]*((8*x[1])/1975 - x[5]/1975) + x[3]*(x[2]/4475 + (2*x[4])/895) + np.cos(x[9])*np.tan(x[10])*(450*q4_bar - 450*x[9]),
+        ((18*x[2])/4475 + x[4]/4475)*(np.sin(x[9])*np.sin(x[11]) + np.cos(x[9])*np.cos(x[11])*np.sin(x[10])) - ((8*x[1])/1975 - x[5]/1975)*(np.cos(x[9])*np.sin(x[11]) - np.cos(x[11])*np.sin(x[9])*np.sin(x[10])) + (x[0]*np.cos(x[10])*np.cos(x[11]))/250,
+        ((8*x[1])/1975 - x[5]/1975)*(np.cos(x[9])*np.cos(x[11]) + np.sin(x[9])*np.sin(x[10])*np.sin(x[11])) - ((18*x[2])/4475 + x[4]/4475)*(np.cos(x[11])*np.sin(x[9]) - np.cos(x[9])*np.sin(x[10])*np.sin(x[11])) + (x[0]*np.cos(x[10])*np.sin(x[11]))/250,
+        np.cos(x[9])*np.cos(x[10])*((18*x[2])/4475 + x[4]/4475) - (x[0]*np.sin(x[10]))/250 + np.cos(x[10])*np.sin(x[9])*((8*x[1])/1975 - x[5]/1975),
+        x[3]/400 - np.cos(x[9])*np.tan(x[10])*(x[1]/1975 - (2*x[5])/395) + np.sin(x[9])*np.tan(x[10])*(x[2]/4475 + (2*x[4])/895),
+        np.cos(x[9])*(x[2]/4475 + (2*x[4])/895) + np.sin(x[9])*(x[1]/1975 - (2*x[5])/395),
+        (np.sin(x[9])*(x[2]/4475 + (2*x[4])/895))/np.cos(x[10]) - (np.cos(x[9])*(x[1]/1975 - (2*x[5])/395))/np.cos(x[10])
+    ])
+
+    G = Ba @ u
+    return f + G
 
 class ControlNode(Node):
     def __init__(self):
@@ -43,6 +94,7 @@ class ControlNode(Node):
             '/wamv/thrusters/stern_star2/thrust'
         ]
         self.thrust_values = [0.0] * len(self.thrust_topics)
+        self.combined_thrust_values = [0.0] * 4  # Combined thrust values for bow port, bow star, stern port, stern star
         for i, topic in enumerate(self.thrust_topics):
             self.create_subscription(Float64, topic, lambda msg, i=i: self.thrust_callback(msg, i), 10)
 
@@ -52,6 +104,13 @@ class ControlNode(Node):
 
     def thrust_callback(self, msg, index):
         self.thrust_values[index] = msg.data
+
+        # Combine stern port and stern star thrust values
+        self.combined_thrust_values[0] = self.thrust_values[0]  # Bow port thrust
+        self.combined_thrust_values[1] = self.thrust_values[1]  # Bow star thrust
+        self.combined_thrust_values[2] = self.thrust_values[2] + self.thrust_values[3]  # Combined stern port thrust
+        self.combined_thrust_values[3] = self.thrust_values[4] + self.thrust_values[5]  # Combined stern star thrust
+
         self.update_control_state()
 
     def gps_callback(self, msg):
@@ -127,7 +186,7 @@ class ControlNode(Node):
             return np.zeros((3 + len(U)))  # No control state available yet
 
         x0 = self.control_state.state  # Current state
-        u0 = self.thrust_values  # Current input from thrust values
+        u0 = self.combined_thrust_values  # Current input from combined thrust values
 
         dt = dt_ctrl / nSubsteps
         nx = len(x0)
