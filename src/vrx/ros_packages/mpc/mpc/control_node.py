@@ -4,7 +4,7 @@ import numpy as np
 from std_msgs.msg import Float64
 from std_msgs.msg import Float64MultiArray
 from sensor_msgs.msg import NavSatFix, Imu
-#from some_package.srv import Trajectory  # Replace with actual service types
+from guidance.srv import Trajectory  # Replace with actual service types
 from scipy.optimize import least_squares
 import math
 
@@ -237,37 +237,42 @@ class ControlNode(Node):
             x = x_pred[:, k + 1]
             u = u_pred[:, k]
 
-            client = self.create_client(Trajectory, '/trajectory')
-            client.wait_for_service()
+            # Create the client once before the loop
+            if k == 0:
+                client = self.create_client(Trajectory, 'trajectory')
+                client.wait_for_service()
+
             request = Trajectory.Request()
             request.time = t
 
             future = client.call_async(request)
             rclpy.spin_until_future_complete(self, future)
+
             if future.result() is not None:
                 X = future.result().trajectory
+                rPNn = np.array([X[0][0], X[1][0], 0])
+                vPNn = np.array([X[0][1], X[1][1], 0])
+
+                if np.linalg.norm(vPNn) < 1e-10:
+                    psistar = x[12]
+                    vPNn_norm = 0
+                else:
+                    psistar = np.arctan2(vPNn[1], vPNn[0])
+                    psistar = psistar + 2 * np.pi * round((x[12] - psistar) / (2 * np.pi))
+                    vPNn_norm = 1
+
+                rBNn = np.array([x[7], x[8], x[12]])
+                rCNn = rBNn  # Boat CoG (C) coinciding with boat reference point (B)
+
+                e[(k * (3 + nu)):(k + 1) * (3 + nu)] = np.concatenate([
+                    sqrtqr * (rCNn[:2] - rPNn[:2]),
+                    [sqrtqpsi * (rCNn[2] - psistar)],
+                    sqrtru * u
+                ])
             else:
                 self.get_logger().error("Service call failed")
+                break  # Optionally handle the failure case (e.g., exit loop or retry)
 
-            rPNn = np.array([X[0, 0], X[1, 0], 0])
-            vPNn = np.array([X[0, 1], X[1, 1], 0])
-
-            if np.linalg.norm(vPNn) < 1e-10:
-                psistar = x[12]
-                vPNn_norm = 0
-            else:
-                psistar = np.arctan2(vPNn[1], vPNn[0])
-                psistar = psistar + 2 * np.pi * round((x[12] - psistar) / (2 * np.pi))
-                vPNn_norm = 1
-
-            rBNn = np.array([x[7], x[8], x[12]])
-            rCNn = rBNn  # Boat CoG (C) coinciding with boat reference point (B)
-
-            e[(k * (3 + nu)):(k + 1) * (3 + nu)] = np.concatenate([
-                sqrtqr * (rCNn[:2] - rPNn[:2]),
-                [sqrtqpsi * (rCNn[2] - psistar)],
-                sqrtru * u
-            ])
 
         return e  # Return the error vector for least_squares
 

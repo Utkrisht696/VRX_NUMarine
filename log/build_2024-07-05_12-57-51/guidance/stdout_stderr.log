@@ -1,0 +1,37 @@
+running egg_info
+creating ../../../../build/guidance/guidance.egg-info
+writing ../../../../build/guidance/guidance.egg-info/PKG-INFO
+writing dependency_links to ../../../../build/guidance/guidance.egg-info/dependency_links.txt
+writing entry points to ../../../../build/guidance/guidance.egg-info/entry_points.txt
+writing requirements to ../../../../build/guidance/guidance.egg-info/requires.txt
+writing top-level names to ../../../../build/guidance/guidance.egg-info/top_level.txt
+writing manifest file '../../../../build/guidance/guidance.egg-info/SOURCES.txt'
+reading manifest file '../../../../build/guidance/guidance.egg-info/SOURCES.txt'
+writing manifest file '../../../../build/guidance/guidance.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build/lib
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build/lib/guidance
+copying guidance/__init__.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build/lib/guidance
+copying guidance/guidance_service.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build/lib/guidance
+running install
+running install_lib
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance
+copying /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build/lib/guidance/__init__.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance
+copying /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build/lib/guidance/guidance_service.py -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance
+byte-compiling /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance/guidance_service.py to guidance_service.cpython-310.pyc
+running install_data
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/ament_index
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages
+copying resource/guidance -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages
+copying package.xml -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance
+creating /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance/srv
+copying srv/Trajectory.srv -> /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance/srv
+running install_egg_info
+Copying ../../../../build/guidance/guidance.egg-info to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance-0.0.0-py3.10.egg-info
+running install_scripts
+Installing guidance_service script to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/guidance
+writing list of installed files to '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/install.log'

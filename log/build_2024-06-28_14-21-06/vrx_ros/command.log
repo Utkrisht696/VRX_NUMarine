@@ -1,4 +1,0 @@
-Invoking command in '/home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
-Invoked command in '/home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
-Invoking command in '/home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros
-Invoked command in '/home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/robotx/Documents/GitHub/VRX_NUMarine/build/vrx_ros

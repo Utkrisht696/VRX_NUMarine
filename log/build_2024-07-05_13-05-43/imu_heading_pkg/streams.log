@@ -1,0 +1,48 @@
+[0.140s] Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/imu_heading_pkg -DCMAKE_INSTALL_PREFIX=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install
+[0.307s] -- The C compiler identification is GNU 11.4.0
+[0.307s] -- The CXX compiler identification is GNU 11.4.0
+[0.307s] -- Detecting C compiler ABI info
+[0.308s] -- Detecting C compiler ABI info - done
+[0.308s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.308s] -- Detecting C compile features
+[0.308s] -- Detecting C compile features - done
+[0.308s] -- Detecting CXX compiler ABI info
+[0.308s] -- Detecting CXX compiler ABI info - done
+[0.308s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.308s] -- Detecting CXX compile features
+[0.308s] -- Detecting CXX compile features - done
+[0.308s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.422s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.474s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[0.504s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.506s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.511s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.519s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.530s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.594s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.597s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.678s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.704s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.735s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.742s] -- Looking for pthread.h
+[0.781s] -- Looking for pthread.h - found
+[0.782s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.821s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.821s] -- Found Threads: TRUE  
+[0.943s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.015s] -- Found tf2_ros: 0.25.7 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.261s] -- Found tf2_geometry_msgs: 0.25.7 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[1.269s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.270s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.270s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.275s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.317s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.318s] -- Configured cppcheck include dirs: /home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/imu_heading_pkg/include
+[1.318s] -- Configured cppcheck exclude dirs and/or files: 
+[1.318s] -- Added test 'lint_cmake' to check CMake code style
+[1.318s] -- Added test 'uncrustify' to check C / C++ code style
+[1.318s] -- Configured uncrustify additional arguments: 
+[1.318s] -- Added test 'xmllint' to check XML markup files
+[1.319s] -- Configuring done
+[1.326s] -- Generating done
+[1.327s] -- Build files have been written to: /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg

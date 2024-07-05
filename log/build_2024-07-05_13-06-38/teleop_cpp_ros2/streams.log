@@ -1,0 +1,4 @@
+[0.275s] Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j12 -l12
+[0.301s] [ 50%] [32mBuilding CXX object CMakeFiles/usv_teleop.dir/src/usv_teleop.cpp.o[0m
+[2.666s] [100%] [32m[1mLinking CXX executable usv_teleop[0m
+[2.779s] [100%] Built target usv_teleop
