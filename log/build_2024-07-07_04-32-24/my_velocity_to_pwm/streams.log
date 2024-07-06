@@ -1,0 +1,69 @@
+[0.043s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[0.163s] -- The C compiler identification is GNU 11.4.0
+[0.269s] -- The CXX compiler identification is GNU 11.4.0
+[0.282s] -- Detecting C compiler ABI info
+[0.410s] -- Detecting C compiler ABI info - done
+[0.427s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.428s] -- Detecting C compile features
+[0.429s] -- Detecting C compile features - done
+[0.435s] -- Detecting CXX compiler ABI info
+[0.592s] -- Detecting CXX compiler ABI info - done
+[0.611s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.611s] -- Detecting CXX compile features
+[0.612s] -- Detecting CXX compile features - done
+[0.617s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.925s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.106s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[1.185s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.195s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.212s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.244s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.287s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.443s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.445s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.627s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.682s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.776s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.794s] -- Looking for pthread.h
+[1.936s] -- Looking for pthread.h - found
+[1.936s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.078s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.080s] -- Found Threads: TRUE  
+[2.433s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.536s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.697s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.697s] -- Configured cppcheck include dirs: 
+[2.697s] -- Configured cppcheck exclude dirs and/or files: 
+[2.699s] -- Added test 'lint_cmake' to check CMake code style
+[2.701s] -- Added test 'uncrustify' to check C / C++ code style
+[2.701s] -- Configured uncrustify additional arguments: 
+[2.702s] -- Added test 'xmllint' to check XML markup files
+[2.704s] -- Configuring done
+[2.721s] -- Generating done
+[2.722s] -- Build files have been written to: /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm
+[2.744s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm -DCMAKE_INSTALL_PREFIX=/home/jain/Documents/GitHub/VRX_NUMarine/install
+[2.745s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm -- -j8 -l8
+[2.845s] [ 50%] [32mBuilding CXX object CMakeFiles/velocity_to_pwm_node.dir/src/velocity_to_pwm_node.cpp.o[0m
+[20.153s] [100%] [32m[1mLinking CXX executable velocity_to_pwm_node[0m
+[21.204s] [100%] Built target velocity_to_pwm_node
+[21.229s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm -- -j8 -l8
+[21.277s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm
+[21.294s] -- Install configuration: ""
+[21.295s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_velocity_to_pwm/velocity_to_pwm_node
+[21.305s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_velocity_to_pwm/velocity_to_pwm_node" to ""
+[21.305s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/my_velocity_to_pwm
+[21.306s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/my_velocity_to_pwm
+[21.308s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/ament_prefix_path.sh
+[21.308s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/ament_prefix_path.dsv
+[21.309s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/path.sh
+[21.309s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/path.dsv
+[21.310s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.bash
+[21.310s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.sh
+[21.311s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.zsh
+[21.312s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.dsv
+[21.312s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/package.dsv
+[21.313s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/my_velocity_to_pwm
+[21.313s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/cmake/my_velocity_to_pwmConfig.cmake
+[21.314s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/cmake/my_velocity_to_pwmConfig-version.cmake
+[21.315s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/package.xml
+[21.325s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm

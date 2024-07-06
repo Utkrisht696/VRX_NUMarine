@@ -3,7 +3,7 @@ ekf_filter_node_odom:
     frequency: 30.0
     two_d_mode: true
     print_diagnostics: true
-    debug: false
+    debug: true
     publish_tf: true
 
     map_frame: map
