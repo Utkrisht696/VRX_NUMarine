@@ -64,7 +64,7 @@ bt_navigator:
 
 controller_server:
   ros__parameters:
-    controller_frequency: 5.0
+    controller_frequency: 0.5
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.5
     min_theta_velocity_threshold: 0.001
@@ -140,7 +140,7 @@ local_costmap:
       global_frame: odom
       robot_base_frame: wamv/wamv/base_link
       rolling_window: true
-      width: 10
+      width: 100
       height: 100
       resolution: 0.05
       robot_radius: 1.5
@@ -269,16 +269,16 @@ waypoint_follower:
       enabled: True
       waypoint_pause_duration: 200
 
-velocity_smoother:
-  ros__parameters:
-    smoothing_frequency: 20.0
-    scale_velocities: False
-    feedback: "OPEN_LOOP"
-    max_velocity: [0.26, 0.0, 1.0]
-    min_velocity: [-0.26, 0.0, -1.0]
-    max_accel: [2.5, 0.0, 3.2]
-    max_decel: [-2.5, 0.0, -3.2]
-    odom_topic: "odom"
-    odom_duration: 0.1
-    deadband_velocity: [0.0, 0.0, 0.0]
-    velocity_timeout: 1.0
+# velocity_smoother:
+#   ros__parameters:
+#     smoothing_frequency: 20.0
+#     scale_velocities: False
+#     feedback: "OPEN_LOOP"
+#     max_velocity: [0.26, 0.0, 1.0]
+#     min_velocity: [-0.26, 0.0, -1.0]
+#     max_accel: [2.5, 0.0, 3.2]
+#     max_decel: [-2.5, 0.0, -3.2]
+#     odom_topic: "odom"
+#     odom_duration: 0.1
+#     deadband_velocity: [0.0, 0.0, 0.0]
+#     velocity_timeout: 1.0
