@@ -43,35 +43,11 @@ def generate_launch_description():
             output='screen',
             parameters=[rl_params_file],
             remappings=[
-                ('imu/data', '/wamv/sensors/imu/imu/data'),
-                ('gps/fix', '/wamv/sensors/gps/gps/fix'),
+                ('imu/data', '/Imu'),
+                ('gps/fix', '/Gps/fix'),
                 ('gps/filtered', 'gps/filtered'),
                 ('odometry/gps', 'odometry/gps'),
                 ('odometry/filtered', 'odometry/global'),
             ],
         ),
-        LogInfo(msg="Launching static_transform_publisher_base_link..."),
-        launch_ros.actions.Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='static_transform_publisher_base_link',
-            arguments=['--x', '0', '--y', '0', '--z', '0', '--roll', '0', '--pitch', '0', '--yaw', '0', '--frame-id', 'world', '--child-frame-id', 'wamv/wamv/base_link'],
-            output='screen'
-        ),
-        LogInfo(msg="Launching static_transform_publisher_imu..."),
-        launch_ros.actions.Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='static_transform_publisher_imu',
-            arguments=['--x', '0', '--y', '0', '--z', '1', '--roll', '0', '--pitch', '0', '--yaw', '0', '--frame-id', 'wamv/wamv/base_link', '--child-frame-id', 'wamv/sensors/imu/imu/data'],
-            output='screen'
-        ),
-        LogInfo(msg="Launching static_transform_publisher_gps..."),
-        launch_ros.actions.Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='static_transform_publisher_gps',
-            arguments=['--x', '0', '--y', '0', '--z', '2', '--roll', '0', '--pitch', '0', '--yaw', '0', '--frame-id', 'wamv/wamv/base_link', '--child-frame-id', 'wamv/sensors/gps/gps/fix'],
-            output='screen'
-        )
     ])
