@@ -1,0 +1,26 @@
+[0.079s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm -- -j8 -l8
+[0.235s] [35m[1mConsolidate compiler generated dependencies of target velocity_to_pwm_node[0m
+[0.304s] [ 50%] [32mBuilding CXX object CMakeFiles/velocity_to_pwm_node.dir/src/velocity_to_pwm_node.cpp.o[0m
+[19.940s] [100%] [32m[1mLinking CXX executable velocity_to_pwm_node[0m
+[20.926s] [100%] Built target velocity_to_pwm_node
+[20.942s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm -- -j8 -l8
+[21.000s] Invoking command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm
+[21.019s] -- Install configuration: ""
+[21.019s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_velocity_to_pwm/velocity_to_pwm_node
+[21.026s] -- Set runtime path of "/home/jain/Documents/GitHub/VRX_NUMarine/install/lib/my_velocity_to_pwm/velocity_to_pwm_node" to ""
+[21.027s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/my_velocity_to_pwm
+[21.027s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/my_velocity_to_pwm
+[21.027s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/ament_prefix_path.sh
+[21.027s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/ament_prefix_path.dsv
+[21.027s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/path.sh
+[21.028s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/environment/path.dsv
+[21.028s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.bash
+[21.028s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.sh
+[21.028s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.zsh
+[21.028s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/local_setup.dsv
+[21.028s] -- Installing: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/package.dsv
+[21.029s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/my_velocity_to_pwm
+[21.029s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/cmake/my_velocity_to_pwmConfig.cmake
+[21.029s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/cmake/my_velocity_to_pwmConfig-version.cmake
+[21.029s] -- Up-to-date: /home/jain/Documents/GitHub/VRX_NUMarine/install/share/my_velocity_to_pwm/package.xml
+[21.032s] Invoked command in '/home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jain/Documents/GitHub/VRX_NUMarine/build/my_velocity_to_pwm

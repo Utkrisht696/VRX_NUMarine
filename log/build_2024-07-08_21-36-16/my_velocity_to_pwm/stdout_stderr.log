@@ -1,0 +1,78 @@
+[35m[1mConsolidate compiler generated dependencies of target velocity_to_pwm_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/velocity_to_pwm_node.dir/src/velocity_to_pwm_node.cpp.o[0m
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:[m[K In constructor ‘[01m[KThrusterController::ThrusterController()[m[K’:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:16:61:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat64[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KFloat32[m[K’?
+   16 |     stern_port_pub_ = this->create_publisher<std_msgs::msg::[01;31m[KFloat64[m[K>("/wamv/thrusters/stern_port/thrust", 10);
+      |                                                             [01;31m[K^~~~~~~[m[K
+      |                                                             [32m[KFloat32[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:16:69:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KThrusterController::create_publisher<<expression error> >(const char [34], int)[m[K’
+   16 |     stern_port_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port/thrust", 10)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  195 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:16:69:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   16 |     stern_port_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port/thrust", 10)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:17:61:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat64[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KFloat32[m[K’?
+   17 |     stern_star_pub_ = this->create_publisher<std_msgs::msg::[01;31m[KFloat64[m[K>("/wamv/thrusters/stern_star/thrust", 10);
+      |                                                             [01;31m[K^~~~~~~[m[K
+      |                                                             [32m[KFloat32[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:17:69:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KThrusterController::create_publisher<<expression error> >(const char [34], int)[m[K’
+   17 |     stern_star_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_star/thrust", 10)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  195 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:17:69:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   17 |     stern_star_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_star/thrust", 10)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:18:59:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat64[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KFloat32[m[K’?
+   18 |     bow_port_pub_ = this->create_publisher<std_msgs::msg::[01;31m[KFloat64[m[K>("/wamv/thrusters/bow_port/thrust", 10);
+      |                                                           [01;31m[K^~~~~~~[m[K
+      |                                                           [32m[KFloat32[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:18:67:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KThrusterController::create_publisher<<expression error> >(const char [32], int)[m[K’
+   18 |     bow_port_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_port/thrust", 10)[m[K;
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  195 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:18:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   18 |     bow_port_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_port/thrust", 10)[m[K;
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:19:59:[m[K [01;31m[Kerror: [m[K‘[01m[KFloat64[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KFloat32[m[K’?
+   19 |     bow_star_pub_ = this->create_publisher<std_msgs::msg::[01;31m[KFloat64[m[K>("/wamv/thrusters/bow_star/thrust", 10);
+      |                                                           [01;31m[K^~~~~~~[m[K
+      |                                                           [32m[KFloat32[m[K
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:19:67:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KThrusterController::create_publisher<<expression error> >(const char [32], int)[m[K’
+   19 |     bow_star_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_star/thrust", 10)[m[K;
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  195 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:195:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jain/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/my_velocity_to_pwm/src/velocity_to_pwm_node.cpp:19:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 |     bow_star_pub_ = [01;31m[Kthis->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_star/thrust", 10)[m[K;
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/velocity_to_pwm_node.dir/build.make:76: CMakeFiles/velocity_to_pwm_node.dir/src/velocity_to_pwm_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/velocity_to_pwm_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
