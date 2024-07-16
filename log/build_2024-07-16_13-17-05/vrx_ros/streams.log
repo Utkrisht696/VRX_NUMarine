@@ -1,0 +1,93 @@
+[0.019s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/numarine/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros -DCMAKE_INSTALL_PREFIX=/home/numarine/Documents/GitHub/VRX_NUMarine/install
+[0.065s] -- The C compiler identification is GNU 11.4.0
+[0.114s] -- The CXX compiler identification is GNU 11.4.0
+[0.123s] -- Detecting C compiler ABI info
+[0.180s] -- Detecting C compiler ABI info - done
+[0.188s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.189s] -- Detecting C compile features
+[0.189s] -- Detecting C compile features - done
+[0.191s] -- Detecting CXX compiler ABI info
+[0.257s] -- Detecting CXX compiler ABI info - done
+[0.264s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.264s] -- Detecting CXX compile features
+[0.265s] -- Detecting CXX compile features - done
+[0.266s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.391s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.464s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.495s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.499s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.506s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.518s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.535s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.646s] -- Looking for gz-msgs9 -- found version 9.5.0
+[0.651s] -- Searching for dependencies of gz-msgs9
+[0.797s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[0.800s] -- Looking for gz-math7 -- found version 7.5.0
+[0.800s] -- Searching for dependencies of gz-math7
+[0.803s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.803s] -- Searching for dependencies of gz-utils2
+[0.810s] -- Checking for module 'tinyxml2'
+[0.823s] --   Found tinyxml2, version 9.0.0
+[0.856s] -- Looking for gz-transport12 -- found version 12.2.1
+[0.856s] -- Searching for dependencies of gz-transport12
+[0.893s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[0.898s] -- Checking for module 'libzmq >= 4'
+[0.911s] --   Found libzmq , version 4.3.4
+[0.942s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[0.947s] -- Checking for module 'uuid'
+[0.957s] --   Found uuid, version 2.37.2
+[0.983s] -- Found UUID: TRUE  
+[0.983s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.984s] -- Searching for dependencies of gz-utils2
+[0.984s] -- Searching for <gz-utils2> component [cli]
+[0.986s] -- Looking for gz-utils2-cli -- found version 2.2.0
+[0.986s] -- Searching for dependencies of gz-utils2-cli
+[0.987s] -- Looking for gz-msgs9 -- found version 9.5.0
+[0.989s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[1.043s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.046s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.132s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.156s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.199s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.207s] -- Found Threads: TRUE  
+[1.354s] -- Found ros_gz_interfaces: 0.244.11 (/opt/ros/humble/share/ros_gz_interfaces/cmake)
+[1.457s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.552s] -- Found tf2: 0.25.7 (/opt/ros/humble/share/tf2/cmake)
+[1.564s] -- Found tf2_msgs: 0.25.7 (/opt/ros/humble/share/tf2_msgs/cmake)
+[1.696s] -- Found tf2_ros: 0.25.7 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.893s] -- Configuring done
+[1.907s] -- Generating done
+[1.909s] -- Build files have been written to: /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros
+[1.921s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/numarine/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros -DCMAKE_INSTALL_PREFIX=/home/numarine/Documents/GitHub/VRX_NUMarine/install
+[1.923s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
+[1.966s] [ 50%] [32mBuilding CXX object CMakeFiles/optical_frame_publisher.dir/src/optical_frame_publisher.cc.o[0m
+[1.966s] [ 50%] [32mBuilding CXX object CMakeFiles/pose_tf_broadcaster.dir/src/pose_tf_broadcaster.cc.o[0m
+[8.851s] [ 75%] [32m[1mLinking CXX executable pose_tf_broadcaster[0m
+[9.209s] [ 75%] Built target pose_tf_broadcaster
+[11.524s] [100%] [32m[1mLinking CXX executable optical_frame_publisher[0m
+[11.968s] [100%] Built target optical_frame_publisher
+[11.976s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
+[11.999s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros
+[12.005s] -- Install configuration: ""
+[12.005s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/optical_frame_publisher
+[12.010s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/optical_frame_publisher" to ""
+[12.010s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/pose_tf_broadcaster
+[12.013s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/pose_tf_broadcaster" to ""
+[12.013s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/launch
+[12.013s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/launch/monitor_sim.py
+[12.013s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/vrx_ros
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/vrx_ros
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/ament_prefix_path.sh
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/ament_prefix_path.dsv
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/path.sh
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/path.dsv
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.bash
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.sh
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.zsh
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.dsv
+[12.014s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.dsv
+[12.015s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/vrx_ros
+[12.015s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/cmake/vrx_rosConfig.cmake
+[12.015s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/cmake/vrx_rosConfig-version.cmake
+[12.015s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.xml
+[12.017s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros

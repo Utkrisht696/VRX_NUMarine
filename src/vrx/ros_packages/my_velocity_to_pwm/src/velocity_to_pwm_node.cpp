@@ -13,8 +13,8 @@ public:
     this->declare_parameter<double>("max_velocity_mps", 7.71667);
     this->declare_parameter<double>("fluid_density", 1000.0);
     this->declare_parameter<double>("propeller_diameter", 0.2);
-    this->declare_parameter<double>("linear_scaling_factor", 0.1);
-    this->declare_parameter<double>("angular_scaling_factor", 0.05);
+    this->declare_parameter<double>("linear_scaling_factor", 0.8);
+    this->declare_parameter<double>("angular_scaling_factor", 0.4);
 
     this->get_parameter("x_uu", x_uu_);
     this->get_parameter("x_u", x_u_);

@@ -1,2 +1,2 @@
-prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;/home/jain/Documents/GitHub/VRX_NUMarine/install/share/
-prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;/home/jain/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models
+prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;/home/numarine/Documents/GitHub/VRX_NUMarine/install/share/
+prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;/home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models

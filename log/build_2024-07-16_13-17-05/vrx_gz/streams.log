@@ -1,0 +1,793 @@
+[0.006s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz': AMENT_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake /home/numarine/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_gz -DCMAKE_INSTALL_PREFIX=/home/numarine/Documents/GitHub/VRX_NUMarine/install
+[0.052s] -- The C compiler identification is GNU 11.4.0
+[0.102s] -- The CXX compiler identification is GNU 11.4.0
+[0.109s] -- Detecting C compiler ABI info
+[0.174s] -- Detecting C compiler ABI info - done
+[0.181s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.182s] -- Detecting C compile features
+[0.182s] -- Detecting C compile features - done
+[0.185s] -- Detecting CXX compiler ABI info
+[0.248s] -- Detecting CXX compiler ABI info - done
+[0.254s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.254s] -- Detecting CXX compile features
+[0.255s] -- Detecting CXX compile features - done
+[0.257s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.373s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.442s] -- Looking for gz-sim7 -- found version 7.7.0
+[0.448s] -- Searching for dependencies of gz-sim7
+[0.450s] -- Looking for sdformat13 -- found version 13.8.0
+[0.450s] -- Searching for dependencies of sdformat13
+[0.454s] -- Checking for module 'tinyxml2'
+[0.462s] --   Found tinyxml2, version 9.0.0
+[0.488s] -- Looking for gz-math7 -- found version 7.5.0
+[0.489s] -- Searching for dependencies of gz-math7
+[0.490s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.491s] -- Searching for dependencies of gz-utils2
+[0.492s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.492s] -- Searching for dependencies of gz-utils2
+[0.492s] -- Searching for <gz-utils2> component [cli]
+[0.494s] -- Looking for gz-utils2-cli -- found version 2.2.0
+[0.494s] -- Searching for dependencies of gz-utils2-cli
+[0.497s] -- Looking for gz-plugin2 -- found version 2.0.3
+[0.497s] -- Searching for dependencies of gz-plugin2
+[0.497s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.498s] -- Searching for <gz-plugin2> component [loader]
+[0.499s] -- Looking for gz-plugin2-loader -- found version 2.0.3
+[0.500s] -- Searching for dependencies of gz-plugin2-loader
+[0.500s] -- Searching for <gz-plugin2> component [register]
+[0.502s] -- Looking for gz-plugin2-register -- found version 2.0.3
+[0.502s] -- Searching for dependencies of gz-plugin2-register
+[0.504s] -- Looking for gz-transport12 -- found version 12.2.1
+[0.504s] -- Searching for dependencies of gz-transport12
+[0.649s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[0.661s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[0.665s] -- Checking for module 'libzmq >= 4'
+[0.677s] --   Found libzmq , version 4.3.4
+[0.709s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[0.715s] -- Checking for module 'uuid'
+[0.726s] --   Found uuid, version 2.37.2
+[0.755s] -- Found UUID: TRUE  
+[0.755s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.758s] -- Looking for gz-msgs9 -- found version 9.5.0
+[0.758s] -- Searching for dependencies of gz-msgs9
+[0.777s] -- Looking for gz-math7 -- found version 7.5.0
+[0.782s] -- Searching for <gz-transport12> component [log]
+[0.784s] -- Looking for gz-transport12-log -- found version 12.2.1
+[0.784s] -- Searching for dependencies of gz-transport12-log
+[0.784s] -- Searching for <gz-transport12> component [parameters]
+[0.786s] -- Looking for gz-transport12-parameters -- found version 12.2.1
+[0.786s] -- Searching for dependencies of gz-transport12-parameters
+[0.787s] -- Looking for gz-msgs9 -- found version 9.5.0
+[0.789s] -- Looking for gz-common5 -- found version 5.6.0
+[0.789s] -- Searching for dependencies of gz-common5
+[0.789s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.790s] -- Looking for dlfcn.h - found
+[0.790s] -- Looking for libdl - found
+[0.791s] -- Found DL: TRUE  
+[0.796s] -- Searching for <gz-common5> component [profiler]
+[0.798s] -- Looking for gz-common5-profiler -- found version 5.6.0
+[0.798s] -- Searching for dependencies of gz-common5-profiler
+[0.799s] -- Searching for <gz-common5> component [events]
+[0.800s] -- Looking for gz-common5-events -- found version 5.6.0
+[0.801s] -- Searching for dependencies of gz-common5-events
+[0.801s] -- Looking for gz-math7 -- found version 7.5.0
+[0.801s] -- Searching for <gz-common5> component [av]
+[0.803s] -- Looking for gz-common5-av -- found version 5.6.0
+[0.803s] -- Searching for dependencies of gz-common5-av
+[0.807s] -- Checking for module 'libswscale'
+[0.817s] --   Found libswscale, version 5.9.100
+[0.842s] -- Found SWSCALE: TRUE  
+[0.846s] -- Checking for module 'libavdevice >= 56.4.100'
+[0.855s] --   Found libavdevice , version 58.13.100
+[0.883s] -- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+[0.887s] -- Checking for module 'libavformat'
+[0.896s] --   Found libavformat, version 58.76.100
+[0.922s] -- Found AVFORMAT: TRUE  
+[0.926s] -- Checking for module 'libavcodec'
+[0.935s] --   Found libavcodec, version 58.134.100
+[0.960s] -- Found AVCODEC: TRUE  
+[0.964s] -- Checking for module 'libavutil'
+[0.974s] --   Found libavutil, version 56.70.100
+[0.998s] -- Found AVUTIL: TRUE  
+[0.999s] -- Searching for <gz-common5> component [io]
+[1.001s] -- Looking for gz-common5-io -- found version 5.6.0
+[1.001s] -- Searching for dependencies of gz-common5-io
+[1.003s] -- Looking for gz-fuel_tools8 -- found version 8.1.0
+[1.003s] -- Searching for dependencies of gz-fuel_tools8
+[1.064s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[1.070s] -- Checking for module 'jsoncpp'
+[1.080s] --   Found jsoncpp, version 1.9.5
+[1.104s] -- Found JSONCPP: TRUE  
+[1.109s] -- Checking for module 'libzip'
+[1.119s] --   Found libzip, version 1.7.3
+[1.143s] -- Found ZIP: TRUE  
+[1.144s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.144s] -- Looking for gz-common5 -- found version 5.6.0
+[1.144s] -- Searching for dependencies of gz-common5
+[1.145s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.145s] -- Looking for dlfcn.h - found
+[1.145s] -- Looking for libdl - found
+[1.151s] -- Searching for <gz-common5> component [testing]
+[1.152s] -- Looking for gz-common5-testing -- found version 5.6.0
+[1.153s] -- Searching for dependencies of gz-common5-testing
+[1.153s] -- Looking for gz-math7 -- found version 7.5.0
+[1.154s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.156s] -- Looking for gz-gui7 -- found version 7.2.2
+[1.156s] -- Searching for dependencies of gz-gui7
+[1.176s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.176s] -- Looking for gz-math7 -- found version 7.5.0
+[1.177s] -- Looking for gz-common5 -- found version 5.6.0
+[1.177s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.178s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.179s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.180s] -- Searching for dependencies of gz-rendering7
+[1.180s] -- Looking for gz-math7 -- found version 7.5.0
+[1.180s] -- Searching for dependencies of gz-math7
+[1.181s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.181s] -- Searching for <gz-math7> component [eigen3]
+[1.182s] -- Looking for gz-math7-eigen3 -- found version 7.5.0
+[1.183s] -- Searching for dependencies of gz-math7-eigen3
+[1.189s] -- Looking for gz-common5 -- found version 5.6.0
+[1.189s] -- Searching for dependencies of gz-common5
+[1.190s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.190s] -- Looking for dlfcn.h - found
+[1.190s] -- Looking for libdl - found
+[1.196s] -- Searching for <gz-common5> component [graphics]
+[1.197s] -- Looking for gz-common5-graphics -- found version 5.6.0
+[1.198s] -- Searching for dependencies of gz-common5-graphics
+[1.198s] -- Looking for gz-math7 -- found version 7.5.0
+[1.203s] -- Found GzAssimp: TRUE (found version "5.2.0") 
+[1.203s] -- Searching for <gz-common5> component [events]
+[1.204s] -- Searching for <gz-common5> component [geospatial]
+[1.205s] -- Looking for gz-common5-geospatial -- found version 5.6.0
+[1.206s] -- Searching for dependencies of gz-common5-geospatial
+[1.206s] -- Looking for gz-math7 -- found version 7.5.0
+[1.206s] -- Looking for gz-common5 -- found version 5.6.0
+[1.207s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.207s] -- Searching for dependencies of gz-plugin2
+[1.208s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.208s] -- Searching for <gz-plugin2> component [all]
+[1.210s] -- Looking for all libraries of gz-plugin2 -- found version 2.0.3
+[1.210s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.211s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.215s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL 
+[1.215s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.232s] -- Looking for gz-physics6 -- found version 6.6.0
+[1.232s] -- Searching for dependencies of gz-physics6
+[1.233s] -- Looking for gz-common5 -- found version 5.6.0
+[1.233s] -- Looking for gz-math7 -- found version 7.5.0
+[1.233s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.234s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.235s] -- Searching for <gz-physics6> component [heightmap]
+[1.236s] -- Looking for gz-physics6-heightmap -- found version 6.6.0
+[1.237s] -- Searching for dependencies of gz-physics6-heightmap
+[1.237s] -- Looking for gz-common5 -- found version 5.6.0
+[1.237s] -- Searching for <gz-physics6> component [mesh]
+[1.239s] -- Looking for gz-physics6-mesh -- found version 6.6.0
+[1.239s] -- Searching for dependencies of gz-physics6-mesh
+[1.240s] -- Looking for gz-common5 -- found version 5.6.0
+[1.240s] -- Searching for <gz-physics6> component [sdf]
+[1.242s] -- Looking for gz-physics6-sdf -- found version 6.6.0
+[1.242s] -- Searching for dependencies of gz-physics6-sdf
+[1.243s] -- Looking for sdformat13 -- found version 13.8.0
+[1.245s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.245s] -- Searching for dependencies of gz-sensors7
+[1.261s] -- Looking for gz-math7 -- found version 7.5.0
+[1.263s] -- Looking for gz-common5 -- found version 5.6.0
+[1.263s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.263s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.263s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.263s] -- Looking for sdformat13 -- found version 13.8.0
+[1.264s] -- Searching for <gz-sensors7> component [air_pressure]
+[1.266s] -- Looking for gz-sensors7-air_pressure -- found version 7.3.0
+[1.266s] -- Searching for dependencies of gz-sensors7-air_pressure
+[1.266s] -- Searching for <gz-sensors7> component [air_speed]
+[1.268s] -- Looking for gz-sensors7-air_speed -- found version 7.3.0
+[1.268s] -- Searching for dependencies of gz-sensors7-air_speed
+[1.269s] -- Searching for <gz-sensors7> component [altimeter]
+[1.271s] -- Looking for gz-sensors7-altimeter -- found version 7.3.0
+[1.271s] -- Searching for dependencies of gz-sensors7-altimeter
+[1.271s] -- Searching for <gz-sensors7> component [imu]
+[1.273s] -- Looking for gz-sensors7-imu -- found version 7.3.0
+[1.273s] -- Searching for dependencies of gz-sensors7-imu
+[1.274s] -- Searching for <gz-sensors7> component [force_torque]
+[1.276s] -- Looking for gz-sensors7-force_torque -- found version 7.3.0
+[1.276s] -- Searching for dependencies of gz-sensors7-force_torque
+[1.276s] -- Searching for <gz-sensors7> component [logical_camera]
+[1.278s] -- Looking for gz-sensors7-logical_camera -- found version 7.3.0
+[1.278s] -- Searching for dependencies of gz-sensors7-logical_camera
+[1.279s] -- Searching for <gz-sensors7> component [magnetometer]
+[1.281s] -- Looking for gz-sensors7-magnetometer -- found version 7.3.0
+[1.281s] -- Searching for dependencies of gz-sensors7-magnetometer
+[1.281s] -- Searching for <gz-sensors7> component [navsat]
+[1.283s] -- Looking for gz-sensors7-navsat -- found version 7.3.0
+[1.283s] -- Searching for dependencies of gz-sensors7-navsat
+[1.284s] -- Searching for <gz-sensors7> component [rendering]
+[1.286s] -- Looking for gz-sensors7-rendering -- found version 7.3.0
+[1.286s] -- Searching for dependencies of gz-sensors7-rendering
+[1.286s] -- Searching for <gz-sensors7> component [lidar]
+[1.288s] -- Looking for gz-sensors7-lidar -- found version 7.3.0
+[1.288s] -- Searching for dependencies of gz-sensors7-lidar
+[1.289s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.289s] -- Searching for <gz-sensors7> component [gpu_lidar]
+[1.291s] -- Looking for gz-sensors7-gpu_lidar -- found version 7.3.0
+[1.291s] -- Searching for dependencies of gz-sensors7-gpu_lidar
+[1.292s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.292s] -- Searching for <gz-sensors7> component [camera]
+[1.294s] -- Looking for gz-sensors7-camera -- found version 7.3.0
+[1.294s] -- Searching for dependencies of gz-sensors7-camera
+[1.294s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.295s] -- Searching for <gz-sensors7> component [boundingbox_camera]
+[1.296s] -- Looking for gz-sensors7-boundingbox_camera -- found version 7.3.0
+[1.297s] -- Searching for dependencies of gz-sensors7-boundingbox_camera
+[1.297s] -- Searching for <gz-sensors7> component [segmentation_camera]
+[1.299s] -- Looking for gz-sensors7-segmentation_camera -- found version 7.3.0
+[1.300s] -- Searching for dependencies of gz-sensors7-segmentation_camera
+[1.300s] -- Searching for <gz-sensors7> component [depth_camera]
+[1.302s] -- Looking for gz-sensors7-depth_camera -- found version 7.3.0
+[1.302s] -- Searching for dependencies of gz-sensors7-depth_camera
+[1.303s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.303s] -- Searching for <gz-sensors7> component [rgbd_camera]
+[1.305s] -- Looking for gz-sensors7-rgbd_camera -- found version 7.3.0
+[1.305s] -- Searching for dependencies of gz-sensors7-rgbd_camera
+[1.306s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.306s] -- Searching for <gz-sensors7> component [thermal_camera]
+[1.308s] -- Looking for gz-sensors7-thermal_camera -- found version 7.3.0
+[1.308s] -- Searching for dependencies of gz-sensors7-thermal_camera
+[1.309s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.309s] -- Searching for <gz-sensors7> component [wide_angle_camera]
+[1.311s] -- Looking for gz-sensors7-wide_angle_camera -- found version 7.3.0
+[1.311s] -- Searching for dependencies of gz-sensors7-wide_angle_camera
+[1.312s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.312s] -- Looking for gz-math7 -- found version 7.5.0
+[1.312s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.330s] -- Looking for gz-common5 -- found version 5.6.0
+[1.330s] -- Looking for gz-fuel_tools8 -- found version 8.1.0
+[1.330s] -- Looking for gz-math7 -- found version 7.5.0
+[1.331s] -- Looking for gz-msgs9 -- found version 9.5.0
+[1.331s] -- Looking for gz-transport12 -- found version 12.2.1
+[1.331s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.332s] -- Looking for gz-rendering7 -- found version 7.4.2
+[1.332s] -- Looking for gz-sensors7 -- found version 7.3.0
+[1.332s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.333s] -- Looking for sdformat13 -- found version 13.8.0
+[1.334s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[1.359s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.364s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.371s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.383s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.400s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.562s] -- Configuring done
+[1.661s] -- Generating done
+[1.664s] -- Build files have been written to: /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz
+[1.675s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake /home/numarine/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_gz -DCMAKE_INSTALL_PREFIX=/home/numarine/Documents/GitHub/VRX_NUMarine/install
+[1.676s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz': AMENT_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz -- -j12 -l12
+[1.717s] [  2%] [32mBuilding CXX object CMakeFiles/Waves.dir/src/Wavefield.cc.o[0m
+[1.717s] [  4%] [32mBuilding CXX object CMakeFiles/ScoringPlugin.dir/src/ScoringPlugin.cc.o[0m
+[1.725s] [  4%] Built target ament_cmake_python_copy_vrx_gz
+[1.917s] running egg_info
+[1.917s] creating vrx_gz.egg-info
+[1.917s] writing vrx_gz.egg-info/PKG-INFO
+[1.917s] writing dependency_links to vrx_gz.egg-info/dependency_links.txt
+[1.918s] writing top-level names to vrx_gz.egg-info/top_level.txt
+[1.918s] writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[1.919s] reading manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[1.919s] writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[1.939s] [  4%] Built target ament_cmake_python_build_vrx_gz_egg
+[4.531s] [  6%] [32m[1mLinking CXX shared library libWaves.so[0m
+[4.717s] [  6%] Built target Waves
+[4.734s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/PolyhedraBuoyancyDrag.cc.o[0m
+[4.734s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/ShapeVolume.cc.o[0m
+[4.734s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/PolyhedronVolume.cc.o[0m
+[5.529s] [ 14%] [32m[1mLinking CXX shared library libScoringPlugin.so[0m
+[5.760s] [ 14%] Built target ScoringPlugin
+[5.783s] [ 16%] [32mBuilding CXX object CMakeFiles/GymkhanaScoringPlugin.dir/src/GymkhanaScoringPlugin.cc.o[0m
+[5.783s] [ 20%] [32mBuilding CXX object CMakeFiles/AcousticPerceptionScoringPlugin.dir/src/AcousticPerceptionScoringPlugin.cc.o[0m
+[5.783s] [ 20%] [32mBuilding CXX object CMakeFiles/AcousticTrackingScoringPlugin.dir/src/AcousticTrackingScoringPlugin.cc.o[0m
+[5.784s] [ 27%] [32mBuilding CXX object CMakeFiles/WayfindingScoringPlugin.dir/src/WayfindingScoringPlugin.cc.o[0m
+[5.784s] [ 27%] [32mBuilding CXX object CMakeFiles/AcousticPingerPlugin.dir/src/AcousticPingerPlugin.cc.o[0m
+[5.784s] [ 27%] [32mBuilding CXX object CMakeFiles/StationkeepingScoringPlugin.dir/src/StationkeepingScoringPlugin.cc.o[0m
+[5.784s] [ 29%] [32mBuilding CXX object CMakeFiles/BallShooterPlugin.dir/src/BallShooterPlugin.cc.o[0m
+[5.784s] [ 31%] [32mBuilding CXX object CMakeFiles/LightBuoyPlugin.dir/src/LightBuoyPlugin.cc.o[0m
+[5.784s] [ 33%] [32mBuilding CXX object CMakeFiles/NavigationScoringPlugin.dir/src/NavigationScoringPlugin.cc.o[0m
+[5.794s] [ 35%] [32mBuilding CXX object CMakeFiles/PerceptionScoringPlugin.dir/src/PerceptionScoringPlugin.cc.o[0m
+[6.372s] [ 37%] [32mBuilding CXX object CMakeFiles/AcousticTrackingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[11.417s] [ 39%] [32m[1mLinking CXX shared library libLightBuoyPlugin.so[0m
+[11.842s] [ 39%] Built target LightBuoyPlugin
+[11.855s] [ 41%] [32mBuilding CXX object CMakeFiles/StationkeepingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[12.478s] [ 43%] [32m[1mLinking CXX shared library libGymkhanaScoringPlugin.so[0m
+[12.940s] [ 43%] Built target GymkhanaScoringPlugin
+[12.968s] [ 45%] [32mBuilding CXX object CMakeFiles/PlacardPlugin.dir/src/PlacardPlugin.cc.o[0m
+[13.259s] [ 47%] [32m[1mLinking CXX shared library libPolyhedraBuoyancyDrag.so[0m
+[13.650s] [ 50%] [32mBuilding CXX object CMakeFiles/PublisherPlugin.dir/src/PublisherPlugin.cc.o[0m
+[13.760s] [ 50%] Built target PolyhedraBuoyancyDrag
+[13.788s] [ 52%] [32mBuilding CXX object CMakeFiles/ScanDockScoringPlugin.dir/src/ScanDockScoringPlugin.cc.o[0m
+[13.869s] [ 54%] [32m[1mLinking CXX shared library libPerceptionScoringPlugin.so[0m
+[13.908s] [ 56%] [32m[1mLinking CXX shared library libAcousticPingerPlugin.so[0m
+[14.423s] [ 56%] Built target AcousticPingerPlugin
+[14.452s] [ 58%] Built target PerceptionScoringPlugin
+[14.453s] [ 58%] [32mBuilding CXX object CMakeFiles/SimpleHydrodynamics.dir/src/SimpleHydrodynamics.cc.o[0m
+[14.482s] [ 60%] [32mBuilding CXX object CMakeFiles/Surface.dir/src/Surface.cc.o[0m
+[15.215s] [ 62%] [32mBuilding CXX object CMakeFiles/AcousticPerceptionScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[15.555s] [ 64%] [32mBuilding CXX object CMakeFiles/USVWind.dir/src/USVWind.cc.o[0m
+[15.627s] [ 66%] [32mBuilding CXX object CMakeFiles/WayfindingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[15.692s] [ 68%] [32m[1mLinking CXX shared library libAcousticTrackingScoringPlugin.so[0m
+[15.906s] [ 70%] [32m[1mLinking CXX shared library libNavigationScoringPlugin.so[0m
+[16.268s] [ 70%] Built target AcousticTrackingScoringPlugin
+[16.297s] [ 72%] [32mBuilding CXX object CMakeFiles/WaveVisual.dir/src/WaveVisual.cc.o[0m
+[16.387s] [ 72%] Built target NavigationScoringPlugin
+[16.415s] [ 75%] [32mBuilding CXX object CMakeFiles/WildlifeScoringPlugin.dir/src/WildlifeScoringPlugin.cc.o[0m
+[16.518s] [ 77%] [32m[1mLinking CXX shared library libBallShooterPlugin.so[0m
+[17.075s] [ 77%] Built target BallShooterPlugin
+[18.981s] [ 79%] [32m[1mLinking CXX shared library libPublisherPlugin.so[0m
+[19.226s] [ 81%] [32m[1mLinking CXX shared library libStationkeepingScoringPlugin.so[0m
+[19.341s] [ 81%] Built target PublisherPlugin
+[19.782s] [ 81%] Built target StationkeepingScoringPlugin
+[20.077s] [ 83%] [32m[1mLinking CXX shared library libPlacardPlugin.so[0m
+[20.376s] [ 83%] Built target PlacardPlugin
+[21.409s] [ 85%] [32m[1mLinking CXX shared library libSimpleHydrodynamics.so[0m
+[21.531s] [ 87%] [32m[1mLinking CXX shared library libSurface.so[0m
+[21.644s] [ 87%] Built target SimpleHydrodynamics
+[21.820s] [ 89%] [32m[1mLinking CXX shared library libAcousticPerceptionScoringPlugin.so[0m
+[21.914s] [ 89%] Built target Surface
+[22.026s] [ 91%] [32m[1mLinking CXX shared library libWayfindingScoringPlugin.so[0m
+[22.165s] [ 91%] Built target AcousticPerceptionScoringPlugin
+[22.359s] [ 91%] Built target WayfindingScoringPlugin
+[22.760s] [ 93%] [32m[1mLinking CXX shared library libWildlifeScoringPlugin.so[0m
+[22.967s] [ 95%] [32m[1mLinking CXX shared library libUSVWind.so[0m
+[23.058s] [ 95%] Built target WildlifeScoringPlugin
+[23.219s] [ 95%] Built target USVWind
+[23.705s] [ 97%] [32m[1mLinking CXX shared library libScanDockScoringPlugin.so[0m
+[23.972s] [ 97%] Built target ScanDockScoringPlugin
+[24.619s] [100%] [32m[1mLinking CXX shared library libWaveVisual.so[0m
+[24.853s] [100%] Built target WaveVisual
+[24.862s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz -- -j12 -l12
+[25.017s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz': AMENT_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz
+[25.044s] -- Install configuration: ""
+[25.044s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/resource_paths.dsv
+[25.046s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/resource_paths.sh
+[25.046s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libWaves.so
+[25.050s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPolyhedraBuoyancyDrag.so
+[25.055s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPolyhedraBuoyancyDrag.so" to ""
+[25.055s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libScoringPlugin.so
+[25.059s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libStationkeepingScoringPlugin.so
+[25.063s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libStationkeepingScoringPlugin.so" to ""
+[25.063s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libWayfindingScoringPlugin.so
+[25.067s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libWayfindingScoringPlugin.so" to ""
+[25.067s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPerceptionScoringPlugin.so
+[25.070s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPerceptionScoringPlugin.so" to ""
+[25.070s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticTrackingScoringPlugin.so
+[25.073s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticTrackingScoringPlugin.so" to ""
+[25.074s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPingerPlugin.so
+[25.076s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libAcousticPingerPlugin.so" to ""
+[25.076s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libBallShooterPlugin.so
+[25.079s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libBallShooterPlugin.so" to ""
+[25.079s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libLightBuoyPlugin.so
+[25.080s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libLightBuoyPlugin.so" to ""
+[25.081s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libNavigationScoringPlugin.so
+[25.083s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libNavigationScoringPlugin.so" to ""
+[25.083s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libGymkhanaScoringPlugin.so
+[25.084s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libGymkhanaScoringPlugin.so" to ""
+[25.085s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPerceptionScoringPlugin.so
+[25.087s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPerceptionScoringPlugin.so" to ""
+[25.087s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPlacardPlugin.so
+[25.089s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPlacardPlugin.so" to ""
+[25.089s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPublisherPlugin.so
+[25.090s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libPublisherPlugin.so" to ""
+[25.090s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libScanDockScoringPlugin.so
+[25.092s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libScanDockScoringPlugin.so" to ""
+[25.092s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libSimpleHydrodynamics.so
+[25.094s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libSimpleHydrodynamics.so" to ""
+[25.094s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libSurface.so
+[25.095s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libSurface.so" to ""
+[25.095s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libUSVWind.so
+[25.097s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libUSVWind.so" to ""
+[25.097s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libWaveVisual.so
+[25.099s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libWaveVisual.so" to ""
+[25.099s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libWildlifeScoringPlugin.so
+[25.101s] -- Set runtime path of "/home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/libWildlifeScoringPlugin.so" to ""
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/pythonpath.sh
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/pythonpath.dsv
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/SOURCES.txt
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/dependency_links.txt
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/top_level.txt
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/PKG-INFO
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridge.py
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridges.py
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/__init__.py
+[25.102s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/launch.py
+[25.103s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/model.py
+[25.103s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/payload_bridges.py
+[25.131s] Listing '/home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz'...
+[25.132s] Compiling '/home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/__init__.py'...
+[25.132s] Compiling '/home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridge.py'...
+[25.132s] Compiling '/home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/bridges.py'...
+[25.132s] Compiling '/home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/launch.py'...
+[25.132s] Compiling '/home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/model.py'...
+[25.132s] Compiling '/home/numarine/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages/vrx_gz/payload_bridges.py'...
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config/wamv.yaml
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/config/roboboat.yaml
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/spawn_config.launch.py
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/competition.launch.py
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/spawn.launch.py
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/usv_joy_teleop.py
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/launch/vrx_environment.launch.py
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models
+[25.135s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2/model.config
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_2/model.sdf
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/model.config
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/mesh
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/mesh/triangle.dae
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/symbol_triangle/model.sdf
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/model.config
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/meshes
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/meshes/mb_round_buoy.dae
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials
+[25.136s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures
+[25.137s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures/RoundBarrierBuoy_Roughness.png
+[25.137s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/materials/textures/RoundBarrierBuoy_Base_Color.png
+[25.138s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails
+[25.139s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/5.png
+[25.139s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/1.png
+[25.139s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/3.png
+[25.139s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/2.png
+[25.139s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/thumbnails/4.png
+[25.139s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_orange/model.sdf
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform/model.config
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/platform/model.sdf
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/model.config
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/meshes
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/meshes/post.dae
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials/textures
+[25.140s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/materials/textures/post.png
+[25.144s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails
+[25.144s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/5.png
+[25.144s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/1.png
+[25.145s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/3.png
+[25.145s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/2.png
+[25.145s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/thumbnails/4.png
+[25.145s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/post/model.sdf
+[25.145s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black
+[25.145s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/model.config
+[25.145s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails
+[25.146s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/5.png
+[25.146s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/1.png
+[25.146s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/3.png
+[25.146s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/2.png
+[25.146s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/thumbnails/4.png
+[25.146s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_round_buoy_black/model.sdf
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg/model.config
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_yrg/model.sdf
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/model.config
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes/antenna.png
+[25.147s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/meshes/antenna.dae
+[25.148s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails
+[25.148s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/5.png
+[25.148s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/1.png
+[25.148s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/3.png
+[25.148s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/2.png
+[25.148s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/thumbnails/4.png
+[25.149s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/antenna/model.sdf
+[25.149s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01
+[25.149s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/model.config
+[25.149s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes
+[25.149s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/prop.dae
+[25.149s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/roboboat01.dae
+[25.150s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/housing.dae
+[25.150s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/meshes/mount.dae
+[25.150s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials
+[25.150s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/scripts
+[25.151s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/scripts/model.material
+[25.151s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures
+[25.151s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Roughness.png
+[25.154s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Albedo.png
+[25.159s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Normal.png
+[25.160s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Metallic.png
+[25.160s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Roughness.png
+[25.161s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Albedo.png
+[25.162s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat01/model.sdf
+[25.162s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022
+[25.162s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022/model.config
+[25.162s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022/model.sdf
+[25.162s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/model.config
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/5.png
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/1.png
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/3.png
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/2.png
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/thumbnails/4.png
+[25.163s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_white/model.sdf
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0/model.config
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_0/model.sdf
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2/model.config
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_2/model.sdf
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb/model.config
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ygb/model.sdf
+[25.164s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform
+[25.165s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform/model.config
+[25.165s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/articulated_platform/model.sdf
+[25.165s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta
+[25.165s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/model.config
+[25.165s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes
+[25.165s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes/sydney_regatta.dae
+[25.180s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/meshes/sydney_regatta_shore.dae
+[25.181s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials
+[25.181s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures
+[25.181s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/DockDark.png
+[25.201s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Wall_05.png
+[25.202s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Dock.png
+[25.221s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/MetalGalvanized.png
+[25.237s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/RoofCorrugated.png
+[25.254s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/TreeDiffuse.png
+[25.255s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Terrain.png
+[25.287s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/materials/textures/Windows_Dark.png
+[25.287s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails
+[25.287s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/5.png
+[25.287s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/1.png
+[25.288s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/3.png
+[25.288s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/2.png
+[25.288s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/thumbnails/4.png
+[25.288s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/sydney_regatta/model.sdf
+[25.288s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table
+[25.288s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/model.config
+[25.288s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh
+[25.289s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh/foldable_table.dae
+[25.289s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/mesh/foldable_table.png
+[25.289s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails
+[25.289s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/5.png
+[25.290s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/1.png
+[25.290s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/3.png
+[25.290s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/2.png
+[25.290s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/thumbnails/4.png
+[25.290s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_table/model.sdf
+[25.290s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy/model.config
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgy/model.sdf
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy/model.config
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgy/model.sdf
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4/model.config
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_4/model.sdf
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr
+[25.291s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr/model.config
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_bgr/model.sdf
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/model.config
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/5.png
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/1.png
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/3.png
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/2.png
+[25.292s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/thumbnails/4.png
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_black/model.sdf
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course/model.config
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/obstacle_course/model.sdf
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/model.config
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/meshes
+[25.293s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/meshes/waterlow.dae
+[25.304s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials
+[25.305s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs
+[25.305s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl
+[25.305s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl
+[25.305s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures
+[25.305s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures/wave_normals.dds
+[25.305s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/materials/textures/skybox_lowres.dds
+[25.306s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/coast_waves/model.sdf
+[25.306s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station
+[25.306s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/model.config
+[25.307s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails
+[25.307s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/5.png
+[25.307s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/1.png
+[25.307s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/3.png
+[25.307s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/2.png
+[25.307s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/thumbnails/4.png
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/ground_station/model.sdf
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr/model.config
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_ybr/model.sdf
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/model.config
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/meshes
+[25.308s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/meshes/roboboat02.dae
+[25.310s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials
+[25.310s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/scripts
+[25.310s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/scripts/model.material
+[25.310s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures
+[25.310s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Metallic.png
+[25.311s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Normal.png
+[25.312s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Roughness.png
+[25.315s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Albedo.png
+[25.319s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat02/model.sdf
+[25.319s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green
+[25.319s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/model.config
+[25.319s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails
+[25.320s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/5.png
+[25.320s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/1.png
+[25.320s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/3.png
+[25.320s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/2.png
+[25.320s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/thumbnails/4.png
+[25.320s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_green/model.sdf
+[25.320s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb
+[25.321s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/model.config
+[25.321s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh
+[25.321s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Normal.png
+[25.324s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Roughness.png
+[25.325s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Albedo.png
+[25.327s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Opacity.png
+[25.327s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/robotx_light_buoy.dae
+[25.328s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Metalness.png
+[25.328s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rgb/model.sdf
+[25.328s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg
+[25.328s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg/model.config
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_rbg/model.sdf
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base/model.config
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_2022_base/model.sdf
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/model.config
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/meshes
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/meshes/pallet.dae
+[25.329s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/5.png
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/1.png
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/3.png
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/2.png
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/thumbnails/4.png
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/euro pallet/model.sdf
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1/model.config
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_1/model.sdf
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/model.config
+[25.330s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh
+[25.331s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh/tent.png
+[25.331s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/mesh/tent.dae
+[25.331s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails
+[25.331s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/5.png
+[25.331s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/1.png
+[25.332s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/3.png
+[25.332s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/2.png
+[25.332s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/thumbnails/4.png
+[25.332s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/tent/model.sdf
+[25.332s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5
+[25.332s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5/model.config
+[25.333s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_5/model.sdf
+[25.333s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair
+[25.333s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/model.config
+[25.333s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh
+[25.333s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh/foldable_chair.dae
+[25.333s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/mesh/foldable_chair.png
+[25.338s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails
+[25.338s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/5.png
+[25.338s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/1.png
+[25.338s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/3.png
+[25.338s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/2.png
+[25.338s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/thumbnails/4.png
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/foldable_chair/model.sdf
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr/model.config
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/robotx_light_buoy_gbr/model.sdf
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit/model.config
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/entrance_exit/model.sdf
+[25.339s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox
+[25.340s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/model.config
+[25.340s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/meshes
+[25.340s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/meshes/drybox.dae
+[25.340s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials
+[25.340s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures
+[25.340s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Albedo.png
+[25.345s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Roughness.png
+[25.353s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/roboboat_cpubox/model.sdf
+[25.353s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red
+[25.354s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/model.config
+[25.354s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/meshes
+[25.354s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/meshes/mb_marker_buoy.dae
+[25.354s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials
+[25.354s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures
+[25.354s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures/MarkerBuoy_Roughness.png
+[25.354s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/materials/textures/MarkerBuoy_Base_Color.png
+[25.356s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails
+[25.356s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/5.png
+[25.356s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/1.png
+[25.356s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/3.png
+[25.356s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/2.png
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/thumbnails/4.png
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/mb_marker_buoy_red/model.sdf
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/model.config
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/meshes
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/meshes/placard_2022.dae
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials/textures
+[25.357s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/materials/textures/Placard.png
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/placard_2022/model.sdf
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3/model.config
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_navigation_course_3/model.sdf
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1/model.config
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/short_course_2023_phase3_1/model.sdf
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/model.config
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh
+[25.358s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Albedo.png
+[25.359s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Roughness.png
+[25.360s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/dock_block_4x4.dae
+[25.362s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Metalness.png
+[25.362s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Normal.png
+[25.385s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/models/dock_block_4x4/model.sdf
+[25.385s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds
+[25.385s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/stationkeeping_task.sdf
+[25.385s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/nbpark.sdf
+[25.385s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/sydney_regatta.sdf
+[25.385s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife1_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife2_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping2_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception1_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver0_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path0_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding2_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking1_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver2_task.sdf
+[25.386s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception1_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife0_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking2_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception2_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver1_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception2_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path1_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception0_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path2_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping1_task.sdf
+[25.387s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking0_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding1_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping0_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_perception0_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding0_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/acoustic_perception_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/follow_path_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/perception_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/scan_dock_deliver_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/wildlife_task.sdf
+[25.388s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/acoustic_tracking_task.sdf
+[25.389s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/wayfinding_task.sdf
+[25.389s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/gymkhana_task.sdf
+[25.389s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/worlds/navigation_task.sdf
+[25.389s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/vrx_gz
+[25.389s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/vrx_gz
+[25.389s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/ament_prefix_path.sh
+[25.389s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/ament_prefix_path.dsv
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/path.sh
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/environment/path.dsv
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.bash
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.sh
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.zsh
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/local_setup.dsv
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/package.dsv
+[25.390s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/vrx_gz
+[25.391s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/cmake/vrx_gzConfig.cmake
+[25.391s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/cmake/vrx_gzConfig-version.cmake
+[25.391s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_gz/package.xml
+[25.393s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/numarine/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_gz

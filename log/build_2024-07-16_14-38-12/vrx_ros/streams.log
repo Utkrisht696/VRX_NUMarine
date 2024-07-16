@@ -1,0 +1,26 @@
+[0.056s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
+[0.151s] [100%] Built target optical_frame_publisher
+[0.151s] [100%] Built target pose_tf_broadcaster
+[0.183s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
+[0.232s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros
+[0.248s] -- Install configuration: ""
+[0.248s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/optical_frame_publisher
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/vrx_ros/pose_tf_broadcaster
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/launch
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/launch/monitor_sim.py
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/vrx_ros
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/vrx_ros
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/ament_prefix_path.sh
+[0.250s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/ament_prefix_path.dsv
+[0.250s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/path.sh
+[0.250s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/environment/path.dsv
+[0.251s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.bash
+[0.251s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.sh
+[0.251s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.zsh
+[0.251s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/local_setup.dsv
+[0.252s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.dsv
+[0.253s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/vrx_ros
+[0.255s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/cmake/vrx_rosConfig.cmake
+[0.255s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/cmake/vrx_rosConfig-version.cmake
+[0.256s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.xml
+[0.261s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/vrx_ros

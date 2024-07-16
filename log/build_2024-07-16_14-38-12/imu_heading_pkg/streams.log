@@ -1,0 +1,22 @@
+[0.057s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg -- -j12 -l12
+[0.156s] [100%] Built target imu_heading_node
+[0.176s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg -- -j12 -l12
+[0.228s] Invoking command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg
+[0.247s] -- Install configuration: ""
+[0.248s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/lib/imu_heading_pkg/imu_heading_node
+[0.248s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/package_run_dependencies/imu_heading_pkg
+[0.248s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/parent_prefix_path/imu_heading_pkg
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/environment/ament_prefix_path.sh
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/environment/ament_prefix_path.dsv
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/environment/path.sh
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/environment/path.dsv
+[0.249s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/local_setup.bash
+[0.250s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/local_setup.sh
+[0.250s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/local_setup.zsh
+[0.250s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/local_setup.dsv
+[0.251s] -- Installing: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.dsv
+[0.252s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/ament_index/resource_index/packages/imu_heading_pkg
+[0.252s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/cmake/imu_heading_pkgConfig.cmake
+[0.252s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/cmake/imu_heading_pkgConfig-version.cmake
+[0.252s] -- Up-to-date: /home/numarine/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.xml
+[0.267s] Invoked command in '/home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/numarine/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg
