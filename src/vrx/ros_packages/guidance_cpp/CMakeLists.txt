@@ -9,27 +9,17 @@ endif()
 # Find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(geometry_msgs REQUIRED)
-find_package(sensor_msgs REQUIRED)
-find_package(std_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
 
-# Generate services
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "srv/Trajectory.srv"
-)
+# Include Eigen unsupported modules
+include_directories(${EIGEN3_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIR}/unsupported)
 
-ament_python_install_package(${PROJECT_NAME})
+add_executable(guidance_service src/guidance_service.cpp)
 
-install(
-  DIRECTORY srv
-  DESTINATION share/${PROJECT_NAME}
-)
+ament_target_dependencies(guidance_service rclcpp Eigen3)
 
-install(
-  TARGETS guidance_service
-  DESTINATION lib/${PROJECT_NAME}
-)
+install(TARGETS
+  guidance_service
+  DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

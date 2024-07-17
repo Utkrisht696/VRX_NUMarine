@@ -2,12 +2,9 @@
 #include <vector>
 #include <cmath>
 #include <rclcpp/rclcpp.hpp>
-#include "guidance_cpp/srv/trajectory.hpp"
 #include <Eigen/Dense>
 #include <unsupported/Eigen/Splines>
 
-using std::placeholders::_1;
-using std::placeholders::_2;
 using Spline2d = Eigen::Spline<double, 2>;
 
 const double METERS_PER_DEGREE_LATITUDE = 111320;
@@ -18,23 +15,17 @@ class GuidanceService : public rclcpp::Node
 public:
     GuidanceService() : Node("guidance_service")
     {
-        service_ = this->create_service<guidance_cpp::srv::Trajectory>("trajectory", std::bind(&GuidanceService::trajectory_callback, this, _1, _2));
+        set_waypoints();
     }
 
 private:
-    void trajectory_callback(const std::shared_ptr<guidance_cpp::srv::Trajectory::Request> request,
-                             std::shared_ptr<guidance_cpp::srv::Trajectory::Response> response)
+    void set_waypoints()
     {
-        auto times = request->times;
-        auto north_positions = request->north_positions;
-        auto east_positions = request->east_positions;
+        std::vector<double> times = {0.0, 10.0, 20.0, 30.0}; // Example times
+        std::vector<double> north_positions = {0.0, 100.0, 200.0, 300.0}; // Example north positions
+        std::vector<double> east_positions = {0.0, 50.0, 100.0, 150.0}; // Example east positions
 
         size_t n_points = times.size();
-        if (north_positions.size() != n_points || east_positions.size() != n_points)
-        {
-            RCLCPP_ERROR(this->get_logger(), "Number of north/east positions must match number of times");
-            return;
-        }
 
         Eigen::VectorXd times_vec = Eigen::Map<Eigen::VectorXd>(times.data(), n_points);
         Eigen::VectorXd north_positions_vec = Eigen::Map<Eigen::VectorXd>(north_positions.data(), n_points);
@@ -45,8 +36,8 @@ private:
         const double origin_lon = 150.67398721748103;
         const double origin_alt = 1.1486131474375725;
 
-        Eigen::VectorXd latitudes = origin_lat + north_positions_vec / METERS_PER_DEGREE_LATITUDE;
-        Eigen::VectorXd longitudes = origin_lon + east_positions_vec / METERS_PER_DEGREE_LONGITUDE;
+        Eigen::VectorXd latitudes = Eigen::VectorXd::Constant(n_points, origin_lat) + (north_positions_vec.array() / METERS_PER_DEGREE_LATITUDE).matrix();
+        Eigen::VectorXd longitudes = Eigen::VectorXd::Constant(n_points, origin_lon) + (east_positions_vec.array() / METERS_PER_DEGREE_LONGITUDE).matrix();
         Eigen::VectorXd altitudes = Eigen::VectorXd::Constant(n_points, origin_alt);
 
         Eigen::Matrix<double, 2, Eigen::Dynamic> waypoints(2, n_points);
@@ -64,16 +55,10 @@ private:
             Eigen::Matrix<double, 2, 1> eval = spline(t);
             Eigen::Matrix<double, 2, 1> eval_der = spline.derivatives(t, 1).col(1);
 
-            response->latitudes.push_back(eval(0));
-            response->longitudes.push_back(eval(1));
-            response->altitudes.push_back(origin_alt);  // Constant altitude
-            response->lat_velocities.push_back(eval_der(0));
-            response->lon_velocities.push_back(eval_der(1));
-            response->alt_velocities.push_back(0.0);  // Constant altitude
+            RCLCPP_INFO(this->get_logger(), "Time: %.2f, Lat: %.6f, Lon: %.6f, Alt: %.2f, Lat Vel: %.6f, Lon Vel: %.6f, Alt Vel: %.2f",
+                        t, eval(0), eval(1), origin_alt, eval_der(0), eval_der(1), 0.0);
         }
     }
-
-    rclcpp::Service<guidance_cpp::srv::Trajectory>::SharedPtr service_;
 };
 
 int main(int argc, char **argv)

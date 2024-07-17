@@ -1,0 +1,1350 @@
+[0.052s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--merge-install']
+[0.052s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=True, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x756a1bcff670>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x756a1bc44220>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x756a1bc44220>>)
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.126s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rileychron111/Documents/GitHub/VRX_NUMarine'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'ros'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extensions ['cmake', 'python']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'cmake'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'python'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extensions ['python_setup_py']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx) by extension 'python_setup_py'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'colcon_meta'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'ros'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extensions ['cmake', 'python']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'cmake'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'python'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extensions ['python_setup_py']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/images) by extension 'python_setup_py'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'colcon_meta'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'ros'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extensions ['cmake', 'python']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'cmake'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'python'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extensions ['python_setup_py']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models) by extension 'python_setup_py'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'colcon_meta'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'ros'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extensions ['cmake', 'python']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'cmake'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'python'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extensions ['python_setup_py']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna) by extension 'python_setup_py'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'ros'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extensions ['cmake', 'python']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'cmake'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'python'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extensions ['python_setup_py']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/meshes) by extension 'python_setup_py'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'ignore'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'ros'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extensions ['cmake', 'python']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'cmake'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'python'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extensions ['python_setup_py']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/antenna/thumbnails) by extension 'python_setup_py'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extensions ['ignore', 'ignore_ament_install']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'ignore'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'ros'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extensions ['cmake', 'python']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'cmake'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'python'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extensions ['python_setup_py']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet) by extension 'python_setup_py'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extensions ['ignore', 'ignore_ament_install']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'ignore'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'ignore_ament_install'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extensions ['colcon_pkg']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'colcon_pkg'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extensions ['colcon_meta']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'colcon_meta'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extensions ['ros']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'ros'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extensions ['cmake', 'python']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'cmake'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'python'
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extensions ['python_setup_py']
+[0.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3) by extension 'python_setup_py'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extensions ['ignore', 'ignore_ament_install']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'ignore'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'ignore_ament_install'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extensions ['colcon_pkg']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'colcon_pkg'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extensions ['colcon_meta']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'colcon_meta'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extensions ['ros']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'ros'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extensions ['cmake', 'python']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'cmake'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'python'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extensions ['python_setup_py']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/meshes) by extension 'python_setup_py'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'ignore'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'ignore_ament_install'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extensions ['colcon_pkg']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'colcon_pkg'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extensions ['colcon_meta']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'colcon_meta'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extensions ['ros']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'ros'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extensions ['cmake', 'python']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'cmake'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'python'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extensions ['python_setup_py']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/euro pallet/3/thumbnails) by extension 'python_setup_py'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extensions ['ignore', 'ignore_ament_install']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'ignore'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'ignore_ament_install'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extensions ['colcon_pkg']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'colcon_pkg'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extensions ['colcon_meta']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'colcon_meta'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extensions ['ros']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'ros'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extensions ['cmake', 'python']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'cmake'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'python'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extensions ['python_setup_py']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair) by extension 'python_setup_py'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extensions ['ignore', 'ignore_ament_install']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'ignore'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'ignore_ament_install'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extensions ['colcon_pkg']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'colcon_pkg'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extensions ['colcon_meta']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'colcon_meta'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extensions ['ros']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'ros'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extensions ['cmake', 'python']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'cmake'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'python'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extensions ['python_setup_py']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3) by extension 'python_setup_py'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extensions ['ignore', 'ignore_ament_install']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'ignore'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'ignore_ament_install'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extensions ['colcon_pkg']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'colcon_pkg'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extensions ['colcon_meta']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'colcon_meta'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extensions ['ros']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'ros'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extensions ['cmake', 'python']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'cmake'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'python'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extensions ['python_setup_py']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/mesh) by extension 'python_setup_py'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'ignore'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'ignore_ament_install'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extensions ['colcon_pkg']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'colcon_pkg'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extensions ['colcon_meta']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'colcon_meta'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extensions ['ros']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'ros'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extensions ['cmake', 'python']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'cmake'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'python'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extensions ['python_setup_py']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_chair/3/thumbnails) by extension 'python_setup_py'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extensions ['ignore', 'ignore_ament_install']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'ignore'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'ignore_ament_install'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extensions ['colcon_pkg']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'colcon_pkg'
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extensions ['colcon_meta']
+[0.137s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'colcon_meta'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extensions ['ros']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'ros'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extensions ['cmake', 'python']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'cmake'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'python'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extensions ['python_setup_py']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table) by extension 'python_setup_py'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extensions ['ignore', 'ignore_ament_install']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'ignore'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'ignore_ament_install'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extensions ['colcon_pkg']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'colcon_pkg'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extensions ['colcon_meta']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'colcon_meta'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extensions ['ros']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'ros'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extensions ['cmake', 'python']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'cmake'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'python'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extensions ['python_setup_py']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4) by extension 'python_setup_py'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extensions ['ignore', 'ignore_ament_install']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'ignore'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'ignore_ament_install'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extensions ['colcon_pkg']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'colcon_pkg'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extensions ['colcon_meta']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'colcon_meta'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extensions ['ros']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'ros'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extensions ['cmake', 'python']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'cmake'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'python'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extensions ['python_setup_py']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/mesh) by extension 'python_setup_py'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'ignore'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'ignore_ament_install'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extensions ['colcon_pkg']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'colcon_pkg'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extensions ['colcon_meta']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'colcon_meta'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extensions ['ros']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'ros'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extensions ['cmake', 'python']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'cmake'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'python'
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extensions ['python_setup_py']
+[0.138s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/foldable_table/4/thumbnails) by extension 'python_setup_py'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extensions ['ignore', 'ignore_ament_install']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'ignore'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'ignore_ament_install'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extensions ['colcon_pkg']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'colcon_pkg'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extensions ['colcon_meta']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'colcon_meta'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extensions ['ros']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'ros'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extensions ['cmake', 'python']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'cmake'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'python'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extensions ['python_setup_py']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station) by extension 'python_setup_py'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'ignore'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'ignore_ament_install'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extensions ['colcon_pkg']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'colcon_pkg'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extensions ['colcon_meta']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'colcon_meta'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extensions ['ros']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'ros'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extensions ['cmake', 'python']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'cmake'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'python'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extensions ['python_setup_py']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/ground_station/thumbnails) by extension 'python_setup_py'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extensions ['ignore', 'ignore_ament_install']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'ignore'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'ignore_ament_install'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extensions ['colcon_pkg']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'colcon_pkg'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extensions ['colcon_meta']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'colcon_meta'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extensions ['ros']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'ros'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extensions ['cmake', 'python']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'cmake'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'python'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extensions ['python_setup_py']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black) by extension 'python_setup_py'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'ignore'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'ignore_ament_install'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extensions ['colcon_pkg']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'colcon_pkg'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extensions ['colcon_meta']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'colcon_meta'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extensions ['ros']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'ros'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extensions ['cmake', 'python']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'cmake'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'python'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extensions ['python_setup_py']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_black/thumbnails) by extension 'python_setup_py'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extensions ['ignore', 'ignore_ament_install']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'ignore_ament_install'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extensions ['colcon_pkg']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'colcon_pkg'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extensions ['colcon_meta']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'colcon_meta'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extensions ['ros']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'ros'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extensions ['cmake', 'python']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'cmake'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'python'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extensions ['python_setup_py']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green) by extension 'python_setup_py'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'ignore_ament_install'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extensions ['colcon_pkg']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'colcon_pkg'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extensions ['colcon_meta']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'colcon_meta'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extensions ['ros']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'ros'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extensions ['cmake', 'python']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'cmake'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'python'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extensions ['python_setup_py']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_green/thumbnails) by extension 'python_setup_py'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extensions ['ignore', 'ignore_ament_install']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'ignore_ament_install'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extensions ['colcon_pkg']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'colcon_pkg'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extensions ['colcon_meta']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'colcon_meta'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extensions ['ros']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'ros'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extensions ['cmake', 'python']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'cmake'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'python'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extensions ['python_setup_py']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red) by extension 'python_setup_py'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extensions ['ignore', 'ignore_ament_install']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'ignore'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'ignore_ament_install'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extensions ['colcon_pkg']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'colcon_pkg'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extensions ['colcon_meta']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'colcon_meta'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extensions ['ros']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'ros'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extensions ['cmake', 'python']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'cmake'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'python'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extensions ['python_setup_py']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials) by extension 'python_setup_py'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extensions ['ignore', 'ignore_ament_install']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'ignore'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'ignore_ament_install'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extensions ['colcon_pkg']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'colcon_pkg'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extensions ['colcon_meta']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'colcon_meta'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extensions ['ros']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'ros'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extensions ['cmake', 'python']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'cmake'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'python'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extensions ['python_setup_py']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/materials/textures) by extension 'python_setup_py'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extensions ['ignore', 'ignore_ament_install']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'ignore'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'ignore_ament_install'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extensions ['colcon_pkg']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'colcon_pkg'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extensions ['colcon_meta']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'colcon_meta'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extensions ['ros']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'ros'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extensions ['cmake', 'python']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'cmake'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'python'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extensions ['python_setup_py']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/meshes) by extension 'python_setup_py'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'ros'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extensions ['cmake', 'python']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'cmake'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'python'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extensions ['python_setup_py']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_red/thumbnails) by extension 'python_setup_py'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'ros'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extensions ['cmake', 'python']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'cmake'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'python'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extensions ['python_setup_py']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white) by extension 'python_setup_py'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'ros'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extensions ['cmake', 'python']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'cmake'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'python'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extensions ['python_setup_py']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_marker_buoy_white/thumbnails) by extension 'python_setup_py'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'ros'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_black/thumbnails) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'ros'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extensions ['cmake', 'python']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'cmake'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'python'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extensions ['python_setup_py']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/materials/textures) by extension 'python_setup_py'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'ros'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extensions ['cmake', 'python']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'cmake'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'python'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extensions ['python_setup_py']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/meshes) by extension 'python_setup_py'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'ros'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extensions ['cmake', 'python']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'cmake'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'python'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extensions ['python_setup_py']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/mb_round_buoy_orange/thumbnails) by extension 'python_setup_py'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'ros'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extensions ['cmake', 'python']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'cmake'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'python'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extensions ['python_setup_py']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post) by extension 'python_setup_py'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extensions ['ignore', 'ignore_ament_install']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'ignore'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'ignore_ament_install'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extensions ['colcon_pkg']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'colcon_pkg'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extensions ['colcon_meta']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'colcon_meta'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extensions ['ros']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'ros'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extensions ['cmake', 'python']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'cmake'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'python'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extensions ['python_setup_py']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials) by extension 'python_setup_py'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extensions ['ignore', 'ignore_ament_install']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'ignore'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'ignore_ament_install'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extensions ['colcon_pkg']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'colcon_pkg'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extensions ['colcon_meta']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'colcon_meta'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extensions ['ros']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'ros'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extensions ['cmake', 'python']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'cmake'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'python'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extensions ['python_setup_py']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/materials/textures) by extension 'python_setup_py'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extensions ['ignore', 'ignore_ament_install']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'ignore'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'ignore_ament_install'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extensions ['colcon_pkg']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'colcon_pkg'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extensions ['colcon_meta']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'colcon_meta'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extensions ['ros']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'ros'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extensions ['cmake', 'python']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'cmake'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'python'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extensions ['python_setup_py']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/meshes) by extension 'python_setup_py'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'ignore'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'ignore_ament_install'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extensions ['colcon_pkg']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'colcon_pkg'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extensions ['colcon_meta']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'colcon_meta'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extensions ['ros']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'ros'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extensions ['cmake', 'python']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'cmake'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'python'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extensions ['python_setup_py']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/post/thumbnails) by extension 'python_setup_py'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extensions ['ignore', 'ignore_ament_install']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'ignore'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'ignore_ament_install'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extensions ['colcon_pkg']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'colcon_pkg'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extensions ['colcon_meta']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'colcon_meta'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extensions ['ros']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'ros'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extensions ['cmake', 'python']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'cmake'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'python'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extensions ['python_setup_py']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta) by extension 'python_setup_py'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extensions ['ignore', 'ignore_ament_install']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'ignore'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'ignore_ament_install'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extensions ['colcon_pkg']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'colcon_pkg'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extensions ['colcon_meta']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'colcon_meta'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extensions ['ros']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'ros'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extensions ['cmake', 'python']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'cmake'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'python'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extensions ['python_setup_py']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials) by extension 'python_setup_py'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extensions ['ignore', 'ignore_ament_install']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'ignore'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'ignore_ament_install'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extensions ['colcon_pkg']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'colcon_pkg'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extensions ['colcon_meta']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'colcon_meta'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extensions ['ros']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'ros'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extensions ['cmake', 'python']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'cmake'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'python'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extensions ['python_setup_py']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/materials/textures) by extension 'python_setup_py'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extensions ['ignore', 'ignore_ament_install']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'ignore'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'ignore_ament_install'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extensions ['colcon_pkg']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'colcon_pkg'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extensions ['colcon_meta']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'colcon_meta'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extensions ['ros']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'ros'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extensions ['cmake', 'python']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'cmake'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'python'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extensions ['python_setup_py']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/meshes) by extension 'python_setup_py'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'ignore'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'ignore_ament_install'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extensions ['colcon_pkg']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'colcon_pkg'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extensions ['colcon_meta']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'colcon_meta'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extensions ['ros']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'ros'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extensions ['cmake', 'python']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'cmake'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'python'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extensions ['python_setup_py']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/sydney_regatta/thumbnails) by extension 'python_setup_py'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extensions ['ignore', 'ignore_ament_install']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'ignore'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'ignore_ament_install'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extensions ['colcon_pkg']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'colcon_pkg'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extensions ['colcon_meta']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'colcon_meta'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extensions ['ros']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'ros'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extensions ['cmake', 'python']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'cmake'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'python'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extensions ['python_setup_py']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent) by extension 'python_setup_py'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'ignore_ament_install'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extensions ['colcon_pkg']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'colcon_pkg'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extensions ['colcon_meta']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'colcon_meta'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extensions ['ros']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'ros'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extensions ['cmake', 'python']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'cmake'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'python'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extensions ['python_setup_py']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4) by extension 'python_setup_py'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'ignore_ament_install'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extensions ['colcon_pkg']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'colcon_pkg'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extensions ['colcon_meta']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'colcon_meta'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extensions ['ros']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'ros'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extensions ['cmake', 'python']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'cmake'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'python'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extensions ['python_setup_py']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/mesh) by extension 'python_setup_py'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'ignore_ament_install'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extensions ['colcon_pkg']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'colcon_pkg'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extensions ['colcon_meta']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'colcon_meta'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extensions ['ros']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'ros'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extensions ['cmake', 'python']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'cmake'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'python'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extensions ['python_setup_py']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/models/tent/4/thumbnails) by extension 'python_setup_py'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'ignore_ament_install'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extensions ['colcon_pkg']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'colcon_pkg'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'ros'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extensions ['cmake', 'python']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'cmake'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'python'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extensions ['python_setup_py']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages) by extension 'python_setup_py'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extensions ['ignore', 'ignore_ament_install']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extension 'ignore'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extension 'ignore_ament_install'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extensions ['colcon_pkg']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extension 'colcon_pkg'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance) by extension 'ros'
+[0.150s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/guidance' with type 'ros.ament_python' and name 'guidance'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extensions ['ignore', 'ignore_ament_install']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extension 'ignore'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extension 'ignore_ament_install'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extensions ['colcon_pkg']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extension 'colcon_pkg'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extensions ['colcon_meta']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extension 'colcon_meta'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extensions ['ros']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/guidance_cpp) by extension 'ros'
+[0.151s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/guidance_cpp' with type 'ros.ament_cmake' and name 'guidance_cpp'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/imu_heading_pkg) by extension 'ros'
+[0.151s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/imu_heading_pkg' with type 'ros.ament_cmake' and name 'imu_heading_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/mpc) by extension 'ros'
+[0.152s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/mpc' with type 'ros.ament_python' and name 'mpc'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extension 'colcon_pkg'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extensions ['colcon_meta']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/teleop_cpp_ros2) by extension 'ros'
+[0.152s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/teleop_cpp_ros2' with type 'ros.ament_cmake' and name 'teleop_cpp_ros2'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extensions ['ignore', 'ignore_ament_install']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extension 'ignore'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extension 'ignore_ament_install'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extensions ['colcon_pkg']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extension 'colcon_pkg'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extensions ['colcon_meta']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extension 'colcon_meta'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extensions ['ros']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_gz) by extension 'ros'
+[0.153s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/vrx_gz' with type 'ros.ament_cmake' and name 'vrx_gz'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extension 'ignore'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extension 'ignore_ament_install'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extensions ['colcon_pkg']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extension 'colcon_pkg'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extensions ['colcon_meta']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extension 'colcon_meta'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extensions ['ros']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_ros) by extension 'ros'
+[0.154s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/vrx_ros' with type 'ros.ament_cmake' and name 'vrx_ros'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'ros'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extensions ['cmake', 'python']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'cmake'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'python'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extensions ['python_setup_py']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf) by extension 'python_setup_py'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/vrx_gazebo) by extension 'ros'
+[0.154s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/vrx_urdf/vrx_gazebo' with type 'ros.ament_cmake' and name 'vrx_gazebo'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_description) by extension 'ros'
+[0.155s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/vrx_urdf/wamv_description' with type 'ros.ament_cmake' and name 'wamv_description'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/vrx/ros_packages/vrx_urdf/wamv_gazebo) by extension 'ros'
+[0.156s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vrx/ros_packages/vrx_urdf/wamv_gazebo' with type 'ros.ament_cmake' and name 'wamv_gazebo'
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.167s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.167s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.168s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 291 installed packages in /opt/ros/humble
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'cmake_args' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'cmake_target' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'cmake_clean_cache' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'cmake_clean_first' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'cmake_force_configure' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'ament_cmake_args' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'catkin_cmake_args' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.192s] DEBUG:colcon.colcon_core.verb:Building package 'guidance' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance', 'symlink_install': False, 'test_result_base': None}
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'cmake_args' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'cmake_target' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.192s] Level 5:colcon.colcon_core.verb:set package 'guidance_cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.192s] DEBUG:colcon.colcon_core.verb:Building package 'guidance_cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance_cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance_cpp', 'symlink_install': False, 'test_result_base': None}
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'cmake_target' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'imu_heading_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.193s] DEBUG:colcon.colcon_core.verb:Building package 'imu_heading_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/imu_heading_pkg', 'symlink_install': False, 'test_result_base': None}
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'cmake_target' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'cmake_clean_cache' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'cmake_clean_first' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'cmake_force_configure' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'ament_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'catkin_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'mpc' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.193s] DEBUG:colcon.colcon_core.verb:Building package 'mpc' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/mpc', 'symlink_install': False, 'test_result_base': None}
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'cmake_target' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'teleop_cpp_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.193s] DEBUG:colcon.colcon_core.verb:Building package 'teleop_cpp_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/teleop_cpp_ros2', 'symlink_install': False, 'test_result_base': None}
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.193s] Level 5:colcon.colcon_core.verb:set package 'vrx_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.193s] DEBUG:colcon.colcon_core.verb:Building package 'vrx_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/vrx_gazebo', 'symlink_install': False, 'test_result_base': None}
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'cmake_target' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.194s] DEBUG:colcon.colcon_core.verb:Building package 'vrx_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros', 'symlink_install': False, 'test_result_base': None}
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'cmake_target' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'cmake_clean_cache' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'cmake_clean_first' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'cmake_force_configure' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'ament_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'catkin_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'vrx_gz' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.194s] DEBUG:colcon.colcon_core.verb:Building package 'vrx_gz' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gz', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_gz', 'symlink_install': False, 'test_result_base': None}
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'cmake_target' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.194s] DEBUG:colcon.colcon_core.verb:Building package 'wamv_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_description', 'symlink_install': False, 'test_result_base': None}
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'wamv_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.194s] DEBUG:colcon.colcon_core.verb:Building package 'wamv_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install', 'merge_install': True, 'path': '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_gazebo', 'symlink_install': False, 'test_result_base': None}
+[0.195s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.195s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.195s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/vrx_gazebo' with build type 'ament_cmake'
+[0.195s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/vrx_gazebo'
+[0.197s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.197s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.197s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.198s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros' with build type 'ament_cmake'
+[0.198s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros'
+[0.198s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.198s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.200s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance' with build type 'ament_python'
+[0.200s] Level 1:colcon.colcon_core.shell:create_environment_hook('guidance', 'ament_prefix_path')
+[0.200s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance/hook/ament_prefix_path.ps1'
+[0.200s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance/hook/ament_prefix_path.dsv'
+[0.200s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance/hook/ament_prefix_path.sh'
+[0.201s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.201s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.202s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance_cpp' with build type 'ament_cmake'
+[0.202s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance_cpp'
+[0.202s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.202s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.204s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/imu_heading_pkg' with build type 'ament_cmake'
+[0.204s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/imu_heading_pkg'
+[0.204s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.204s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.205s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/mpc' with build type 'ament_python'
+[0.205s] Level 1:colcon.colcon_core.shell:create_environment_hook('mpc', 'ament_prefix_path')
+[0.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/mpc/hook/ament_prefix_path.ps1'
+[0.209s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/mpc/hook/ament_prefix_path.dsv'
+[0.209s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/mpc/hook/ament_prefix_path.sh'
+[0.209s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.209s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.210s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/teleop_cpp_ros2' with build type 'ament_cmake'
+[0.210s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/teleop_cpp_ros2'
+[0.211s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.211s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.215s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo -- -j12 -l12
+[0.216s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
+[0.335s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance'
+[0.336s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.336s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.340s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance_cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance_cpp -DCMAKE_INSTALL_PREFIX=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install
+[0.341s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg -- -j12 -l12
+[0.461s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/mpc'
+[0.461s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.461s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.468s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
+[0.471s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j12 -l12
+[0.471s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg -- -j12 -l12
+[0.472s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo -- -j12 -l12
+[0.487s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros
+[0.488s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg
+[0.489s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo
+[0.492s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vrx_ros)
+[0.493s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros
+[0.500s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.502s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.504s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_ros', 'cmake_prefix_path')
+[0.504s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/cmake_prefix_path.ps1'
+[0.505s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/cmake_prefix_path.dsv'
+[0.505s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/cmake_prefix_path.sh'
+[0.505s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.506s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.506s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/vrx_ros.pc'
+[0.506s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.506s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_ros', 'pythonpath')
+[0.506s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/pythonpath.ps1'
+[0.506s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/pythonpath.dsv'
+[0.506s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/pythonpath.sh'
+[0.507s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.507s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.ps1'
+[0.507s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.dsv'
+[0.507s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.sh'
+[0.508s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.bash'
+[0.508s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.zsh'
+[0.508s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/vrx_ros)
+[0.509s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(imu_heading_pkg)
+[0.510s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.510s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/imu_heading_pkg
+[0.511s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.511s] Level 1:colcon.colcon_core.shell:create_environment_hook('imu_heading_pkg', 'cmake_prefix_path')
+[0.511s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/cmake_prefix_path.ps1'
+[0.511s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/cmake_prefix_path.dsv'
+[0.512s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/cmake_prefix_path.sh'
+[0.512s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.512s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.512s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/imu_heading_pkg.pc'
+[0.513s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.513s] Level 1:colcon.colcon_core.shell:create_environment_hook('imu_heading_pkg', 'pythonpath')
+[0.513s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/pythonpath.ps1'
+[0.513s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/pythonpath.dsv'
+[0.513s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/pythonpath.sh'
+[0.514s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.514s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.ps1'
+[0.514s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.dsv'
+[0.514s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.sh'
+[0.514s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.bash'
+[0.514s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.zsh'
+[0.515s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/imu_heading_pkg)
+[0.515s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j12 -l12
+[0.517s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vrx_gazebo)
+[0.518s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.518s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gazebo
+[0.518s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.519s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_gazebo', 'cmake_prefix_path')
+[0.519s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/cmake_prefix_path.ps1'
+[0.519s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/cmake_prefix_path.dsv'
+[0.519s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/cmake_prefix_path.sh'
+[0.520s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.520s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.520s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/vrx_gazebo.pc'
+[0.520s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.520s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_gazebo', 'pythonpath')
+[0.520s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/pythonpath.ps1'
+[0.521s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/pythonpath.dsv'
+[0.521s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/pythonpath.sh'
+[0.521s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.521s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.ps1'
+[0.522s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.dsv'
+[0.522s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.sh'
+[0.522s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.bash'
+[0.522s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.zsh'
+[0.522s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/vrx_gazebo)
+[0.524s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vrx_ros)
+[0.524s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.524s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.524s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_ros', 'cmake_prefix_path')
+[0.524s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/cmake_prefix_path.ps1'
+[0.525s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/cmake_prefix_path.dsv'
+[0.525s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/cmake_prefix_path.sh'
+[0.525s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.525s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.525s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/vrx_ros.pc'
+[0.525s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.525s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_ros', 'pythonpath')
+[0.525s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/pythonpath.ps1'
+[0.526s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/pythonpath.dsv'
+[0.526s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/hook/pythonpath.sh'
+[0.526s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.526s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.ps1'
+[0.527s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.dsv'
+[0.527s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.sh'
+[0.528s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.bash'
+[0.528s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_ros/package.zsh'
+[0.529s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/vrx_ros)
+[0.529s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_gz' with build type 'ament_cmake'
+[0.529s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_gz'
+[0.530s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.530s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.533s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2
+[0.534s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(imu_heading_pkg)
+[0.534s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.534s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.534s] Level 1:colcon.colcon_core.shell:create_environment_hook('imu_heading_pkg', 'cmake_prefix_path')
+[0.535s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/cmake_prefix_path.ps1'
+[0.535s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/cmake_prefix_path.dsv'
+[0.535s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/cmake_prefix_path.sh'
+[0.536s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.536s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.536s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/imu_heading_pkg.pc'
+[0.536s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.536s] Level 1:colcon.colcon_core.shell:create_environment_hook('imu_heading_pkg', 'pythonpath')
+[0.537s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/pythonpath.ps1'
+[0.537s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/pythonpath.dsv'
+[0.537s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/hook/pythonpath.sh'
+[0.538s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.538s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.ps1'
+[0.539s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.dsv'
+[0.539s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.sh'
+[0.539s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.bash'
+[0.540s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/imu_heading_pkg/package.zsh'
+[0.540s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/imu_heading_pkg)
+[0.541s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(vrx_gazebo)
+[0.541s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.542s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.543s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_gazebo', 'cmake_prefix_path')
+[0.543s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/cmake_prefix_path.ps1'
+[0.543s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/cmake_prefix_path.dsv'
+[0.543s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/cmake_prefix_path.sh'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/vrx_gazebo.pc'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.544s] Level 1:colcon.colcon_core.shell:create_environment_hook('vrx_gazebo', 'pythonpath')
+[0.544s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/pythonpath.ps1'
+[0.544s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/pythonpath.dsv'
+[0.544s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/hook/pythonpath.sh'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.545s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.ps1'
+[0.545s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.dsv'
+[0.545s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.sh'
+[0.545s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.bash'
+[0.545s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/package.zsh'
+[0.545s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/vrx_gazebo)
+[0.547s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_description' with build type 'ament_cmake'
+[0.547s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_description'
+[0.547s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.547s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.548s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gz': AMENT_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_gz -- -j12 -l12
+[0.549s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(teleop_cpp_ros2)
+[0.550s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.550s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2
+[0.550s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.550s] Level 1:colcon.colcon_core.shell:create_environment_hook('teleop_cpp_ros2', 'cmake_prefix_path')
+[0.551s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/cmake_prefix_path.ps1'
+[0.551s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/cmake_prefix_path.dsv'
+[0.551s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/cmake_prefix_path.sh'
+[0.552s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.552s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.552s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/teleop_cpp_ros2.pc'
+[0.552s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.552s] Level 1:colcon.colcon_core.shell:create_environment_hook('teleop_cpp_ros2', 'pythonpath')
+[0.552s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/pythonpath.ps1'
+[0.552s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/pythonpath.dsv'
+[0.553s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/pythonpath.sh'
+[0.553s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.553s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.ps1'
+[0.553s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.dsv'
+[0.554s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.sh'
+[0.554s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.bash'
+[0.554s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.zsh'
+[0.554s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/teleop_cpp_ros2)
+[0.557s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description': AMENT_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description -- -j12 -l12
+[0.566s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(teleop_cpp_ros2)
+[0.566s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.567s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.567s] Level 1:colcon.colcon_core.shell:create_environment_hook('teleop_cpp_ros2', 'cmake_prefix_path')
+[0.567s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/cmake_prefix_path.ps1'
+[0.567s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/cmake_prefix_path.dsv'
+[0.568s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/cmake_prefix_path.sh'
+[0.568s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.568s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.568s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/teleop_cpp_ros2.pc'
+[0.569s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.569s] Level 1:colcon.colcon_core.shell:create_environment_hook('teleop_cpp_ros2', 'pythonpath')
+[0.569s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/pythonpath.ps1'
+[0.569s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/pythonpath.dsv'
+[0.570s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/hook/pythonpath.sh'
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.570s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.ps1'
+[0.571s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.dsv'
+[0.572s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.sh'
+[0.572s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.bash'
+[0.573s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/teleop_cpp_ros2/package.zsh'
+[0.573s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/teleop_cpp_ros2)
+[0.606s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description' returned '0': AMENT_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description -- -j12 -l12
+[0.628s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description': AMENT_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description
+[0.636s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(wamv_description)
+[0.636s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.636s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.639s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description' returned '0': AMENT_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_description
+[0.639s] Level 1:colcon.colcon_core.shell:create_environment_hook('wamv_description', 'cmake_prefix_path')
+[0.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/cmake_prefix_path.ps1'
+[0.640s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/cmake_prefix_path.dsv'
+[0.640s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/cmake_prefix_path.sh'
+[0.641s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.641s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.641s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/wamv_description.pc'
+[0.641s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('wamv_description', 'pythonpath')
+[0.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/pythonpath.ps1'
+[0.641s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/pythonpath.dsv'
+[0.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/pythonpath.sh'
+[0.642s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.642s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.ps1'
+[0.643s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.dsv'
+[0.643s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.sh'
+[0.644s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.bash'
+[0.644s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.zsh'
+[0.644s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/wamv_description)
+[0.662s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(wamv_description)
+[0.662s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.663s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.663s] Level 1:colcon.colcon_core.shell:create_environment_hook('wamv_description', 'cmake_prefix_path')
+[0.663s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/cmake_prefix_path.ps1'
+[0.663s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/cmake_prefix_path.dsv'
+[0.664s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/cmake_prefix_path.sh'
+[0.664s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.664s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.665s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/wamv_description.pc'
+[0.665s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.665s] Level 1:colcon.colcon_core.shell:create_environment_hook('wamv_description', 'pythonpath')
+[0.665s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/pythonpath.ps1'
+[0.665s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/pythonpath.dsv'
+[0.666s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/hook/pythonpath.sh'
+[0.666s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.666s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.ps1'
+[0.666s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.dsv'
+[0.666s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.sh'
+[0.667s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.bash'
+[0.667s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/package.zsh'
+[0.667s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/wamv_description)
+[0.667s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_gazebo' with build type 'ament_cmake'
+[0.667s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_urdf/wamv_gazebo'
+[0.667s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.667s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.673s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_gazebo': AMENT_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/wamv_description/models:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/vrx_gazebo/models:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/wamv_gazebo -- -j12 -l12
+[0.686s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance_cpp' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance_cpp -DCMAKE_INSTALL_PREFIX=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install
+[0.693s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(guidance_cpp)
+[0.693s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake module files
+[0.693s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install' for CMake config files
+[0.693s] Level 1:colcon.colcon_core.shell:create_environment_hook('guidance_cpp', 'cmake_prefix_path')
+[0.693s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/hook/cmake_prefix_path.ps1'
+[0.693s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/hook/cmake_prefix_path.dsv'
+[0.694s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/hook/cmake_prefix_path.sh'
+[0.694s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib'
+[0.694s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.694s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/pkgconfig/guidance_cpp.pc'
+[0.694s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages'
+[0.694s] Level 1:colcon.colcon_core.shell:create_environment_hook('guidance_cpp', 'pythonpath')
+[0.694s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/hook/pythonpath.ps1'
+[0.694s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/hook/pythonpath.dsv'
+[0.695s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/hook/pythonpath.sh'
+[0.695s] Level 1:colcon.colcon_core.environment:checking '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/bin'
+[0.695s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/package.ps1'
+[0.695s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/package.dsv'
+[0.695s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/package.sh'
+[0.696s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/package.bash'
+[0.696s] INFO:colcon.colcon_core.shell:Creating package script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/guidance_cpp/package.zsh'
+[0.696s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/share/colcon-core/packages/guidance_cpp)
+[0.770s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.771s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.771s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '1'
+[0.771s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.774s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.774s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.774s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.782s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.783s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local_setup.ps1'
+[0.783s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/_local_setup_util_ps1.py'
+[0.784s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/setup.ps1'
+[0.785s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local_setup.sh'
+[0.785s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/_local_setup_util_sh.py'
+[0.786s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/setup.sh'
+[0.786s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local_setup.bash'
+[0.786s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/setup.bash'
+[0.787s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/local_setup.zsh'
+[0.787s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/setup.zsh'

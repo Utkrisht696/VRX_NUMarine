@@ -1,0 +1,21 @@
+[0.567s] Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance': PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/prefix_override:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../../build/guidance build --build-base /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build install --record /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/install.log --single-version-externally-managed install_data
+[0.683s] running egg_info
+[0.683s] writing ../../../../build/guidance/guidance.egg-info/PKG-INFO
+[0.683s] writing dependency_links to ../../../../build/guidance/guidance.egg-info/dependency_links.txt
+[0.683s] writing entry points to ../../../../build/guidance/guidance.egg-info/entry_points.txt
+[0.684s] writing requirements to ../../../../build/guidance/guidance.egg-info/requires.txt
+[0.684s] writing top-level names to ../../../../build/guidance/guidance.egg-info/top_level.txt
+[0.684s] reading manifest file '../../../../build/guidance/guidance.egg-info/SOURCES.txt'
+[0.685s] writing manifest file '../../../../build/guidance/guidance.egg-info/SOURCES.txt'
+[0.685s] running build
+[0.685s] running build_py
+[0.685s] running install
+[0.685s] running install_lib
+[0.686s] running install_data
+[0.686s] running install_egg_info
+[0.687s] removing '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance-0.0.0-py3.10.egg-info' (and everything under it)
+[0.687s] Copying ../../../../build/guidance/guidance.egg-info to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/guidance-0.0.0-py3.10.egg-info
+[0.687s] running install_scripts
+[0.699s] Installing guidance_service script to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/guidance
+[0.699s] writing list of installed files to '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/install.log'
+[0.713s] Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/guidance' returned '0': PYTHONPATH=/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/prefix_override:/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../../build/guidance build --build-base /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/build install --record /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/guidance/install.log --single-version-externally-managed install_data

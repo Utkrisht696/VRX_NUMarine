@@ -4,7 +4,6 @@ import numpy as np
 from std_msgs.msg import Float64
 from std_msgs.msg import Float64MultiArray
 from sensor_msgs.msg import NavSatFix, Imu
-from guidance.srv import Trajectory  # Replace with actual service types
 from scipy.optimize import least_squares
 import math
 

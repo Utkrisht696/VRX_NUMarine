@@ -1,0 +1,19 @@
+running egg_info
+writing ../../../../build/mpc/mpc.egg-info/PKG-INFO
+writing dependency_links to ../../../../build/mpc/mpc.egg-info/dependency_links.txt
+writing entry points to ../../../../build/mpc/mpc.egg-info/entry_points.txt
+writing requirements to ../../../../build/mpc/mpc.egg-info/requires.txt
+writing top-level names to ../../../../build/mpc/mpc.egg-info/top_level.txt
+reading manifest file '../../../../build/mpc/mpc.egg-info/SOURCES.txt'
+writing manifest file '../../../../build/mpc/mpc.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../../../build/mpc/mpc.egg-info to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/python3.10/site-packages/mpc-0.0.0-py3.10.egg-info
+running install_scripts
+Installing control_node script to /home/rileychron111/Documents/GitHub/VRX_NUMarine/install/lib/mpc
+writing list of installed files to '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/mpc/install.log'
