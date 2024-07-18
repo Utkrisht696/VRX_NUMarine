@@ -1,1 +1,0 @@
-Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j12 -l12

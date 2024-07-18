@@ -1,4 +1,0 @@
-Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j12 -l12
-Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2 -- -j12 -l12
-Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2
-Invoked command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/teleop_cpp_ros2

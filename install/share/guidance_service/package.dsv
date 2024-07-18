@@ -1,0 +1,12 @@
+source;share/guidance_service/hook/cmake_prefix_path.ps1
+source;share/guidance_service/hook/cmake_prefix_path.dsv
+source;share/guidance_service/hook/cmake_prefix_path.sh
+source;share/guidance_service/hook/ld_library_path_lib.ps1
+source;share/guidance_service/hook/ld_library_path_lib.dsv
+source;share/guidance_service/hook/ld_library_path_lib.sh
+source;share/guidance_service/hook/pythonpath.ps1
+source;share/guidance_service/hook/pythonpath.dsv
+source;share/guidance_service/hook/pythonpath.sh
+source;share/guidance_service/hook/ament_prefix_path.ps1
+source;share/guidance_service/hook/ament_prefix_path.dsv
+source;share/guidance_service/hook/ament_prefix_path.sh

@@ -1,1 +1,0 @@
-Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/rileychron111/Documents/GitHub/VRX_NUMarine/src/vrx/ros_packages/vrx_ros -DCMAKE_INSTALL_PREFIX=/home/rileychron111/Documents/GitHub/VRX_NUMarine/install

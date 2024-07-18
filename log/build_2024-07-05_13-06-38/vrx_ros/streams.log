@@ -1,7 +1,0 @@
-[0.015s] Invoking command in '/home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/rileychron111/Documents/GitHub/VRX_NUMarine/build/vrx_ros -- -j12 -l12
-[0.281s] [ 50%] [32mBuilding CXX object CMakeFiles/optical_frame_publisher.dir/src/optical_frame_publisher.cc.o[0m
-[0.281s] [ 50%] [32mBuilding CXX object CMakeFiles/pose_tf_broadcaster.dir/src/pose_tf_broadcaster.cc.o[0m
-[5.162s] [ 75%] [32m[1mLinking CXX executable pose_tf_broadcaster[0m
-[5.410s] [ 75%] Built target pose_tf_broadcaster
-[6.744s] [100%] [32m[1mLinking CXX executable optical_frame_publisher[0m
-[7.115s] [100%] Built target optical_frame_publisher

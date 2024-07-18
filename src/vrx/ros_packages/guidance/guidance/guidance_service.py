@@ -1,76 +1,47 @@
 import rclpy
 from rclpy.node import Node
-from guidance.srv import Trajectory
 import numpy as np
 from scipy.interpolate import CubicSpline
-
-# Constants for converting meters to latitude and longitude
-METERS_PER_DEGREE_LATITUDE = 111320  # Approximate meters per degree of latitude
-METERS_PER_DEGREE_LONGITUDE = 111320 * np.cos(np.radians(-33.72276913511836))  # Adjust for the given latitude
+from std_msgs.msg import Float64MultiArray
 
 class GuidanceService(Node):
     def __init__(self):
         super().__init__('guidance_service')
-        self.srv = self.create_service(Trajectory, 'trajectory', self.trajectory_callback)
+        self.publisher_ = self.create_publisher(Float64MultiArray, '/guidance_service/output', 10)
+        self.set_waypoints()
 
-    def trajectory_callback(self, request, response):
-        times = np.array(request.times)
-        north_positions = np.array(request.north_positions)
-        east_positions = np.array(request.east_positions)
+    def set_waypoints(self):
+        times = np.array([0.0, 15.0, 30.0])  # Example times
+        north_positions = np.array([0.0, 5.0, 10.0])  # Example north positions in meters
+        east_positions = np.array([0.0, 0.0, 0.0])  # Example east positions in meters
+        north_velocities = np.array([0.0, 1/3, 0.0])  # Example north velocities in meters per second
+        east_velocities = np.array([0.0, 0.0, 0.0])  # Example east velocities in meters per second
 
-        n_points = len(times)
-        assert len(north_positions) == n_points, "Number of north positions must match number of times"
-        assert len(east_positions) == n_points, "Number of east positions must match number of times"
+        # Fit cubic splines with specified derivatives
+        spline_north = CubicSpline(times, north_positions, bc_type=((1, north_velocities[0]), (1, north_velocities[-1])))
+        spline_east = CubicSpline(times, east_positions, bc_type=((1, east_velocities[0]), (1, east_velocities[-1])))
 
-        # Convert north and east positions to latitude and longitude
-        origin_lat = -33.72276913511836
-        origin_lon = 150.67398721748103
-        origin_alt = 1.1486131474375725
+        # Evaluate splines at desired times for debugging
+        eval_times = np.linspace(times.min(), times.max(), 100)
+        eval_north_positions = spline_north(eval_times)
+        eval_north_velocities = spline_north(eval_times, 1)
+        eval_east_positions = spline_east(eval_times)
+        eval_east_velocities = spline_east(eval_times, 1)
 
-        latitudes = origin_lat + north_positions / METERS_PER_DEGREE_LATITUDE
-        longitudes = origin_lon + east_positions / METERS_PER_DEGREE_LONGITUDE
-        altitudes = np.full_like(latitudes, origin_alt)  # Assuming constant altitude for simplicity
+        # Log evaluated points
+        for t, n, e, nv, ev in zip(eval_times, eval_north_positions, eval_east_positions, eval_north_velocities, eval_east_velocities):
+            self.get_logger().info(f'Time: {t:.2f}, N: {n:.2f}, E: {e:.2f}, N Vel: {nv:.2f}, E Vel: {ev:.2f}')
 
-        waypoints = np.vstack((latitudes, longitudes, altitudes))
-
-        # Create splines for latitude, longitude, and altitude
-        cs_lat = CubicSpline(times, waypoints[0, :])
-        cs_lon = CubicSpline(times, waypoints[1, :])
-        cs_alt = CubicSpline(times, waypoints[2, :])
-
-        # Define time steps for the evaluation
-        eval_times = np.linspace(times[0], times[-1], num=100)  # 100 points for the trajectory
-
-        trajectory = []
-        lat_velocities = []
-        lon_velocities = []
-        alt_velocities = []
-
-        for t in eval_times:
-            lat_pos = cs_lat(t)
-            lon_pos = cs_lon(t)
-            alt_pos = cs_alt(t)
-            lat_vel = cs_lat(t, 1)
-            lon_vel = cs_lon(t, 1)
-            alt_vel = cs_alt(t, 1)
-            trajectory.append([lat_pos, lon_pos, alt_pos])
-            lat_velocities.append(lat_vel)
-            lon_velocities.append(lon_vel)
-            alt_velocities.append(alt_vel)
-
-        response.latitudes = [point[0] for point in trajectory]
-        response.longitudes = [point[1] for point in trajectory]
-        response.altitudes = [point[2] for point in trajectory]
-        response.lat_velocities = lat_velocities
-        response.lon_velocities = lon_velocities
-        response.alt_velocities = alt_velocities
-
-        return response
+        # Publish spline coefficients
+        spline_msg = Float64MultiArray()
+        spline_msg.data = np.concatenate([spline_north.c.ravel(), spline_east.c.ravel()]).tolist()
+        self.publisher_.publish(spline_msg)
 
 def main(args=None):
     rclpy.init(args=args)
     guidance_service = GuidanceService()
     rclpy.spin(guidance_service)
+    guidance_service.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':

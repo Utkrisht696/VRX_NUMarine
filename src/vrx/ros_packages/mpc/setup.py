@@ -13,7 +13,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name, glob('launch/*.launch.py')),  # Include launch files if any
     ],
-    install_requires=['setuptools', 'numpy', 'scipy'],
+    install_requires=['setuptools', 'numpy', 'scipy', 'geopy'],
     zip_safe=True,
     maintainer='rileychron111',
     maintainer_email='c3374355@uon.edu.au',

@@ -1,11 +1,14 @@
 import rclpy
 from rclpy.node import Node
+from rclpy.clock import Clock
 import numpy as np
 from std_msgs.msg import Float64
 from std_msgs.msg import Float64MultiArray
 from sensor_msgs.msg import NavSatFix, Imu
+from rosgraph_msgs.msg import Clock as ClockMsg
 from scipy.optimize import least_squares
 import math
+import geopy.distance
 
 # Kinematics helper function for skew-symmetric matrix
 def skew(vector):
@@ -98,6 +101,7 @@ class ControlNode(Node):
             '/wamv/thrusters/stern_star2/thrust'
         ]
         self.thrust_values = [0.0] * len(self.thrust_topics)
+        self.thrust_publishers = [self.create_publisher(Float64, topic, 10) for topic in self.thrust_topics]
         self.combined_thrust_values = [0.0] * 4  # Combined thrust values for bow port, bow star, stern port, stern star
         for i, topic in enumerate(self.thrust_topics):
             self.create_subscription(Float64, topic, lambda msg, i=i: self.thrust_callback(msg, i), 10)
@@ -105,6 +109,38 @@ class ControlNode(Node):
         self.latest_gps = None
         self.latest_imu = None
         self.current_state = None  # Store the current state directly
+
+        # Subscribe to the guidance service output
+        self.guidance_subscription = self.create_subscription(
+            Float64MultiArray,
+            '/guidance_service/output',
+            self.guidance_callback,
+            10
+        )
+        self.guidance_spline = None
+
+        # Subscribe to the Gazebo simulation time
+        self.clock_subscription = self.create_subscription(
+            ClockMsg,
+            '/clock',
+            self.clock_callback,
+            10
+        )
+        self.sim_start_time = None
+
+        # Initialize variables to store the initial GPS coordinates
+        self.initial_lat = None
+        self.initial_lon = None
+        self.initial_alt = None
+
+    def clock_callback(self, msg):
+        if self.sim_start_time is None:
+            self.sim_start_time = msg.clock.sec + msg.clock.nanosec * 1e-9
+            self.get_logger().info(f'Simulation start time set to {self.sim_start_time}')
+
+    def guidance_callback(self, msg):
+        # Assuming the guidance service publishes a list of spline coefficients
+        self.guidance_spline = np.array(msg.data).reshape(2, -1)
 
     def thrust_callback(self, msg, index):
         self.thrust_values[index] = msg.data
@@ -119,6 +155,13 @@ class ControlNode(Node):
 
     def gps_callback(self, msg):
         self.latest_gps = msg
+
+        # Set initial GPS coordinates if not already set
+        if self.initial_lat is None:
+            self.initial_lat = msg.latitude
+            self.initial_lon = msg.longitude
+            self.initial_alt = msg.altitude
+
         self.update_control_state()
 
     def imu_callback(self, msg):
@@ -133,6 +176,17 @@ class ControlNode(Node):
         latitude = self.latest_gps.latitude
         longitude = self.latest_gps.longitude
         altitude = self.latest_gps.altitude
+
+        # Convert latitude and longitude to NED coordinates
+        ref_point = (self.initial_lat, self.initial_lon)
+        current_point = (latitude, longitude)
+        ned = self.latlon_to_ned(current_point, ref_point)
+
+        # Calculate the altitude difference
+        altitude_diff = self.initial_alt - altitude
+
+        # Construct displacement vector (N, E, D, phi, theta, psi)
+        displacement = np.array([ned[0], ned[1], altitude_diff])
 
         # Extract IMU data
         orientation = self.latest_imu.orientation
@@ -152,8 +206,8 @@ class ControlNode(Node):
         cosy_cosp = 1 - 2 * (q.y * q.y + q.z * q.z)
         psi = math.atan2(siny_cosp, cosy_cosp)
 
-        # Construct displacement vector (N, E, D, phi, theta, psi)
-        displacement = np.array([latitude, longitude, altitude, phi, theta, psi])
+        # Combine displacement and orientation into a single vector
+        displacement_orientation = np.array([ned[0], ned[1], altitude_diff, phi, theta, psi])
 
         # Construct momentum vector from angular velocity and linear acceleration
         momentum = np.array([
@@ -162,8 +216,20 @@ class ControlNode(Node):
         ])
 
         # Combine into a single state vector
-        self.current_state = np.concatenate((momentum, displacement))
-        self.get_logger().info(f'State vector updated: {self.current_state}')
+        self.current_state = np.concatenate((momentum, displacement_orientation))
+        #self.get_logger().info(f'State vector updated: {self.current_state}')
+
+    def latlon_to_ned(self, current_point, ref_point):
+        # Calculate North, East, Down (NED) coordinates
+        north = geopy.distance.distance((ref_point[0], ref_point[1]), (current_point[0], ref_point[1])).m
+        east = geopy.distance.distance((ref_point[0], ref_point[1]), (ref_point[0], current_point[1])).m
+
+        if current_point[0] < ref_point[0]:
+            north = -north
+        if current_point[1] < ref_point[1]:
+            east = -east
+
+        return north, east
 
     def control_error(self, U):
         dt_ctrl = 5  # Control horizon time (s)
@@ -182,8 +248,12 @@ class ControlNode(Node):
 
         # Initial values from ROS topics
         t0 = self.get_clock().now().seconds_nanoseconds()[0]  # Current time
-        if self.current_state is None:
-            return np.zeros((3 + len(U)))  # No control state available yet
+        if self.sim_start_time is None:
+            return np.zeros((3 + len(U)))  # No simulation start time available yet
+
+        t0 = self.get_clock().now().seconds_nanoseconds()[0] - self.sim_start_time
+        if self.current_state is None or self.guidance_spline is None:
+            return np.zeros((3 + len(U)))  # No control state or guidance data available yet
 
         x0 = self.current_state  # Current state
         u0 = self.combined_thrust_values  # Current input from combined thrust values
@@ -232,46 +302,35 @@ class ControlNode(Node):
         e = np.zeros((3 + nu) * Np)
 
         for k in range(Np):
-            t = self.get_clock().now().seconds_nanoseconds()[0] + (k + 1) * dt_ctrl
+            t = self.get_clock().now().seconds_nanoseconds()[0] - self.sim_start_time + (k + 1) * dt_ctrl
             x = x_pred[:, k + 1]
             u = u_pred[:, k]
 
-            # Create the client once before the loop
-            if k == 0:
-                client = self.create_client(Trajectory, 'trajectory')
-                client.wait_for_service()
+            # Evaluate the spline at time t
+            lat_spline = np.polyval(self.guidance_spline[0][::-1], t)
+            lon_spline = np.polyval(self.guidance_spline[1][::-1], t)
+            d_lat_spline = np.polyval(np.polyder(self.guidance_spline[0][::-1]), t)
+            d_lon_spline = np.polyval(np.polyder(self.guidance_spline[1][::-1]), t)
 
-            request = Trajectory.Request()
-            request.time = t
+            rPNn = np.array([lat_spline, lon_spline, 0])
+            vPNn = np.array([d_lat_spline, d_lon_spline, 0])
 
-            future = client.call_async(request)
-            rclpy.spin_until_future_complete(self, future)
-
-            if future.result() is not None:
-                X = future.result().trajectory
-                rPNn = np.array([X[0][0], X[1][0], 0])
-                vPNn = np.array([X[0][1], X[1][1], 0])
-
-                if np.linalg.norm(vPNn) < 1e-10:
-                    psistar = x[12]
-                    vPNn_norm = 0
-                else:
-                    psistar = np.arctan2(vPNn[1], vPNn[0])
-                    psistar = psistar + 2 * np.pi * round((x[12] - psistar) / (2 * np.pi))
-                    vPNn_norm = 1
-
-                rBNn = np.array([x[7], x[8], x[12]])
-                rCNn = rBNn  # Boat CoG (C) coinciding with boat reference point (B)
-
-                e[(k * (3 + nu)):(k + 1) * (3 + nu)] = np.concatenate([
-                    sqrtqr * (rCNn[:2] - rPNn[:2]),
-                    [sqrtqpsi * (rCNn[2] - psistar)],
-                    sqrtru * u
-                ])
+            if np.linalg.norm(vPNn) < 1e-10:
+                psistar = x[11]
+                vPNn_norm = 0
             else:
-                self.get_logger().error("Service call failed")
-                break  # Optionally handle the failure case (e.g., exit loop or retry)
+                psistar = np.arctan2(vPNn[1], vPNn[0])
+                psistar = psistar + 2 * np.pi * round((x[11] - psistar) / (2 * np.pi))
+                vPNn_norm = 1
 
+            rBNn = np.array([x[6], x[7], x[11]])
+            rCNn = rBNn  # Boat CoG (C) coinciding with boat reference point (B)
+
+            e[(k * (3 + nu)):(k + 1) * (3 + nu)] = np.concatenate([
+                sqrtqr * (rCNn[:2] - rPNn[:2]),
+                [sqrtqpsi * (rCNn[2] - psistar)],
+                sqrtru * u
+            ])
 
         return e  # Return the error vector for least_squares
 
@@ -304,6 +363,12 @@ class ControlNode(Node):
 
             # Publish the message
             self.publisher_.publish(msg)
+
+            # Publish thrust values to individual thrusters
+            for i in range(4):
+                thrust_msg = Float64()
+                thrust_msg.data = U_opt[i]
+                self.thrust_publishers[i].publish(thrust_msg)
         else:
             self.get_logger().error("Optimization failed: %s" % message)
 
