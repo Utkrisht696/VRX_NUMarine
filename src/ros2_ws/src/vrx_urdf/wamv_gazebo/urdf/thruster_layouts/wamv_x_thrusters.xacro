@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find wamv_description)/urdf/thrusters/engine.xacro" />
+  <xacro:engine prefix="stern_port" position="-1.05 0.8 0.318237"  orientation="0.0 0.0 0.0"/>
+  <xacro:engine prefix="stern_star" position="-1.05 -0.8 0.318237" orientation="0.0 0.0 0.0"/>
+  <xacro:engine prefix="bow_port" position="1.2 0.9 0.318237" orientation="0.0 0.0 1.57"/>
+  <xacro:engine prefix="bow_star" position="1.2 -0.9 0.318237" orientation="0.0 0.0 -1.57"/>
+
+  <xacro:include filename="$(find wamv_gazebo)/urdf/thruster_layouts/wamv_gazebo_thruster_config.xacro" />
+  <xacro:wamv_gazebo_thruster_config name="stern_port" />
+  <xacro:wamv_gazebo_thruster_config name="stern_star" />
+  <xacro:wamv_gazebo_thruster_config name="bow_port" />
+  <xacro:wamv_gazebo_thruster_config name="bow_star" />
+
+</robot>
