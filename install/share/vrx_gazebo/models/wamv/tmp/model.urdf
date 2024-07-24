@@ -446,7 +446,7 @@
   <joint name="wamv/bow_port_chassis_engine_joint" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort="10" lower="-3.141592653589793" upper="3.141592653589793" velocity="10"/>
-    <origin rpy="0.0 0.0 1.57" xyz="1.2 0.9 0.318237"/>
+    <origin rpy="0.0 0.0 -1.57" xyz="1.2 0.5 0.318237"/>
     <parent link="wamv/base_link"/>
     <child link="wamv/bow_port_engine_link"/>
   </joint>
@@ -501,7 +501,7 @@
   <joint name="wamv/bow_star_chassis_engine_joint" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort="10" lower="-3.141592653589793" upper="3.141592653589793" velocity="10"/>
-    <origin rpy="0.0 0.0 -1.57" xyz="1.2 -0.9 0.318237"/>
+    <origin rpy="0.0 0.0 1.57" xyz="1.2 -0.5 0.318237"/>
     <parent link="wamv/base_link"/>
     <child link="wamv/bow_star_engine_link"/>
   </joint>
