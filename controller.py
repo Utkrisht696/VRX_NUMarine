@@ -90,6 +90,8 @@ class WAMV_NMPC_Controller(Node):
         
         # Timer for control loop
         self.create_timer(self.dt, self.control_loop)
+
+    
     
     def error_and_Jacobian(self, x, U, Xref):
         dXdU = np.zeros((self.nx , self.nu * self.Nu))
@@ -155,6 +157,50 @@ class WAMV_NMPC_Controller(Node):
 
         # print(self.Xref[0:3,:])
 
+    def create_slew_rate_constraints(self, slew_rate_limit, U, Nu, nu):
+        '''
+        Create G and h matrices for slew rate constraints.
+        
+        Parameters:
+        slew_rate_limit : float
+            The maximum allowable change in control input between time steps.
+        Nu : int
+            Number of control input steps.
+        nu : int
+            Dimension of each control input.
+        
+        Returns:
+        G : np.ndarray
+            The G matrix for the inequality constraints.
+        h : np.ndarray
+            The h vector for the inequality constraints.
+        '''
+        I = np.eye(nu)
+        
+        # Number of constraints is (Nu-1) * nu for both positive and negative slew rates
+        num_constraints = (Nu - 1) * nu
+
+        # Initialize G and h
+        G = np.zeros((2 * num_constraints, Nu * nu))
+        h = np.zeros((2 * num_constraints, 1))
+
+        for i in range(Nu - 1):
+            G[2 * i * nu:2 * i * nu + nu, i * nu:(i + 1) * nu] = I
+            G[2 * i * nu:2 * i * nu + nu, (i + 1) * nu:(i + 2) * nu] = -I
+            G[2 * i * nu + nu:2 * (i + 1) * nu, i * nu:(i + 1) * nu] = -I
+            G[2 * i * nu + nu:2 * (i + 1) * nu, (i + 1) * nu:(i + 2) * nu] = I
+
+         # Set the h vector
+        for i in range(Nu - 1):
+            # First set of constraints: β + U_k
+            h[i * nu:(i + 1) * nu] = slew_rate_limit + U[:, i].reshape(-1, 1)
+            # Second set of constraints: β - U_k
+            h[num_constraints + i * nu:num_constraints + (i + 1) * nu] = slew_rate_limit - U[:, i].reshape(-1, 1)
+ 
+        
+        return G, h
+
+
     def control_loop(self):
         print(self.current_state)
         if self.waypoints is not None and self.gpsUpdates > 100 and self.imuUpdates > 100:
@@ -163,7 +209,9 @@ class WAMV_NMPC_Controller(Node):
             x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
 
             print(self.last_inputs)
-
+            slew_rate_limit = 25
+            self.G, self.h = self.create_slew_rate_constraints(slew_rate_limit,self.last_inputs,self.Nu,self.nu)
+                
             # Publish control commands
             msg = Float64()
             msg.data = float(4 * self.last_inputs[0])
@@ -196,6 +244,7 @@ class WAMV_NMPC_Controller(Node):
             #Determine trajectory
             self.computeTrajectory(x)
 
+            
             # Run main optimisation loop
             for i in range(10):
                 #compute error and jacobian
@@ -210,7 +259,7 @@ class WAMV_NMPC_Controller(Node):
                 
                 #Slew rates as G and h s.t. GU <= h
                 
-                prob = Problem(H,f,None,None,None,None,lb,ub)
+                prob = Problem(H,f,self.G,self.h,None,None,lb,ub)
                 sol  = solve_problem(prob,solver='proxqp')
 
                 p = sol.x
