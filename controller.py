@@ -210,7 +210,7 @@ class WAMV_NMPC_Controller(Node):
 
             print(self.last_inputs)
             slew_rate_limit = 25
-            self.G, self.h = self.create_slew_rate_constraints(slew_rate_limit,self.last_inputs,self.Nu,self.nu)
+            G, h = self.create_slew_rate_constraints(slew_rate_limit,self.last_inputs,self.Nu,self.nu)
                 
             # Publish control commands
             msg = Float64()
@@ -259,7 +259,7 @@ class WAMV_NMPC_Controller(Node):
                 
                 #Slew rates as G and h s.t. GU <= h
                 
-                prob = Problem(H,f,self.G,self.h,None,None,lb,ub)
+                prob = Problem(H,f,G,h,None,None,lb,ub)
                 sol  = solve_problem(prob,solver='proxqp')
 
                 p = sol.x
