@@ -46,7 +46,12 @@ class WAMV_NMPC_Controller(Node):
         self.R_imu = np.diag([0.01, 0.01])  # IMU measurement noise covariance
         
         #Control parameters
-        self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
+        #self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1]) # Original
+        #self.Rctrl = np.array([0.1, 0, 0, 0,
+        #                       0, 0.1, 0, 0,
+        #                       0, 0, 10, 0,
+        #                       0, 0, 0,10]),
+        self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.001])
         self.Rctrl = 2
         self.thrust_lower_bound = -100
         self.thrust_upper_bound =  100
@@ -92,6 +97,7 @@ class WAMV_NMPC_Controller(Node):
         self.create_timer(self.dt, self.control_loop)
 
         self.G = self.create_slew_rate_constraints_G(self.Nu, self.nu)
+        self.h = self.create_slew_rate_constraints_h(50, self.U, self.Nu, self.nu)
 
     
     
@@ -200,11 +206,19 @@ class WAMV_NMPC_Controller(Node):
         h = np.zeros((2*nu*Nu,1))
         for i in range(Nu):
             if i == 0:
-                h[i:nu] = beta + U[:, -1].reshape(-1, 1)  # β + U_k
-                h[nu:2*nu] = beta - U[:, -1].reshape(-1, 1)  # β - U_k
+                h[i:nu] = beta + U[:,0:1].reshape(-1, 1)  # β + U_k
+                h[nu:2*nu] = beta - U[:,0:1].reshape(-1, 1)  # β - U_k
             else:
                 h[2*nu*i:(2 * i + 1) * nu] = beta
                 h[(2 * i + 1) * nu:(2 * i + 2) * nu] = beta
+        return h
+    def update_slew_rate_constraints_h(self, slew_rate_limit, U, nu, h):
+        beta = slew_rate_limit * np.ones((nu,1))
+        
+        
+        h[:nu] = beta + U[:,0:1].reshape(-1, 1)  # β + U_k
+        h[nu:2*nu] = beta - U[:,0:1].reshape(-1, 1)  # β - U_k
+            
         return h
     def control_loop(self):
         print(self.current_state)
@@ -247,8 +261,8 @@ class WAMV_NMPC_Controller(Node):
             #Determine trajectory
             self.computeTrajectory(x)
 
-            h = self.create_slew_rate_constraints_h(50, U, self.Nu, self.nu)
             
+            #self.h = self.update_slew_rate_constraints_h(50, self.U, self.nu, self.h)
 
             # Run main optimisation loop
             for i in range(10):
@@ -263,7 +277,8 @@ class WAMV_NMPC_Controller(Node):
                 ub = -U.reshape(-1,1,order='f') + self.thrust_upper_bound*np.ones((self.Nu * self.nu,1))
                 
                 #Slew rates as G and h s.t. GU <= h
-                prob = Problem(H,f,self.G,h,None,None,lb,ub)
+                #prob = Problem(H,f,self.G,self.h,None,None,lb,ub)
+                prob = Problem(H,f,None,None,None,None,lb,ub)
                 sol  = solve_problem(prob,solver='proxqp')
 
                 p = sol.x
