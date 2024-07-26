@@ -28,7 +28,7 @@ class WAMV_NMPC_Controller(Node):
         
         # NMPC parameters
         self.Np = 25  # Prediction horizon
-        self.Nu = 15        
+        self.Nu = 15  # Control horizon        
         self.dt = 0.5  # Time step
         self.nu = 4
         self.nx = 6
@@ -178,12 +178,9 @@ class WAMV_NMPC_Controller(Node):
             The h vector for the inequality constraints.
         '''
         I = np.eye(nu)
-        
-        # Number of constraints is (Nu-1) * nu for both positive and negative slew rates
-        num_constraints = (Nu - 1) * nu
 
         # Initialize G and h
-        G = np.zeros((2 * num_constraints, Nu * nu))
+        G = np.zeros((2* Nu * nu, Nu * nu))
         
 
         for i in range(Nu):
@@ -191,10 +188,11 @@ class WAMV_NMPC_Controller(Node):
                 G[2 * i * nu:(2 * i + 1) * nu, i * nu:(i + 1) * nu] = I
                 G[(2 * i + 1) * nu:(2 * i + 2) * nu, i * nu:(i + 1) * nu] = -I
             else:
-                G[2 * i * nu:(2 * i + 1) * nu, (i - 1) * nu:i * nu] = -I
-                G[2 * i * nu:(2 * i + 1) * nu, i * nu:(i + 1) * nu] = I
-                G[(2 * i + 1) * nu:(2 * i + 2) * nu, (i - 1) * nu:i * nu] = I
-                G[(2 * i + 1) * nu:(2 * i + 2) * nu, i * nu:(i + 1) * nu] = -I
+                G[2 * i * nu:(2 * i + 1) * nu, (i-1) * nu:(i) * nu] = -I
+                G[(2 * i + 1) * nu:(2 * i + 2) * nu, (i-1) * nu:(i) * nu] = I
+                G[2 * i * nu:(2 * i + 1) * nu, (i) * nu:(i+1) * nu] = I
+                G[(2 * i + 1) * nu:(2 * i + 2) * nu, (i) * nu:(i+1) * nu] = -I
+            
 
         return G
     def create_slew_rate_constraints_h(self, slew_rate_limit, U, Nu, nu):
