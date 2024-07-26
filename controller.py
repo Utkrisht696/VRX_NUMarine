@@ -45,14 +45,15 @@ class WAMV_NMPC_Controller(Node):
         self.R_gps = np.diag([1.0, 1.0])  # GPS measurement noise covariance
         self.R_imu = np.diag([0.01, 0.01])  # IMU measurement noise covariance
         
-        #Control parameters
-        #self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1]) # Original
-        #self.Rctrl = np.array([0.1, 0, 0, 0,
-        #                       0, 0.1, 0, 0,
-        #                       0, 0, 10, 0,
-        #                       0, 0, 0,10]),
-        self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.001])
-        self.Rctrl = 2
+        # Control parameters
+        self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1]) # Original
+        self.Rctrl = np.diag([0.1, 0.1, 100, 100])
+        self.Rctrl_array = np.array([0.1,
+                                     0.1,
+                                     100,
+                                     100])
+        #self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.001])
+        #self.Rctrl = 2 # Original
         self.thrust_lower_bound = -100
         self.thrust_upper_bound =  100
 
@@ -98,9 +99,23 @@ class WAMV_NMPC_Controller(Node):
 
         self.G = self.create_slew_rate_constraints_G(self.Nu, self.nu)
         self.h = self.create_slew_rate_constraints_h(50, self.U, self.Nu, self.nu)
+        self.Ju = self.ju_matrix()
+        self.e_u = self.e_matrix_section()
 
     
+    def ju_matrix(self):
+        Ju = np.zeros((self.Nu * self.nu,self.Nu * self.nu))
+        for i in range(self.Nu):
+            Ju[i * self.nu:(i + 1) * self.nu,i * self.nu:(i + 1) * self.nu] = self.Rctrl
+        return Ju
     
+    def e_matrix_section(self):
+        e_u = np.zeros((self.Nu * self.nu, 1))
+        for i in range(self.Nu):
+            e_u[i*self.nu:i*self.nu + 4,0] = self.Rctrl_array
+        return e_u
+               
+
     def error_and_Jacobian(self, x, U, Xref):
         dXdU = np.zeros((self.nx , self.nu * self.Nu))
         ex = np.zeros((self.nx, self.Np+1))
@@ -116,8 +131,10 @@ class WAMV_NMPC_Controller(Node):
             Jx[k*self.nx:(k+1)*self.nx,:] = self.Qctrl @ dXdU
             x, dXdU = self.state_transition_U(x, ucur, self.dt, dXdU, k)
 
-        Ju = self.Rctrl * np.eye(self.nu * self.Nu)
-        e  = np.vstack((ex.reshape(-1,1,order='f'), self.Rctrl * U.reshape(-1,1,order='f')))
+        #Ju = np.eye(self.Nu * self.nu) # Original
+        Ju = self.Ju
+        #e  = np.vstack((ex.reshape(-1,1,order='f'), self.Rctrl * U.reshape(-1,1,order='f'))) # Original
+        e = np.vstack((ex.reshape(-1,1,order='f'), self.e_u * U.reshape(-1,1,order='f')))
         J  = np.vstack((Jx, Ju))
 
         return e, J
@@ -133,7 +150,8 @@ class WAMV_NMPC_Controller(Node):
             ex[:,[k]] = self.Qctrl @ (x - Xref[:,[k]])
             x = self.state_transition_xonly(x, ucur, self.dt)
         
-        e  = np.vstack((ex.reshape(-1,1,order='f'), self.Rctrl * U.reshape(-1,1,order='f')))
+        #e  = np.vstack((ex.reshape(-1,1,order='f'), self.Rctrl * U.reshape(-1,1,order='f'))) # Original
+        e = np.vstack((ex.reshape(-1,1,order='f'), self.e_u * U.reshape(-1,1,order='f')))
         return e
 
 
@@ -166,23 +184,7 @@ class WAMV_NMPC_Controller(Node):
         # print(self.Xref[0:3,:])
 
     def create_slew_rate_constraints_G(self, Nu, nu):
-        '''
-        Create G and h matrices for slew rate constraints.
         
-        Parameters:
-        slew_rate_limit : float
-            The maximum allowable change in control input between time steps.
-        Nu : int
-            Number of control input steps.
-        nu : int
-            Dimension of each control input.
-        
-        Returns:
-        G : np.ndarray
-            The G matrix for the inequality constraints.
-        h : np.ndarray
-            The h vector for the inequality constraints.
-        '''
         I = np.eye(nu)
 
         # Initialize G and h
