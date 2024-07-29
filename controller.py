@@ -13,23 +13,24 @@ from scipy.spatial.transform import Rotation
 from pyproj import Proj
 from pyproj import Proj, Transformer
 from qpsolvers import Problem, solve_problem
+from scipy.linalg import block_diag
 
 class WAMV_NMPC_Controller(Node):
 
     def __init__(self):
         super().__init__('wamv_nmpc_controller')
         
-        # Model parameters
-        self.m11, self.m22, self.m33 = 345.0, 256.0, 944.0
-        self.d11, self.d22, self.d33 = 137.0, 79.0, 934.0
-        self.d11_2, self.d22_2, self.d33_2 = 225.0, 55.0, 1057.0
+        # Model parameters 252.5551, 251.7846, 516.2194,  98.9777, 100.4924, 806.6199, 150.1745, 99.7235, 809.7870
+        self.m11, self.m22, self.m33 = 252.5551, 251.7846, 516.2194#410.89900114, 525.73311676, 544.59887753#250.0, 250.0, 500.0
+        self.d11, self.d22, self.d33 = 98.9777, 100.4924, 806.6199#115.90932599,  76.23187308, 812.11345731#100.0, 100.0, 800.0
+        self.d11_2, self.d22_2, self.d33_2 = 150.1745, 99.7235, 809.7870#142.36120428, 206.60423149, 902.23070692#150.0, 100.0, 800.0
         self.d_m, self.L_m = 0.8, 1.05
         self.d_b, self.L_b = 0.5, 1.2
         
         # NMPC parameters
-        self.Np = 25  # Prediction horizon
-        self.Nu = 15        
-        self.dt = 0.5  # Time step
+        self.Np = 30  # Prediction horizon
+        self.Nu = 6       
+        self.dt = 0.1  # Time step
         self.nu = 4
         self.nx = 6
         
@@ -41,19 +42,37 @@ class WAMV_NMPC_Controller(Node):
 
         # EKF parameters
         self.P = np.diag([1000.0, 1000.0, 10.0, 0.0, 0.0, 0.0]) # Initial state covariance
-        self.Q = np.diag([0.1, 0.1, 0.01, 0.01, 0.01, 0.01])  # Process noise covariance
-        self.R_gps = np.diag([1.0, 1.0])  # GPS measurement noise covariance
-        self.R_imu = np.diag([0.01, 0.01])  # IMU measurement noise covariance
+        # self.Q = np.diag([0.01, 0.01, 0.001, 0.001, 0.001, 0.001])  # Process noise covariance
+        self.Q = np.array([
+            [ 6.1856e-02, -9.4391e-04,  1.4843e-04,  4.3312e-04, -1.2616e-04, -1.0697e-04],
+            [-9.4391e-04,  6.5208e-02, -2.3349e-04,  3.8015e-04, -4.1236e-04,  3.9740e-04],
+            [ 1.4843e-04, -2.3349e-04,  2.0787e-04,  5.3975e-06,  8.4772e-06,  6.3032e-05],
+            [ 4.3312e-04,  3.8015e-04,  5.3975e-06,  7.9621e-06, -3.0529e-06,  3.4317e-06],
+            [-1.2616e-04, -4.1236e-04,  8.4772e-06, -3.0529e-06,  5.8290e-06, -1.3472e-07],
+            [-1.0697e-04,  3.9740e-04,  6.3032e-05,  3.4317e-06, -1.3472e-07,  2.4441e-05]
+            ])
+        self.R_gps = np.diag([0.1, 0.1])  # GPS measurement noise covariance
+        self.R_imu = np.diag([0.1, 0.1])  # IMU measurement noise covariance
+
+        self.beta = 20
+        self.G = np.vstack((np.eye(self.nu),-np.eye(self.nu)))
+        self.h = self.beta * np.ones((2*self.nu*self.Nu,1))
+        I = np.eye(self.nu)
+        Z = np.zeros(self.nu)
+        mat = np.block([[-I, I],[I, -I]])
+        for i in range(self.Nu-1):
+            self.G = np.block([[self.G,np.zeros((self.G.shape[0],self.nu))],[np.zeros((2*self.nu,self.G.shape[1]-self.nu)),mat]])
         
         #Control parameters
         self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
-        self.Rctrl = 2
+        self.Rctrl = 4
+        self.Rdiff = 10
         self.thrust_lower_bound = -100
         self.thrust_upper_bound =  100
 
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
-        self.waypoints = np.array([[-400],[700],[np.pi/2]])
+        self.waypoints = np.array([[-400],[720],[np.pi/2]])
 
         # Sydney Regatta Centre coordinates (approximate center)
         self.datum_lat = -33.7285
@@ -79,6 +98,7 @@ class WAMV_NMPC_Controller(Node):
         self.last_update_time = self.get_clock().now().nanoseconds / 1e9
         
         # ROS2 publishers and subscribers
+        self.state_pub = self.create_publisher(Float64MultiArray, '/wamv/current_state', 10)
         self.cmd_L_pub = self.create_publisher(Float64, '/wamv/thrusters/stern_port/thrust', 10)
         self.cmd_R_pub = self.create_publisher(Float64, '/wamv/thrusters/stern_star/thrust', 10)
         self.cmd_bl_pub = self.create_publisher(Float64, '/wamv/thrusters/bow_port/thrust', 10)
@@ -91,41 +111,38 @@ class WAMV_NMPC_Controller(Node):
         # Timer for control loop
         self.create_timer(self.dt, self.control_loop)
     
-    def error_and_Jacobian(self, x, U, Xref):
+    def error_and_Jacobian(self, x, U, Xref, grad=False):
         dXdU = np.zeros((self.nx , self.nu * self.Nu))
         ex = np.zeros((self.nx, self.Np+1))
-        Jx = np.zeros((self.nx * (self.Np+1), self.nu * self.Nu))
+
+        if grad:
+            Jx = np.zeros((self.nx * (self.Np+1), self.nu * self.Nu))
+
+        Uo = U.copy()
+        Uo[:,1:] = Uo[:,:-1]
+        Uo[:,[0]] = self.last_inputs
 
         for k in range(self.Np+1):
             if k<self.Nu:
                 ucur = U[:,[k]]
             else:
-                ucur = U[:,[self.Nu-1]]
+                ucur = 0*U[:,[self.Nu-1]]
 
             ex[:,[k]] = self.Qctrl @ (x - Xref[:,[k]])
-            Jx[k*self.nx:(k+1)*self.nx,:] = self.Qctrl @ dXdU
-            x, dXdU = self.state_transition_U(x, ucur, self.dt, dXdU, k)
-
-        Ju = self.Rctrl * np.eye(self.nu * self.Nu)
-        e  = np.vstack((ex.reshape(-1,1,order='f'), self.Rctrl * U.reshape(-1,1,order='f')))
-        J  = np.vstack((Jx, Ju))
-
-        return e, J
-    
-    def error_only(self, x, U, Xref):
-        ex = np.zeros((self.nx, self.Np+1))
-        for k in range(self.Np+1):
-            if k<self.Nu:
-                ucur = U[:,[k]]
+            if grad:
+                Jx[k*self.nx:(k+1)*self.nx,:] = self.Qctrl @ dXdU
+                x, dXdU = self.state_transition_U(x, ucur, self.dt, dXdU, k)
             else:
-                ucur = U[:,[self.Nu-1]]
-            
-            ex[:,[k]] = self.Qctrl @ (x - Xref[:,[k]])
-            x = self.state_transition_xonly(x, ucur, self.dt)
-        
-        e  = np.vstack((ex.reshape(-1,1,order='f'), self.Rctrl * U.reshape(-1,1,order='f')))
-        return e
+                x = self.state_transition_xonly(x, ucur, self.dt)
 
+        e  = np.vstack((ex.reshape(-1,1,order='f'), self.Rctrl * U.reshape(-1,1,order='f'), self.Rdiff * (U-Uo).reshape(-1,1,order='f')))
+        if grad:
+            Ju = self.Rctrl * np.eye(self.nu * self.Nu)
+            Jdu = self.Rdiff * (np.eye(self.nu * self.Nu) - np.diag(np.ones((self.Nu-1)*self.nu),-self.nu))
+            J  = np.vstack((Jx, Ju, Jdu))
+            return e, J
+        else:
+            return e
 
     def computeTrajectory(self, x):
         #Compute unit direction vector from x to next waypoint
@@ -150,20 +167,23 @@ class WAMV_NMPC_Controller(Node):
             heading = self.waypoint[2,0] #self.headingOld
         else:
             heading = np.arctan2(uv[1,0],uv[0,0])
-        self.Xref[2,:] = self.waypoint[2,0] # np.linspace(x[2,0], heading, self.Np+1)
+        self.Xref[2,:] = heading#self.waypoint[2,0] # np.linspace(x[2,0], heading, self.Np+1)
         self.headingOld = heading
 
         # print(self.Xref[0:3,:])
 
+
+    def publish_current_state(self):
+        msg = Float64MultiArray()
+        msg.data = self.current_state.flatten().tolist()  # Convert the state to a flat list
+        self.state_pub.publish(msg)
+
+
     def control_loop(self):
-        print(self.current_state)
+        # print(self.current_state[0:3,[0]].T)
         if self.waypoints is not None and self.gpsUpdates > 100 and self.imuUpdates > 100:
             # Apply previous control action and compute predicted state at k+1
-            self.last_inputs = self.U[:,0:1]
-            x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
-
-            print(self.last_inputs)
-
+            self.last_inputs = self.U[:,[0]]
             # Publish control commands
             msg = Float64()
             msg.data = float(4 * self.last_inputs[0])
@@ -174,6 +194,13 @@ class WAMV_NMPC_Controller(Node):
             self.cmd_bl_pub.publish(msg)
             msg.data = float(4 * self.last_inputs[3])
             self.cmd_br_pub.publish(msg)
+
+            self.publish_current_state()
+
+            x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
+            #x = self.current_state
+
+            # print(self.last_inputs.T)
 
 
             # Start timer
@@ -196,10 +223,14 @@ class WAMV_NMPC_Controller(Node):
             #Determine trajectory
             self.computeTrajectory(x)
 
+            h = self.h.copy()
+            h[0:self.nu,[0]] += self.last_inputs
+            h[self.nu:2*self.nu,[0]] -= self.last_inputs
+
             # Run main optimisation loop
             for i in range(10):
                 #compute error and jacobian
-                e, J = self.error_and_Jacobian(x, U, self.Xref)
+                e, J = self.error_and_Jacobian(x, U, self.Xref, True)
 
                 # Compute search direction
                 # p, res, tmp, sv = np.linalg.lstsq(J,e, rcond=None)
@@ -209,29 +240,38 @@ class WAMV_NMPC_Controller(Node):
                 ub = -U.reshape(-1,1,order='f') + self.thrust_upper_bound*np.ones((self.Nu * self.nu,1))
                 
                 #Slew rates as G and h s.t. GU <= h
+                hh = h - self.G @ U.reshape(-1,1,order='f')
                 
-                prob = Problem(H,f,None,None,None,None,lb,ub)
-                sol  = solve_problem(prob,solver='proxqp')
+                prob = Problem(H,f,self.G,hh,None,None,lb,ub)
+                sol  = solve_problem(prob,solver='daqp')
+
+                if sol.found == False:
+                    print('QP not solved')
 
                 p = sol.x
                 lam = sol.z_box
-                maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam))))
+                lamg = sol.z
+                maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam)),np.max(np.fabs(lamg))))
+                # maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam))))
+
 
                 #Compute the Newton Decrement and return if less than some threshold
-                if np.linalg.norm(f+lam.reshape(-1,1,order='f')) < np.max((1e-3, 1e-3*maxv)):
+                fonc_vec = f+lam.reshape(-1,1,order='f')+(self.G.T @ lamg).reshape(-1,1,order='f')
+                # fonc_vec = f+lam.reshape(-1,1,order='f')
+                if np.linalg.norm(fonc_vec) < np.max((1e-1, 1e-3*maxv)):
                     break
 
                 #Compute cost (sum of squared errors)
                 co = e.T @ e
 
-                # print("Cost = {:f}, FONC = {:f}".format(co[0,0], np.linalg.norm(f+lam.reshape(-1,1,order='f'))))
+                # print("Cost = {:f}, FONC = {:f}".format(co[0,0], np.linalg.norm(fonc_vec)))
 
                 #Use backtracking line search
                 alp = 1.0
                 for j in range(30):
                     #Try out new input sequence 
                     Un = U + alp*p.reshape(self.nu,-1,order='f')
-                    e = self.error_only(x, Un, self.Xref)
+                    e = self.error_and_Jacobian(x, Un, self.Xref)
                     cn = e.T @ e
                     #If we have reduced the cost then accept the new input sequence and return
                     if np.isfinite(cn) and cn < co:
@@ -245,18 +285,22 @@ class WAMV_NMPC_Controller(Node):
                     for j in range(self.Nu * self.nu):
                         Ut = U.copy()
                         Ut = Ut.reshape(-1,1,order='f')
-                        Ut[j] += 1e-8
+                        Ut[j] += 1e-6
                         Ut = Ut.reshape(self.nu,-1,order='f')
-                        ep, Jp = self.error_and_Jacobian(x, Ut, self.Xref)
+                        # ep, Jp = self.error_and_Jacobian(x, Ut, self.Xref)
+                        ep = self.error_and_Jacobian(x, Ut, self.Xref)
                         Ut = U.copy()
                         Ut = Ut.reshape(-1,1,order='f')
-                        Ut[j] -= 1e-8
+                        Ut[j] -= 1e-6
                         Ut = Ut.reshape(self.nu,-1,order='f')
-                        em, Jm = self.error_and_Jacobian(x, Ut, self.Xref)
-                        Jn[:,[j]] = (ep-em)/2e-8
+                        # em, Jm = self.error_and_Jacobian(x, Ut, self.Xref)
+                        em = self.error_and_Jacobian(x, Ut, self.Xref)
+                        Jn[:,[j]] = (ep-em)/2e-6
 
                     print('hello')
 
+            # if any(self.G@U.reshape(-1,1,order='f') > h):
+                # print('asdf')
 
             #record the optimal input sequence
             self.U = U
@@ -266,7 +310,9 @@ class WAMV_NMPC_Controller(Node):
 
             # Calculate elapsed time
             elapsed_time = end_time - start_time
-            print("Elapsed time: ", elapsed_time)
+            xc = self.current_state[:,0]
+            uc = self.last_inputs[:,0]
+            print("X: {:8.2f}, Y: {:8.2f}, P: {:8.2f}, U1: {:8.2f}, U2: {:8.2f}, U3: {:8.2f}, U4: {:8.2f}, ET: {:8.2f}".format(xc[0], xc[1], xc[2], uc[0], uc[1], uc[2], uc[3], elapsed_time))
             # print('end')
 
     def reference_callback(self, msg):
@@ -291,7 +337,7 @@ class WAMV_NMPC_Controller(Node):
                           [0],
                           [(F_l+F_r)/self.m11],
                           [(F_br-F_bl)/self.m22],
-                          [(self.L_b*(F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
+                          [(self.L_b*(-F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
 
         # Compute state derivatives
         dN = u_vel * np.cos(psi) - v * np.sin(psi)
@@ -361,7 +407,7 @@ class WAMV_NMPC_Controller(Node):
         #                   [0],
         #                   [(F_l+F_r)/self.m11],
         #                   [(F_br-F_bl)/self.m22],
-        #                   [(self.L_b*(F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
+        #                   [(self.L_b*(-F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
 
         dFdu = 4 * np.eye(4)
 
@@ -371,7 +417,7 @@ class WAMV_NMPC_Controller(Node):
             [0, 0, 0, 0],
             [1/self.m11, 1/self.m11, 0, 0],
             [0, 0, -1/self.m22, 1/self.m22],
-            [-self.d_m/self.m33, self.d_m/self.m33, self.L_b/self.m33, self.L_b/self.m33]
+            [-self.d_m/self.m33, self.d_m/self.m33, -self.L_b/self.m33, self.L_b/self.m33]
         ])
 
         B = dxdF @ dFdu
@@ -379,23 +425,23 @@ class WAMV_NMPC_Controller(Node):
         dk1du = self.CTStateModelDx(x) @ dxdu
         if k<self.Nu:
             dk1du[:,k*self.nu:(k+1)*self.nu] += B
-        else:
-            dk1du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
+        # else:
+        #     dk1du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
         dk2du = self.CTStateModelDx(x+(dt/2.0)*k1) @ (dxdu+(dt/2.0)*dk1du)
         if k<self.Nu:
             dk2du[:,k*self.nu:(k+1)*self.nu] += B
-        else:
-            dk2du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
+        # else:
+        #     dk2du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
         dk3du = self.CTStateModelDx(x+(dt/2.0)*k2) @ (dxdu+(dt/2.0)*dk2du)
         if k<self.Nu:
             dk3du[:,k*self.nu:(k+1)*self.nu] += B
-        else:
-            dk3du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
+        # else:
+        #     dk3du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
         dk4du = self.CTStateModelDx(x+(dt/1.0)*k3) @ (dxdu+(dt/1.0)*dk3du)
         if k<self.Nu:
             dk4du[:,k*self.nu:(k+1)*self.nu] += B
-        else:
-            dk4du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
+        # else:
+        #     dk4du[:,(self.Nu-1)*self.nu:(self.Nu)*self.nu] += B
         dxdun = dxdu + (dt/6.0) * (dk1du + 2.0*dk2du + 2.0*dk3du + dk4du)
         
         return xn, dxdun
@@ -452,7 +498,7 @@ class WAMV_NMPC_Controller(Node):
 
     def update_ekf(self, dt, gps_measurement=None, imu_measurement=None):
         # Prediction step
-        self.current_state, F = self.state_transition_A(self.current_state, dt, 0*self.last_inputs)
+        self.current_state, F = self.state_transition_A(self.current_state, dt, self.last_inputs)
         self.P = F @ self.P @ F.T + self.Q * dt  # Scale process noise with dt
 
         # Update step
@@ -483,5 +529,4 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
 
