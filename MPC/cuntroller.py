@@ -1,6 +1,7 @@
 import sys
 import os
 import time
+import yaml
 
 import rclpy
 from rclpy.node import Node
@@ -10,29 +11,36 @@ from std_msgs.msg import Float64, Float64MultiArray
 import casadi as ca
 import numpy as np
 from scipy.spatial.transform import Rotation
-from pyproj import Proj
 from pyproj import Proj, Transformer
 from qpsolvers import Problem, solve_problem
 from scipy.linalg import block_diag
 
 class WAMV_NMPC_Controller(Node):
 
-    def __init__(self):
+    def __init__(self, config):
         super().__init__('wamv_nmpc_controller')
         
-        # Model parameters 252.5551, 251.7846, 516.2194,  98.9777, 100.4924, 806.6199, 150.1745, 99.7235, 809.7870
-        self.m11, self.m22, self.m33 = 252.5551, 251.7846, 516.2194#410.89900114, 525.73311676, 544.59887753#250.0, 250.0, 500.0
-        self.d11, self.d22, self.d33 = 98.9777, 100.4924, 806.6199#115.90932599,  76.23187308, 812.11345731#100.0, 100.0, 800.0
-        self.d11_2, self.d22_2, self.d33_2 = 150.1745, 99.7235, 809.7870#142.36120428, 206.60423149, 902.23070692#150.0, 100.0, 800.0
-        self.d_m, self.L_m = 0.8, 1.05
-        self.d_b, self.L_b = 0.5, 1.2
+        # Load model parameters
+        self.m11 = config['model_parameters']['m11']
+        self.m22 = config['model_parameters']['m22']
+        self.m33 = config['model_parameters']['m33']
+        self.d11 = config['model_parameters']['d11']
+        self.d22 = config['model_parameters']['d22']
+        self.d33 = config['model_parameters']['d33']
+        self.d11_2 = config['model_parameters']['d11_2']
+        self.d22_2 = config['model_parameters']['d22_2']
+        self.d33_2 = config['model_parameters']['d33_2']
+        self.d_m = config['model_parameters']['d_m']
+        self.L_m = config['model_parameters']['L_m']
+        self.d_b = config['model_parameters']['d_b']
+        self.L_b = config['model_parameters']['L_b']
         
-        # NMPC parameters
-        self.Np = 30  # Prediction horizon
-        self.Nu = 6       
-        self.dt = 0.1  # Time step
-        self.nu = 4
-        self.nx = 6
+        # Load NMPC parameters
+        self.Np = config['nmpc_parameters']['Np']
+        self.Nu = config['nmpc_parameters']['Nu']
+        self.dt = config['nmpc_parameters']['dt']
+        self.nu = config['nmpc_parameters']['nu']
+        self.nx = config['nmpc_parameters']['nx']
         
         # Initialize state and reference
         self.current_state = np.zeros((self.nx,1))
@@ -40,21 +48,13 @@ class WAMV_NMPC_Controller(Node):
         # Last known actuator inputs
         self.last_inputs = np.zeros((self.nu,1))
 
-        # EKF parameters
-        self.P = np.diag([1000.0, 1000.0, 10.0, 0.0, 0.0, 0.0]) # Initial state covariance
-        # self.Q = np.diag([0.01, 0.01, 0.001, 0.001, 0.001, 0.001])  # Process noise covariance
-        self.Q = np.array([
-            [ 6.1856e-02, -9.4391e-04,  1.4843e-04,  4.3312e-04, -1.2616e-04, -1.0697e-04],
-            [-9.4391e-04,  6.5208e-02, -2.3349e-04,  3.8015e-04, -4.1236e-04,  3.9740e-04],
-            [ 1.4843e-04, -2.3349e-04,  2.0787e-04,  5.3975e-06,  8.4772e-06,  6.3032e-05],
-            [ 4.3312e-04,  3.8015e-04,  5.3975e-06,  7.9621e-06, -3.0529e-06,  3.4317e-06],
-            [-1.2616e-04, -4.1236e-04,  8.4772e-06, -3.0529e-06,  5.8290e-06, -1.3472e-07],
-            [-1.0697e-04,  3.9740e-04,  6.3032e-05,  3.4317e-06, -1.3472e-07,  2.4441e-05]
-            ])
-        self.R_gps = np.diag([0.1, 0.1])  # GPS measurement noise covariance
-        self.R_imu = np.diag([0.1, 0.1])  # IMU measurement noise covariance
+        # Load EKF parameters
+        self.P = np.diag(config['ekf_parameters']['initial_state_covariance'])
+        self.Q = np.array(config['ekf_parameters']['process_noise_covariance'])
+        self.R_gps = np.diag(config['ekf_parameters']['gps_measurement_noise_covariance'])
+        self.R_imu = np.diag(config['ekf_parameters']['imu_measurement_noise_covariance'])
 
-        self.beta = 20
+        self.beta = config['ekf_parameters']['beta']
         self.G = np.vstack((np.eye(self.nu),-np.eye(self.nu)))
         self.h = self.beta * np.ones((2*self.nu*self.Nu,1))
         I = np.eye(self.nu)
@@ -62,25 +62,27 @@ class WAMV_NMPC_Controller(Node):
         mat = np.block([[-I, I],[I, -I]])
         for i in range(self.Nu-1):
             self.G = np.block([[self.G,np.zeros((self.G.shape[0],self.nu))],[np.zeros((2*self.nu,self.G.shape[1]-self.nu)),mat]])
-        
-        #Control parameters
-        self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
-        self.Rctrl = 4
-        self.Rdiff = 10
-        self.thrust_lower_bound = -100
-        self.thrust_upper_bound =  100
+
+        # Control parameters
+        self.Qctrl = np.diag(config['control_parameters']['Qctrl'])
+        self.Rctrl = config['control_parameters']['Rctrl']
+        self.Rdiff = config['control_parameters']['Rdiff']
+        self.thrust_lower_bound = config['control_parameters']['thrust_lower_bound']
+        self.thrust_upper_bound = config['control_parameters']['thrust_upper_bound']
 
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
-        self.waypoints = np.array([[-400],[720],[np.pi/2]])
+        self.Xreff  = np.zeros((self.nx, self.Np+1))
+        self.received_trajectory = np.zeros((self.nx, self.Np+1))
+        self.waypoints = np.array(config['waypoints']).reshape((3, 1))
 
-        # Sydney Regatta Centre coordinates (approximate center)
-        self.datum_lat = -33.7285
-        self.datum_lon = 150.6789
+        # Load datum coordinates
+        self.datum_lat = config['datum_coordinates']['lat']
+        self.datum_lon = config['datum_coordinates']['lon']
 
         # Initialize projections
         self.proj_wgs84 = Proj(proj='latlong', datum='WGS84')
-        self.proj_utm = Proj(proj='utm', zone=56, datum='WGS84', south=True)
+        self.proj_utm = Proj(proj=config['projections']['proj'], zone=config['projections']['zone'], datum=config['projections']['datum'], south=config['projections']['south'])
         self.transformer = Transformer.from_proj(self.proj_wgs84, self.proj_utm)
 
         # Calculate datum in UTM coordinates
@@ -105,8 +107,9 @@ class WAMV_NMPC_Controller(Node):
         self.cmd_br_pub = self.create_publisher(Float64, '/wamv/thrusters/bow_star/thrust', 10)
         self.gps_sub = self.create_subscription(NavSatFix, '/wamv/sensors/gps/gps/fix', self.gps_callback, 10)
         self.imu_sub = self.create_subscription(Imu, '/wamv/sensors/imu/imu/data', self.imu_callback, 10)
-        # self.ref_sub = self.create_subscription(Float64MultiArray, '/wamv/reference', self.reference_callback, 10)
         self.ref_sub = self.create_subscription(PoseArray, '/vrx/wayfinding/waypoints', self.reference_callback, 10)
+        self.waypoint_pub = self.create_publisher(Float64MultiArray, '/wamv/computed_trajectory', 10)
+        self.trajectory = self.create_subscription(Float64MultiArray, '/wamv/computed_trajectory', self.trajectory_callback ,10)
         
         # Timer for control loop
         self.create_timer(self.dt, self.control_loop)
@@ -159,23 +162,30 @@ class WAMV_NMPC_Controller(Node):
             wpX = self.waypoint[0,0]
             wpY = self.waypoint[1,0]
 
-        self.Xref[0,:] = self.waypoint[0,0] # np.linspace(x[0,0], wpX, self.Np+1)
-        self.Xref[1,:] = self.waypoint[1,0] # np.linspace(x[1,0], wpY, self.Np+1)
+        self.Xreff[0,:] = self.waypoint[0,0] # np.linspace(x[0,0], wpX, self.Np+1)
+        self.Xreff[1,:] = self.waypoint[1,0] # np.linspace(x[1,0], wpY, self.Np+1)
         
         maxAngSpeed = 0.5 #rads/s
         if distance_to_waypoint < 10.0:
             heading = self.waypoint[2,0] #self.headingOld
         else:
             heading = np.arctan2(uv[1,0],uv[0,0])
-        self.Xref[2,:] = heading#self.waypoint[2,0] # np.linspace(x[2,0], heading, self.Np+1)
+        self.Xreff[2,:] = heading#self.waypoint[2,0] # np.linspace(x[2,0], heading, self.Np+1)
         self.headingOld = heading
 
-        # print(self.Xref[0:3,:])
-
-
-    def publish_current_state(self):
+        # Publish computed trajectory
         msg = Float64MultiArray()
-        msg.data = self.current_state.flatten().tolist()  # Convert the state to a flat list
+        msg.data = self.Xreff.flatten().tolist()
+        self.waypoint_pub.publish(msg)
+
+        # print(self.Xref)
+    
+    def trajectory_callback(self,msg):
+        self.received_trajectory = np.array(msg.data).reshape((self.nx, self.Np+1))
+
+    def publish_current_state(self,x):
+        msg = Float64MultiArray()
+        msg.data = x.flatten().tolist()  # Convert the state to a flat list
         self.state_pub.publish(msg)
 
 
@@ -195,13 +205,10 @@ class WAMV_NMPC_Controller(Node):
             msg.data = float(4 * self.last_inputs[3])
             self.cmd_br_pub.publish(msg)
 
-            self.publish_current_state()
-
             x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
             #x = self.current_state
 
-            # print(self.last_inputs.T)
-
+            self.publish_current_state(x)
 
             # Start timer
             start_time = time.time()
@@ -220,8 +227,18 @@ class WAMV_NMPC_Controller(Node):
             #Pick waypoint from the list
             self.waypoint = self.waypoints[:,[self.currentwaypoint]]
 
-            #Determine trajectory
             self.computeTrajectory(x)
+
+            #Determine trajectory
+            # self.computeTrajectory(x)
+            # Use the received trajectory for control computation
+            if self.received_trajectory is not None:
+                self.Xref = self.received_trajectory
+            else:
+                print("chut")
+                self.compute_trajectory(x)
+                self.Xref = self.Xref
+                print("chut")
 
             h = self.h.copy()
             h[0:self.nu,[0]] += self.last_inputs
@@ -312,7 +329,7 @@ class WAMV_NMPC_Controller(Node):
             elapsed_time = end_time - start_time
             xc = self.current_state[:,0]
             uc = self.last_inputs[:,0]
-            print("X: {:8.2f}, Y: {:8.2f}, P: {:8.2f}, U1: {:8.2f}, U2: {:8.2f}, U3: {:8.2f}, U4: {:8.2f}, ET: {:8.2f}".format(xc[0], xc[1], xc[2], uc[0], uc[1], uc[2], uc[3], elapsed_time))
+            # print("X: {:8.2f}, Y: {:8.2f}, P: {:8.2f}, U1: {:8.2f}, U2: {:8.2f}, U3: {:8.2f}, U4: {:8.2f}, ET: {:8.2f}".format(xc[0], xc[1], xc[2], uc[0], uc[1], uc[2], uc[3], elapsed_time))
             # print('end')
 
     def reference_callback(self, msg):
@@ -521,12 +538,20 @@ class WAMV_NMPC_Controller(Node):
             self.P = (np.eye(6) - K @ H_imu) @ self.P
 
 def main(args=None):
+    # Set the working directory to the script's directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+
     rclpy.init(args=args)
-    controller = WAMV_NMPC_Controller()
+
+    # Load configuration file
+    with open('config.yaml', 'r') as file:
+        config = yaml.safe_load(file)
+        
+    controller = WAMV_NMPC_Controller(config)
     rclpy.spin(controller)
     controller.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
-
