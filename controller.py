@@ -178,15 +178,47 @@ class WAMV_NMPC_Controller(Node):
             self.last_inputs = self.U[:,[0]]
             # Publish control commands
             msg = Float64()
-            msg.data = float(4 * self.last_inputs[0])
-            self.cmd_L_pub.publish(msg)
-            msg.data = float(4 * self.last_inputs[1])
-            self.cmd_R_pub.publish(msg)
-            msg.data = float(4 * self.last_inputs[2])
-            self.cmd_bl_pub.publish(msg)
-            msg.data = float(4 * self.last_inputs[3])
-            self.cmd_br_pub.publish(msg)
 
+
+################################3
+
+        ####
+        # may need to update these parameters to account for signal needed for real boat  
+        ###
+            singleActuator= 2   # tune this parameter 
+            stern =2*singleActuator # double the actuator  
+            bow = singleActuator   
+
+        ##
+
+            # bow 
+            msg.data = float(bow * self.last_inputs[0])
+            self.cmd_L_pub.publish(msg)
+            msg.data = float(bow * self.last_inputs[1])
+            self.cmd_R_pub.publish(msg)
+            # stern
+            msg.data = float(stern * self.last_inputs[2])   
+            self.cmd_bl_pub.publish(msg)
+            msg.data = float(stern * self.last_inputs[3])
+            self.cmd_br_pub.publish(msg)
+            
+
+
+
+            # # bow 
+            # msg.data = float(4 * self.last_inputs[0])
+            # self.cmd_L_pub.publish(msg)
+            # msg.data = float(4 * self.last_inputs[1])
+            # self.cmd_R_pub.publish(msg)
+            
+            # # stern
+            # msg.data = float(4 * self.last_inputs[2])   
+            # self.cmd_bl_pub.publish(msg)
+            # msg.data = float(4 * self.last_inputs[3])
+            # self.cmd_br_pub.publish(msg)
+
+
+#################################3
             x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
             #x = self.current_state
 
@@ -258,7 +290,7 @@ class WAMV_NMPC_Controller(Node):
 
                 #Use backtracking line search
                 alp = 1.0
-                for j in range(50):
+                for j in range(30):
                     #Try out new input sequence 
                     Un = U + alp*p.reshape(self.nu,-1,order='f')
                     e = self.error_and_Jacobian(x, Un, self.Xref)

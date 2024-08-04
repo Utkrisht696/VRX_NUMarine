@@ -1,18 +1,3 @@
-# Copyright 2021 Open Source Robotics Foundation, Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.actions import OpaqueFunction
@@ -22,17 +7,10 @@ import os
 import vrx_gz.launch
 from vrx_gz.model import Model
 
-import os
-
 from ament_index_python.packages import get_package_share_directory
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
 from launch.actions import IncludeLaunchDescription
-from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
-
 
 def launch(context, *args, **kwargs):
     config_file = LaunchConfiguration('config_file').perform(context)
@@ -54,10 +32,10 @@ def launch(context, *args, **kwargs):
         with open(config_file, 'r') as stream:
             models = Model.FromConfig(stream)
     else:
-      m = Model('wamv', 'wam-v', [-532, 162, 0, 0, 0, 1])
-      if robot_urdf and robot_urdf != '':
-          m.set_urdf(robot_urdf)
-      models.append(m)
+        m = Model('wamv', 'wam-v', [-532, 162, 0, 0, 0, 1])
+        if robot_urdf and robot_urdf != '':
+            m.set_urdf(robot_urdf)
+        models.append(m)
 
     world_name, ext = os.path.splitext(world_name)
     launch_processes.extend(vrx_gz.launch.simulation(world_name, headless, 
@@ -70,9 +48,7 @@ def launch(context, *args, **kwargs):
 
     return launch_processes
 
-
 def generate_launch_description():
-
     pkg_vrx_gazebo = get_package_share_directory('vrx_gazebo')
 
     rviz = IncludeLaunchDescription(

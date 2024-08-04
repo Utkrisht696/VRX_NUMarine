@@ -36,7 +36,7 @@
     <xacro:property name="post_arm_to_lidar_z" value="0.05"/>
 
     <!-- 3d lidar sensor -->
-    <link name="${namespace}/${name}_link">
+    <link name="wamv/base_link/lidar_wamv_sensor">
       <visual>
         <origin xyz="0 0 -0.035" rpy="0 0 0"/>
         <geometry>
@@ -140,10 +140,10 @@
     <joint name="${namespace}/${name}_post_arm_to_${name}_joint" type="fixed">
       <origin xyz="${post_arm_to_lidar_x} 0 ${post_arm_to_lidar_z}" rpy="${R} ${P} ${Y-post_Y}" />
       <parent link="${namespace}/${name}_post_arm_link" />
-      <child link="${namespace}/${name}_link" />
+      <child link="wamv/base_link/lidar_wamv_sensor" />
     </joint>
 
-    <gazebo reference="${namespace}/${name}_link">
+    <gazebo reference="wamv/base_link/lidar_wamv_sensor">
       <visual>
         <material>
           <diffuse>1.0 1.0 1.0</diffuse>
