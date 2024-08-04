@@ -23,7 +23,7 @@ setup(
         'console_scripts': [
             'gps_waypoint_logger = gps_waypoint_logger.gps_waypoint_logger:main',
             'logged_waypoint_follower = gps_waypoint_logger.logged_waypoint_follower:main',
-            'gps_waypoint_publisher = gps_waypoint_logger.gps_waypoint_publisher:main'
+            'waypoints_publisher = gps_waypoint_logger.waypoints_publisher:main'
         ],
     },
 )
