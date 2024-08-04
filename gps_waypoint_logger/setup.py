@@ -10,6 +10,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/config', ['config/gps_waypoints.yaml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -21,7 +22,8 @@ setup(
     entry_points={
         'console_scripts': [
             'gps_waypoint_logger = gps_waypoint_logger.gps_waypoint_logger:main',
-            'logged_waypoint_follower = gps_waypoint_logger.logged_waypoint_follower:main'
+            'logged_waypoint_follower = gps_waypoint_logger.logged_waypoint_follower:main',
+            'gps_waypoint_publisher = gps_waypoint_logger.gps_waypoint_publisher:main'
         ],
     },
 )
