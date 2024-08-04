@@ -73,7 +73,8 @@ class WAMV_NMPC_Controller(Node):
 
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
-        self.waypoints = np.array([[-400],[720],[np.pi/2]])
+        # self.waypoints = np.array([[-400],[720],[np.pi/2]])
+        self.waypoints = np.array([[0],[0],[0]])
 
         # Sydney Regatta Centre coordinates (approximate center)
         self.datum_lat = -33.7285
