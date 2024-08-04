@@ -1,0 +1,1 @@
+savedcmd_/home/nuc1/Downloads/linuxcan/pcican/kvpcican.mod := printf '%s\n'   PciCanHwIf.o dallas.o | awk '!x[$$0]++ { print("/home/nuc1/Downloads/linuxcan/pcican/"$$0) }' > /home/nuc1/Downloads/linuxcan/pcican/kvpcican.mod

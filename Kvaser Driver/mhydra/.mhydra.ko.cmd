@@ -1,0 +1,1 @@
+savedcmd_/home/nuc1/Downloads/linuxcan/mhydra/mhydra.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/nuc1/Downloads/linuxcan/mhydra/mhydra.ko /home/nuc1/Downloads/linuxcan/mhydra/mhydra.o /home/nuc1/Downloads/linuxcan/mhydra/mhydra.mod.o;  make -f ./arch/x86/Makefile.postlink /home/nuc1/Downloads/linuxcan/mhydra/mhydra.ko
