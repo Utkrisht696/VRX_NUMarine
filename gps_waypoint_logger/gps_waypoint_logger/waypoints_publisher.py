@@ -3,9 +3,9 @@ from rclpy.node import Node
 import yaml
 from geometry_msgs.msg import Pose, PoseArray
 from std_msgs.msg import Header
-from tf_transformations import quaternion_from_euler
 from ament_index_python.packages import get_package_share_directory
 import os
+import math
 
 class GPSWaypointPublisher(Node):
     def __init__(self):
@@ -20,6 +20,13 @@ class GPSWaypointPublisher(Node):
         with open(waypoints_file, 'r') as file:
             return yaml.safe_load(file)['waypoints']
 
+    def euler_to_quaternion(self, roll, pitch, yaw):
+        qx = math.sin(roll / 2) * math.cos(pitch / 2) * math.cos(yaw / 2) - math.cos(roll / 2) * math.sin(pitch / 2) * math.sin(yaw / 2)
+        qy = math.cos(roll / 2) * math.sin(pitch / 2) * math.cos(yaw / 2) + math.sin(roll / 2) * math.cos(pitch / 2) * math.sin(yaw / 2)
+        qz = math.cos(roll / 2) * math.cos(pitch / 2) * math.sin(yaw / 2) - math.sin(roll / 2) * math.sin(pitch / 2) * math.cos(yaw / 2)
+        qw = math.cos(roll / 2) * math.cos(pitch / 2) * math.cos(yaw / 2) + math.sin(roll / 2) * math.sin(pitch / 2) * math.sin(yaw / 2)
+        return [qx, qy, qz, qw]
+
     def publish_waypoints(self):
         pose_array_msg = PoseArray()
         pose_array_msg.header = Header()
@@ -33,7 +40,7 @@ class GPSWaypointPublisher(Node):
             pose.position.z = 0.0  # Set Z position if needed
 
             # Convert yaw (Euler angle) to quaternion
-            quaternion = quaternion_from_euler(0, 0, waypoint['yaw'])
+            quaternion = self.euler_to_quaternion(0, 0, waypoint['yaw'])
             pose.orientation.x = quaternion[0]
             pose.orientation.y = quaternion[1]
             pose.orientation.z = quaternion[2]

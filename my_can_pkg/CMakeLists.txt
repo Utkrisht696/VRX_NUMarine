@@ -20,6 +20,10 @@ ament_target_dependencies(can_float_publisher rclcpp can_msgs kvaser_interface g
 add_executable(can_thrust_pub src/can_thrust_pub.cpp)
 ament_target_dependencies(can_thrust_pub rclcpp can_msgs geometry_msgs)
 
+# Add the new thrust_pub executable
+add_executable(thrust_pub src/thrust_pub.cpp)
+ament_target_dependencies(thrust_pub rclcpp can_msgs std_msgs)
+
 target_include_directories(can_float_publisher PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
@@ -30,7 +34,13 @@ target_include_directories(can_thrust_pub PUBLIC
   $<INSTALL_INTERFACE:include>)
 target_compile_features(can_thrust_pub PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-install(TARGETS can_float_publisher can_thrust_pub
+target_include_directories(thrust_pub PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(thrust_pub PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+
+install(TARGETS can_float_publisher thrust_pub can_thrust_pub
   DESTINATION lib/${PROJECT_NAME})
 
 # Install launch files

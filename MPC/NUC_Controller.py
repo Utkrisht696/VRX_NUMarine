@@ -29,8 +29,8 @@ class WAMV_NMPC_Controller(Node):
         self.d_b, self.L_b = 0.5, 1.2
         
         # NMPC parameters
-        self.Np = 30  # Prediction horizon
-        self.Nu = 6       
+        self.Np = 10  # Prediction horizon
+        self.Nu = 2       
         self.dt = 0.1  # Time step
         self.nu = 4
         self.nx = 6
@@ -66,7 +66,7 @@ class WAMV_NMPC_Controller(Node):
         
         #Control parameters
         self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
-        self.Rctrl = 4
+        self.Rctrl = 5
         self.Rdiff = 10
         self.thrust_lower_bound = -100
         self.thrust_upper_bound =  100
@@ -74,11 +74,11 @@ class WAMV_NMPC_Controller(Node):
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
         # self.waypoints = np.array([[-400],[720],[np.pi/2]])
-        self.waypoints = np.array([[0],[0],[0]])
+        self.waypoints = np.array([[0],[0],[1.57]])
 
         # Sydney Regatta Centre coordinates (approximate center)
-        self.datum_lat = -33.7285
-        self.datum_lon = 150.6789
+        self.datum_lat = -32.916472938042595
+        self.datum_lon = 151.7603586183495
 
         # Initialize projections
         self.proj_wgs84 = Proj(proj='latlong', datum='WGS84')
@@ -219,7 +219,7 @@ class WAMV_NMPC_Controller(Node):
             U[:,-1]  = self.U[:,-1]
 
             #Check if we are close to waypoint and move to the next
-            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 0.5:
+            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 5.0:
                 self.currentwaypoint += 1
                 if self.currentwaypoint >= self.waypoints.shape[1]:
                     self.currentwaypoint = self.waypoints.shape[1]-1
@@ -334,10 +334,15 @@ class WAMV_NMPC_Controller(Node):
     def CTStateModel(self, x, u):
         # Unpack state and inputs
         N, E, psi, u_vel, v, r = x[:,0]
-        F_l  = ForceCalculator().get_force_from_signal(u[0,0])*2
-        F_r  = ForceCalculator().get_force_from_signal(u[1,0])*2
-        F_bl = ForceCalculator().get_force_from_signal(u[2,0])
-        F_br = ForceCalculator().get_force_from_signal(u[3,0])
+        # F_l  = ForceCalculator().get_force_from_signal(u[0,0])
+        # F_r  = ForceCalculator().get_force_from_signal(u[1,0])
+        # F_bl = ForceCalculator().get_force_from_signal(u[2,0])
+        # F_br = ForceCalculator().get_force_from_signal(u[3,0])
+
+        F_l  = 2*u[0,0]
+        F_r  = 2*u[1,0]
+        F_bl = 2*u[2,0]
+        F_br = 2*u[3,0]
         
         tau_u = np.array([[0],
                           [0],
@@ -416,7 +421,8 @@ class WAMV_NMPC_Controller(Node):
         #                   [(F_br-F_bl)/self.m22],
         #                   [(self.L_b*(-F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
 
-        dFdu = 4 * np.eye(4)
+        dFdu = 2 * np.eye(4)
+        # dFdu = 1.57*np.eye(4)
 
         dxdF = np.array([
             [0, 0, 0, 0],

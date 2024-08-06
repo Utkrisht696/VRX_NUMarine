@@ -21,8 +21,8 @@ def generate_launch_description():
             actions=[
                 Node(
                     package='my_can_pkg',
-                    executable='can_thrust_pub',
-                    name='can_thrust_pub',
+                    executable='thrust_pub',
+                    name='thrust_pub',
                     output='screen'
                 )
             ]
