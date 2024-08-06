@@ -53,8 +53,8 @@ private:
 
     double stern_port_thrust = stern_thrust;
     double stern_star_thrust = stern_thrust;
-    double bow_port_thrust = bow_thrust;
-    double bow_star_thrust = -bow_thrust;
+    double bow_port_thrust = -bow_thrust;
+    double bow_star_thrust = bow_thrust;
 
     // Publish the thrust commands
     publishThrust(stern_port_pub_, stern_port_thrust);
