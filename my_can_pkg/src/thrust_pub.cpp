@@ -27,10 +27,10 @@ private:
         thrust_msg.data = convertRange(msg->data[0]);
         
         switch (msg->id) {
-            case 0x28:
+            case 0x29:
                 publisher_stern_left->publish(thrust_msg);
                 break;
-            case 0x29:
+            case 0x28:
                 publisher_stern_right->publish(thrust_msg);
                 break;
             case 0x2A:

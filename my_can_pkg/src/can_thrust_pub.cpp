@@ -27,12 +27,12 @@ public:
 private:
     void stern_port_callback(const std_msgs::msg::Float64::SharedPtr msg) {
         uint8_t converted_value = convert_thrust(msg->data);
-        publish_to_can(0x28, converted_value); // Stern Port
+        publish_to_can(0x29, converted_value); // Stern Port
     }
 
     void stern_star_callback(const std_msgs::msg::Float64::SharedPtr msg) {
         uint8_t converted_value = convert_thrust(msg->data);
-        publish_to_can(0x29, converted_value); // Stern Starboard
+        publish_to_can(0x28, converted_value); // Stern Starboard
     }
 
     void bow_port_callback(const std_msgs::msg::Float64::SharedPtr msg) {
