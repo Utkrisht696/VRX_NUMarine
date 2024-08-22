@@ -1,1 +1,0 @@
-savedcmd_/home/nuc1/Downloads/linuxcan/pciefd/Module.symvers :=  scripts/mod/modpost -m -a      -o /home/nuc1/Downloads/linuxcan/pciefd/Module.symvers -T /home/nuc1/Downloads/linuxcan/pciefd/modules.order -i Module.symvers -e -i /home/nuc1/Downloads/linuxcan/pciefd/../common/Module.symvers

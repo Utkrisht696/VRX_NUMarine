@@ -1,1 +1,0 @@
-savedcmd_/home/nuc1/Downloads/linuxcan/common/kvcommon.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/nuc1/Downloads/linuxcan/common/kvcommon.ko /home/nuc1/Downloads/linuxcan/common/kvcommon.o /home/nuc1/Downloads/linuxcan/common/kvcommon.mod.o;  make -f ./arch/x86/Makefile.postlink /home/nuc1/Downloads/linuxcan/common/kvcommon.ko

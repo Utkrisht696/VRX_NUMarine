@@ -1,1 +1,0 @@
-savedcmd_/home/nuc1/Downloads/linuxcan/pcican2/kvpcicanII.o := ld -m elf_x86_64 -z noexecstack   -r -o /home/nuc1/Downloads/linuxcan/pcican2/kvpcicanII.o @/home/nuc1/Downloads/linuxcan/pcican2/kvpcicanII.mod 
