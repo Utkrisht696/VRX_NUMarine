@@ -187,140 +187,140 @@ class WAMV_NMPC_Controller(Node):
         self.state_pub.publish(msg)
 
 
-    def control_loop(self):
-        # print(self.current_state[0:3,[0]].T)
-        if self.waypoints is not None and self.gpsUpdates > 100 and self.imuUpdates > 100:
-            # Apply previous control action and compute predicted state at k+1
-            self.last_inputs = self.U[:,[0]]
-            # Publish control commands
-            msg = Float64()
-            msg.data = float(self.last_inputs[0])
-            self.cmd_L_pub.publish(msg)
-            msg.data = float(self.last_inputs[1])
-            self.cmd_R_pub.publish(msg)
-            msg.data = float(self.last_inputs[2])
-            self.cmd_bl_pub.publish(msg)
-            msg.data = float(self.last_inputs[3])
-            self.cmd_br_pub.publish(msg)
+    # def control_loop(self):
+    #     # print(self.current_state[0:3,[0]].T)
+    #     if self.waypoints is not None and self.gpsUpdates > 100 and self.imuUpdates > 100:
+    #         # Apply previous control action and compute predicted state at k+1
+    #         self.last_inputs = self.U[:,[0]]
+    #         # Publish control commands
+    #         msg = Float64()
+    #         msg.data = float(self.last_inputs[0])
+    #         self.cmd_L_pub.publish(msg)
+    #         msg.data = float(self.last_inputs[1])
+    #         self.cmd_R_pub.publish(msg)
+    #         msg.data = float(self.last_inputs[2])
+    #         self.cmd_bl_pub.publish(msg)
+    #         msg.data = float(self.last_inputs[3])
+    #         self.cmd_br_pub.publish(msg)
 
-            x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
-            #x = self.current_state
+    #         x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
+    #         #x = self.current_state
 
-            self.publish_current_state(x)
-            # print(self.last_inputs.T)
+    #         self.publish_current_state(x)
+    #         # print(self.last_inputs.T)
 
 
-            # Start timer
-            start_time = time.time()
+    #         # Start timer
+    #         start_time = time.time()
 
-            # Solve NMPC problem
-            U = np.zeros((self.nu, self.Nu))
-            U[:,:-1] = self.U[:,1:]
-            U[:,-1]  = self.U[:,-1]
+    #         # Solve NMPC problem
+    #         U = np.zeros((self.nu, self.Nu))
+    #         U[:,:-1] = self.U[:,1:]
+    #         U[:,-1]  = self.U[:,-1]
 
-            #Check if we are close to waypoint and move to the next
-            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 5.0:
-                self.currentwaypoint += 1
-                if self.currentwaypoint >= self.waypoints.shape[1]:
-                    self.currentwaypoint = self.waypoints.shape[1]-1
+    #         #Check if we are close to waypoint and move to the next
+    #         if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 5.0:
+    #             self.currentwaypoint += 1
+    #             if self.currentwaypoint >= self.waypoints.shape[1]:
+    #                 self.currentwaypoint = self.waypoints.shape[1]-1
 
-            #Pick waypoint from the list
-            self.waypoint = self.waypoints[:,[self.currentwaypoint]]
+    #         #Pick waypoint from the list
+    #         self.waypoint = self.waypoints[:,[self.currentwaypoint]]
 
-            #Determine trajectory
-            self.computeTrajectory(x)
+    #         #Determine trajectory
+    #         self.computeTrajectory(x)
 
-            h = self.h.copy()
-            h[0:self.nu,[0]] += self.last_inputs
-            h[self.nu:2*self.nu,[0]] -= self.last_inputs
+    #         h = self.h.copy()
+    #         h[0:self.nu,[0]] += self.last_inputs
+    #         h[self.nu:2*self.nu,[0]] -= self.last_inputs
 
-            # Run main optimisation loop
-            for i in range(10):
-                #compute error and jacobian
-                e, J = self.error_and_Jacobian(x, U, self.Xref, True)
+    #         # Run main optimisation loop
+    #         for i in range(10):
+    #             #compute error and jacobian
+    #             e, J = self.error_and_Jacobian(x, U, self.Xref, True)
 
-                # Compute search direction
-                # p, res, tmp, sv = np.linalg.lstsq(J,e, rcond=None)
-                H = J.T @ J
-                f = J.T @ e
-                lb = -U.reshape(-1,1,order='f') + self.thrust_lower_bound*np.ones((self.Nu * self.nu,1))
-                ub = -U.reshape(-1,1,order='f') + self.thrust_upper_bound*np.ones((self.Nu * self.nu,1))
+    #             # Compute search direction
+    #             # p, res, tmp, sv = np.linalg.lstsq(J,e, rcond=None)
+    #             H = J.T @ J
+    #             f = J.T @ e
+    #             lb = -U.reshape(-1,1,order='f') + self.thrust_lower_bound*np.ones((self.Nu * self.nu,1))
+    #             ub = -U.reshape(-1,1,order='f') + self.thrust_upper_bound*np.ones((self.Nu * self.nu,1))
                 
-                #Slew rates as G and h s.t. GU <= h
-                hh = h - self.G @ U.reshape(-1,1,order='f')
+    #             #Slew rates as G and h s.t. GU <= h
+    #             hh = h - self.G @ U.reshape(-1,1,order='f')
                 
-                prob = Problem(H,f,self.G,hh,None,None,lb,ub)
-                sol  = solve_problem(prob,solver='daqp')
+    #             prob = Problem(H,f,self.G,hh,None,None,lb,ub)
+    #             sol  = solve_problem(prob,solver='daqp')
 
-                if sol.found == False:
-                    print('QP not solved')
+    #             if sol.found == False:
+    #                 print('QP not solved')
 
-                p = sol.x
-                lam = sol.z_box
-                lamg = sol.z
-                maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam)),np.max(np.fabs(lamg))))
-                # maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam))))
+    #             p = sol.x
+    #             lam = sol.z_box
+    #             lamg = sol.z
+    #             maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam)),np.max(np.fabs(lamg))))
+    #             # maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam))))
 
 
-                #Compute the Newton Decrement and return if less than some threshold
-                fonc_vec = f+lam.reshape(-1,1,order='f')+(self.G.T @ lamg).reshape(-1,1,order='f')
-                # fonc_vec = f+lam.reshape(-1,1,order='f')
-                if np.linalg.norm(fonc_vec) < np.max((1e-1, 1e-3*maxv)):
-                    break
+    #             #Compute the Newton Decrement and return if less than some threshold
+    #             fonc_vec = f+lam.reshape(-1,1,order='f')+(self.G.T @ lamg).reshape(-1,1,order='f')
+    #             # fonc_vec = f+lam.reshape(-1,1,order='f')
+    #             if np.linalg.norm(fonc_vec) < np.max((1e-1, 1e-3*maxv)):
+    #                 break
 
-                #Compute cost (sum of squared errors)
-                co = e.T @ e
+    #             #Compute cost (sum of squared errors)
+    #             co = e.T @ e
 
-                # print("Cost = {:f}, FONC = {:f}".format(co[0,0], np.linalg.norm(fonc_vec)))
+    #             # print("Cost = {:f}, FONC = {:f}".format(co[0,0], np.linalg.norm(fonc_vec)))
 
-                #Use backtracking line search
-                alp = 1.0
-                for j in range(30):
-                    #Try out new input sequence 
-                    Un = U + alp*p.reshape(self.nu,-1,order='f')
-                    e = self.error_and_Jacobian(x, Un, self.Xref)
-                    cn = e.T @ e
-                    #If we have reduced the cost then accept the new input sequence and return
-                    if np.isfinite(cn) and cn < co:
-                        U = Un
-                        break
-                    #Otherwise halve the step length
-                    alp = alp / 2.0
+    #             #Use backtracking line search
+    #             alp = 1.0
+    #             for j in range(30):
+    #                 #Try out new input sequence 
+    #                 Un = U + alp*p.reshape(self.nu,-1,order='f')
+    #                 e = self.error_and_Jacobian(x, Un, self.Xref)
+    #                 cn = e.T @ e
+    #                 #If we have reduced the cost then accept the new input sequence and return
+    #                 if np.isfinite(cn) and cn < co:
+    #                     U = Un
+    #                     break
+    #                 #Otherwise halve the step length
+    #                 alp = alp / 2.0
                 
-                if j==29:
-                    Jn = 0*J
-                    for j in range(self.Nu * self.nu):
-                        Ut = U.copy()
-                        Ut = Ut.reshape(-1,1,order='f')
-                        Ut[j] += 1e-6
-                        Ut = Ut.reshape(self.nu,-1,order='f')
-                        # ep, Jp = self.error_and_Jacobian(x, Ut, self.Xref)
-                        ep = self.error_and_Jacobian(x, Ut, self.Xref)
-                        Ut = U.copy()
-                        Ut = Ut.reshape(-1,1,order='f')
-                        Ut[j] -= 1e-6
-                        Ut = Ut.reshape(self.nu,-1,order='f')
-                        # em, Jm = self.error_and_Jacobian(x, Ut, self.Xref)
-                        em = self.error_and_Jacobian(x, Ut, self.Xref)
-                        Jn[:,[j]] = (ep-em)/2e-6
+    #             if j==29:
+    #                 Jn = 0*J
+    #                 for j in range(self.Nu * self.nu):
+    #                     Ut = U.copy()
+    #                     Ut = Ut.reshape(-1,1,order='f')
+    #                     Ut[j] += 1e-6
+    #                     Ut = Ut.reshape(self.nu,-1,order='f')
+    #                     # ep, Jp = self.error_and_Jacobian(x, Ut, self.Xref)
+    #                     ep = self.error_and_Jacobian(x, Ut, self.Xref)
+    #                     Ut = U.copy()
+    #                     Ut = Ut.reshape(-1,1,order='f')
+    #                     Ut[j] -= 1e-6
+    #                     Ut = Ut.reshape(self.nu,-1,order='f')
+    #                     # em, Jm = self.error_and_Jacobian(x, Ut, self.Xref)
+    #                     em = self.error_and_Jacobian(x, Ut, self.Xref)
+    #                     Jn[:,[j]] = (ep-em)/2e-6
 
-                    print('hello')
+    #                 print('hello')
 
-            # if any(self.G@U.reshape(-1,1,order='f') > h):
-                # print('asdf')
+    #         # if any(self.G@U.reshape(-1,1,order='f') > h):
+    #             # print('asdf')
 
-            #record the optimal input sequence
-            self.U = U
+    #         #record the optimal input sequence
+    #         self.U = U
 
-            # End timer
-            end_time = time.time()
+    #         # End timer
+    #         end_time = time.time()
 
-            # Calculate elapsed time
-            elapsed_time = end_time - start_time
-            xc = self.current_state[:,0]
-            uc = self.last_inputs[:,0]
-            print("X: {:8.2f}, Y: {:8.2f}, P: {:8.2f}, U1: {:8.2f}, U2: {:8.2f}, U3: {:8.2f}, U4: {:8.2f}, ET: {:8.2f}".format(xc[0], xc[1], xc[2], uc[0], uc[1], uc[2], uc[3], elapsed_time))
-            # print('end')
+    #         # Calculate elapsed time
+    #         elapsed_time = end_time - start_time
+    #         xc = self.current_state[:,0]
+    #         uc = self.last_inputs[:,0]
+    #         print("X: {:8.2f}, Y: {:8.2f}, P: {:8.2f}, U1: {:8.2f}, U2: {:8.2f}, U3: {:8.2f}, U4: {:8.2f}, ET: {:8.2f}".format(xc[0], xc[1], xc[2], uc[0], uc[1], uc[2], uc[3], elapsed_time))
+    #         # print('end')
 
     def reference_callback(self, msg):
         # Extract yaw from quaternion for the reference pose

@@ -36,8 +36,8 @@ class StateEstimator(Node):
         self.last_update_time = self.get_clock().now().nanoseconds / 1e9
 
         self.state_pub = self.create_publisher(Float64MultiArray, '/wamv/current_state', 10)
-        self.gps_sub = self.create_subscription(NavSatFix, '/wamv/sensors/gps/gps/fix', self.gps_callback, 10)
-        self.imu_sub = self.create_subscription(Imu, '/wamv/sensors/imu/imu/data', self.imu_callback, 10)
+        self.gps_sub = self.create_subscription(NavSatFix, '/NavSatFix', self.gps_callback, 10)
+        self.imu_sub = self.create_subscription(Imu, '/Imu', self.imu_callback, 10)
         
     def gps_to_local_xy(self, lon, lat):
         x, y = self.transformer.transform(lon, lat)

@@ -14,23 +14,23 @@ from pyproj import Proj
 from pyproj import Proj, Transformer
 from qpsolvers import Problem, solve_problem
 from scipy.linalg import block_diag
-
+import pymap3d as pm
 class WAMV_NMPC_Controller(Node):
 
     def __init__(self):
         super().__init__('wamv_nmpc_controller')
         
         # Model parameters 252.5551, 251.7846, 516.2194,  98.9777, 100.4924, 806.6199, 150.1745, 99.7235, 809.7870
-        self.m11, self.m22, self.m33 = 252.5551, 251.7846, 516.2194#410.89900114, 525.73311676, 544.59887753#250.0, 250.0, 500.0
-        self.d11, self.d22, self.d33 = 98.9777, 100.4924, 806.6199#115.90932599,  76.23187308, 812.11345731#100.0, 100.0, 800.0
-        self.d11_2, self.d22_2, self.d33_2 = 150.1745, 99.7235, 809.7870#142.36120428, 206.60423149, 902.23070692#150.0, 100.0, 800.0
-        self.d_m, self.L_m = 0.8, 1.05
-        self.d_b, self.L_b = 0.5, 1.2
+        self.m11, self.m22, self.m33 = 395, 395, 1101 #410.89900114, 525.73311676, 544.59887753#250.0, 250.0, 500.0
+        self.d11, self.d22, self.d33 = 47, 206, 548 #115.90932599,  76.23187308, 812.11345731#100.0, 100.0, 800.0
+        self.d11_2, self.d22_2, self.d33_2 = 166, 50, 583 #142.36120428, 206.60423149, 902.23070692#150.0, 100.0, 800.0
+        self.d_m, self.L_m = 1.26, 0.98
+        self.d_b, self.L_b = 1.26, 1.62
         
         # NMPC parameters
-        self.Np = 30  # Prediction horizon
-        self.Nu = 6       
-        self.dt = 0.1  # Time step
+        self.Np = 20  # Prediction horizon
+        self.Nu = 10      
+        self.dt = 0.2  # Time step
         self.nu = 4
         self.nx = 6
         
@@ -42,15 +42,15 @@ class WAMV_NMPC_Controller(Node):
 
         # EKF parameters
         self.P = np.diag([1000.0, 1000.0, 10.0, 0.0, 0.0, 0.0]) # Initial state covariance
-        # self.Q = np.diag([0.01, 0.01, 0.001, 0.001, 0.001, 0.001])  # Process noise covariance
-        self.Q = np.array([
-            [ 6.1856e-02, -9.4391e-04,  1.4843e-04,  4.3312e-04, -1.2616e-04, -1.0697e-04],
-            [-9.4391e-04,  6.5208e-02, -2.3349e-04,  3.8015e-04, -4.1236e-04,  3.9740e-04],
-            [ 1.4843e-04, -2.3349e-04,  2.0787e-04,  5.3975e-06,  8.4772e-06,  6.3032e-05],
-            [ 4.3312e-04,  3.8015e-04,  5.3975e-06,  7.9621e-06, -3.0529e-06,  3.4317e-06],
-            [-1.2616e-04, -4.1236e-04,  8.4772e-06, -3.0529e-06,  5.8290e-06, -1.3472e-07],
-            [-1.0697e-04,  3.9740e-04,  6.3032e-05,  3.4317e-06, -1.3472e-07,  2.4441e-05]
-            ])
+        self.Q = 1e-3*np.eye(6)#np.diag([0.01, 0.01, 0.001, 0.001, 0.001, 0.001])  # Process noise covariance
+        # self.Q = np.array([
+        #     [ 6.1856e-02, -9.4391e-04,  1.4843e-04,  4.3312e-04, -1.2616e-04, -1.0697e-04],
+        #     [-9.4391e-04,  6.5208e-02, -2.3349e-04,  3.8015e-04, -4.1236e-04,  3.9740e-04],
+        #     [ 1.4843e-04, -2.3349e-04,  2.0787e-04,  5.3975e-06,  8.4772e-06,  6.3032e-05],
+        #     [ 4.3312e-04,  3.8015e-04,  5.3975e-06,  7.9621e-06, -3.0529e-06,  3.4317e-06],
+        #     [-1.2616e-04, -4.1236e-04,  8.4772e-06, -3.0529e-06,  5.8290e-06, -1.3472e-07],
+        #     [-1.0697e-04,  3.9740e-04,  6.3032e-05,  3.4317e-06, -1.3472e-07,  2.4441e-05]
+        #     ])
         self.R_gps = np.diag([0.1, 0.1])  # GPS measurement noise covariance
         self.R_imu = np.diag([0.1, 0.1])  # IMU measurement noise covariance
 
@@ -67,24 +67,24 @@ class WAMV_NMPC_Controller(Node):
         self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
         self.Rctrl = 4
         self.Rdiff = 10
-        self.thrust_lower_bound = -100
-        self.thrust_upper_bound =  100
+        self.thrust_lower_bound = -40
+        self.thrust_upper_bound =  40
 
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
-        self.waypoints = np.array([[-400],[720],[np.pi/2]])
+        self.waypoints = np.array([[10.0],[-10.0],[0.0]])
 
         # Sydney Regatta Centre coordinates (approximate center)
-        self.datum_lat = -33.7285
-        self.datum_lon = 150.6789
+        self.datum_lat = -32.91649273201699
+        self.datum_lon = 151.76075877703477
 
-        # Initialize projections
-        self.proj_wgs84 = Proj(proj='latlong', datum='WGS84')
-        self.proj_utm = Proj(proj='utm', zone=56, datum='WGS84', south=True)
-        self.transformer = Transformer.from_proj(self.proj_wgs84, self.proj_utm)
+        # # Initialize projections
+        # self.proj_wgs84 = Proj(proj='latlong', datum='WGS84')
+        # self.proj_utm = Proj(proj='utm', zone=56, datum='WGS84', south=True)
+        # self.transformer = Transformer.from_proj(self.proj_wgs84, self.proj_utm)
 
         # Calculate datum in UTM coordinates
-        self.datum_x, self.datum_y = self.transformer.transform(self.datum_lon, self.datum_lat)
+        # self.datum_x, self.datum_y = self.transformer.transform(self.datum_lon, self.datum_lat)
         
         # Counters for number of gps and imu updates
         self.gpsUpdates = 0
@@ -103,8 +103,8 @@ class WAMV_NMPC_Controller(Node):
         self.cmd_R_pub = self.create_publisher(Float64, '/wamv/thrusters/stern_star/thrust', 10)
         self.cmd_bl_pub = self.create_publisher(Float64, '/wamv/thrusters/bow_port/thrust', 10)
         self.cmd_br_pub = self.create_publisher(Float64, '/wamv/thrusters/bow_star/thrust', 10)
-        self.gps_sub = self.create_subscription(NavSatFix, '/wamv/sensors/gps/gps/fix', self.gps_callback, 10)
-        self.imu_sub = self.create_subscription(Imu, '/wamv/sensors/imu/imu/data', self.imu_callback, 10)
+        self.gps_sub = self.create_subscription(NavSatFix, '/NavSatFix', self.gps_callback, 10)
+        self.imu_sub = self.create_subscription(Imu, '/Imu', self.imu_callback, 10)
         # self.ref_sub = self.create_subscription(Float64MultiArray, '/wamv/reference', self.reference_callback, 10)
         self.ref_sub = self.create_subscription(PoseArray, '/vrx/wayfinding/waypoints', self.reference_callback, 10)
         self.waypoint_pub = self.create_publisher(Float64MultiArray, '/wamv/computed_trajectory', 10)
@@ -192,13 +192,13 @@ class WAMV_NMPC_Controller(Node):
             self.last_inputs = self.U[:,[0]]
             # Publish control commands
             msg = Float64()
-            msg.data = float(4 * self.last_inputs[0])
+            msg.data = float(self.last_inputs[0])
             self.cmd_L_pub.publish(msg)
-            msg.data = float(4 * self.last_inputs[1])
+            msg.data = float(self.last_inputs[1])
             self.cmd_R_pub.publish(msg)
-            msg.data = float(4 * self.last_inputs[2])
+            msg.data = float(self.last_inputs[2])
             self.cmd_bl_pub.publish(msg)
-            msg.data = float(4 * self.last_inputs[3])
+            msg.data = float(self.last_inputs[3])
             self.cmd_br_pub.publish(msg)
 
             x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
@@ -217,7 +217,7 @@ class WAMV_NMPC_Controller(Node):
             U[:,-1]  = self.U[:,-1]
 
             #Check if we are close to waypoint and move to the next
-            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 0.5:
+            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 2:
                 self.currentwaypoint += 1
                 if self.currentwaypoint >= self.waypoints.shape[1]:
                     self.currentwaypoint = self.waypoints.shape[1]-1
@@ -233,7 +233,7 @@ class WAMV_NMPC_Controller(Node):
             h[self.nu:2*self.nu,[0]] -= self.last_inputs
 
             # Run main optimisation loop
-            for i in range(10):
+            for i in range(-1):
                 #compute error and jacobian
                 e, J = self.error_and_Jacobian(x, U, self.Xref, True)
 
@@ -326,23 +326,23 @@ class WAMV_NMPC_Controller(Node):
         for i in range(len(msg.poses)):
             quat = [msg.poses[i].orientation.x, msg.poses[i].orientation.y, msg.poses[i].orientation.z, msg.poses[i].orientation.w]
             euler = Rotation.from_quat(quat).as_euler('xyz')
-            x, y = self.gps_to_local_xy(msg.poses[i].position.y, msg.poses[i].position.x)
+            x, y = self.gps_to_local_ned(msg.poses[i].position.y, msg.poses[i].position.x)
             self.waypoints[:3,i] = [x, y, euler[2]]  # yaw is euler[2]
 
     def CTStateModel(self, x, u):
         # Unpack state and inputs
         N, E, psi, u_vel, v, r = x[:,0]
-        F_l  = 4*u[0,0]
-        F_r  = 4*u[1,0]
-        F_bl = 4*u[2,0]
-        F_br = 4*u[3,0]
+        F_l  = 2*1.7*u[0,0]
+        F_r  = 2*1.7*u[1,0]
+        F_bl = 1.7*u[2,0]
+        F_br = 1.7*u[3,0]
         
         tau_u = np.array([[0],
                           [0],
                           [0],
                           [(F_l+F_r)/self.m11],
-                          [(F_br-F_bl)/self.m22],
-                          [(self.L_b*(-F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
+                          [(-F_br+F_bl)/self.m22],
+                          [(self.L_b*(F_bl-F_br) + self.d_m*(-F_r+F_l))/self.m33]])
 
         # Compute state derivatives
         dN = u_vel * np.cos(psi) - v * np.sin(psi)
@@ -411,18 +411,17 @@ class WAMV_NMPC_Controller(Node):
         #                   [0],
         #                   [0],
         #                   [(F_l+F_r)/self.m11],
-        #                   [(F_br-F_bl)/self.m22],
-        #                   [(self.L_b*(-F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
-
-        dFdu = 4 * np.eye(4)
+        #                   [(-F_br+F_bl)/self.m22],
+        #                   [(self.L_b*(F_bl-F_br) + self.d_m*(-F_r+F_l))/self.m33]])
+        dFdu = np.diag([2*1.7, 2*1.7, 1.7, 1.7])
 
         dxdF = np.array([
             [0, 0, 0, 0],
             [0, 0, 0, 0],
             [0, 0, 0, 0],
             [1/self.m11, 1/self.m11, 0, 0],
-            [0, 0, -1/self.m22, 1/self.m22],
-            [-self.d_m/self.m33, self.d_m/self.m33, -self.L_b/self.m33, self.L_b/self.m33]
+            [0, 0, 1/self.m22, -1/self.m22],
+            [self.d_m/self.m33, -self.d_m/self.m33, self.L_b/self.m33, -self.L_b/self.m33]
         ])
 
         B = dxdF @ dFdu
@@ -451,15 +450,17 @@ class WAMV_NMPC_Controller(Node):
         
         return xn, dxdun
 
-    def gps_to_local_xy(self, lon, lat):
+    def gps_to_local_ned(self, lon, lat):
         # Convert GPS coordinates to UTM
-        x, y = self.transformer.transform(lon, lat)
+        # x, y = self.transformer.transform(lon, lat)
         
         # Calculate local x-y relative to the datum
-        local_x = x - self.datum_x
-        local_y = y - self.datum_y
+        # local_x = x - self.datum_x
+        # local_y = y - self.datum_y
         
-        return local_x, local_y
+        north, east, down = pm.geodetic2ned(lat, lon, 0, self.datum_lat, self.datum_lon,0)
+
+        return north, east
 
     def gps_callback(self, msg):
         current_time = self.get_clock().now().nanoseconds / 1e9
@@ -467,9 +468,9 @@ class WAMV_NMPC_Controller(Node):
         self.last_update_time = current_time
 
         # Convert GPS to local x-y coordinates
-        x, y = self.gps_to_local_xy(msg.longitude, msg.latitude)
+        north, east = self.gps_to_local_ned(msg.longitude, msg.latitude)
         
-        self.update_ekf(dt, gps_measurement=np.array([x, y]))
+        self.update_ekf(dt, gps_measurement=np.array([north, east]))
 
         if self.gpsUpdates < 300:
             self.gpsUpdates += 1
