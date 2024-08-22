@@ -67,12 +67,12 @@ class WAMV_NMPC_Controller(Node):
         self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
         self.Rctrl = 4
         self.Rdiff = 10
-        self.thrust_lower_bound = -40
-        self.thrust_upper_bound =  40
+        self.thrust_lower_bound = -60
+        self.thrust_upper_bound =  60
 
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
-        self.waypoints = np.array([[10.0],[-10.0],[0.0]])
+        self.waypoints = np.array([[20.0],[-20.0],[0.0]])
 
         # Sydney Regatta Centre coordinates (approximate center)
         self.datum_lat = -32.91649273201699
@@ -217,7 +217,7 @@ class WAMV_NMPC_Controller(Node):
             U[:,-1]  = self.U[:,-1]
 
             #Check if we are close to waypoint and move to the next
-            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 2:
+            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 1:
                 self.currentwaypoint += 1
                 if self.currentwaypoint >= self.waypoints.shape[1]:
                     self.currentwaypoint = self.waypoints.shape[1]-1
@@ -233,7 +233,7 @@ class WAMV_NMPC_Controller(Node):
             h[self.nu:2*self.nu,[0]] -= self.last_inputs
 
             # Run main optimisation loop
-            for i in range(-1):
+            for i in range(10):
                 #compute error and jacobian
                 e, J = self.error_and_Jacobian(x, U, self.Xref, True)
 

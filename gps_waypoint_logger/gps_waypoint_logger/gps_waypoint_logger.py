@@ -34,7 +34,7 @@ class GpsGuiLogger(tk.Tk, Node):
         # Subscribe to the specific IMU and GPS topics
         self.gps_subscription = self.create_subscription(
             NavSatFix,
-            '/wamv/sensors/gps/gps/fix',
+            '/NavSatFix',
             self.gps_callback,
             1
         )
@@ -42,7 +42,7 @@ class GpsGuiLogger(tk.Tk, Node):
 
         self.imu_subscription = self.create_subscription(
             Imu,
-            '/wamv/sensors/imu/imu/data',
+            '/Imu',
             self.imu_callback,
             1
         )
@@ -122,7 +122,7 @@ def main(args=None):
 
     # Allow passing the logging path as an argument
     default_yaml_file_path = os.path.expanduser(
-        "~/Documents/GitHub/vrx_ws/src/VRX_NUMarine/gps_waypoint_logger/config/gps_waypoints.yaml")
+        "~/robotx_ws/src/VRX_NUMarine/gps_waypoint_logger/config/gps_waypoints.yaml")
     if len(sys.argv) > 1:
         yaml_file_path = sys.argv[1]
     else:
