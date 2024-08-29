@@ -25,7 +25,7 @@ def generate_launch_description():
         package='scanmatcher',
         executable='scanmatcher_node',
         parameters=[main_param_dir],
-        remappings=[('/input_cloud','/filtered_point_cloud')],
+        remappings=[('/input_cloud','/filtered_point_cloud'),('/imu','/wamv/sensors/imu/imu/data')],
         output='screen'
         )
 
