@@ -40,7 +40,7 @@ ScanMatcherComponent::ScanMatcherComponent(const rclcpp::NodeOptions & options)
   get_parameter("use_min_max_filter", use_min_max_filter_);
   declare_parameter("scan_min_range", 0.1);
   get_parameter("scan_min_range", scan_min_range_);
-  declare_parameter("scan_max_range", 100.0);
+  declare_parameter("scan_max_range", 120.0);
   get_parameter("scan_max_range", scan_max_range_);
   declare_parameter("scan_period", 0.1);
   get_parameter("scan_period", scan_period_);

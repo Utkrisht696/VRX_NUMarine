@@ -25,14 +25,14 @@ def generate_launch_description():
         package='scanmatcher',
         executable='scanmatcher_node',
         parameters=[main_param_dir],
-        remappings=[('/input_cloud','/wamv/sensors/lidars/lidar_wamv_sensor/points')],
+        remappings=[('/input_cloud','/filtered_point_cloud')],
         output='screen'
         )
 
     tf = launch_ros.actions.Node(
         package='tf2_ros',
         executable='static_transform_publisher',
-        arguments=['0','0','0','0','0','0','1','wamv/wamv/base_link/lidar_wamv_sensor','velodyne']
+        arguments=['0.7','0','1.8','0','0','0','1','wamv/base_link','wamv/base_link/lidar_wamv_sensor']
         )
 
 

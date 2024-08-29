@@ -65,7 +65,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: false
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.05
       Style: Flat Squares
       Topic: /map
       Unreliable: false
@@ -95,7 +95,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.05
       Style: Flat Squares
       Topic: /modified_map
       Unreliable: false
