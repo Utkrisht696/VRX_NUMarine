@@ -1,6 +1,7 @@
 import sys
 import os
 import time
+from can_msgs.msg import Frame
 
 import rclpy
 from rclpy.node import Node
@@ -24,8 +25,8 @@ class WAMV_NMPC_Controller(Node):
         self.m11, self.m22, self.m33 = 395, 395, 1101 #410.89900114, 525.73311676, 544.59887753#250.0, 250.0, 500.0
         self.d11, self.d22, self.d33 = 47, 206, 548 #115.90932599,  76.23187308, 812.11345731#100.0, 100.0, 800.0
         self.d11_2, self.d22_2, self.d33_2 = 166, 50, 583 #142.36120428, 206.60423149, 902.23070692#150.0, 100.0, 800.0
-        self.d_m, self.L_m = 1.26, 0.98
-        self.d_b, self.L_b = 1.26, 1.62
+        self.d_m, self.L_m = 0.63, 0.98
+        self.d_b, self.L_b = 0.63, 1.62
         
         # NMPC parameters
         self.Np = 20  # Prediction horizon
@@ -108,6 +109,8 @@ class WAMV_NMPC_Controller(Node):
         # self.ref_sub = self.create_subscription(Float64MultiArray, '/wamv/reference', self.reference_callback, 10)
         self.ref_sub = self.create_subscription(PoseArray, '/vrx/wayfinding/waypoints', self.reference_callback, 10)
         self.waypoint_pub = self.create_publisher(Float64MultiArray, '/wamv/computed_trajectory', 10)
+
+        self.can_sub = self.create_subscription(Frame, 'can_tx', self.can_callback, 10)  # Subscribe to CAN messages
         
         # Timer for control loop
         self.create_timer(self.dt, self.control_loop)
@@ -184,8 +187,22 @@ class WAMV_NMPC_Controller(Node):
         msg.data = x.flatten().tolist()  # Convert the state to a flat list
         self.state_pub.publish(msg)
 
-
+    def can_callback(self, msg):
+        """Callback function to handle incoming CAN messages."""
+        if msg.id == 0x0:  # Check for the specific CAN ID
+            if len(msg.data) >= 5 and any(b > 0 for b in msg.data[:5]):  # Check if any of the first 5 bytes are > 0
+                self.enabled = True
+                # self.get_logger().info("Control enabled based on CAN message.")
+            else:
+                self.enabled = False
+                # self.get_logger().info("Control disabled based on CAN message.")
+    
     def control_loop(self):
+
+        if not self.enabled:
+            self.get_logger().info("Control loop skipped because control is disabled.")
+            return
+        
         # print(self.current_state[0:3,[0]].T)
         if self.waypoints is not None and self.gpsUpdates > 100 and self.imuUpdates > 100:
             # Apply previous control action and compute predicted state at k+1

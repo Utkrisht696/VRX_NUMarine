@@ -1,6 +1,7 @@
 import sys
 import os
 import time
+from can_msgs.msg import Frame
 
 import rclpy
 from rclpy.node import Node
@@ -14,24 +15,23 @@ from pyproj import Proj
 from pyproj import Proj, Transformer
 from qpsolvers import Problem, solve_problem
 from scipy.linalg import block_diag
-from force_calculator import ForceCalculator
-
+import pymap3d as pm
 class WAMV_NMPC_Controller(Node):
 
     def __init__(self):
         super().__init__('wamv_nmpc_controller')
         
         # Model parameters 252.5551, 251.7846, 516.2194,  98.9777, 100.4924, 806.6199, 150.1745, 99.7235, 809.7870
-        self.m11, self.m22, self.m33 = 252.5551, 251.7846, 516.2194#410.89900114, 525.73311676, 544.59887753#250.0, 250.0, 500.0
-        self.d11, self.d22, self.d33 = 98.9777, 100.4924, 806.6199#115.90932599,  76.23187308, 812.11345731#100.0, 100.0, 800.0
-        self.d11_2, self.d22_2, self.d33_2 = 150.1745, 99.7235, 809.7870#142.36120428, 206.60423149, 902.23070692#150.0, 100.0, 800.0
-        self.d_m, self.L_m = 0.8, 1.05
-        self.d_b, self.L_b = 0.5, 1.2
+        self.m11, self.m22, self.m33 = 395, 395, 1101 #410.89900114, 525.73311676, 544.59887753#250.0, 250.0, 500.0
+        self.d11, self.d22, self.d33 = 47, 206, 548 #115.90932599,  76.23187308, 812.11345731#100.0, 100.0, 800.0
+        self.d11_2, self.d22_2, self.d33_2 = 166, 50, 583 #142.36120428, 206.60423149, 902.23070692#150.0, 100.0, 800.0
+        self.d_m, self.L_m = 0.63, 0.98
+        self.d_b, self.L_b = 0.63, 1.62
         
         # NMPC parameters
-        self.Np = 10  # Prediction horizon
-        self.Nu = 2       
-        self.dt = 0.1  # Time step
+        self.Np = 20  # Prediction horizon
+        self.Nu = 10      
+        self.dt = 0.2  # Time step
         self.nu = 4
         self.nx = 6
         
@@ -43,15 +43,15 @@ class WAMV_NMPC_Controller(Node):
 
         # EKF parameters
         self.P = np.diag([1000.0, 1000.0, 10.0, 0.0, 0.0, 0.0]) # Initial state covariance
-        # self.Q = np.diag([0.01, 0.01, 0.001, 0.001, 0.001, 0.001])  # Process noise covariance
-        self.Q = np.array([
-            [ 6.1856e-02, -9.4391e-04,  1.4843e-04,  4.3312e-04, -1.2616e-04, -1.0697e-04],
-            [-9.4391e-04,  6.5208e-02, -2.3349e-04,  3.8015e-04, -4.1236e-04,  3.9740e-04],
-            [ 1.4843e-04, -2.3349e-04,  2.0787e-04,  5.3975e-06,  8.4772e-06,  6.3032e-05],
-            [ 4.3312e-04,  3.8015e-04,  5.3975e-06,  7.9621e-06, -3.0529e-06,  3.4317e-06],
-            [-1.2616e-04, -4.1236e-04,  8.4772e-06, -3.0529e-06,  5.8290e-06, -1.3472e-07],
-            [-1.0697e-04,  3.9740e-04,  6.3032e-05,  3.4317e-06, -1.3472e-07,  2.4441e-05]
-            ])
+        self.Q = 1e-3*np.eye(6)#np.diag([0.01, 0.01, 0.001, 0.001, 0.001, 0.001])  # Process noise covariance
+        # self.Q = np.array([
+        #     [ 6.1856e-02, -9.4391e-04,  1.4843e-04,  4.3312e-04, -1.2616e-04, -1.0697e-04],
+        #     [-9.4391e-04,  6.5208e-02, -2.3349e-04,  3.8015e-04, -4.1236e-04,  3.9740e-04],
+        #     [ 1.4843e-04, -2.3349e-04,  2.0787e-04,  5.3975e-06,  8.4772e-06,  6.3032e-05],
+        #     [ 4.3312e-04,  3.8015e-04,  5.3975e-06,  7.9621e-06, -3.0529e-06,  3.4317e-06],
+        #     [-1.2616e-04, -4.1236e-04,  8.4772e-06, -3.0529e-06,  5.8290e-06, -1.3472e-07],
+        #     [-1.0697e-04,  3.9740e-04,  6.3032e-05,  3.4317e-06, -1.3472e-07,  2.4441e-05]
+        #     ])
         self.R_gps = np.diag([0.1, 0.1])  # GPS measurement noise covariance
         self.R_imu = np.diag([0.1, 0.1])  # IMU measurement noise covariance
 
@@ -66,27 +66,26 @@ class WAMV_NMPC_Controller(Node):
         
         #Control parameters
         self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
-        self.Rctrl = 5
+        self.Rctrl = 4
         self.Rdiff = 10
-        self.thrust_lower_bound = -100
-        self.thrust_upper_bound =  100
+        self.thrust_lower_bound = -60
+        self.thrust_upper_bound =  60
 
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
-        # self.waypoints = np.array([[-400],[720],[np.pi/2]])
-        self.waypoints = np.array([[0],[0],[1.57]])
+        self.waypoints = np.array([[20.0],[-20.0],[0.0]])
 
         # Sydney Regatta Centre coordinates (approximate center)
-        self.datum_lat = -32.916472938042595
-        self.datum_lon = 151.7603586183495
+        self.datum_lat = -32.91649273201699
+        self.datum_lon = 151.76075877703477
 
-        # Initialize projections
-        self.proj_wgs84 = Proj(proj='latlong', datum='WGS84')
-        self.proj_utm = Proj(proj='utm', zone=56, datum='WGS84', south=True)
-        self.transformer = Transformer.from_proj(self.proj_wgs84, self.proj_utm)
+        # # Initialize projections
+        # self.proj_wgs84 = Proj(proj='latlong', datum='WGS84')
+        # self.proj_utm = Proj(proj='utm', zone=56, datum='WGS84', south=True)
+        # self.transformer = Transformer.from_proj(self.proj_wgs84, self.proj_utm)
 
         # Calculate datum in UTM coordinates
-        self.datum_x, self.datum_y = self.transformer.transform(self.datum_lon, self.datum_lat)
+        # self.datum_x, self.datum_y = self.transformer.transform(self.datum_lon, self.datum_lat)
         
         # Counters for number of gps and imu updates
         self.gpsUpdates = 0
@@ -110,6 +109,8 @@ class WAMV_NMPC_Controller(Node):
         # self.ref_sub = self.create_subscription(Float64MultiArray, '/wamv/reference', self.reference_callback, 10)
         self.ref_sub = self.create_subscription(PoseArray, '/vrx/wayfinding/waypoints', self.reference_callback, 10)
         self.waypoint_pub = self.create_publisher(Float64MultiArray, '/wamv/computed_trajectory', 10)
+
+        self.can_sub = self.create_subscription(Frame, 'can_tx', self.can_callback, 10)  # Subscribe to CAN messages
         
         # Timer for control loop
         self.create_timer(self.dt, self.control_loop)
@@ -186,141 +187,155 @@ class WAMV_NMPC_Controller(Node):
         msg.data = x.flatten().tolist()  # Convert the state to a flat list
         self.state_pub.publish(msg)
 
+    def can_callback(self, msg):
+        """Callback function to handle incoming CAN messages."""
+        if msg.id == 0x0:  # Check for the specific CAN ID
+            if len(msg.data) >= 5 and any(b > 0 for b in msg.data[:5]):  # Check if any of the first 5 bytes are > 0
+                self.enabled = True
+                # self.get_logger().info("Control enabled based on CAN message.")
+            else:
+                self.enabled = False
+                # self.get_logger().info("Control disabled based on CAN message.")
+    
+    def control_loop(self):
 
-    # def control_loop(self):
-    #     # print(self.current_state[0:3,[0]].T)
-    #     if self.waypoints is not None and self.gpsUpdates > 100 and self.imuUpdates > 100:
-    #         # Apply previous control action and compute predicted state at k+1
-    #         self.last_inputs = self.U[:,[0]]
-    #         # Publish control commands
-    #         msg = Float64()
-    #         msg.data = float(self.last_inputs[0])
-    #         self.cmd_L_pub.publish(msg)
-    #         msg.data = float(self.last_inputs[1])
-    #         self.cmd_R_pub.publish(msg)
-    #         msg.data = float(self.last_inputs[2])
-    #         self.cmd_bl_pub.publish(msg)
-    #         msg.data = float(self.last_inputs[3])
-    #         self.cmd_br_pub.publish(msg)
+        if not self.enabled:
+            self.get_logger().info("Control loop skipped because control is disabled.")
+            return
+        
+        # print(self.current_state[0:3,[0]].T)
+        if self.waypoints is not None and self.gpsUpdates > 100 and self.imuUpdates > 100:
+            # Apply previous control action and compute predicted state at k+1
+            self.last_inputs = self.U[:,[0]]
+            # Publish control commands
+            msg = Float64()
+            msg.data = float(self.last_inputs[0])
+            self.cmd_L_pub.publish(msg)
+            msg.data = float(self.last_inputs[1])
+            self.cmd_R_pub.publish(msg)
+            msg.data = float(self.last_inputs[2])
+            self.cmd_bl_pub.publish(msg)
+            msg.data = float(self.last_inputs[3])
+            self.cmd_br_pub.publish(msg)
 
-    #         x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
-    #         #x = self.current_state
+            x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
+            #x = self.current_state
 
-    #         self.publish_current_state(x)
-    #         # print(self.last_inputs.T)
+            self.publish_current_state(x)
+            # print(self.last_inputs.T)
 
 
-    #         # Start timer
-    #         start_time = time.time()
+            # Start timer
+            start_time = time.time()
 
-    #         # Solve NMPC problem
-    #         U = np.zeros((self.nu, self.Nu))
-    #         U[:,:-1] = self.U[:,1:]
-    #         U[:,-1]  = self.U[:,-1]
+            # Solve NMPC problem
+            U = np.zeros((self.nu, self.Nu))
+            U[:,:-1] = self.U[:,1:]
+            U[:,-1]  = self.U[:,-1]
 
-    #         #Check if we are close to waypoint and move to the next
-    #         if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 5.0:
-    #             self.currentwaypoint += 1
-    #             if self.currentwaypoint >= self.waypoints.shape[1]:
-    #                 self.currentwaypoint = self.waypoints.shape[1]-1
+            #Check if we are close to waypoint and move to the next
+            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 1:
+                self.currentwaypoint += 1
+                if self.currentwaypoint >= self.waypoints.shape[1]:
+                    self.currentwaypoint = self.waypoints.shape[1]-1
 
-    #         #Pick waypoint from the list
-    #         self.waypoint = self.waypoints[:,[self.currentwaypoint]]
+            #Pick waypoint from the list
+            self.waypoint = self.waypoints[:,[self.currentwaypoint]]
 
-    #         #Determine trajectory
-    #         self.computeTrajectory(x)
+            #Determine trajectory
+            self.computeTrajectory(x)
 
-    #         h = self.h.copy()
-    #         h[0:self.nu,[0]] += self.last_inputs
-    #         h[self.nu:2*self.nu,[0]] -= self.last_inputs
+            h = self.h.copy()
+            h[0:self.nu,[0]] += self.last_inputs
+            h[self.nu:2*self.nu,[0]] -= self.last_inputs
 
-    #         # Run main optimisation loop
-    #         for i in range(10):
-    #             #compute error and jacobian
-    #             e, J = self.error_and_Jacobian(x, U, self.Xref, True)
+            # Run main optimisation loop
+            for i in range(10):
+                #compute error and jacobian
+                e, J = self.error_and_Jacobian(x, U, self.Xref, True)
 
-    #             # Compute search direction
-    #             # p, res, tmp, sv = np.linalg.lstsq(J,e, rcond=None)
-    #             H = J.T @ J
-    #             f = J.T @ e
-    #             lb = -U.reshape(-1,1,order='f') + self.thrust_lower_bound*np.ones((self.Nu * self.nu,1))
-    #             ub = -U.reshape(-1,1,order='f') + self.thrust_upper_bound*np.ones((self.Nu * self.nu,1))
+                # Compute search direction
+                # p, res, tmp, sv = np.linalg.lstsq(J,e, rcond=None)
+                H = J.T @ J
+                f = J.T @ e
+                lb = -U.reshape(-1,1,order='f') + self.thrust_lower_bound*np.ones((self.Nu * self.nu,1))
+                ub = -U.reshape(-1,1,order='f') + self.thrust_upper_bound*np.ones((self.Nu * self.nu,1))
                 
-    #             #Slew rates as G and h s.t. GU <= h
-    #             hh = h - self.G @ U.reshape(-1,1,order='f')
+                #Slew rates as G and h s.t. GU <= h
+                hh = h - self.G @ U.reshape(-1,1,order='f')
                 
-    #             prob = Problem(H,f,self.G,hh,None,None,lb,ub)
-    #             sol  = solve_problem(prob,solver='daqp')
+                prob = Problem(H,f,self.G,hh,None,None,lb,ub)
+                sol  = solve_problem(prob,solver='daqp')
 
-    #             if sol.found == False:
-    #                 print('QP not solved')
+                if sol.found == False:
+                    print('QP not solved')
 
-    #             p = sol.x
-    #             lam = sol.z_box
-    #             lamg = sol.z
-    #             maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam)),np.max(np.fabs(lamg))))
-    #             # maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam))))
+                p = sol.x
+                lam = sol.z_box
+                lamg = sol.z
+                maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam)),np.max(np.fabs(lamg))))
+                # maxv = np.max((np.max(np.fabs(f)),np.max(np.fabs(lam))))
 
 
-    #             #Compute the Newton Decrement and return if less than some threshold
-    #             fonc_vec = f+lam.reshape(-1,1,order='f')+(self.G.T @ lamg).reshape(-1,1,order='f')
-    #             # fonc_vec = f+lam.reshape(-1,1,order='f')
-    #             if np.linalg.norm(fonc_vec) < np.max((1e-1, 1e-3*maxv)):
-    #                 break
+                #Compute the Newton Decrement and return if less than some threshold
+                fonc_vec = f+lam.reshape(-1,1,order='f')+(self.G.T @ lamg).reshape(-1,1,order='f')
+                # fonc_vec = f+lam.reshape(-1,1,order='f')
+                if np.linalg.norm(fonc_vec) < np.max((1e-1, 1e-3*maxv)):
+                    break
 
-    #             #Compute cost (sum of squared errors)
-    #             co = e.T @ e
+                #Compute cost (sum of squared errors)
+                co = e.T @ e
 
-    #             # print("Cost = {:f}, FONC = {:f}".format(co[0,0], np.linalg.norm(fonc_vec)))
+                # print("Cost = {:f}, FONC = {:f}".format(co[0,0], np.linalg.norm(fonc_vec)))
 
-    #             #Use backtracking line search
-    #             alp = 1.0
-    #             for j in range(30):
-    #                 #Try out new input sequence 
-    #                 Un = U + alp*p.reshape(self.nu,-1,order='f')
-    #                 e = self.error_and_Jacobian(x, Un, self.Xref)
-    #                 cn = e.T @ e
-    #                 #If we have reduced the cost then accept the new input sequence and return
-    #                 if np.isfinite(cn) and cn < co:
-    #                     U = Un
-    #                     break
-    #                 #Otherwise halve the step length
-    #                 alp = alp / 2.0
+                #Use backtracking line search
+                alp = 1.0
+                for j in range(30):
+                    #Try out new input sequence 
+                    Un = U + alp*p.reshape(self.nu,-1,order='f')
+                    e = self.error_and_Jacobian(x, Un, self.Xref)
+                    cn = e.T @ e
+                    #If we have reduced the cost then accept the new input sequence and return
+                    if np.isfinite(cn) and cn < co:
+                        U = Un
+                        break
+                    #Otherwise halve the step length
+                    alp = alp / 2.0
                 
-    #             if j==29:
-    #                 Jn = 0*J
-    #                 for j in range(self.Nu * self.nu):
-    #                     Ut = U.copy()
-    #                     Ut = Ut.reshape(-1,1,order='f')
-    #                     Ut[j] += 1e-6
-    #                     Ut = Ut.reshape(self.nu,-1,order='f')
-    #                     # ep, Jp = self.error_and_Jacobian(x, Ut, self.Xref)
-    #                     ep = self.error_and_Jacobian(x, Ut, self.Xref)
-    #                     Ut = U.copy()
-    #                     Ut = Ut.reshape(-1,1,order='f')
-    #                     Ut[j] -= 1e-6
-    #                     Ut = Ut.reshape(self.nu,-1,order='f')
-    #                     # em, Jm = self.error_and_Jacobian(x, Ut, self.Xref)
-    #                     em = self.error_and_Jacobian(x, Ut, self.Xref)
-    #                     Jn[:,[j]] = (ep-em)/2e-6
+                if j==29:
+                    Jn = 0*J
+                    for j in range(self.Nu * self.nu):
+                        Ut = U.copy()
+                        Ut = Ut.reshape(-1,1,order='f')
+                        Ut[j] += 1e-6
+                        Ut = Ut.reshape(self.nu,-1,order='f')
+                        # ep, Jp = self.error_and_Jacobian(x, Ut, self.Xref)
+                        ep = self.error_and_Jacobian(x, Ut, self.Xref)
+                        Ut = U.copy()
+                        Ut = Ut.reshape(-1,1,order='f')
+                        Ut[j] -= 1e-6
+                        Ut = Ut.reshape(self.nu,-1,order='f')
+                        # em, Jm = self.error_and_Jacobian(x, Ut, self.Xref)
+                        em = self.error_and_Jacobian(x, Ut, self.Xref)
+                        Jn[:,[j]] = (ep-em)/2e-6
 
-    #                 print('hello')
+                    print('hello')
 
-    #         # if any(self.G@U.reshape(-1,1,order='f') > h):
-    #             # print('asdf')
+            # if any(self.G@U.reshape(-1,1,order='f') > h):
+                # print('asdf')
 
-    #         #record the optimal input sequence
-    #         self.U = U
+            #record the optimal input sequence
+            self.U = U
 
-    #         # End timer
-    #         end_time = time.time()
+            # End timer
+            end_time = time.time()
 
-    #         # Calculate elapsed time
-    #         elapsed_time = end_time - start_time
-    #         xc = self.current_state[:,0]
-    #         uc = self.last_inputs[:,0]
-    #         print("X: {:8.2f}, Y: {:8.2f}, P: {:8.2f}, U1: {:8.2f}, U2: {:8.2f}, U3: {:8.2f}, U4: {:8.2f}, ET: {:8.2f}".format(xc[0], xc[1], xc[2], uc[0], uc[1], uc[2], uc[3], elapsed_time))
-    #         # print('end')
+            # Calculate elapsed time
+            elapsed_time = end_time - start_time
+            xc = self.current_state[:,0]
+            uc = self.last_inputs[:,0]
+            print("X: {:8.2f}, Y: {:8.2f}, P: {:8.2f}, U1: {:8.2f}, U2: {:8.2f}, U3: {:8.2f}, U4: {:8.2f}, ET: {:8.2f}".format(xc[0], xc[1], xc[2], uc[0], uc[1], uc[2], uc[3], elapsed_time))
+            # print('end')
 
     def reference_callback(self, msg):
         # Extract yaw from quaternion for the reference pose
@@ -328,28 +343,23 @@ class WAMV_NMPC_Controller(Node):
         for i in range(len(msg.poses)):
             quat = [msg.poses[i].orientation.x, msg.poses[i].orientation.y, msg.poses[i].orientation.z, msg.poses[i].orientation.w]
             euler = Rotation.from_quat(quat).as_euler('xyz')
-            x, y = self.gps_to_local_xy(msg.poses[i].position.y, msg.poses[i].position.x)
+            x, y = self.gps_to_local_ned(msg.poses[i].position.y, msg.poses[i].position.x)
             self.waypoints[:3,i] = [x, y, euler[2]]  # yaw is euler[2]
 
     def CTStateModel(self, x, u):
         # Unpack state and inputs
         N, E, psi, u_vel, v, r = x[:,0]
-        # F_l  = ForceCalculator().get_force_from_signal(u[0,0])
-        # F_r  = ForceCalculator().get_force_from_signal(u[1,0])
-        # F_bl = ForceCalculator().get_force_from_signal(u[2,0])
-        # F_br = ForceCalculator().get_force_from_signal(u[3,0])
-
-        F_l  = 2*u[0,0]
-        F_r  = 2*u[1,0]
-        F_bl = 2*u[2,0]
-        F_br = 2*u[3,0]
+        F_l  = 2*1.7*u[0,0]
+        F_r  = 2*1.7*u[1,0]
+        F_bl = 1.7*u[2,0]
+        F_br = 1.7*u[3,0]
         
         tau_u = np.array([[0],
                           [0],
                           [0],
                           [(F_l+F_r)/self.m11],
-                          [(F_br-F_bl)/self.m22],
-                          [(self.L_b*(-F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
+                          [(-F_br+F_bl)/self.m22],
+                          [(self.L_b*(F_bl-F_br) + self.d_m*(-F_r+F_l))/self.m33]])
 
         # Compute state derivatives
         dN = u_vel * np.cos(psi) - v * np.sin(psi)
@@ -418,19 +428,17 @@ class WAMV_NMPC_Controller(Node):
         #                   [0],
         #                   [0],
         #                   [(F_l+F_r)/self.m11],
-        #                   [(F_br-F_bl)/self.m22],
-        #                   [(self.L_b*(-F_bl+F_br) + self.d_m*(F_r-F_l))/self.m33]])
-
-        dFdu = 2 * np.eye(4)
-        # dFdu = 1.57*np.eye(4)
+        #                   [(-F_br+F_bl)/self.m22],
+        #                   [(self.L_b*(F_bl-F_br) + self.d_m*(-F_r+F_l))/self.m33]])
+        dFdu = np.diag([2*1.7, 2*1.7, 1.7, 1.7])
 
         dxdF = np.array([
             [0, 0, 0, 0],
             [0, 0, 0, 0],
             [0, 0, 0, 0],
             [1/self.m11, 1/self.m11, 0, 0],
-            [0, 0, -1/self.m22, 1/self.m22],
-            [-self.d_m/self.m33, self.d_m/self.m33, -self.L_b/self.m33, self.L_b/self.m33]
+            [0, 0, 1/self.m22, -1/self.m22],
+            [self.d_m/self.m33, -self.d_m/self.m33, self.L_b/self.m33, -self.L_b/self.m33]
         ])
 
         B = dxdF @ dFdu
@@ -459,15 +467,17 @@ class WAMV_NMPC_Controller(Node):
         
         return xn, dxdun
 
-    def gps_to_local_xy(self, lon, lat):
+    def gps_to_local_ned(self, lon, lat):
         # Convert GPS coordinates to UTM
-        x, y = self.transformer.transform(lon, lat)
+        # x, y = self.transformer.transform(lon, lat)
         
         # Calculate local x-y relative to the datum
-        local_x = x - self.datum_x
-        local_y = y - self.datum_y
+        # local_x = x - self.datum_x
+        # local_y = y - self.datum_y
         
-        return local_x, local_y
+        north, east, down = pm.geodetic2ned(lat, lon, 0, self.datum_lat, self.datum_lon,0)
+
+        return north, east
 
     def gps_callback(self, msg):
         current_time = self.get_clock().now().nanoseconds / 1e9
@@ -475,9 +485,9 @@ class WAMV_NMPC_Controller(Node):
         self.last_update_time = current_time
 
         # Convert GPS to local x-y coordinates
-        x, y = self.gps_to_local_xy(msg.longitude, msg.latitude)
+        north, east = self.gps_to_local_ned(msg.longitude, msg.latitude)
         
-        self.update_ekf(dt, gps_measurement=np.array([x, y]))
+        self.update_ekf(dt, gps_measurement=np.array([north, east]))
 
         if self.gpsUpdates < 300:
             self.gpsUpdates += 1
