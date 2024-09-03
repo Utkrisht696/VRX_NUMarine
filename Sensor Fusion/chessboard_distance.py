@@ -18,7 +18,7 @@ class ChessboardDistanceNode(Node):
                            [0.0, 0.0, 1.0]])
         self.D = np.array([-0.1950356958649444, 0.1383504196472886, 0.0002563441895758756, -0.0003855201794363196, 0.0])
         
-        # Transformation matrix from LiDAR frame to camera frame
+        # Transformation matrix from camera frame to LiDAR frame
         self.T = np.array([
             [1, 0, 0, -1.1],
             [0, 1, 0, 0.0],
@@ -46,18 +46,15 @@ class ChessboardDistanceNode(Node):
         self.get_logger().info('Received image')
         
         try:
-            # Convert the ROS Image message to a raw OpenCV Bayer image
-            bayer_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='mono8')
-
-            # Convert Bayer RGGB to RGB
-            cv_image = cv2.cvtColor(bayer_image, cv2.COLOR_BayerBG2BGR)
+            # Convert the ROS Image message to an OpenCV image
+            cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
             # Rectify the image
             h, w = cv_image.shape[:2]
             new_camera_matrix, roi = cv2.getOptimalNewCameraMatrix(self.K, self.D, (w, h), 1, (w, h))
             rectified_image = cv2.undistort(cv_image, self.K, self.D, None, new_camera_matrix)
 
-            # Convert to grayscale for chessboard detection
+            # Convert to grayscale
             gray_image = cv2.cvtColor(rectified_image, cv2.COLOR_BGR2GRAY)
 
             # Detect chessboard corners
@@ -77,7 +74,6 @@ class ChessboardDistanceNode(Node):
                 self.latest_corners = None
 
             # Display the image regardless of chessboard detection
-            self.latest_image = rectified_image.copy()
             cv2.imshow('Chessboard Detection', rectified_image)
             cv2.resizeWindow('Chessboard Detection', 800, 600)  # Resize window to 800x600
             cv2.waitKey(1)
@@ -88,30 +84,44 @@ class ChessboardDistanceNode(Node):
         self.get_logger().info('Received LiDAR point cloud')
         self.latest_pointcloud = msg
 
-        if self.latest_corners is not None and self.latest_image is not None:
+        if self.latest_corners is not None:
             try:
-                # Convert PointCloud2 to numpy array manually
-                points = self.pointcloud2_to_xyz_array(msg)
+                # Project the 2D corners into 3D using the camera matrix
+                object_points = np.zeros((np.prod(self.chessboard_size), 3), dtype=np.float32)
+                object_points[:, :2] = np.indices(self.chessboard_size).T.reshape(-1, 2)
+                object_points *= self.square_size
+                
+                # Solve for pose of the chessboard
+                ret, rvec, tvec = cv2.solvePnP(object_points, self.latest_corners, self.K, self.D)
+                
+                if ret:
+                    # Convert rotation vector to rotation matrix
+                    R, _ = cv2.Rodrigues(rvec)
+                    
+                    # Create the homogeneous transformation matrix
+                    chessboard_pose_camera_frame = np.eye(4)
+                    chessboard_pose_camera_frame[:3, :3] = R
+                    chessboard_pose_camera_frame[:3, 3] = tvec.T
 
-                # Transform LiDAR points to the camera frame
-                points_camera_frame = self.transform_points_to_camera_frame(points)
+                    # Transform chessboard pose to LiDAR frame
+                    chessboard_pose_lidar_frame = np.dot(self.T, chessboard_pose_camera_frame)
 
-                # Project points onto the image plane
-                image_points = self.project_points_to_image_plane(points_camera_frame)
+                    # Extract the position of the chessboard in the LiDAR frame
+                    chessboard_position_lidar = chessboard_pose_lidar_frame[:3, 3]
+                    self.get_logger().info(f'Chessboard position in LiDAR frame: {chessboard_position_lidar}')
 
-                # Debugging: Log the first few projected points to inspect
-                self.get_logger().info(f'First few projected points: {image_points[:5]}')
+                    # Convert PointCloud2 to numpy array manually
+                    points = self.pointcloud2_to_xyz_array(msg)
 
-                # Overlay points on the image
-                for point in image_points:
-                    point = tuple(int(coord) for coord in point)  # Ensure the point is a tuple of integers
-                    self.get_logger().info(f'Drawing point at: {point}')  # Log the point being drawn
-                    cv2.circle(self.latest_image, point, 3, (0, 0, 255), -1)
+                    self.get_logger().info(f'Number of points in LiDAR data: {points.shape[0]}')
 
-                # Display the image with projected LiDAR points
-                cv2.imshow('Chessboard Detection', self.latest_image)
-                cv2.waitKey(1)
-
+                    # Calculate the distance between the chessboard position and the points in the LiDAR point cloud
+                    if points.size > 0:
+                        distances = np.linalg.norm(points - chessboard_position_lidar, axis=1)
+                        min_distance = np.min(distances)
+                        self.get_logger().info(f'Chessboard distance: {min_distance:.2f} meters')
+                    else:
+                        self.get_logger().info('No corresponding points found in LiDAR data')
             except Exception as e:
                 self.get_logger().error(f'Failed to process LiDAR data: {e}')
 
@@ -135,17 +145,6 @@ class ChessboardDistanceNode(Node):
                 if skip_nans and (np.isnan(x) or np.isnan(y) or np.isnan(z)):
                     continue
                 yield (x, y, z)
-
-    def transform_points_to_camera_frame(self, points):
-        """Transform LiDAR points to the camera frame."""
-        points_homogeneous = np.hstack((points, np.ones((points.shape[0], 1))))
-        points_camera_frame = np.dot(self.T, points_homogeneous.T).T[:, :3]
-        return points_camera_frame
-
-    def project_points_to_image_plane(self, points_camera_frame):
-        """Project 3D points in the camera frame onto the 2D image plane."""
-        image_points, _ = cv2.projectPoints(points_camera_frame, np.zeros((3, 1)), np.zeros((3, 1)), self.K, self.D)
-        return image_points.reshape(-1, 2)
 
 def main(args=None):
     rclpy.init(args=args)
