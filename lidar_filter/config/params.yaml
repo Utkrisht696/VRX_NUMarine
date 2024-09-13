@@ -1,0 +1,5 @@
+# params.yaml
+lidar_filter_node:
+  ros__parameters:
+    min_z: -0.5  # Set these values based on your environment
+    max_z: 5.0
