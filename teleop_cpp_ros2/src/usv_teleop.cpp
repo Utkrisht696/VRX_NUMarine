@@ -135,18 +135,18 @@ class TeleopUSV : public rclcpp::Node
 {
 public:
     TeleopUSV()
-        : Node("usv_teleop"),
+        : Node("usv_teleop"),                                       // Name the node 'usv_teleop' and initialise values
           thrust_speed_(5.0),
           thrust_bow_port_(0.0), thrust_bow_star_(0.0),
           thrust_stern_port1_(0.0), thrust_stern_port2_(0.0),
           thrust_stern_star1_(0.0), thrust_stern_star2_(0.0)
     {
-        publisher_thrust_bow_port_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_port/thrust", 10);
-        publisher_thrust_bow_star_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_star/thrust", 10);
-        publisher_thrust_stern_port1_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port1/thrust", 10);
-        publisher_thrust_stern_port2_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port2/thrust", 10);
-        publisher_thrust_stern_star1_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_star1/thrust", 10);
-        publisher_thrust_stern_star2_ = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_star2/thrust", 10);
+        publisher_thrust_bow_port_      = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_port/thrust", 10);
+        publisher_thrust_bow_star_      = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/bow_star/thrust", 10);
+        publisher_thrust_stern_port1_   = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port1/thrust", 10);
+        publisher_thrust_stern_port2_   = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_port2/thrust", 10);
+        publisher_thrust_stern_star1_   = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_star1/thrust", 10);
+        publisher_thrust_stern_star2_   = this->create_publisher<std_msgs::msg::Float64>("/wamv/thrusters/stern_star2/thrust", 10);
 
         print_instructions();
     }
