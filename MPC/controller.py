@@ -68,8 +68,8 @@ class WAMV_NMPC_Controller(Node):
         self.Qctrl = np.diag([100, 100, 200, 0.00001, 0.00001, 0.1])
         self.Rctrl = 4
         self.Rdiff = 10
-        self.thrust_lower_bound = -60
-        self.thrust_upper_bound =  60
+        self.thrust_lower_bound = -80
+        self.thrust_upper_bound =  80
 
         self.U     = np.zeros((self.nu, self.Nu))
         self.Xref  = np.zeros((self.nx, self.Np+1))
@@ -234,7 +234,7 @@ class WAMV_NMPC_Controller(Node):
             U[:,-1]  = self.U[:,-1]
 
             #Check if we are close to waypoint and move to the next
-            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 1:
+            if np.linalg.norm(self.waypoints[:,[self.currentwaypoint]] - self.current_state[:3,[0]]) < 2:
                 self.currentwaypoint += 1
                 if self.currentwaypoint >= self.waypoints.shape[1]:
                     self.currentwaypoint = self.waypoints.shape[1]-1
