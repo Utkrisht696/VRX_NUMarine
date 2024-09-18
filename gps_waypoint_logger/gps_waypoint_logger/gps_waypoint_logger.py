@@ -8,6 +8,7 @@ import sys
 import tkinter as tk
 from tkinter import messagebox
 from gps_waypoint_logger.utils.gps_utils import euler_from_quaternion, quaternion_from_euler
+from ament_index_python.packages import get_package_share_directory
 
 
 class GpsGuiLogger(tk.Tk, Node):
@@ -121,8 +122,7 @@ def main(args=None):
     rclpy.init(args=args)
 
     # Allow passing the logging path as an argument
-    default_yaml_file_path = os.path.expanduser(
-        "~/Documents/GitHub/vrx_ws/src/VRX_NUMarine/gps_waypoint_logger/config/gps_waypoints.yaml")
+    default_yaml_file_path = get_package_share_directory("gps_waypoint_logger")
     if len(sys.argv) > 1:
         yaml_file_path = sys.argv[1]
     else:
