@@ -23,7 +23,7 @@ class GpsGuiLogger(Node):
 		self.logging_file_path = logging_file_path
 		self.waypoint_counter = 0
 		self.new_yaml_waypoint_list_filename = ''
-
+		print("init started")
 		# TKINTER INTERFACE
 		self.tkroot = tk.Tk()
 
@@ -100,8 +100,7 @@ class GpsGuiLogger(Node):
 		# Populate the waypoint list dropdown on startup
 		self.refresh_waypoint_list()
 
-		# Start the GUI event loop
-		self.tkroot.mainloop()
+
 
 		# END TKINTER INTERFACE
 
@@ -122,9 +121,12 @@ class GpsGuiLogger(Node):
 		)
 		self.last_heading = 0.0
 
-		print("gps pos: ', self.last_gps_position)
+		print("gps pos: ", self.last_gps_position)
 
 		print("Finished init")
+
+		# Start the GUI event loop
+		# self.tkroot.mainloop()
 
 	def gps_callback(self, msg: NavSatFix):
 		"""
@@ -285,7 +287,7 @@ def main(args=None):
 	while rclpy.ok():
 		# Spin both the ROS system and the interface
 		rclpy.spin_once(gps_gui_logger, timeout_sec=0.1)  # Run ros2 callbacks
-		gps_gui_logger.update()  # Update the tkinter interface
+		# gps_gui_logger.update()  # Update the tkinter interface
 
 	rclpy.shutdown()
 
