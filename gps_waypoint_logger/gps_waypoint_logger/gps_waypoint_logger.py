@@ -12,15 +12,13 @@ from gps_waypoint_logger.utils.gps_utils import euler_from_quaternion, quaternio
 from ament_index_python.packages import get_package_share_directory
 
 
-class GpsGuiLogger(tk.Tk, Node):
+class GpsGuiLogger(Node):
 	"""
 	ROS2 node to log GPS waypoints to a file in the format of PoseArray
 	"""
 
 	def __init__(self, logging_file_path):
-		tk.Tk.__init__(self)
 		Node.__init__(self, 'gps_waypoint_logger')
-		self.title("GPS Waypoint Logger")
 
 		self.logging_file_path = logging_file_path
 		self.waypoint_counter = 0
@@ -105,7 +103,7 @@ class GpsGuiLogger(tk.Tk, Node):
 		# Start the GUI event loop
 		self.tkroot.mainloop()
 
-		## END TKINTER INTERFACE
+		# END TKINTER INTERFACE
 
 		# Subscribe to the specific IMU and GPS topics
 		self.gps_subscription = self.create_subscription(
@@ -124,6 +122,21 @@ class GpsGuiLogger(tk.Tk, Node):
 		)
 		self.last_heading = 0.0
 
+		print("gps pos: ', self.last_gps_position)
+
+		print("Finished init")
+
+	def gps_callback(self, msg: NavSatFix):
+		"""
+        Callback to store the last GPS pose
+        """
+		self.last_gps_position = msg
+
+	def imu_callback(self, msg: Imu):
+		"""
+        Callback to store the last heading
+        """
+		_, _, self.last_heading = euler_from_quaternion(msg.orientation)
 
 	def new_list_button_handler(self):
 		# Reset the waypoint counter when a new list is created
@@ -145,7 +158,7 @@ class GpsGuiLogger(tk.Tk, Node):
 		self.update_label.config(text=f"Creating list: {self.new_yaml_waypoint_list_filename}", anchor="w")
 
 		# Create the YAML file structure if it doesn't exist
-		yaml_filepath = os.path.join(self.logging_file_path, new_yaml_waypoint_list_filename)
+		yaml_filepath = os.path.join(self.logging_file_path, self.new_yaml_waypoint_list_filename)
 		if not os.path.exists(yaml_filepath): #TODO CREATE FOLDER FOR LOGGING FILES
 			initial_yaml_data = {"poses": []}
 			with open(yaml_filepath, 'w') as yaml_file:
@@ -168,7 +181,6 @@ class GpsGuiLogger(tk.Tk, Node):
 
 
 	def new_waypoint_button_handler(self):
-		global waypoint_counter, new_yaml_waypoint_list_filename
 		self.waypoint_counter += 1
 
 		# Append waypoint data to the YAML file
@@ -176,10 +188,10 @@ class GpsGuiLogger(tk.Tk, Node):
 		self.append_waypoint_yaml(yaml_filepath)
 
 		# Update the label to reflect the current waypoint with fixed width
-		if waypoint_counter == 0:
+		if self.waypoint_counter == 0:
 			self.waypoint_label.config(text="Starting Waypoint", anchor="w")
 		else:
-			self.waypoint_label.config(text=f"{waypoint_counter}th Waypoint", anchor="w")
+			self.waypoint_label.config(text=f"{self.waypoint_counter}th Waypoint", anchor="w")
 
 	def format_date_time(self):
 		# Get the current date and time
@@ -201,7 +213,6 @@ class GpsGuiLogger(tk.Tk, Node):
 		return formatted_time
 
 	def append_waypoint_yaml(self, yaml_filename):
-		global waypoint_counter
 		new_pose = self.generate_current_posearray()
 
 		try:
@@ -215,7 +226,7 @@ class GpsGuiLogger(tk.Tk, Node):
 			with open(yaml_filename, 'w') as yaml_file:
 				yaml.dump(existing_data, yaml_file, default_flow_style=False)
 
-			print(f"Waypoint {waypoint_counter} added to {yaml_filename}")
+			print(f"Waypoint {self.waypoint_counter} added to {yaml_filename}")
 		except FileNotFoundError:
 			print(f"File {yaml_filename} not found!")
 		except Exception as e:
@@ -226,7 +237,7 @@ class GpsGuiLogger(tk.Tk, Node):
 
 		selected_waypoint_file = self.waypoint_var.get()
 		self.new_yaml_waypoint_list_filename = os.path.join(self.logging_file_path, selected_waypoint_file)
-		self.update_label.config(text=f"Selected list: {new_yaml_waypoint_list_filename}", anchor="w")
+		self.update_label.config(text=f"Selected list: {self.new_yaml_waypoint_list_filename}", anchor="w")
 
 		# Grey out the add waypoint button when selecting a list
 		self.new_waypoint_button.config(state="disabled")  # Disable butto
