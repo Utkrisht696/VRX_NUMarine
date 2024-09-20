@@ -23,7 +23,7 @@ class GpsGuiLogger(Node):
 		self.logging_file_path = logging_file_path
 		self.waypoint_counter = 0
 		self.new_yaml_waypoint_list_filename = ''
-		print("init started")
+		# print("init started")
 		# TKINTER INTERFACE
 		self.tkroot = tk.Tk()
 
@@ -121,9 +121,9 @@ class GpsGuiLogger(Node):
 		)
 		self.last_heading = 0.0
 
-		print("gps pos: ", self.last_gps_position)
+		# print("gps pos: ", self.last_gps_position)
 
-		print("Finished init")
+		# print("Finished init")
 
 		# Start the GUI event loop
 		# self.tkroot.mainloop()
@@ -161,7 +161,7 @@ class GpsGuiLogger(Node):
 
 		# Create the YAML file structure if it doesn't exist
 		yaml_filepath = os.path.join(self.logging_file_path, self.new_yaml_waypoint_list_filename)
-		if not os.path.exists(yaml_filepath): #TODO CREATE FOLDER FOR LOGGING FILES
+		if not os.path.exists(yaml_filepath): #TODO confirm this automatically creates the file CREATE FOLDER FOR LOGGING FILES
 			initial_yaml_data = {"poses": []}
 			with open(yaml_filepath, 'w') as yaml_file:
 				yaml.dump(initial_yaml_data, yaml_file, default_flow_style=False)
@@ -245,7 +245,8 @@ class GpsGuiLogger(Node):
 		self.new_waypoint_button.config(state="disabled")  # Disable butto
 
 	def run_action(self):
-		print(f"Run action triggered for: {self.new_yaml_waypoint_list_filename}")
+		
+		print(f"TODO Run action triggered for: {self.new_yaml_waypoint_list_filename}")
 
 	def refresh_action(self):
 		self.refresh_waypoint_list()
@@ -254,7 +255,7 @@ class GpsGuiLogger(Node):
 	def generate_current_posearray(self):
 		# Convert GPS coordinates to a Pose (x = latitude, y = longitude, z = 0)
 		new_pose = {
-			"position": {
+			"position": {gps_waypoints
 				"x": self.last_gps_position.latitude,
 				"y": self.last_gps_position.longitude,
 				"z": 0.0
@@ -287,7 +288,7 @@ def main(args=None):
 	while rclpy.ok():
 		# Spin both the ROS system and the interface
 		rclpy.spin_once(gps_gui_logger, timeout_sec=0.1)  # Run ros2 callbacks
-		# gps_gui_logger.update()  # Update the tkinter interface
+		gps_gui_logger.tkroot.update()  # Update the tkinter interface
 
 	rclpy.shutdown()
 
