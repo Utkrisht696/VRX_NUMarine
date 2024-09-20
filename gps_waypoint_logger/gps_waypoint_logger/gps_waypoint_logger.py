@@ -6,6 +6,7 @@ import yaml
 import os
 import sys
 import datetime
+from std_msgs.msg import Header
 import tkinter as tk
 from tkinter import ttk
 from gps_waypoint_logger.utils.gps_utils import euler_from_quaternion, quaternion_from_euler
@@ -19,6 +20,11 @@ class GpsGuiLogger(Node):
 
 	def __init__(self, logging_file_path):
 		Node.__init__(self, 'gps_waypoint_logger')
+
+		self.publisher_ = self.create_publisher(PoseArray, '/vrx/wayfinding/waypoints', 10)
+		self.timer = self.create_timer(2.0, self.publish_waypoints)
+		self.timer.cancel()
+		self.pose_array_msg = None
 
 		self.logging_file_path = logging_file_path
 		self.waypoint_counter = 0
@@ -195,6 +201,55 @@ class GpsGuiLogger(Node):
 		else:
 			self.waypoint_label.config(text=f"{self.waypoint_counter}th Waypoint", anchor="w")
 
+	def load_waypoints(self, filename):
+		"""
+        Load the PoseArray from the YAML file.
+        """
+		package_share_directory = get_package_share_directory('gps_waypoint_logger')
+		waypoints_file = os.path.join(package_share_directory, 'index', filename)
+		with open(waypoints_file, 'r') as file:
+			pose_array_data = yaml.safe_load(file)
+
+		# Create a PoseArray message and populate it with the loaded poses
+		pose_array_msg = PoseArray()
+		pose_array_msg.header = Header()
+		pose_array_msg.header.frame_id = ''  # Adjust frame_id as needed
+
+		for pose_data in pose_array_data['poses']:
+			pose = self.pose_from_yaml(pose_data)
+			pose_array_msg.poses.append(pose)
+
+		return pose_array_msg
+
+	def pose_from_yaml(self, pose_data):
+		"""
+        Convert the pose data from YAML format to a Pose message.
+        """
+
+		pose = Pose()
+		pose.position.x = pose_data['position']['x']
+		pose.position.y = pose_data['position']['y']
+		pose.position.z = pose_data['position']['z']
+		pose.orientation.x = pose_data['orientation']['x']
+		pose.orientation.y = pose_data['orientation']['y']
+		pose.orientation.z = pose_data['orientation']['z']
+		pose.orientation.w = pose_data['orientation']['w']
+
+		return pose
+
+	def publish_waypoints(self):
+		"""
+        Publish the PoseArray loaded from the YAML file.
+        """
+		# Update the timestamp before publishing
+
+		self.pose_array_msg.header.stamp = self.get_clock().now().to_msg()
+
+		# Publish the pose array message
+		self.publisher_.publish(self.pose_array_msg)
+		self.timer.reset()
+		self.get_logger().info('Published pose array with {} waypoints'.format(len(self.pose_array_msg.poses)))
+
 	def format_date_time(self):
 		# Get the current date and time
 		now = datetime.datetime.now()
@@ -245,7 +300,9 @@ class GpsGuiLogger(Node):
 		self.new_waypoint_button.config(state="disabled")  # Disable butto
 
 	def run_action(self):
-		
+		print(self.new_yaml_waypoint_list_filename)
+		self.pose_array_msg = self.load_waypoints(self.new_yaml_waypoint_list_filename)
+		self.publish_waypoints()
 		print(f"TODO Run action triggered for: {self.new_yaml_waypoint_list_filename}")
 
 	def refresh_action(self):
@@ -255,7 +312,7 @@ class GpsGuiLogger(Node):
 	def generate_current_posearray(self):
 		# Convert GPS coordinates to a Pose (x = latitude, y = longitude, z = 0)
 		new_pose = {
-			"position": {gps_waypoints
+			"position": {
 				"x": self.last_gps_position.latitude,
 				"y": self.last_gps_position.longitude,
 				"z": 0.0
