@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a822e7d3-bb3e-4066-9f6b-5d5775ef3729" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gps_waypoint_logger/gps_waypoint_logger/gps_waypoint_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/gps_waypoint_logger/gps_waypoint_logger/gps_waypoint_logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

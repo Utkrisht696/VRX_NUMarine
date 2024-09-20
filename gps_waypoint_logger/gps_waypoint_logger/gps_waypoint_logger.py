@@ -167,7 +167,7 @@ class GpsGuiLogger(Node):
 
 		# Create the YAML file structure if it doesn't exist
 		yaml_filepath = os.path.join(self.logging_file_path, self.new_yaml_waypoint_list_filename)
-		if not os.path.exists(yaml_filepath): #TODO confirm this automatically creates the file CREATE FOLDER FOR LOGGING FILES
+		if not os.path.exists(yaml_filepath):
 			initial_yaml_data = {"poses": []}
 			with open(yaml_filepath, 'w') as yaml_file:
 				yaml.dump(initial_yaml_data, yaml_file, default_flow_style=False)
@@ -205,8 +205,9 @@ class GpsGuiLogger(Node):
 		"""
         Load the PoseArray from the YAML file.
         """
-		package_share_directory = get_package_share_directory('gps_waypoint_logger')
-		waypoints_file = os.path.join(package_share_directory, 'index', filename)
+
+		waypoints_file = os.path.join(self.logging_file_path, filename)
+		print(waypoints_file)
 		with open(waypoints_file, 'r') as file:
 			pose_array_data = yaml.safe_load(file)
 
