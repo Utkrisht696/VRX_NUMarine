@@ -73,7 +73,7 @@ class GpsGuiLogger(Node):
 		self.waypoint_label_dropdown.grid(row=2, column=0, padx=10, pady=5)
 
 		self.waypoint_var = tk.StringVar()
-		self.waypoint_dropdown = ttk.Combobox(self.dropdown_frame, textvariable=self.waypoint_var)
+		self.waypoint_dropdown = ttk.Combobox(self.dropdown_frame, textvariable=self.waypoint_var, width=30)
 		self.waypoint_dropdown.grid(row=2, column=1, padx=10, pady=5)
 
 		# Bind the selection event to update the selected waypoint file
