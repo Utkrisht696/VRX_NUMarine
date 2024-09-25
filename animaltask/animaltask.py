@@ -65,7 +65,7 @@ class WaypointPublisher(Node):
 
         # Radius of the circle for waypoints (in meters)
         self.radius = 10.0
-
+        self.last_yaw = None
         # Flag to track if waypoints have been published
         self.waypoints_published = False
 
@@ -96,7 +96,7 @@ class WaypointPublisher(Node):
     def order_waypoints_once(self):
         # Create waypoints around the buoy in a clockwise direction
         lat_buoy, lon_buoy = self.buoy_position
-        num_waypoints = 13
+        num_waypoints = 8
         angle_increment = 2 * math.pi / num_waypoints
         lat_radius = self.radius / EARTH_RADIUS * (180 / math.pi)
         lon_radius = self.radius / (EARTH_RADIUS * math.cos(math.radians(lat_buoy))) * (180 / math.pi)
@@ -135,6 +135,7 @@ class WaypointPublisher(Node):
         self.ordered_waypoints.append(self.ordered_waypoints[0])
 
         # Set orientation based on the direction to the next waypoint (consistent yaw changes)
+        # Set orientation based on the direction to the next waypoint (continuous yaw changes)
         for i in range(len(self.ordered_waypoints) - 1):
             current_pose = self.ordered_waypoints[i]
             next_pose = self.ordered_waypoints[i + 1]
@@ -143,11 +144,23 @@ class WaypointPublisher(Node):
             delta_lon = next_pose.position.y - current_pose.position.y
             yaw = math.atan2(delta_lat, delta_lon)  # Heading towards the next waypoint
 
+            if self.last_yaw is not None:
+                # Unwrap the yaw to avoid overflow
+                yaw_diff = yaw - self.last_yaw
+                if yaw_diff > math.pi:
+                    yaw -= 2 * math.pi
+                elif yaw_diff < -math.pi:
+                    yaw += 2 * math.pi
+
+            # Update last yaw for the next iteration
+            self.last_yaw = yaw
+
             quaternion = euler_to_quaternion(0, 0, yaw)
             current_pose.orientation.x = quaternion[0]
             current_pose.orientation.y = quaternion[1]
             current_pose.orientation.z = quaternion[2]
             current_pose.orientation.w = quaternion[3]
+
 
         self.get_logger().info(f"Ordered waypoints with closest to boat at index {closest_index}. Loop closes on this waypoint.")
 
