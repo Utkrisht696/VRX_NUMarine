@@ -5,10 +5,10 @@ import torch
 print(torch.cuda.is_available()) 
 
 # Load the YOLOv8 model
-model = YOLO('detectVRX25e.pt')  # Replace 'yolov8n.pt' with the path to your YOLOv8 model if different
+model = YOLO('scanDockDeliver.pt')  # Replace 'yolov8n.pt' with the path to your YOLOv8 model if different
 model.to('cuda')  # Ensure the model uses GPU
 # Load the image
-image_path = "images/lightTower3.png"  # Replace with the path to your image
+image_path = "images/VRX1.png"  # Replace with the path to your image
 image = cv2.imread(image_path)
 
 # Perform inference
