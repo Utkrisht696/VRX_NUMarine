@@ -162,7 +162,7 @@ class WAMV_NMPC_Controller(Node):
         self.Xref[1,:] = self.waypoint[1,0] # np.linspace(x[1,0], wpY, self.Np+1)
         
         maxAngSpeed = 0.5 #rads/s
-        if distance_to_waypoint < 1:   
+        if distance_to_waypoint < 10.0:
             heading = self.waypoint[2,0] #self.headingOld
         else:
             heading = np.arctan2(uv[1,0],uv[0,0])
@@ -178,47 +178,15 @@ class WAMV_NMPC_Controller(Node):
             self.last_inputs = self.U[:,[0]]
             # Publish control commands
             msg = Float64()
-
-
-################################3
-
-        ####
-        # may need to update these parameters to account for signal needed for real boat  
-        ###
-            singleActuator= 2   # tune this parameter 
-            stern =2*singleActuator # double the actuator  
-            bow = singleActuator   
-
-        ##
-
-            # bow 
-            msg.data = float(bow * self.last_inputs[0])
+            msg.data = float(4 * self.last_inputs[0])
             self.cmd_L_pub.publish(msg)
-            msg.data = float(bow * self.last_inputs[1])
+            msg.data = float(4 * self.last_inputs[1])
             self.cmd_R_pub.publish(msg)
-            # stern
-            msg.data = float(stern * self.last_inputs[2])   
+            msg.data = float(4 * self.last_inputs[2])
             self.cmd_bl_pub.publish(msg)
-            msg.data = float(stern * self.last_inputs[3])
+            msg.data = float(4 * self.last_inputs[3])
             self.cmd_br_pub.publish(msg)
-            
 
-
-
-            # # bow 
-            # msg.data = float(4 * self.last_inputs[0])
-            # self.cmd_L_pub.publish(msg)
-            # msg.data = float(4 * self.last_inputs[1])
-            # self.cmd_R_pub.publish(msg)
-            
-            # # stern
-            # msg.data = float(4 * self.last_inputs[2])   
-            # self.cmd_bl_pub.publish(msg)
-            # msg.data = float(4 * self.last_inputs[3])
-            # self.cmd_br_pub.publish(msg)
-
-
-#################################3
             x = self.state_transition_xonly(self.current_state, self.last_inputs, self.dt)
             #x = self.current_state
 
@@ -385,7 +353,6 @@ class WAMV_NMPC_Controller(Node):
             [0, 0, 0, 0 - ((self.d11 + 2.0*self.d11_2*np.fabs(u_vel)) / self.m11) , (self.m22 / self.m11) * r , (self.m22 / self.m11) * v ],
             [0, 0, 0, -(self.m11 / self.m22) * r , - ((self.d22 + 2.0*self.d22_2*np.fabs(v)) / self.m22) , -(self.m11 / self.m22) * u_vel ],
             [0, 0, 0, 0, 0, - ((self.d33 + 2.0*self.d33_2*np.fabs(r)) / self.m33)]
-            
         ])
         
         return J
@@ -552,4 +519,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-

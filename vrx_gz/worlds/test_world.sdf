@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="test_world">
+    <!-- Include the ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Include a simple box model -->
+    <model name="simple_box">
+      <static>true</static>
+      <pose>0 0 0.5 0 0 0</pose> <!-- Positioned slightly above the ground -->
+      <link name="simple_box_link">
+        <visual name="simple_box_visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size> <!-- Larger size for visibility -->
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient> <!-- Red color for high visibility -->
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Insert any other models you want to test -->
+    
+  </world>
+</sdf>

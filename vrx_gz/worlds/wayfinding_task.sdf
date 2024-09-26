@@ -517,6 +517,29 @@
       </plugin>
     </include>
 
+       <!-- chessboard-->
+
+    <!-- <include>
+      <name>chessboard</name>
+      <pose>-526.5 170 1.8 0.1 1.57 1.0</pose>
+      <uri>https://fuel.gazebosim.org/1.0/justartemm/models/Chessboard</uri>
+    </include> -->
+    <!-- <include>
+      <name>chessboard</name>
+      <pose>-531.3 165 1.2 0.1 1.57 1.0</pose>
+      <uri>https://fuel.gazebosim.org/1.0/justartemm/models/Chessboard</uri>
+      <scale>2 2 2</scale> 
+    </include> -->
+
+    <include>
+      <name>checkerboard_8_7_0_05</name>
+      <pose>-530.3 165 1.2 0 1.57 1.0</pose> <!-- Adjust pose as needed -->
+      <uri>model://checkerboard_8_7_0_05</uri> <!-- The URI pointing to the model folder -->
+      <scale>2 2 2</scale> <!-- Scale to double the size of the checkerboard -->
+    </include>
+
+
+
     <!-- The posts for securing the WAM-V -->
     <include>
       <name>post_0</name>

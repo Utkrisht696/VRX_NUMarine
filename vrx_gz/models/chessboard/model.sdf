@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="chessboard">
+    <static>true</static>
+    <link name="chessboard_link">
+      <visual name="chessboard_visual">
+        <geometry>
+          <box>
+            <size>0.594 0.42 0.01</size> <!-- A2 size with a small thickness -->
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Chessboard</name>
+          </script>
+          <texture>
+            <diffuse>file://materials/textures/chessboard_10x7.ppm</diffuse>
+          </texture>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
