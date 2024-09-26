@@ -96,7 +96,7 @@ class WaypointPublisher(Node):
     def order_waypoints_once(self):
         # Create waypoints around the buoy in a clockwise direction
         lat_buoy, lon_buoy = self.buoy_position
-        num_waypoints = 8
+        num_waypoints = 4
         angle_increment = 2 * math.pi / num_waypoints
         lat_radius = self.radius / EARTH_RADIUS * (180 / math.pi)
         lon_radius = self.radius / (EARTH_RADIUS * math.cos(math.radians(lat_buoy))) * (180 / math.pi)
@@ -143,14 +143,17 @@ class WaypointPublisher(Node):
             delta_lat = next_pose.position.x - current_pose.position.x
             delta_lon = next_pose.position.y - current_pose.position.y
             yaw = math.atan2(delta_lat, delta_lon)  # Heading towards the next waypoint
-
+            yaw_diff = 0
             if self.last_yaw is not None:
-                # Unwrap the yaw to avoid overflow
+                # Compute the yaw difference and ensure continuous yaw
                 yaw_diff = yaw - self.last_yaw
                 if yaw_diff > math.pi:
-                    yaw -= 2 * math.pi
+                    yaw_diff -= 2 * math.pi
                 elif yaw_diff < -math.pi:
-                    yaw += 2 * math.pi
+                    yaw_diff += 2 * math.pi
+
+                # Accumulate the yaw difference to the previous yaw to ensure continuity
+            unwrapped_yaw = yaw + yaw_diff
 
             # Update last yaw for the next iteration
             self.last_yaw = yaw
